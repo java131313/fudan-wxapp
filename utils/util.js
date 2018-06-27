@@ -24,7 +24,7 @@ class Util {
 
   /* 判断A字符串是否包含B字符串 */
   static strIsContain(strA, strB) {
-    if (strA.indexOf(strB)) return true;
+    if (strA.indexOf(strB) > -1) return true;
     else return false;
   }
 

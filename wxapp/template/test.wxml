@@ -1,0 +1,3 @@
+<template name="test">
+  <text>{{test}}-{{test}}</text>
+</template>

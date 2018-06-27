@@ -1,8 +1,16 @@
+import {MockData} from '../mock/mockData.js';
 const CONFIG = require('config.js');
+const mockData = new MockData();
 
 class Api {
   constructor() {
     let self = this;
+    self.isMock = CONFIG.MOCK.STATUS;
+  }
+
+  mockTest() {
+    let self = this;
+    if (self.isMock) return mockData.getCommentList();
   }
 
   /* 获取缓存里面的session_id */
@@ -13,7 +21,6 @@ class Api {
   /* 保存用户信息 */
   setUserInfo() {
     let self = this;
-
   }
 
   /* session过期重新登录 */
@@ -26,7 +33,9 @@ class Api {
           wx.request({
             url: `${service} `,
             method: 'POST',
-            data: { code: res.code },
+            data: {
+              code: res.code
+            },
             success: res => {
               if (res.data.code == 200) {
                 resolve(res);
@@ -44,6 +53,18 @@ class Api {
     return reLoginPromise;
   }
 
+  /* GET请求 */
+  getRequest(method, url, data, header) {
+    let self = this;
+    return self.requestData('get', url, data, header);
+  }
+
+  /* POST请求 */
+  post(method, url, data, header) {
+    let self = this;
+    return self.requestData('post', url, data, header);
+  }
+
   /* wx请求数据 */
   requestData(method, url, data, header) {
     if (!url || !method) return;
@@ -55,7 +76,7 @@ class Api {
         data: data || {},
         header: header || {},
         method: method.toLocaleUpperCase(),
-        success: function (res) {
+        success: function(res) {
           if (res.data.code == 200) {
             resolve(res);
           } else if (res.data.code == 450) {
@@ -69,12 +90,14 @@ class Api {
               /* 如果是登录请求则不需要再进行重复请求 */
               if (url.indexOf('login') > -1) return;
               self.requestData(method, url, data, header);
-            }, res => { reject(res); });
+            }, res => {
+              reject(res);
+            });
           } else {
             reject(res);
           }
         },
-        fail: function (res) {
+        fail: function(res) {
           reject(res.errMsg || '发送网络错误(http fail)');
         }
       });

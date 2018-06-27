@@ -6,6 +6,9 @@ module.exports = {
     STATUS: false,
     API: 'debug',
   },
+  MOCK: {
+    STATUS: true
+  },
   PAGE: {
     INDEX: '/pages/index/index',
   }
