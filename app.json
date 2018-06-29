@@ -1,12 +1,9 @@
 {
   "pages": [
-<<<<<<< HEAD
     "pages/personal/personal",
-=======
     "pages/personalDetails/personalDetails",
     "pages/selectiveID/selectiveID",
     "pages/loginym/loginym",
->>>>>>> 3fc424b9988bcb7f0e7291d8b104766191ed05ba
     "pages/index/index"
   ],
   "window": {
