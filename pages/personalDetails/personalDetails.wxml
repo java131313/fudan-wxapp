@@ -1,0 +1,15 @@
+<!--pages/personalDetails/personalDetails.wxml-->
+<view class='personalDetails'>
+  <view class='headPortraitList'>
+    <view class='headN'>
+      <text class='headName'>头像</text>
+    </view>
+    <view class="headPic">
+      <open-data type="userAvatarUrl" class="headPortrait"></open-data>
+    </view>
+    <view class='arrows'>
+      <image src='/images/jt.png'></image>
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>

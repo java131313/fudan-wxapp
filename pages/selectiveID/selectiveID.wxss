@@ -1,0 +1,76 @@
+/* pages/selectiveID/selectiveID.wxss */
+
+page {
+  height: 100%;
+  width: 92.8%;
+  background: #f5f5f5;
+  padding: 0 3.6%;
+}
+
+.slogan {
+  padding-top: 59rpx;
+}
+
+.slogan .sloganH1 {
+  display: block;
+  font-size: 35rpx;
+  color: #000;
+  font-weight: bold;
+  line-height: 50rpx;
+  text-align: left;
+}
+
+.slogan .sloganH2 {
+  display: block;
+  font-size: 27rpx;
+  color: #999;
+  line-height: 65rpx;
+  text-align: left;
+  margin-bottom: 40rpx;
+}
+
+.slogan .sloganH3 {
+  display: block;
+  font-size: 27rpx;
+  color: #333;
+  line-height: 70rpx;
+  text-align: left;
+}
+
+.tag {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 255rpx;
+}
+
+.tag .tagJob {
+  height: 130rpx;
+  width: 46.04%;
+  text-align: center;
+  line-height: 130rpx;
+  color: #acacac;
+  border: 2rpx solid #dfdfdf;
+  margin-bottom: 45rpx;
+}
+.tag .tagJob:nth-child(1){
+  margin-right: 6.5%;
+}
+.tag .tagJob:nth-child(3){
+  margin-right: 6.5%;
+}
+
+.sloganEnd{
+  text-align: center;
+}
+.sloganEnd .sloganEndTitle{
+  display: inline-block;
+  width: 33.53%;
+  background: #cc1a1a;
+  color: #fff;
+  font-size: 31rpx;
+  line-height: 84rpx;
+  height: 84rpx;
+  border-radius: 5rpx;
+}
