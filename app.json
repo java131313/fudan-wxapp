@@ -1,10 +1,13 @@
 {
   "pages": [
+    "pages/personalDetails/personalDetails",
+    "pages/selectiveID/selectiveID",
+    "pages/loginym/loginym",
     "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#5b57e1",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   }
