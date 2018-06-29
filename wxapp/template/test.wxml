@@ -1,3 +1,4 @@
 <template name="test">
   <text>{{test}}-{{test}}</text>
+  <button bindtap='cc'>点击我</button>
 </template>

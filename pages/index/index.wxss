@@ -1,1 +1,7 @@
 /* pages/index/index.wxss */
+.test{
+  width: 100%;
+  height: 100rpx;
+  background: url('https://mmbiz.qpic.cn/mmbiz_gif/aTnTTELWibpOBraBSESkMZJIqF8dLaNhq9S3ricguibpMNZVxRajfnlfjW5so6ibZRJtYvT1v9kFprQwHFwYiamLdMw/640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1') no-repeat center center;
+  background-size: cover;
+}

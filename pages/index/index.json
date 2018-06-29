@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "复旦大学",
+  "navigationBarTextStyle": "white",
+  "onReachBottomDistance": 0,
+  "enablePullDownRefresh": true
+}

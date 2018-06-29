@@ -1,4 +1,6 @@
-import {MockData} from '../mock/mockData.js';
+import {
+  MockData
+} from '../mock/mockData.js';
 const CONFIG = require('config.js');
 const mockData = new MockData();
 

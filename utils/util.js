@@ -1,4 +1,6 @@
-import { Api } from '../wxapp/api/api.js';
+import {
+  Api
+} from '../wxapp/api/api.js';
 const api = new Api();
 const app = getApp();
 
@@ -24,7 +26,7 @@ class Util {
 
   /* 判断A字符串是否包含B字符串 */
   static strIsContain(strA, strB) {
-    if (strA.indexOf(strB) > -1) return true;
+    if (strA.toString().indexOf(strB.toString() > -1)) return true;
     else return false;
   }
 
@@ -37,13 +39,13 @@ class Util {
       cancelText: '取消'
     };
     options = Object.assign(defaultOption, options || {});
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
       wx.showModal({
         title: options.title,
         content: options.content,
         confirmText: options.confirmText,
         cancelText: options.cancelText,
-        success: function (res) {
+        success: function(res) {
           if (res.confirm) {
             resolve();
           } else {
@@ -118,10 +120,39 @@ class Util {
           });
         }
       },
-      fail: function (res) {
+      fail: function(res) {
         console.log('分享转发失败！');
       }
     };
+  }
+
+  /* 用户下拉重新加载数据 */
+  static onPullDownRefresh(ctx, apifunc, cb, pageTitle) {;
+    let self = this;
+    wx.stopPullDownRefresh();
+    wx.showNavigationBarLoading();
+    wx.setNavigationBarTitle({
+      title: '正在刷新...'
+    });
+    ctx.setData({
+      isLoading: true
+    });
+    let finallyfunc = () => {
+      ctx.setData({
+        isLoading: false
+      });
+      wx.hideNavigationBarLoading();
+      wx.setNavigationBarTitle({
+        title: pageTitle || ''
+      })
+    }
+    self.strIsContain(apifunc, 'Promise') && apifunc.then(res => {
+      typeof cb == 'function' && cb(res);
+      finallyfunc();
+    }, res => {
+      console.error('重新加载失败: ', res);
+      finallyfunc();
+    });
   }
 }
 

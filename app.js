@@ -1,6 +1,10 @@
 import Util from 'utils/util.js';
-import {Api} from 'wxapp/api/api.js';
-import {MockData} from 'wxapp/mock/mockData.js';
+import {
+  Api
+} from 'wxapp/api/api.js';
+import {
+  MockData
+} from 'wxapp/mock/mockData.js';
 const CONFIG = require('wxapp/api/config.js');
 const api = new Api();
 const mockData = new MockData();

@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
-	"appid": "touristappid",
-	"projectname": "fudan_wxapp",
+	"appid": "wx3c7fb8a1d1c4d919",
+	"projectname": "fudantest",
 	"condition": {
 		"search": {
 			"current": -1,
