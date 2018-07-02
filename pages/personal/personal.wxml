@@ -1,41 +1,26 @@
-<view class='person_wrapper'>
-  <view class='person_top'>
-    <view class='person_avatar_box'>
-      <image class='person_avatar_default' src='../../images/default_avatar.png'></image>
-      <!-- <open-data type="userAvatarUrl" class="person_avatar"></open-data> -->
+<view class='person-wrapper'>
+  <view class='person-top'>
+    <view class='person-avatar-box'>
+      <image class='person-avatar-default' src='../../images/default_avatar.png'></image>
+      <!-- <open-data type="userAvatarUrl" class="person-avatar"></open-data> -->
     </view>
-    <view class='person_nickname_box'>
-      <text class='person_nickname'>点击登录</text>
-      <!-- <open-data type="userNickName" class="person_nickname"></open-data> -->
+    <view class='person-nickname-box'>
+      <text class='person-nickname'>点击登录</text>
+      <!-- <open-data type="userNickName" class="person-nickname"></open-data> -->
     </view>
-    <view class='person_major_box'>
-      <text class='person_major'>传媒与设计学院</text>
-      <view class='person_major_icon_box'>
+    <view class='person-major-box'>
+      <text class='person-major'>传媒与设计学院</text>
+      <view class='person-major-icon-box'>
         <image src='../../images/major_icon.png'></image>
       </view>
     </view>
   </view>
-  <view class='person_container'>
-    <view class='person_action_box'>
-      <image src='../../images/person_active_icon.png'></image>
-      <text class='person_action_text'>我的活动</text>
-      <view class='person_action_arrow_box'>
-        <image src='../../images/arrow.png'></image>
-      </view>
-    </view>
-    <view class='person_action_box'>
-      <image src='../../images/person_vote_icon.png'></image>
-      <text class='person_action_text'>我的投票</text>
-      <view class='person_action_arrow_box'>
-        <image src='../../images/arrow.png'></image>
-      </view>
-    </view>
-    <view class='person_action_box'>
-      <image src='../../images/person_comment_icon.png'></image>
-      <text class='person_action_text'>我的评论</text>
-      <view class='person_action_arrow_box'>
-        <image src='../../images/arrow.png'></image>
-      </view>
-    </view>
+  <view class='person-container'>
+    <block wx:for='{{actionBarItem}}' wx:key='this'>
+      <action-bar class='overspread' 
+      actionNaviTo='{{item.actionNaviTo}}' 
+      actionIconUrl='{{item.actionIconUrl}}' 
+      actionText='{{item.actionText}}' />
+    </block>
   </view>
 </view>

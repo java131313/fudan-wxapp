@@ -1,0 +1,33 @@
+.action-bar {
+  width: 100%;
+  height: 135rpx;
+  background: #fff;
+  margin-bottom: 5rpx;
+  display: flex;
+  align-items: center;
+}
+
+.action-bar > image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 50rpx;
+}
+
+.action-bar > text {
+  display: inline-block;
+  color: #333;
+  line-height: 40rpx;
+  margin-left: 30rpx;
+}
+
+.action-arrow-box {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-arrow-box > image {
+  width: 20rpx;
+  height: 30rpx;
+  margin-right: 40rpx;
+}

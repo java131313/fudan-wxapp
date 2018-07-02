@@ -91,6 +91,19 @@ class Util {
     });
   }
 
+  /* 微信用户登录 */
+  static wxlogin() {
+    wx.login({
+      success: res => {
+        let code = res.code;
+        console.log('登录code:', code);
+        api.wxlogin(code).then(res => {
+          console.log(res);
+        });
+      }
+    });
+  }
+
   /* 分享和转发 */
   static onShareAppMessage(title, path, imageUrl, cb) {
     let defaultImageUrl = '../../images/share.jpg';

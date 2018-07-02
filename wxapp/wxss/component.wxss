@@ -1,0 +1,4 @@
+.select-id-hover {
+  color: #cc1a1a !important;
+  border: 2rpx solid #d54646 !important;
+}

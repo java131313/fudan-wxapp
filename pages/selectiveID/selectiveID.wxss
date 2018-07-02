@@ -45,26 +45,21 @@ page {
   margin-bottom: 255rpx;
 }
 
-.tag .tagJob {
+.tag-self {
   height: 130rpx;
   width: 46.04%;
-  text-align: center;
-  line-height: 130rpx;
-  color: #acacac;
-  border: 2rpx solid #dfdfdf;
   margin-bottom: 45rpx;
 }
-.tag .tagJob:nth-child(1){
-  margin-right: 6.5%;
-}
-.tag .tagJob:nth-child(3){
+
+.tag .tag-self:nth-child(2n-1) {
   margin-right: 6.5%;
 }
 
-.sloganEnd{
+.sloganEnd {
   text-align: center;
 }
-.sloganEnd .sloganEndTitle{
+
+.sloganEnd .sloganEndTitle {
   display: inline-block;
   width: 33.53%;
   background: #cc1a1a;

@@ -6,3 +6,7 @@ page {
 .clear {
   clear: both;
 }
+
+.overspread {
+  width: 100%;
+}

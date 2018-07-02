@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/selectInterest/selectInterest",
+    "pages/index/index",
+    "pages/selectiveID/selectiveID",
     "pages/personal/personal",
     "pages/personalDetails/personalDetails",
-    "pages/selectiveID/selectiveID",
-    "pages/loginym/loginym",
-    "pages/index/index"
+    "pages/loginym/loginym"
   ],
   "window": {
     "backgroundTextStyle": "light",

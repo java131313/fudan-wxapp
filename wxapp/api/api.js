@@ -20,9 +20,24 @@ class Api {
     return wx.getStorageSync('session_id');
   }
 
-  /* 保存用户信息 */
-  setUserInfo() {
+  /* 微信登录 */
+  wxlogin(code) {
     let self = this;
+    let url = '/front/wxLogin';
+    let postData = {
+      code: code
+    };
+    return self.post(url, postData);
+  }
+
+  /* 保存用户信息 */
+  setUserInfo(userInfo) {
+    let self = this;
+    let url = '/front/setUserInfo';
+    let postData = Object.assign(userInfo, {
+      session_id: self.getSessionId()
+    });
+    return self.post(url, postData);
   }
 
   /* session过期重新登录 */
@@ -56,13 +71,13 @@ class Api {
   }
 
   /* GET请求 */
-  getRequest(method, url, data, header) {
+  getRequest(url, data, header) {
     let self = this;
     return self.requestData('get', url, data, header);
   }
 
   /* POST请求 */
-  post(method, url, data, header) {
+  post(url, data, header) {
     let self = this;
     return self.requestData('post', url, data, header);
   }
@@ -81,7 +96,7 @@ class Api {
         success: function(res) {
           if (res.data.code == 200) {
             resolve(res);
-          } else if (res.data.code == 450) {
+          } else if (res.data.code == 400) {
             /* session过期需要重新登录一次 */
             console.warn('sessiong过期！');
             if (!(data && data.session_id)) return;

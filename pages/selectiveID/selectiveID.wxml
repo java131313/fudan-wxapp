@@ -5,10 +5,13 @@
   <text class='sloganH3'>请选择你的身份</text>
 </view>
 <view class='tag'>
-  <view class='tagJob'>在校职员</view>
-  <view class='tagJob'>在校学生</view>
-  <view class='tagJob'>校友</view>
-  <view class='tagJob'>游客</view>
+<block wx:for='{{test}}' wx:key='this'>
+  <tab-widget id='com_{{index}}' class='tag-self'
+  hoverClass='select-id-hover' 
+  dataTid='{{index}}' 
+  tagText='{{item}}' 
+  bind:selectTag='selectIdentity' />
+</block>
 </view>
 <view class='sloganEnd'>
   <text class='sloganEndTitle'>下一步</text>

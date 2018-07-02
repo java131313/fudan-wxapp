@@ -1,0 +1,3 @@
+<view data-tid='{{dataTid}}' class='tag-item {{showHoverClass ? hoverClass : ""}}' bindtap='_selectTag'>
+  <text>{{tagText}}</text>
+</view>

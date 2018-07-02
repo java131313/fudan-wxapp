@@ -1,0 +1,9 @@
+<view class='InterestIabel'>
+  <text class='InterestIabelTitle'>选择你感兴趣的标签</text>
+</view>
+<view class='InterestTheIabel'>
+<text class='label'>学校要闻</text><text class='label'>学校要闻</text><text class='label'>学校要闻</text>
+<text class='label'>学校要闻</text><text class='label'>学校要闻</text><text class='label'>学校要闻</text>
+<text class='label'>学校要闻</text><text class='label'>学校要闻</text><text class='label'>学校要闻</text>
+
+</view>
