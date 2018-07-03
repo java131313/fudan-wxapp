@@ -1,4 +1,7 @@
 // pages/personal/personal.js
+import {
+  Util
+} from '../../utils/util.js';
 const app = getApp();
 
 Page({
@@ -7,14 +10,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    actionBarItem: app.CONFIG.PERSONAL.ACTION_BAR_ITEM
+    actionBarItem: app.CONFIG.PERSONAL.ACTION_BAR_ITEM,
+    userInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let self = this;
+    self.getUserInfo();
   },
 
   /**
@@ -64,5 +69,22 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  getUserInfo() {
+    let self = this;
+    /* 获取用户信息 */
+    app.api.getUserInfo().then(res => {
+      self.setData({
+        userInfo: res.data.data
+      });
+    });
+  },
+
+  wxAuthorize(e) {
+    let self = this;
+    Util.checkIsAuthorized(e).then(() => {
+      self.getUserInfo();
+    });
   }
 })

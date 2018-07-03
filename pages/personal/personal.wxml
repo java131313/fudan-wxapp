@@ -1,15 +1,16 @@
 <view class='person-wrapper'>
   <view class='person-top'>
     <view class='person-avatar-box'>
-      <image class='person-avatar-default' src='../../images/default_avatar.png'></image>
-      <!-- <open-data type="userAvatarUrl" class="person-avatar"></open-data> -->
+      <image wx:if='{{!userInfo.avatar}}' class='person-avatar-default' src='/images/default_avatar.png'></image>
+      <open-data wx:if='{{userInfo.avatar}}' type="userAvatarUrl" class="person-avatar"></open-data>
     </view>
     <view class='person-nickname-box'>
-      <text class='person-nickname'>点击登录</text>
-      <!-- <open-data type="userNickName" class="person-nickname"></open-data> -->
+      <button wx:if='{{!userInfo.nickname}}' class='person-nickname' open-type='getUserInfo' bindgetuserinfo='wxAuthorize'>点击登录</button>
+      <open-data wx:if='{{userInfo.nickname}}' type="userNickName" class="person-nickname"></open-data>
     </view>
     <view class='person-major-box'>
-      <text class='person-major'>传媒与设计学院</text>
+      <navigator wx:if='{{!userInfo.college}}' class='person-major' url='/pages/selectiveID/selectiveID'>请完成身份认证</navigator>
+      <text wx:if='{{userInfo.college}}' class='person-major'>传媒与设计学院</text>
       <view class='person-major-icon-box'>
         <image src='../../images/major_icon.png'></image>
       </view>
@@ -17,10 +18,7 @@
   </view>
   <view class='person-container'>
     <block wx:for='{{actionBarItem}}' wx:key='this'>
-      <action-bar class='overspread' 
-      actionNaviTo='{{item.actionNaviTo}}' 
-      actionIconUrl='{{item.actionIconUrl}}' 
-      actionText='{{item.actionText}}' />
+      <action-bar class='overspread' actionNaviTo='{{item.actionNaviTo}}' actionIconUrl='{{item.actionIconUrl}}' actionText='{{item.actionText}}' />
     </block>
   </view>
 </view>

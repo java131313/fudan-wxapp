@@ -20,8 +20,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    Util.wxlogin();
-    app.api.mockTest().then((res) => {
+    Util.wxlogin().then(res => {
+      console.log('微信登录结果:', res);
+      app.api.getUserInfo();
+      app.api.getRoles();
+    });
+    app.api.mockTest().then(res => {
       console.log(res);
       if (res.data.code == 200) {
         console.log(res.data.data);

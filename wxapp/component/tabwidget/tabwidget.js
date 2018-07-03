@@ -23,6 +23,9 @@ Component({
     _selectTag(e) {
       let self = this;
       let tid = e.currentTarget.dataset.tid;
+      self.setData({
+        showHoverClass: !self.data.showHoverClass
+      });
       self.triggerEvent('selectTag', {
         tid: tid
       });

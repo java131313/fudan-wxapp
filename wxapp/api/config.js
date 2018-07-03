@@ -11,6 +11,12 @@ module.exports = {
   },
   PAGE: {
     INDEX: '/pages/index/index',
+    LOGIN: '/pages/loginym/loginym',
+    PERSONAL: '/pages/personal/personal',
+    PEESONALDETAILS: '/pages/personalDetails/personalDetails',
+    SELECTINTEREST: '/pages/selectInterest/selectInterest',
+    SELECTID: '/pages/selectiveID/selectiveID',
+    SERVICE: '/pages/service/service'
   },
   PERSONAL: {
     ACTION_BAR_ITEM: [{

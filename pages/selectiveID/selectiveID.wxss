@@ -42,7 +42,6 @@ page {
   flex-direction: row;
   width: 100%;
   flex-wrap: wrap;
-  margin-bottom: 255rpx;
 }
 
 .tag-self {
@@ -56,16 +55,22 @@ page {
 }
 
 .sloganEnd {
-  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 160rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sloganEnd .sloganEndTitle {
   display: inline-block;
-  width: 33.53%;
+  text-align: center;
+  width: 230rpx;
   background: #cc1a1a;
   color: #fff;
   font-size: 31rpx;
   line-height: 84rpx;
   height: 84rpx;
-  border-radius: 5rpx;
+  border-radius: 7rpx;
 }

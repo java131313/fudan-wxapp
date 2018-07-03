@@ -1,16 +1,41 @@
 {
   "pages": [
-    "pages/selectInterest/selectInterest",
+    "pages/loginym/loginym",
+    "pages/personal/personal",
+    "pages/service/service",
     "pages/index/index",
     "pages/selectiveID/selectiveID",
-    "pages/personal/personal",
-    "pages/personalDetails/personalDetails",
-    "pages/loginym/loginym"
+    "pages/selectInterest/selectInterest",
+    "pages/personalDetails/personalDetails"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#aaaaaa",
+    "selectedColor": "#cc1a1a",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/1.png",
+        "selectedIconPath": "/images/1r.png"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "text": "服务",
+        "iconPath": "/images/2.png",
+        "selectedIconPath": "/images/2r.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "/images/3.png",
+        "selectedIconPath": "/images/3r.png"
+      }
+    ]
   }
 }

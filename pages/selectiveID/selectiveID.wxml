@@ -1,17 +1,12 @@
-<!--pages/selectiveID/selectiveID.wxml-->
 <view class='slogan'>
   <text class='sloganH1'>选择你最关心的资讯和服务，我们将为你定制个性化信息内容</text>
   <text class='sloganH2'>集结复旦大学全网资讯及服务，随时了解校园动态</text>
   <text class='sloganH3'>请选择你的身份</text>
 </view>
 <view class='tag'>
-<block wx:for='{{test}}' wx:key='this'>
-  <tab-widget id='com_{{index}}' class='tag-self'
-  hoverClass='select-id-hover' 
-  dataTid='{{index}}' 
-  tagText='{{item}}' 
-  bind:selectTag='selectIdentity' />
-</block>
+  <block wx:for='{{idList}}' wx:key='{{item.id}}'>
+    <tab-widget id='com_{{item.id}}' class='tag-self' hoverClass='select-id-hover' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='selectIdentity' />
+  </block>
 </view>
 <view class='sloganEnd'>
   <text class='sloganEndTitle'>下一步</text>

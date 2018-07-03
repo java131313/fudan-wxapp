@@ -1,18 +1,26 @@
 // pages/selectiveID/selectiveID.js
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    test: ['在校职员', '在校学生', '校友', '游客']
+    idList: [],
+    selectedID: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let self = this;
+    app.api.getRoles().then(res => {
+      self.setData({
+        idList: res.data.data
+      });
+    });
   },
 
   /**
@@ -64,14 +72,18 @@ Page({
 
   },
 
+  /* 选择身份触发 */
   selectIdentity(e) {
     let self = this;
     let tid = e.detail.tid;
+    self.setData({
+      selectedID: tid
+    });
     self.selectComponent(`#com_${tid}`).setHoverCss();
-    for (let i = 0; i < self.data.test.length; i++) {
-      if (i != tid) {
-        self.selectComponent(`#com_${i}`).clearHoverCss();
+    self.data.idList.forEach(x => {
+      if (x.id != tid) {
+        self.selectComponent(`#com_${x.id}`).clearHoverCss();
       }
-    }
+    });
   }
 })

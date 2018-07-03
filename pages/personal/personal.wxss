@@ -42,6 +42,10 @@
   margin-top: 25rpx;
 }
 
+.person-nickname-box button[class='person-nickname']::after {
+  border: 0;
+}
+
 .person-major-box {
   width: auto;
   height: auto;
@@ -62,10 +66,12 @@
 }
 
 .person-nickname {
-  line-height: 30rpx;
+  height: 35rpx;
+  line-height: 35rpx;
   color: #fff;
   letter-spacing: 2rpx;
   font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 .person-major {

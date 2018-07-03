@@ -1,42 +1,49 @@
 /* pages/loginym/loginym.wxss */
-page{
+
+page {
   width: 81.6%;
   height: 100%;
   background: #994a4a;
   padding: 0 9.2%;
 }
-.logoPic{
+
+.logoPic {
   height: 120rpx;
   width: 100%;
   margin-top: 87rpx;
 }
-.logoPic image{
+
+.logoPic image {
   height: 100%;
   width: 70.64%;
 }
-.submissionInformation{
+
+.submissionInformation {
   margin-top: 31rpx;
   text-align: center;
 }
-.submissionInformation .account{
+
+.submissionInformation .account {
   background: #fff;
-  font-size:30rpx;
+  font-size: 30rpx;
   line-height: 94rpx;
   height: 94rpx;
-  color:#aaaaaa;
+  color: #aaa;
   border-radius: 6rpx;
 }
-.submissionInformation .passCode{
+
+.submissionInformation .passCode {
   background: #fff;
-  font-size:30rpx;
+  font-size: 30rpx;
   line-height: 94rpx;
   height: 94rpx;
-  color:#aaaaaa;
+  color: #aaa;
   margin-top: 21rpx;
   border-radius: 6rpx;
   margin-bottom: 53rpx;
 }
-.submissionInformation .loginBtn{
+
+.submissionInformation .loginBtn {
   color: #cc1a1a;
   font-size: 32rpx;
   line-height: 83rpx;
@@ -44,7 +51,8 @@ page{
   margin-bottom: 75rpx;
   background: #ffe5e5;
 }
-.submissionInformation .forgetPassword{
+
+.submissionInformation .forgetPassword {
   font-size: 27rpx;
   color: #fff;
 }

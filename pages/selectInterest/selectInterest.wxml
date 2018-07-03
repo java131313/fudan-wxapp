@@ -1,9 +1,10 @@
-<view class='InterestIabel'>
-  <text class='InterestIabelTitle'>选择你感兴趣的标签</text>
+<view class='interest-label'>
+  <text class='interest-label-title'>选择你感兴趣的标签</text>
 </view>
-<view class='InterestTheIabel'>
-<text class='label'>学校要闻</text><text class='label'>学校要闻</text><text class='label'>学校要闻</text>
-<text class='label'>学校要闻</text><text class='label'>学校要闻</text><text class='label'>学校要闻</text>
-<text class='label'>学校要闻</text><text class='label'>学校要闻</text><text class='label'>学校要闻</text>
-
+<view class='interest-lable-content'>
+  <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='ss' tagText='学校要闻' bind:selectTag='selectInterestLable' />
+  <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='ss' tagText='学校要闻' bind:selectTag='selectInterestLable' />
+  <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='ss' tagText='学校要闻' bind:selectTag='selectInterestLable' />
+  <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='ss' tagText='学校要闻' bind:selectTag='selectInterestLable' />
+  <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='ss' tagText='学校要闻' bind:selectTag='selectInterestLable' />
 </view>

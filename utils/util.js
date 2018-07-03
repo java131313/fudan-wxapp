@@ -2,7 +2,6 @@ import {
   Api
 } from '../wxapp/api/api.js';
 const api = new Api();
-const app = getApp();
 
 class Util {
   constructor() {
@@ -47,9 +46,9 @@ class Util {
         cancelText: options.cancelText,
         success: function(res) {
           if (res.confirm) {
-            resolve();
+            resolve('模态弹窗确定!');
           } else {
-            reject();
+            reject('模态弹窗取消!');
           }
         }
       })
@@ -58,16 +57,24 @@ class Util {
 
   /* 验证授权并保存用户信息 */
   static checkIsAuthorized(event, cb) {
+    let self = this;
     let userInfo = event.detail.userInfo;
-    if (!userInfo) return;
+    /* 用户点击拒绝授权 */
+    if (!userInfo) {
+      self.showModal({
+        content: '游客身份无法进行正常浏览',
+        cancelText: '知道了'
+      });
+      return Promise.reject('用户拒绝授权!');
+    }
     /* 用户已授权 */
-    if (app.globalData.userInfo) {
+    if (getApp().globalData.userInfo) {
       typeof cb == 'function' && cb();
       return;
     }
     /* 用户还未授权 */
-    app.globalData.userInfo = userInfo;
-    api.setUserInfo(userInfo).then((res) => {
+    getApp().globalData.userInfo = userInfo;
+    return api.setUserInfo(userInfo).then((res) => {
       console.log('保存用户信息成功: ', res);
       typeof cb == 'function' && cb();
     });
@@ -81,7 +88,7 @@ class Util {
           wx.getUserInfo({
             success: res => {
               console.log('用户已授权！');
-              app.globalData.userInfo = res.userInfo;
+              getApp().globalData.userInfo = res.userInfo;
             }
           });
         } else {
@@ -93,14 +100,21 @@ class Util {
 
   /* 微信用户登录 */
   static wxlogin() {
-    wx.login({
-      success: res => {
-        let code = res.code;
-        console.log('登录code:', code);
-        api.wxlogin(code).then(res => {
-          console.log(res);
-        });
-      }
+    return new Promise((resolve, reject) => {
+      wx.login({
+        success: res => {
+          let code = res.code;
+          console.log('登录code:', code);
+          api.wxlogin(code).then(res => {
+            console.log('登录成功！');
+            wx.setStorageSync('session_id', res.data.data.session_id);
+            resolve(res.data.data.session_id);
+          });
+        },
+        fail: res => {
+          reject(res);
+        }
+      });
     });
   }
 

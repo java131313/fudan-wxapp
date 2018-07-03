@@ -40,6 +40,23 @@ class Api {
     return self.post(url, postData);
   }
 
+  /* 获取用户信息 */
+  getUserInfo() {
+    let self = this;
+    let url = '/front/getUserInfo';
+    let postData = {
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
+  /* 获取用户身份列表 */
+  getRoles() {
+    let self = this;
+    let url = '/front/roles';
+    return self.post(url);
+  }
+
   /* session过期重新登录 */
   reLogin() {
     let self = this;
@@ -48,7 +65,7 @@ class Api {
       wx.login({
         success: res => {
           wx.request({
-            url: `${service} `,
+            url: `${service}/front/wxLogin`,
             method: 'POST',
             data: {
               code: res.code
