@@ -27,7 +27,8 @@ Component({
         showHoverClass: !self.data.showHoverClass
       });
       self.triggerEvent('selectTag', {
-        tid: tid
+        tid: tid,
+        isSelect: self.data.showHoverClass
       });
     },
     setHoverCss() {

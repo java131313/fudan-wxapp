@@ -45,7 +45,7 @@ class Api {
     let self = this;
     let url = '/front/getUserInfo';
     let postData = {
-      session_id: self.getSessionId()
+      session_id: self.getSessionId(),
     };
     return self.post(url, postData);
   }
@@ -55,6 +55,27 @@ class Api {
     let self = this;
     let url = '/front/roles';
     return self.post(url);
+  }
+
+  /* 获取标签列表 */
+  getTags() {
+    let self = this;
+    let url = '/front/getTags';
+    let postData = {
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
+  /* 用户设置多个标签 */
+  setTags(tags) {
+    let self = this;
+    let url = '/front/setTags';
+    let postData = {
+      session_id: self.getSessionId(),
+      tags: tags.toString()
+    };
+    return self.post(url, postData);
   }
 
   /* session过期重新登录 */
@@ -111,11 +132,12 @@ class Api {
         header: header || {},
         method: method.toLocaleUpperCase(),
         success: function(res) {
+          console.log(res.data.msg);
           if (res.data.code == 200) {
             resolve(res);
           } else if (res.data.code == 400) {
             /* session过期需要重新登录一次 */
-            console.warn('sessiong过期！');
+            console.warn('session过期！');
             if (!(data && data.session_id)) return;
             self.reLogin().then(res => {
               console.log('重新登录成功！');

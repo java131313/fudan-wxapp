@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
-	"appid": "wx3c7fb8a1d1c4d919",
-	"projectname": "fudantest",
+	"appid": "wx8279caa2c76dd900",
+	"projectname": "fudan_front",
 	"condition": {
 		"search": {
 			"current": -1,

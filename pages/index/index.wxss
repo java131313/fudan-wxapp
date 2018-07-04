@@ -1,14 +1,3 @@
-/* pages/index/index.wxss */
+@import '/wxapp/template/topLoading/topLoading.wxss'
 
-.loading {
-  width: 100%;
-  height: 100rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.loading > image {
-  height: 100%;
-  width: 100%;
-}

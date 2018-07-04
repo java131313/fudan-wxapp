@@ -1,4 +1,3 @@
-// pages/selectiveID/selectiveID.js
 const app = getApp();
 
 Page({
@@ -85,5 +84,20 @@ Page({
         self.selectComponent(`#com_${x.id}`).clearHoverCss();
       }
     });
+  },
+
+  /* 点击下一步 */
+  nextAction(e) {
+    let self = this;
+    let selecedID = self.data.selectedID;
+    if (selecedID == app.ENUM.Identity.Teacher || selecedID == app.ENUM.Identity.Student) {
+      wx.navigateTo({
+        url: `${app.CONFIG.PAGE.LOGIN}?id=${selecedID}`
+      });
+    } else {
+      wx.navigateTo({
+        url: `${app.CONFIG.PAGE.SELECTINTEREST}?id=${selecedID}`
+      });
+    }
   }
 })

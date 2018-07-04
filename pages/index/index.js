@@ -1,4 +1,3 @@
-// pages/index/index.js
 import {
   Util
 } from '../../utils/util.js';
@@ -10,8 +9,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isTZ: false,
-    test: "我是模板啊",
     isLoading: false,
     comment: {}
   },
@@ -20,11 +17,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    Util.wxlogin().then(res => {
-      console.log('微信登录结果:', res);
-      app.api.getUserInfo();
-      app.api.getRoles();
-    });
     app.api.mockTest().then(res => {
       console.log(res);
       if (res.data.code == 200) {
@@ -88,30 +80,10 @@ Page({
    */
   onReachBottom: function() {},
 
-  onPageScroll(res) {
-    // console.log(res);
-    // if (res.scrollTop == 0) {
-    //   this.setData({
-    //     istt: true
-    //   });
-    //   setTimeout(() => {
-    //     this.setData({
-    //       istt: false
-    //     });
-    //   }, 3000)
-    // }
-  },
-
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
 
   },
-
-  gobaidu() {
-    this.setData({
-      isTZ: true
-    });
-  }
 })

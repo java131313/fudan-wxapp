@@ -9,5 +9,5 @@
   </block>
 </view>
 <view class='sloganEnd'>
-  <text class='sloganEndTitle'>下一步</text>
+  <text class='sloganEndTitle' bindtap='nextAction'>下一步</text>
 </view>

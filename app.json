@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/loginym/loginym",
     "pages/personal/personal",
     "pages/service/service",
-    "pages/index/index",
     "pages/selectiveID/selectiveID",
     "pages/selectInterest/selectInterest",
     "pages/personalDetails/personalDetails"

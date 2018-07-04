@@ -1,4 +1,3 @@
-// pages/personal/personal.js
 import {
   Util
 } from '../../utils/util.js';
@@ -18,8 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let self = this;
-    self.getUserInfo();
+
   },
 
   /**
@@ -33,7 +31,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    let self = this;
+    self.getUserInfo();
   },
 
   /**
@@ -71,20 +70,19 @@ Page({
 
   },
 
+  /* 获取用户信息 */
   getUserInfo() {
     let self = this;
-    /* 获取用户信息 */
-    app.api.getUserInfo().then(res => {
-      self.setData({
-        userInfo: res.data.data
-      });
+    self.setData({
+      userInfo: app.globalData.userInfo
     });
   },
 
   wxAuthorize(e) {
     let self = this;
-    Util.checkIsAuthorized(e).then(() => {
-      self.getUserInfo();
-    });
+    let cb = () => {
+      Util.getUserInfo();
+    };
+    Util.checkIsAuthorized(e, cb);
   }
 })

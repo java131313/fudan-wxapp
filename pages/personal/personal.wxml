@@ -8,11 +8,11 @@
       <button wx:if='{{!userInfo.nickname}}' class='person-nickname' open-type='getUserInfo' bindgetuserinfo='wxAuthorize'>点击登录</button>
       <open-data wx:if='{{userInfo.nickname}}' type="userNickName" class="person-nickname"></open-data>
     </view>
-    <view class='person-major-box'>
+    <view wx:if='{{userInfo.nickname && userInfo.avatar}}' class='person-major-box'>
       <navigator wx:if='{{!userInfo.college}}' class='person-major' url='/pages/selectiveID/selectiveID'>请完成身份认证</navigator>
       <text wx:if='{{userInfo.college}}' class='person-major'>传媒与设计学院</text>
       <view class='person-major-icon-box'>
-        <image src='../../images/major_icon.png'></image>
+        <image src='/images/major_icon.png'></image>
       </view>
     </view>
   </view>

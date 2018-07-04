@@ -16,7 +16,7 @@ class MockData {
       }]
     });
     console.log('模拟评论列表数据', data);
-    return self.mockApi(data, 5000);
+    return self.mockApi(data, 2000);
   }
 
   /* 模拟API真实请求 */

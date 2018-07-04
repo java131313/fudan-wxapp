@@ -29,6 +29,12 @@ class Util {
     else return false;
   }
 
+  /* 判断数组是否包含某个元素 */
+  static arrayIsContain(array, arg) {
+    if (!array || array.length == 0) return false;
+    else return array.indexOf(arg) > -1 ? true : false;
+  }
+
   /* 模态弹窗 */
   static showModal(options) {
     let defaultOption = {
@@ -65,36 +71,43 @@ class Util {
         content: '游客身份无法进行正常浏览',
         cancelText: '知道了'
       });
-      return Promise.reject('用户拒绝授权!');
-    }
-    /* 用户已授权 */
-    if (getApp().globalData.userInfo) {
-      typeof cb == 'function' && cb();
       return;
     }
-    /* 用户还未授权 */
-    getApp().globalData.userInfo = userInfo;
-    return api.setUserInfo(userInfo).then((res) => {
+    /* 保存用户信息 */
+    api.setUserInfo(userInfo).then(res => {
       console.log('保存用户信息成功: ', res);
       typeof cb == 'function' && cb();
+      wx.navigateTo({
+        url: getApp().CONFIG.PAGE.SELECTID
+      });
+    }, res => {
+      console.log('保存用户信息失败！');
+      self.showModal({
+        content: '授权失败，请再次点击！',
+        cancelText: '知道了'
+      });
     });
   }
 
   /* 判断用户是否已经授权 */
   static getSetting() {
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: res => {
-              console.log('用户已授权！');
-              getApp().globalData.userInfo = res.userInfo;
-            }
-          });
-        } else {
-          console.log('用户未授权！');
+    return new Promise((resolve, reject) => {
+      wx.getSetting({
+        success: res => {
+          if (res.authSetting['scope.userInfo']) {
+            wx.getUserInfo({
+              success: res => {
+                console.log('用户已授权:', res);
+                getApp().globalData.isAuthorized = true;
+                resolve();
+              }
+            });
+          } else {
+            console.log('用户未授权！');
+            reject();
+          }
         }
-      }
+      });
     });
   }
 
@@ -115,6 +128,13 @@ class Util {
           reject(res);
         }
       });
+    });
+  }
+
+  /* 获取用户信息并且保存到全局变量中 */
+  static getUserInfo() {
+    api.getUserInfo().then(res => {
+      getApp().globalData.userInfo = res.data.data;
     });
   }
 
@@ -179,6 +199,19 @@ class Util {
     }, res => {
       console.error('重新加载失败: ', res);
       finallyfunc();
+    });
+  }
+
+  /* tabBar页面跳转后执行页面的OnLoad事件 */
+  static switchTabToOnload(url, cb) {
+    if (!url) return;
+    wx.switchTab({
+      url: url,
+      success: res => {
+        typeof cb == 'function' && cb();
+        let page = getCurrentPages().pop();
+        page && page.onLoad();
+      }
     });
   }
 }

@@ -7,7 +7,7 @@ page {
 }
 
 .interest-label {
-  margin-top: 28rpx;
+  padding-top: 28rpx;
 }
 
 .interest-label-title {
@@ -16,19 +16,6 @@ page {
   color: #000;
   font-weight: bold;
 }
-
-/* .interest-lable-content text {
-  display: inline-block;
-  text-align: center;
-  color: #999;
-  line-height: 74rpx;
-  height: 74rpx;
-  width: 30.54%;
-  border: 2rpx solid #e2e2e2;
-  margin-right: 3.2%;
-  font-size: 28rpx;
-  margin-bottom: 28rpx;
-} */
 
 .interest-lable-content text:nth-child(3n) {
   margin-right: 0%;
@@ -51,4 +38,25 @@ page {
 
 .tag-self:nth-child(3n) {
   margin-right: 0%;
+}
+
+.sloganEnd {
+  width: 100%;
+  position: fixed;
+  bottom: 160rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sloganEnd .sloganEndTitle {
+  display: inline-block;
+  text-align: center;
+  width: 230rpx;
+  background: #cc1a1a;
+  color: #fff;
+  font-size: 31rpx;
+  line-height: 84rpx;
+  height: 84rpx;
+  border-radius: 7rpx;
 }

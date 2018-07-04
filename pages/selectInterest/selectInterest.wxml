@@ -2,9 +2,10 @@
   <text class='interest-label-title'>选择你感兴趣的标签</text>
 </view>
 <view class='interest-lable-content'>
-  <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='ss' tagText='学校要闻' bind:selectTag='selectInterestLable' />
-  <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='ss' tagText='学校要闻' bind:selectTag='selectInterestLable' />
-  <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='ss' tagText='学校要闻' bind:selectTag='selectInterestLable' />
-  <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='ss' tagText='学校要闻' bind:selectTag='selectInterestLable' />
-  <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='ss' tagText='学校要闻' bind:selectTag='selectInterestLable' />
+  <block wx:for='{{tags}}' wx:key='{{item.id}}'>
+    <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable' />
+  </block>
+</view>
+<view class='sloganEnd'>
+  <text class='sloganEndTitle' bindtap='goMyFudan'>进入我的复旦</text>
 </view>
