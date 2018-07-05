@@ -1,27 +1,31 @@
 /* wxapp/component/school-service/school-service.wxss */
-page{
+
+page {
   width: 87.8%;
   height: 100%;
   padding: 0 6.1%;
   overflow: hidden;
   background: #f3f3f3;
 }
-.schoolService{
+
+.schoolService {
   width: 100%;
 }
-.service{
+
+.service {
   display: inline-block;
-  width:100%;
+  width: 100%;
   background: #fff;
   text-align: center;
   overflow: hidden;
 }
 
-.classifyPic{
+.classifyPic {
   width: 22.62%;
   height: 70rpx;
 }
-.classify{
+
+.classify {
   display: block;
   width: 100%;
   line-height: 100rpx;

@@ -4,9 +4,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    schoolNaviTo:String,
-    schoolUrl:String,
-    schoolText:String
+    schoolNaviTo: String,
+    schoolUrl: String,
+    schoolText: String
   },
 
   /**

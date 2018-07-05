@@ -5,8 +5,7 @@
 </view>
 <view class='interest-lable-content'>
   <block wx:for='{{tags}}' wx:key='{{item.id}}'>
-    <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable'
-    />
+    <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable' />
   </block>
 </view>
 <view class='sloganEnd'>
