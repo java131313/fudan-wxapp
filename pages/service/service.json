@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "校园服务",
+  "usingComponents": {
+    "school-bar": "/wxapp/component/school-service/school-service"
+  }
+}

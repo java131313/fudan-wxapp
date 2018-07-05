@@ -41,7 +41,8 @@
         "pages/selectiveID/selectiveID",
         "pages/selectInterest/selectInterest",
         "pages/personalDetails/personalDetails",
-        "pages/loginym/loginym"
+        "pages/loginym/loginym",
+        "pages/interestTags/interestTags"
       ]
     }
   ]

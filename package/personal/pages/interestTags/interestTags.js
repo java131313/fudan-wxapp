@@ -1,7 +1,6 @@
-// pages/service/service.js
 import {
   Util
-} from '../../utils/util.js';
+} from '../../../../utils/util.js';
 const app = getApp();
 
 Page({
@@ -10,14 +9,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    schoolBarItem: app.CONFIG.SCHOOL_SERVICE.SCHOOL_ITEM
+    tags:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let self = this;
+    self.getTags();
   },
 
   /**
@@ -67,5 +67,16 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+
+  /* 获取标签列表 */
+  getTags() {
+    let self = this;
+    app.api.getTags().then(res => {
+      self.setData({
+        tags: res.data.data
+      });
+    });
+  },
+
 })

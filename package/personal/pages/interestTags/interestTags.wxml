@@ -1,0 +1,20 @@
+<view class="tag-wrapper">
+  <view class="tag-top">
+    <view class="tag-bar">
+      <text class="tag-title">我的标签</text>
+      <text class="tag-action-delete">点击删除</text>
+    </view>
+    <view class="tag-content"></view>
+  </view>
+  <view class="tag-foot">
+    <view class="tag-bar">
+      <text class="tag-title">更多标签</text>
+      <text class="tag-action-add">点击添加</text>
+    </view>
+    <view class="tag-content">
+      <block wx:for='{{tags}}' wx:key='{{item.id}}'>
+        <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable' />
+      </block>
+    </view>
+  </view>
+</view>

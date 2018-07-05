@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "选择标签",
+  "navigationBarTitleText": "兴趣标签",
   "usingComponents": {
     "tab-widget": "/wxapp/component/tabwidget/tabwidget"
   }

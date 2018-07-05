@@ -10,3 +10,9 @@
   background-size: 15%;
   background-position: 101% -3rpx;
 }
+
+.delete-interest-hove{
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAcCAYAAACQ0cTtAAABu0lEQVRIie3Wz0obURTH8e8poSETZxb5v3LeQrAaiJkJJCRSioW+kg/iRqwUoSGLVrIQsnLhG4i7+WNC8ZqObua6GMhGm0mTKl3k7IZ7h88c7u8eRq5hE8jw+vUrA1yQgK9dh+/eAJnVGltjy2O2Utiej7Hj/HGPseNgez62UqthIoJUK5TP++Qb7Wfr+Uab8nkfqVYQkdWwoHuAVgrJZimdHJHbbs7WcttNSidHSDaLVoqge5CKyTXcMGeCGPUW5e9fEcuCKML74AJQG/2EXA59d0fY+8zvix9p1mEqBpDf61A6O0ZMEz2eJF9ZLKCV4vbjF6bDQWpXLDqupsMB3laTOAiRYgEpFoiDEG+ruSgE/E30Y41oPXsUrSHWc15YEss32tQuh0i1gh5P0OMJUq1Quxy+mNKlMWPXnZ0XUYTv7uO7+xBFiGlSOjvG2HVXx4x6i3L/FLEs9HiC7/R4uBrxcDXCd3pJh5ZFuX+KUW+lYnPTaCuFbGygHx+57Xx6Fob8XofS4Fty1+7vuTHNedb8NIoIcRASOt0XUzcdDgidbpLSBSbIQvfsH9X6t2CN/UdYBugB79/A8p4ASnGcIOT7auIAAAAASUVORK5CYII=) no-repeat;
+  background-size: 15%;
+  background-position: 101% -3rpx;
+}

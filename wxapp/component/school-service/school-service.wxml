@@ -1,0 +1,9 @@
+
+<navigator class='school-bar' url='{{schoolNaviTo}}' open-type='navigate'>
+  <view class='schoolService'>
+    <view class='service'>
+      <image class='classifyPic' src='{{schoolUrl}}'></image>
+      <text class='classify'>{{schoolText}}</text>
+    </view>
+  </view>
+</navigator>
