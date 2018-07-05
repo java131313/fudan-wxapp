@@ -10,13 +10,17 @@ module.exports = {
     STATUS: true
   },
   PAGE: {
+    /* 首页 */
     INDEX: '/pages/index/index',
-    LOGIN: '/pages/loginym/loginym',
+    /* 服务 */
+    SERVICE: '/pages/service/service',
+    /* 我的 */
     PERSONAL: '/pages/personal/personal',
-    PEESONALDETAILS: '/pages/personalDetails/personalDetails',
-    SELECTINTEREST: '/pages/selectInterest/selectInterest',
-    SELECTID: '/pages/selectiveID/selectiveID',
-    SERVICE: '/pages/service/service'
+    /* 我的(分包页) */
+    LOGIN: '/package/personal/pages/loginym/loginym',
+    PEESONALDETAILS: '/package/personal/pages/personalDetails/personalDetails',
+    SELECTINTEREST: '/package/personal/pages/selectInterest/selectInterest',
+    SELECTID: '/package/personal/pages/selectiveID/selectiveID',
   },
   PERSONAL: {
     ACTION_BAR_ITEM: [{

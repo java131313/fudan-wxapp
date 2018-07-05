@@ -1,12 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/loginym/loginym",
     "pages/personal/personal",
-    "pages/service/service",
-    "pages/selectiveID/selectiveID",
-    "pages/selectInterest/selectInterest",
-    "pages/personalDetails/personalDetails"
+    "pages/service/service"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,5 +33,16 @@
         "selectedIconPath": "/images/3r.png"
       }
     ]
-  }
+  },
+  "subPackages": [
+    {
+      "root": "package/personal/",
+      "pages": [
+        "pages/selectiveID/selectiveID",
+        "pages/selectInterest/selectInterest",
+        "pages/personalDetails/personalDetails",
+        "pages/loginym/loginym"
+      ]
+    }
+  ]
 }

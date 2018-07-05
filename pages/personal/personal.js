@@ -10,6 +10,7 @@ Page({
    */
   data: {
     actionBarItem: app.CONFIG.PERSONAL.ACTION_BAR_ITEM,
+    authorizeIDUrl: app.CONFIG.PAGE.SELECTID,
     userInfo: {}
   },
 

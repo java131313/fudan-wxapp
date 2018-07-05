@@ -41,7 +41,7 @@ class Util {
       title: '提示',
       content: '',
       confirmText: '确定',
-      cancelText: '取消'
+      cancelText: '知道了'
     };
     options = Object.assign(defaultOption, options || {});
     return new Promise(function(resolve, reject) {
@@ -68,8 +68,7 @@ class Util {
     /* 用户点击拒绝授权 */
     if (!userInfo) {
       self.showModal({
-        content: '游客身份无法进行正常浏览',
-        cancelText: '知道了'
+        content: '游客身份无法进行正常浏览'
       });
       return;
     }
@@ -83,8 +82,7 @@ class Util {
     }, res => {
       console.log('保存用户信息失败！');
       self.showModal({
-        content: '授权失败，请再次点击！',
-        cancelText: '知道了'
+        content: '授权失败，请再次点击'
       });
     });
   }
