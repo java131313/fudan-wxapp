@@ -19,6 +19,22 @@ class MockData {
     return self.mockApi(data, 2000);
   }
 
+  /* 模拟新闻封面列表数据 */
+  getNewsList() {
+    let self = this;
+    let data = Mock.mock({
+      'news|5-15': [{
+        'id|+1': 1,
+        'title|1': analogData.newsTitle,
+        'source|1': analogData.source,
+        'createtime|1': analogData.createtime,
+        'activetime|1': analogData.activetime
+      }]
+    });
+    console.log('模拟新闻封面列表数据', data);
+    return self.mockApi(data, 2000);
+  }
+
   /* 模拟API真实请求 */
   mockApi(data, delayTime, code, msg) {
     let result = {

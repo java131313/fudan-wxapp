@@ -44,13 +44,13 @@ class Util {
       cancelText: '知道了'
     };
     options = Object.assign(defaultOption, options || {});
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       wx.showModal({
         title: options.title,
         content: options.content,
         confirmText: options.confirmText,
         cancelText: options.cancelText,
-        success: function(res) {
+        success: function (res) {
           if (res.confirm) {
             resolve('模态弹窗确定!');
           } else {
@@ -131,7 +131,7 @@ class Util {
 
   /* 获取用户信息并且保存到全局变量中 */
   static getUserInfo() {
-    api.getUserInfo().then(res => {
+    return api.getUserInfo().then(res => {
       getApp().globalData.userInfo = res.data.data;
     });
   }
@@ -165,14 +165,14 @@ class Util {
           });
         }
       },
-      fail: function(res) {
+      fail: function (res) {
         console.log('分享转发失败！');
       }
     };
   }
 
   /* 用户下拉重新加载数据 */
-  static onPullDownRefresh(ctx, apifunc, cb, pageTitle) {;
+  static onPullDownRefresh(ctx, apifunc, cb, pageTitle) {
     let self = this;
     wx.stopPullDownRefresh();
     wx.showNavigationBarLoading();
@@ -211,6 +211,30 @@ class Util {
         page && page.onLoad();
       }
     });
+  }
+
+  /* 处理选择的兴趣标签 */
+  static handleTagsSelected(e, param, ctx) {
+    let tid = e.detail.tid;
+    let isSelect = e.detail.isSelect;
+    let selectedTags = ctx.data[param];
+    if (isSelect) {
+      if (!Util.arrayIsContain(selectedTags, tid)) {
+        selectedTags.push(tid);
+      }
+    } else {
+      if (Util.arrayIsContain(selectedTags, tid) && selectedTags.length > 0) {
+        let res = [];
+        for (let i = 0; i < selectedTags.length; i++) {
+          if (selectedTags[i] != tid) {
+            res.push(selectedTags[i]);
+          }
+        }
+        let obj = {};
+        obj[param] = res;
+        ctx.setData(obj);
+      }
+    }
   }
 }
 
