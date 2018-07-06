@@ -1,5 +1,8 @@
 {
   "navigationBarTitleText": "复旦大学",
   "onReachBottomDistance": 0,
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "news-bar": "/wxapp/component/news_service/news_service"
+  }
 }

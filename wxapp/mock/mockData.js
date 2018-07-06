@@ -28,7 +28,9 @@ class MockData {
         'title|1': analogData.newsTitle,
         'source|1': analogData.source,
         'createtime|1': analogData.createtime,
-        'activetime|1': analogData.activetime
+        'activetime|1': analogData.activetime,
+        'type|1': [1, 2, 3],
+        'imgUrl|1': analogData.newsImage
       }]
     });
     console.log('模拟新闻封面列表数据', data);

@@ -12,7 +12,7 @@ class Api {
 
   mockTest() {
     let self = this;
-    if (self.isMock) return mockData.getCommentList();
+    if (self.isMock) return mockData.getNewsList();
   }
 
   /* 获取缓存里面的session_id */

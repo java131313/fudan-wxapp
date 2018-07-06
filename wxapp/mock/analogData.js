@@ -55,5 +55,10 @@ module.exports = {
     `2018-06-01 16:00`,
     `2018-06-03 09:00`,
     `2018-05-15 10:00`
+  ],
+  newsImage:[
+    '/images/news.png',
+    '/images/news2.png',
+    '/images/news3.png'
   ]
 }

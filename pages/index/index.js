@@ -1,8 +1,7 @@
-import {
+import{
   Util
-} from '../../utils/util.js';
-const app = getApp();
-
+}from '../../utils/util.js';
+const app=getApp();
 Page({
 
   /**
@@ -10,7 +9,7 @@ Page({
    */
   data: {
     isLoading: false,
-    comment: {}
+    newsItem: []
   },
 
   /**
@@ -18,11 +17,9 @@ Page({
    */
   onLoad: function(options) {
     app.api.mockTest().then(res => {
-      console.log(res);
       if (res.data.code == 200) {
-        console.log(res.data.data);
         this.setData({
-          comment: res.data.data
+          newsItem: res.data.data.news
         });
       }
     });
@@ -64,7 +61,7 @@ Page({
     let apifunc = app.api.mockTest();
     let cb = res => {
       self.setData({
-        comment: res.data.data
+        newsItem: res.data.data.news
       });
     };
     let pageTitle = '复旦大学';

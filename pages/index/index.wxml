@@ -1,8 +1,7 @@
 <import src="/wxapp/template/topLoading/topLoading.wxml" />
 
 <template is="topLoading" data="{{isLoading}}"></template>
-<scroll-view scoll-y="true" style='background:pink'>
-  <block wx:for='{{comment.list}}' wx:key="{{item.id}}">
-    <view style='border:2rpx solid white'>{{item.comments}}</view>
-  </block>
-</scroll-view>
+
+<block wx:for="{{newsItem}}" wx:key="{{item.id}}">
+  <news-bar type='{{item.type}}' news_pic="{{item.imgUrl}}" news_title="{{item.title}}" synopsis_time="{{item.createtime}}" synopsis_source="{{item.source}}" newsB_time="{{item.activetime}}" />
+</block>
