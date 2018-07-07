@@ -1,7 +1,19 @@
-<import src="/wxapp/template/topLoading/topLoading.wxml" />
+<import src='/wxapp/template/topLoading/topLoading.wxml' />
 
-<template is="topLoading" data="{{isLoading}}"></template>
-
-<block wx:for="{{newsItem}}" wx:key="{{item.id}}">
-  <news-bar type='{{item.type}}' news_pic="{{item.imgUrl}}" news_title="{{item.title}}" synopsis_time="{{item.createtime}}" synopsis_source="{{item.source}}" newsB_time="{{item.activetime}}" />
-</block>
+<view class='main-wrapper' style='background:{{bgColor}}'>
+  <view class='newsHeader'>
+    <text class='newsTitle'>我的复旦</text>
+    <text class='newsTitle'>本周热榜</text>
+    <view class='search'>
+      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='学院 / 活动 / 课程...'>
+      <image src='/images/search.png'></image>
+      </input>
+    </view>
+  </view>
+  <scroll-view scroll-y='true' class='news-box'>
+    <template is='topLoading' data='{{isLoading}}'></template>
+    <block wx:for='{{newsItem}}' wx:key='{{item.id}}'>
+      <news-bar news_type='{{item.type}}' news_pic='{{item.imgUrl}}' news_title='{{item.title}}' synopsis_time='{{item.createtime}}' synopsis_source='{{item.source}}' newsB_time='{{item.activetime}}' newsB_from='{{item.activefrom}}' />
+    </block>
+  </scroll-view>
+</view>

@@ -10,6 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    bgColor: app.CONFIG.BGCOLOR,
     schoolBarItem: app.CONFIG.SCHOOL_SERVICE.SCHOOL_ITEM
   },
 

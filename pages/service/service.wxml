@@ -1,5 +1,7 @@
-<view class='mv'>
-  <block wx:for='{{schoolBarItem}}' wx:key='this'>
-    <school-bar schoolNaviTo='{{item.schoolNaviTo}}' schoolUrl='{{item.schoolUrl}}' schoolText='{{item.schoolText}}' class="mw"></school-bar>
-  </block>
+<view class='main-wrapper' style='background:{{bgColor}}'>
+  <view class='mv'>
+    <block wx:for='{{schoolBarItem}}' wx:key='this'>
+      <service-bar class="mw" schoolNaviTo='{{item.schoolNaviTo}}' schoolUrl='{{item.schoolUrl}}' schoolText='{{item.schoolText}}' />
+    </block>
+  </view>
 </view>

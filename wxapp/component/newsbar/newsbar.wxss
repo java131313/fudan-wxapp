@@ -1,0 +1,120 @@
+.newsIndex {
+  background: #fff;
+  width: 94.68%;
+  margin: 20rpx 2.66% 0;
+}
+
+.newsBigPic {
+  padding: 20rpx 2.8% 0;
+}
+
+.newsModle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.news_pic {
+  width: 100%;
+  height: 308rpx;
+}
+
+.newsText {
+  display: inline-block;
+  width: 90%;
+  padding: 0 5%;
+  position: absolute;
+  bottom: 18%;
+  left: 0%;
+  font-size: 34rpx;
+  line-height: 50rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+.newsSynopsis {
+  overflow: hidden;
+}
+
+.synopsis1 {
+  font-size: 26rpx;
+  line-height: 94rpx;
+  color: #aaa;
+}
+
+.synopsis2 {
+  display: inline-block;
+  padding: 0 4%;
+}
+
+/* 方案二 */
+
+.news_F_pic2 {
+  display: inline-block;
+  width: 32%;
+  height: 288rpx;
+  overflow: hidden;
+}
+
+.news_pic2 {
+  height: 100%;
+  width: 100%;
+}
+
+.news_service {
+  display: inline-block;
+  overflow: hidden;
+  width: 64.4%;
+  height: 288rpx;
+  padding-left: 3.6%;
+}
+
+.newsA {
+  width: 100%;
+}
+
+.news_service_title {
+  line-height: 48rpx;
+  font-size: 34rpx;
+  color: #000;
+  font-weight: bold;
+}
+
+.newsB {
+  width: 100%;
+  margin-top: 16rpx;
+  margin-bottom: 30rpx;
+}
+
+.newsB text {
+  display: block;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 38rpx;
+}
+
+.news_FA3 {
+  display: inline-block;
+  width: 32%;
+  height: 144rpx;
+  overflow: hidden;
+}
+
+.news_FA3 image {
+  width: 100%;
+  height: 100%;
+}
+
+.news_FA3_title {
+  display: inline-block;
+  width: 64.4%;
+  padding-left: 3.6%;
+}
+
+.news_FA3_title text {
+  line-height: 46rpx;
+  color: #333;
+  font-size: 34rpx;
+  font-weight: bold;
+}

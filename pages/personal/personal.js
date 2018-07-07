@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    bgColor: app.CONFIG.BGCOLOR,
     actionBarItem: app.CONFIG.PERSONAL.ACTION_BAR_ITEM,
     authorizeIDUrl: app.CONFIG.PAGE.SELECTID,
     userInfo: {}

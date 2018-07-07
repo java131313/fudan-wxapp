@@ -1,3 +1,65 @@
-@import '/wxapp/template/topLoading/topLoading.wxss'
+@import '/wxapp/template/topLoading/topLoading.wxss';
 
+.newsHeader {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
 
+.news-box {
+  margin-top: 125rpx;
+}
+
+.newsTitle {
+  display: inline-block;
+  width: 16.26%;
+  font-size: 30rpx;
+  line-height: 122rpx;
+  color: #999;
+  padding-left: 4.5%;
+  padding-right: 4.1%;
+}
+
+.newsTitle:nth-child(1) {
+  color: #d33a3a;
+}
+
+.newsTitle:nth-child(2) {
+  padding-right: 3.4%;
+}
+
+.search {
+  display: inline-block;
+  background: #f5f5f5;
+  width: 44.4%;
+  font-size: 28rpx;
+  line-height: 68rpx;
+  color: #aaa;
+  margin-left: 4%;
+}
+
+.btnClass {
+  font-size: 28rpx;
+  line-height: 68rpx;
+  color: #aaa;
+  padding-left: 20%;
+}
+
+.searchBtn {
+  position: relative;
+  height: 68rpx;
+  line-height: 68rpx;
+}
+
+.searchBtn image {
+  position: absolute;
+  top: 13%;
+  left: 4%;
+  width: 39%;
+  height: 80%;
+}

@@ -1,0 +1,48 @@
+.guide-item {
+  width: 100%;
+  height: 175rpx;
+  background: #fff;
+  margin-bottom: 5rpx;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.guide-text-box {
+  width: 95%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.guide-arrow-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guide-text-box > text {
+  display: inline-block;
+  width: 100%;
+}
+
+.guide-title {
+  line-height: 45rpx;
+  color: #333;
+  font-size: 0.9em;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+  height: 75rpx;
+}
+
+.guide-time {
+  line-height: 25rpx;
+  color: #aaa;
+  font-size: 0.8em;
+}
+
+.guide-arrow-box > image {
+  width: 20rpx;
+  height: 30rpx;
+}

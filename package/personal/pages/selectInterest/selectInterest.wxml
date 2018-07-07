@@ -1,13 +1,15 @@
-<view class='slogan'>
-  <text class='sloganH1'>选择你最关心的资讯和服务，我们将为你定制个性化信息内容</text>
-  <text class='sloganH2'>集结复旦大学全网资讯及服务，随时了解校园动态</text>
-  <text class='sloganH3'>选择你感兴趣的标签</text>
-</view>
-<view class='interest-lable-content'>
-  <block wx:for='{{tags}}' wx:key='{{item.id}}'>
-    <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable' />
-  </block>
-</view>
-<view class='sloganEnd'>
-  <text class='sloganEndTitle' bindtap='goMyFudan'>进入我的复旦</text>
+<view class="main-wrapper" style='background:{{bgColor}}'>
+  <view class='slogan'>
+    <text class='sloganH1'>选择你最关心的资讯和服务，我们将为你定制个性化信息内容</text>
+    <text class='sloganH2'>集结复旦大学全网资讯及服务，随时了解校园动态</text>
+    <text class='sloganH3'>选择你感兴趣的标签</text>
+  </view>
+  <view class='interest-lable-content'>
+    <block wx:for='{{tags}}' wx:key='{{item.id}}'>
+      <tab-widget class='tag-self' hoverClass='select-interest-hover' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable' />
+    </block>
+  </view>
+  <view class='sloganEnd'>
+    <text class='sloganEndTitle' bindtap='goMyFudan'>进入我的复旦</text>
+  </view>
 </view>

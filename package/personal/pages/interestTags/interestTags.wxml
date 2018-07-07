@@ -1,4 +1,4 @@
-<view class="tag-wrapper">
+<view class="main-wrapper" style='background:{{bgColor}}'>
   <view class="tag-top">
     <view class="tag-bar">
       <text class="tag-title">我的标签</text>

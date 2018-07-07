@@ -1,4 +1,3 @@
-// wxapp/component/news_service/news_service.js
 Component({
   /**
    * 组件的属性列表
@@ -10,7 +9,7 @@ Component({
     synopsis_source: String,
     newsB_time: String,
     newsB_from: String,
-    type: Number
+    news_type: Number
   },
 
   /**

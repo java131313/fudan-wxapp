@@ -42,7 +42,8 @@
         "pages/selectInterest/selectInterest",
         "pages/personalDetails/personalDetails",
         "pages/loginym/loginym",
-        "pages/interestTags/interestTags"
+        "pages/interestTags/interestTags",
+        "pages/personalVote/personalVote"
       ]
     }
   ]

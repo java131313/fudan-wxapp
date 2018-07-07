@@ -1,4 +1,4 @@
-<view class='person-wrapper'>
+<view class='main-wrapper' style='background:{{bgColor}}'>
   <view class='person-top'>
     <view class='person-avatar-box'>
       <image wx:if='{{!userInfo.avatar}}' class='person-avatar-default' src='/images/default_avatar.png'></image>

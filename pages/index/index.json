@@ -3,6 +3,6 @@
   "onReachBottomDistance": 0,
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "news-bar": "/wxapp/component/news_service/news_service"
+    "news-bar": "/wxapp/component/newsbar/newsbar"
   }
 }

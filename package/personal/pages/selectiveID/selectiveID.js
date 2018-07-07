@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    bgColor: app.CONFIG.BGCOLOR,
     idList: [],
     selectedID: ''
   },

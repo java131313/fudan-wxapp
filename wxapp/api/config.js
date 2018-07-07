@@ -1,4 +1,5 @@
 module.exports = {
+  BGCOLOR: '#f5f5f5',
   HTTP: {
     API: 'formal',
   },
@@ -21,7 +22,8 @@ module.exports = {
     PEESONALDETAILS: '/package/personal/pages/personalDetails/personalDetails',
     SELECTINTEREST: '/package/personal/pages/selectInterest/selectInterest',
     SELECTID: '/package/personal/pages/selectiveID/selectiveID',
-    SELFTAGS: '/package/personal/pages/interestTags/interestTags'
+    SELFTAGS: '/package/personal/pages/interestTags/interestTags',
+    SELFVOTE: '/package/personal/pages/personalVote/personalVote'
   },
   PERSONAL: {
     ACTION_BAR_ITEM: [{
@@ -30,7 +32,7 @@ module.exports = {
         actionText: '我的活动'
       },
       {
-        actionNaviTo: '/pages/index/index',
+        actionNaviTo: '/package/personal/pages/personalVote/personalVote',
         actionIconUrl: '/images/person_vote_icon.png',
         actionText: '我的投票'
       },

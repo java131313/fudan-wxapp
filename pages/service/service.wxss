@@ -1,21 +1,20 @@
-/* pages/service/service.wxss */
-page{
+.main-wrapper {
   width: 87.8%;
   height: 100%;
   padding: 0 6.1%;
   overflow: hidden;
-  background: #f3f3f3;
 }
 
-.mw{
+.mw {
   display: inline-block;
-  width:45.93%;
+  width: 45.93%;
   padding-top: 42rpx;
   margin-top: 42rpx;
   background: #fff;
   text-align: center;
   overflow: hidden;
 }
-.mw:nth-child(2n-1){
+
+.mw:nth-child(2n-1) {
   margin-right: 7.98%;
 }

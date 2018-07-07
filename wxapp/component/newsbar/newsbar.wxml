@@ -1,6 +1,6 @@
 <!-- 文章图片：news_pic，文章标题：news_title，发表时间：synopsis1_time，来源：synopsis2_source 活动时间：newsB_time，活动地点：newsB_from-->
 <!--  方案一  -->
-<view wx:if='{{type==1}}' class='newsIndex'>
+<view wx:if='{{news_type==1}}' class='newsIndex'>
   <view class='newsBigPic'>
     <view class='newsModle'>
       <image class='news_pic' src='{{news_pic}}'></image>
@@ -13,7 +13,7 @@
 </view>
 
 <!--方案二  -->
-<view class='newsIndex' wx:if="{{type==2}}">
+<view wx:if="{{news_type==2}}" class='newsIndex'>
   <view class='newsBigPic'>
     <view class='newsModle'>
       <view class="news_F_pic2">
@@ -24,8 +24,8 @@
           <text class='news_service_title'>{{news_title}}</text>
         </view>
         <view class='newsB'>
-          <text>{{newsB_time}}</text>
-          <text>{{newsB_from}}</text>
+          <text>时间：{{newsB_time}}</text>
+          <text>地点：{{newsB_from}}</text>
         </view>
         <view class='newsD'></view>
       </view>
@@ -38,7 +38,7 @@
 </view>
 
 <!-- 方案三 -->
-<view class='newsIndex' wx:if="{{type==3}}">
+<view wx:if="{{news_type==3}}" class='newsIndex'>
   <view class='newsBigPic'>
     <view class='newsModle'>
       <view class='news_FA3'>

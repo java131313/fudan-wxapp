@@ -1,4 +1,4 @@
-.person-wrapper {
+.main-wrapper {
   width: 100%;
   height: 100%;
   display: flex;
@@ -18,7 +18,6 @@
 }
 
 .person-container {
-  background: #f4f4f4;
   padding-top: 20rpx;
   flex: 1;
   display: flex;

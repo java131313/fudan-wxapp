@@ -31,6 +31,7 @@ App({
       /* 获取用户信息 */
       Util.getUserInfo();
     });
+    // self.CONFIG.BGCOLOR = 'orange';
   },
 
   /**

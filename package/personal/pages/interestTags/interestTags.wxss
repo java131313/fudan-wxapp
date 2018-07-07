@@ -1,11 +1,13 @@
-.tag-wrapper {
+.main-wrapper {
   width: 92.6%;
-  padding: 75rpx 3.7%;
+  padding: 0 3.7%;
+  height: 100%;
 }
 
 .tag-top {
   width: 100%;
   height: auto;
+  padding-top: 75rpx;
   display: flex;
   flex-direction: column;
 }

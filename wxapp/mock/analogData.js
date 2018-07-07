@@ -56,9 +56,25 @@ module.exports = {
     `2018-06-03 09:00`,
     `2018-05-15 10:00`
   ],
-  newsImage:[
-    '/images/news.png',
-    '/images/news2.png',
-    '/images/news3.png'
+  newsImage: [
+    `https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530954424329&di=e2b075af94885d240a9e71e29807de3a&imgtype=0&src=http%3A%2F%2Fimg1.cache.netease.com%2Fcatchpic%2F7%2F7A%2F7A9045BEFFEB518EA86FED6DD7A75650.jpg`,
+    `https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530954424710&di=6bc0f8a185e85b8b67e1da24ddec1b2a&imgtype=0&src=http%3A%2F%2Fs6.sinaimg.cn%2Fmw690%2F002NI6ejzy7fIQto20t35%26690`,
+    `https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530954424708&di=848dbe1d6090b594acdcc101d832917b&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20120805%2FImg349872541.jpg`,
+    `http://p3.pstatp.com/large/pgc-image/1530830035381b78fb36169`,
+    `http://p1.pstatp.com/large/pgc-image/15308274845677e0a6c7267`,
+    `http://p3.pstatp.com/list/640x360/95ed00114d55f98d0e3c`,
+    `http://p1.pstatp.com/large/pgc-image/1530843280136fc9980a242`,
+    `http://p1.pstatp.com/large/pgc-image/1530843280136fc9980a242`,
+    `http://p1.pstatp.com/large/pgc-image/1530003809233f9dc1fe0ad`,
+    `http://p9.pstatp.com/large/pgc-image/15308432802686e58625139`
+  ],
+  activefrom: [
+    `青花楼六楼B4`,
+    `校招办公楼A3`,
+    `光华楼11楼小礼堂`,
+    `图书馆605`,
+    `电影院2楼`,
+    `学院机房205`,
+    `复旦体育馆`
   ]
 }
