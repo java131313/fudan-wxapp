@@ -44,13 +44,13 @@ class Util {
       cancelText: '知道了'
     };
     options = Object.assign(defaultOption, options || {});
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
       wx.showModal({
         title: options.title,
         content: options.content,
         confirmText: options.confirmText,
         cancelText: options.cancelText,
-        success: function (res) {
+        success: function(res) {
           if (res.confirm) {
             resolve('模态弹窗确定!');
           } else {
@@ -165,7 +165,7 @@ class Util {
           });
         }
       },
-      fail: function (res) {
+      fail: function(res) {
         console.log('分享转发失败！');
       }
     };

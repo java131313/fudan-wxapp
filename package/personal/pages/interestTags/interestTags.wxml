@@ -2,7 +2,7 @@
   <view class="tag-top">
     <view class="tag-bar">
       <text class="tag-title">我的标签</text>
-      <text class="tag-action-delete" bindtap='deleteTag'>点击删除</text>
+      <text class="tag-action-delete" bindtap='deleteTag'>完成</text>
     </view>
     <view class="tag-content">
       <block wx:for='{{selfTags}}' wx:key='{{item.id}}'>

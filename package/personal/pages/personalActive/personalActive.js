@@ -1,7 +1,8 @@
 import {
   Util
-} from '../../utils/util.js';
+} from '../../../../utils/util.js';
 const app = getApp();
+
 Page({
 
   /**
@@ -9,21 +10,16 @@ Page({
    */
   data: {
     bgColor: app.CONFIG.BGCOLOR,
-    isLoading: false,
-    newsItem: [],
+    naviUrl: app.CONFIG.PAGE.ACTIVEDETAILS,
+    myActivity: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    app.api.mockTest().then(res => {
-      if (res.data.code == 200) {
-        this.setData({
-          newsItem: res.data.data.news
-        });
-      }
-    });
+    let self = this;
+    self.getMyActivity();
   },
 
   /**
@@ -58,21 +54,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    let self = this;
-    let apifunc = app.api.mockTest();
-    let cb = res => {
-      self.setData({
-        newsItem: res.data.data.news
-      });
-    };
-    let pageTitle = '复旦大学';
-    Util.onPullDownRefresh(self, apifunc, cb, pageTitle);
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {},
+  onReachBottom: function() {
+
+  },
 
   /**
    * 用户点击右上角分享
@@ -81,10 +71,13 @@ Page({
 
   },
 
-  /* 搜索获取焦点触发 */
-  search() {
-    wx.navigateTo({
-      url: app.CONFIG.PAGE.SEARCH
+  /* 获取我的活动 */
+  getMyActivity() {
+    let self = this;
+    app.api.getMyActivity().then(res => {
+      self.setData({
+        myActivity: res.data.data
+      });
     });
   }
 })

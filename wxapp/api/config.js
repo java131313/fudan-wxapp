@@ -11,23 +11,34 @@ module.exports = {
     STATUS: true
   },
   PAGE: {
+    /* 开机页 */
+    TRANSITIONAL: '/pages/transitional/transitional',
+    /* 选择身份 */
+    SELECTID: '/pages/selectiveID/selectiveID',
+    /* 登录 */
+    LOGIN: '/pages/loginym/loginym',
+    /* 选择兴趣标签 */
+    SELECTINTEREST: '/pages/selectInterest/selectInterest',
     /* 首页 */
     INDEX: '/pages/index/index',
+    /* 首页(分包页) */
+    SEARCH: '/package/index/pages/search/search',
+    ACTIVEDETAILS: '/package/index/pages/activeDetails/activeDetails',
     /* 服务 */
     SERVICE: '/pages/service/service',
     /* 我的 */
     PERSONAL: '/pages/personal/personal',
     /* 我的(分包页) */
-    LOGIN: '/package/personal/pages/loginym/loginym',
     PEESONALDETAILS: '/package/personal/pages/personalDetails/personalDetails',
-    SELECTINTEREST: '/package/personal/pages/selectInterest/selectInterest',
-    SELECTID: '/package/personal/pages/selectiveID/selectiveID',
     SELFTAGS: '/package/personal/pages/interestTags/interestTags',
-    SELFVOTE: '/package/personal/pages/personalVote/personalVote'
+    SELFVOTE: '/package/personal/pages/personalVote/personalVote',
+    SELFACTIVE: '/package/personal/pages/personalActive/personalActive',
+    SELFComment: '/package/personal/pages/personalComment/personalComment',
+    SELFContribute: '/package/personal/pages/personalContribute/personalContribute',
   },
   PERSONAL: {
     ACTION_BAR_ITEM: [{
-        actionNaviTo: '/pages/index/index',
+        actionNaviTo: '/package/personal/pages/personalActive/personalActive',
         actionIconUrl: '/images/person_active_icon.png',
         actionText: '我的活动'
       },
@@ -37,12 +48,12 @@ module.exports = {
         actionText: '我的投票'
       },
       {
-        actionNaviTo: '/pages/index/index',
+        actionNaviTo: '/package/personal/pages/personalComment/personalComment',
         actionIconUrl: '/images/person_comment_icon.png',
         actionText: '我的评论'
       },
       {
-        actionNaviTo: '/pages/index/index',
+        actionNaviTo: '/package/personal/pages/personalContribute/personalContribute',
         actionIconUrl: '/images/person_contribute_icon.png',
         actionText: '我的投稿'
       },

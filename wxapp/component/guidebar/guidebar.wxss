@@ -1,24 +1,27 @@
 .guide-item {
   width: 100%;
-  height: 175rpx;
+  height: 160rpx;
   background: #fff;
   margin-bottom: 5rpx;
   padding: 20rpx;
   display: flex;
   flex-direction: row;
+  align-items: center;
   box-sizing: border-box;
 }
 
 .guide-text-box {
   width: 95%;
   overflow: hidden;
-  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .guide-arrow-box {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -33,11 +36,13 @@
   font-size: 0.9em;
   font-weight: bold;
   letter-spacing: 2rpx;
-  height: 75rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .guide-time {
-  line-height: 25rpx;
+  line-height: 60rpx;
   color: #aaa;
   font-size: 0.8em;
 }

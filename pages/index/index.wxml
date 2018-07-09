@@ -5,7 +5,7 @@
     <text class='newsTitle'>我的复旦</text>
     <text class='newsTitle'>本周热榜</text>
     <view class='search'>
-      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='学院 / 活动 / 课程...'>
+      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='学院 / 活动 / 课程...' bindfocus='search'>
       <image src='/images/search.png'></image>
       </input>
     </view>

@@ -78,6 +78,16 @@ class Api {
     return self.post(url, postData);
   }
 
+  /* 获取我的活动 */
+  getMyActivity() {
+    let self = this;
+    let url = '/front/myActivity'
+    let postData = {
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
   /* session过期重新登录 */
   reLogin() {
     let self = this;

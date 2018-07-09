@@ -1,8 +1,12 @@
 {
   "pages": [
+    "pages/transitional/transitional",
     "pages/index/index",
     "pages/personal/personal",
-    "pages/service/service"
+    "pages/service/service",
+    "pages/selectiveID/selectiveID",
+    "pages/selectInterest/selectInterest",
+    "pages/loginym/loginym"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -38,12 +42,19 @@
     {
       "root": "package/personal/",
       "pages": [
-        "pages/selectiveID/selectiveID",
-        "pages/selectInterest/selectInterest",
         "pages/personalDetails/personalDetails",
-        "pages/loginym/loginym",
         "pages/interestTags/interestTags",
-        "pages/personalVote/personalVote"
+        "pages/personalVote/personalVote",
+        "pages/personalActive/personalActive",
+        "pages/personalComment/personalComment",
+        "pages/personalContribute/personalContribute"
+      ]
+    },
+    {
+      "root": "package/index/",
+      "pages": [
+        "pages/search/search",
+        "pages/activeDetails/activeDetails"
       ]
     }
   ]

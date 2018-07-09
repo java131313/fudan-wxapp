@@ -5,7 +5,8 @@ Component({
    */
   properties: {
     guide_title: String,
-    guide_content: String
+    guide_content: String,
+    guide_naviUrl: String
   },
 
   /**

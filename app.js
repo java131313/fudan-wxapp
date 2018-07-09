@@ -29,9 +29,12 @@ App({
     /* 微信登录 */
     Util.wxlogin().then(() => {
       /* 获取用户信息 */
-      Util.getUserInfo();
+      Util.getUserInfo().then(() => {
+        // wx.reLaunch({
+        //   url: self.CONFIG.PAGE.TRANSITIONAL
+        // });
+      });
     });
-    // self.CONFIG.BGCOLOR = 'orange';
   },
 
   /**
