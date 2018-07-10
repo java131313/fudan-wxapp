@@ -11,6 +11,7 @@ const CONFIG = require('wxapp/api/config.js');
 const ENUM = require('utils/enum.js');
 const api = new Api();
 const mockData = new MockData();
+export let bindRolePromise = new Promise((resolve, reject) => {});
 
 App({
 
@@ -27,8 +28,8 @@ App({
   onShow: function(options) {
     let self = this;
     /* 微信登录 */
-    Util.wxlogin().then(() => {
-      self.getHasBindRole(options.scene);
+    bindRolePromise = Util.wxlogin().then(() => {
+      return self.getHasBindRole(options.scene);
     });
   },
 
@@ -49,7 +50,7 @@ App({
   /* 判断是否绑定身份 */
   getHasBindRole(scene) {
     let self = this;
-    self.api.getHasBindRole().then(() => {
+    return self.api.getHasBindRole().then(() => {
       /* 已绑定身份 */
       self.globalData.isAuthorized = true;
       Util.getUserInfo();
