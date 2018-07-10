@@ -88,6 +88,47 @@ class Api {
     return self.post(url, postData);
   }
 
+  /* 获取我的投票 */
+  getMyVote() {
+    let self = this;
+    let url = '/front/myVote';
+    let postData = {
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
+  /* 判断是否绑定身份 */
+  getHasBindRole() {
+    let self = this;
+    let url = '/front/hasBindRole';
+    let postData = {
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
+  /* 获取我的投稿 */
+  getMyContribution() {
+    let self = this;
+    let url = '/front/myContribution';
+    let postData = {
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
+  /* 绑定用户身份 */
+  setRole(role_id) {
+    let self = this;
+    let url = '/front/setRole';
+    let postData = {
+      session_id: self.getSessionId(),
+      role_id: role_id
+    };
+    return self.post(url, postData);
+  }
+
   /* session过期重新登录 */
   reLogin() {
     let self = this;

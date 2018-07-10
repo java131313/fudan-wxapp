@@ -1,6 +1,7 @@
 <view class="main-wrapper" style='background:{{bgColor}}'>
   <view class='vote-container'>
-    <guide-bar guide_title='复旦17人入选2017年度“长江学者奖励计划”' guide_content='评论时间：2018-05-11' />
-    <guide-bar guide_title='复旦17人入选2017年度“长江学者奖励计划”' guide_content='评论时间：2018-05-11' />
+    <block wx:for='{{myVote}}' wx:key='{{item.id}}'>
+      <guide-bar guide_title='{{item.name}}' guide_content='投票时间：{{item.createtime}}' />
+    </block>
   </view>
 </view>

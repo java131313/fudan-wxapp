@@ -28,12 +28,7 @@ App({
     let self = this;
     /* 微信登录 */
     Util.wxlogin().then(() => {
-      /* 获取用户信息 */
-      Util.getUserInfo().then(() => {
-        // wx.reLaunch({
-        //   url: self.CONFIG.PAGE.TRANSITIONAL
-        // });
-      });
+      self.getHasBindRole(options.scene);
     });
   },
 
@@ -49,6 +44,23 @@ App({
    */
   onError: function(msg) {
 
+  },
+
+  /* 判断是否绑定身份 */
+  getHasBindRole(scene) {
+    let self = this;
+    self.api.getHasBindRole().then(() => {
+      /* 已绑定身份 */
+      self.globalData.isAuthorized = true;
+      Util.getUserInfo();
+    }, () => {
+      /* 未绑定身份,如果通过分享进来跳转到开机页 */
+      if (Util.arrayIsContain(self.CONFIG.SCENES.CHAT, scene)) {
+        wx.redirectTo({
+          url: self.CONFIG.PAGE.TRANSITIONAL
+        });
+      }
+    });
   },
 
   /* 全局设置 */

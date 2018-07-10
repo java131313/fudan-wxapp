@@ -1,7 +1,7 @@
 <view class="main-wrapper" style='background:{{bgColor}}'>
   <view class='active-container'>
     <block wx:for='{{myActivity}}' wx:key='{{item.id}}'>
-      <guide-bar guide_naviUrl='{{naviUrl}}' guide_title='{{item.title}}' guide_content='报名时间：{{item.begintime}}' />
+      <guide-bar guide_naviUrl='{{naviUrl}}?id={{item.id}}' guide_title='{{item.title}}' guide_content='报名时间：{{item.createtime}}' />
     </block>
   </view>
 </view>

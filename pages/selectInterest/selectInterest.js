@@ -11,6 +11,7 @@ Page({
    */
   data: {
     bgColor: app.CONFIG.BGCOLOR,
+    id: '',
     tags: [],
     selectedTags: []
   },
@@ -20,6 +21,9 @@ Page({
    */
   onLoad: function(options) {
     let self = this;
+    self.setData({
+      id: options.id
+    });
     self.getTags();
   },
 
@@ -72,6 +76,12 @@ Page({
 
   },
 
+  /* 绑定用户身份 */
+  setRole() {
+    let self = this;
+    return app.api.setRole(self.data.id);
+  },
+
   /* 获取标签列表 */
   getTags() {
     let self = this;
@@ -81,7 +91,6 @@ Page({
       });
     });
   },
-
 
   /* 选择兴趣标签触发 */
   selectInterestLable(e) {
@@ -100,10 +109,14 @@ Page({
       return;
     }
     app.api.setTags(self.data.selectedTags).then(res => {
-      let cb = () => {
-        Util.getUserInfo();
-      };
-      Util.switchTabToOnload(app.CONFIG.PAGE.INDEX, cb);
+      self.setRole().then(res => {
+        wx.switchTab({
+          url: app.CONFIG.PAGE.INDEX,
+          success: res => {
+            Util.getUserInfo();
+          }
+        });
+      });
     });
   }
 })

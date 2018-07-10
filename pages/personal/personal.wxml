@@ -1,8 +1,8 @@
 <view class='main-wrapper' style='background:{{bgColor}}'>
   <view class='person-top'>
     <view class='person-avatar-box'>
-      <image wx:if='{{!userInfo.avatar}}' class='person-avatar-default' src='/images/default_avatar.png'></image>
-      <open-data wx:if='{{userInfo.avatar}}' type="userAvatarUrl" class="person-avatar"></open-data>
+      <image class='person-avatar-default' src='{{userInfo.avatar ? userInfo.avatar : "/images/default_avatar.png"}}'></image>
+      <!-- <open-data wx:if='{{userInfo.avatar}}' type="userAvatarUrl" class="person-avatar"></open-data> -->
     </view>
     <view class='person-nickname-box'>
       <button wx:if='{{!userInfo.nickname}}' class='person-nickname' open-type='getUserInfo' bindgetuserinfo='wxAuthorize'>点击登录</button>

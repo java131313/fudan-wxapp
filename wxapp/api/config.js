@@ -1,5 +1,11 @@
 module.exports = {
   BGCOLOR: '#f5f5f5',
+  SCENES: {
+    CHAT: [1007, 1008],
+    QRCODE: [1011, 1012, 1013],
+    ONECODE: [1025, 1031, 1032],
+    WXAPPCODE: [1047, 1048, 1049]
+  },
   HTTP: {
     API: 'formal',
   },

@@ -9,14 +9,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bgColor: app.CONFIG.BGCOLOR
+    bgColor: app.CONFIG.BGCOLOR,
+    myVote: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let self = this;
+    self.getMyVote();
   },
 
   /**
@@ -66,5 +68,15 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 获取我的投票 */
+  getMyVote() {
+    let self = this;
+    app.api.getMyVote().then(res => {
+      self.setData({
+        myVote: res.data.data
+      });
+    });
   }
 })

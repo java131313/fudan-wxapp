@@ -12,6 +12,7 @@ Page({
     bgColor: app.CONFIG.BGCOLOR,
     actionBarItem: app.CONFIG.PERSONAL.ACTION_BAR_ITEM,
     authorizeIDUrl: app.CONFIG.PAGE.SELECTID,
+    personalDetailsUrl: app.CONFIG.PAGE.PEESONALDETAILS,
     userInfo: {}
   },
 
