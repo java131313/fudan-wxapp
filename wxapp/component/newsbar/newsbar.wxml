@@ -1,55 +1,57 @@
 <!-- 文章图片：news_pic，文章标题：news_title，发表时间：synopsis1_time，来源：synopsis2_source 活动时间：newsB_time，活动地点：newsB_from-->
 <!--  方案一  -->
-<view wx:if='{{news_type==1}}' class='newsIndex'>
-  <view class='newsBigPic'>
-    <view class='newsModle'>
-      <image class='news_pic' src='{{news_pic}}'></image>
-      <text class='newsText'>{{news_title}}</text>
-    </view>
-    <view class='newsSynopsis'>
-      <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+<navigator url='{{news_url}}'>
+  <view wx:if='{{news_type == 1}}' class='newsIndex'>
+    <view class='newsBigPic'>
+      <view class='newsModle'>
+        <image class='news_pic' src='{{news_pic}}'></image>
+        <text class='newsText'>{{news_title}}</text>
+      </view>
+      <view class='newsSynopsis'>
+        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+      </view>
     </view>
   </view>
-</view>
 
-<!--方案二  -->
-<view wx:if="{{news_type==2}}" class='newsIndex'>
-  <view class='newsBigPic'>
-    <view class='newsModle'>
-      <view class="news_F_pic2">
-        <image class='news_pic2' src='{{news_pic}}'></image>
-      </view>
-      <view class='news_service'>
-        <view class='newsA'>
-          <text class='news_service_title'>{{news_title}}</text>
+  <!--方案二  -->
+  <view wx:if="{{news_type == 2}}" class='newsIndex'>
+    <view class='newsBigPic'>
+      <view class='newsModle'>
+        <view class="news_F_pic2">
+          <image class='news_pic2' src='{{news_pic}}'></image>
         </view>
-        <view class='newsB'>
-          <text>时间：{{newsB_time}}</text>
-          <text>地点：{{newsB_from}}</text>
+        <view class='news_service'>
+          <view class='newsA'>
+            <text class='news_service_title'>{{news_title}}</text>
+          </view>
+          <view class='newsB'>
+            <text>时间：{{newsB_time}}</text>
+            <text>地点：{{newsB_from}}</text>
+          </view>
+          <view class='newsD'></view>
         </view>
-        <view class='newsD'></view>
+      </view>
+      <view class='newsSynopsis'>
+        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
       </view>
     </view>
-    <view class='newsSynopsis'>
-      <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
-    </view>
+
   </view>
 
-</view>
-
-<!-- 方案三 -->
-<view wx:if="{{news_type==3}}" class='newsIndex'>
-  <view class='newsBigPic'>
-    <view class='newsModle'>
-      <view class='news_FA3'>
-        <image src='{{news_pic}}'></image>
+  <!-- 方案三 -->
+  <view wx:if="{{news_type == 3}}" class='newsIndex'>
+    <view class='newsBigPic'>
+      <view class='newsModle'>
+        <view class='news_FA3'>
+          <image src='{{news_pic}}'></image>
+        </view>
+        <view class='news_FA3_title'>
+          <text>{{news_title}}</text>
+        </view>
       </view>
-      <view class='news_FA3_title'>
-        <text>{{news_title}}</text>
+      <view class='newsSynopsis'>
+        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
       </view>
-    </view>
-    <view class='newsSynopsis'>
-      <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
     </view>
   </view>
-</view>
+</navigator>

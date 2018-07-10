@@ -9,7 +9,8 @@ Component({
     synopsis_source: String,
     newsB_time: String,
     newsB_from: String,
-    news_type: Number
+    news_type: Number,
+    news_url: String
   },
 
   /**
