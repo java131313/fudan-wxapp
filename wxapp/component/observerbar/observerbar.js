@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    support_num: Number,
+    comment_num: Number,
+    share_num: Number,
+    comments: Array
   },
 
   /**

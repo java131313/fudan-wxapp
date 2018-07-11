@@ -2,15 +2,15 @@
   <view class='click_like_border'>
     <view class='click_love'>
       <image src='/images/like.png'></image>
-      <text>122</text>
+      <text>{{support_num}}</text>
     </view>
     <view class='click_love'>
       <image src='/images/like.png'></image>
-      <text>122</text>
+      <text>{{comment_num}}</text>
     </view>
     <view class='click_love'>
       <image src='/images/like.png'></image>
-      <text>122</text>
+      <text>{{share_num}}</text>
     </view>
   </view>
 </view>
@@ -23,23 +23,24 @@
     <text>写评论</text>
   </view>
 </view>
-
-<view class="commentContent">
-  <view class='commentContent_pic'>
-    <open-data type="userAvatarUrl"></open-data>
-  </view>
-  <view class='commentContent_all'>
-    <view class='commentContent_name'>
-      <open-data type="userNickName"></open-data>
+<block wx:for="{{comments}}" wx:key="{{item.id}}">
+  <view class="commentContent">
+    <view class='commentContent_pic'>
+      <image src='{{item.avatar}}'></image>
     </view>
-    <view class='commentContent_speak'>
-      <text>今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！</text>
+    <view class='commentContent_all'>
+      <view class='commentContent_name'>
+        <text>{{item.nickname}}</text>
+      </view>
+      <view class='commentContent_speak'>
+        <text>{{item.content}}</text>
+      </view>
+    </view>
+    <view class='commentContent_attitude'>
+      <view class='click_love2'>
+        <image src='/images/like.png'></image>
+         <text>{{item.support_num}}</text> 
+      </view>
     </view>
   </view>
-  <view class='commentContent_attitude'>
-    <view class='click_love2'>
-      <image src='/images/like.png'></image>
-      <text>12</text>
-    </view>
-  </view>
-</view>
+</block>

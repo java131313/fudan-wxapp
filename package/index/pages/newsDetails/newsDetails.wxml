@@ -14,5 +14,6 @@
       <text>来源：{{newsDetail.origin}}</text>
     </view>
   </view>
-  <observer-bar />
+  
 </view>
+<observer-bar support_num="{{newsDetail.support_num}}" comment_num= "{{newsDetail.comment_num}}" share_num="{{newsDetail.share_num}}" comments="{{newsDetail.comments}}"/>
