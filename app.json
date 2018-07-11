@@ -55,7 +55,8 @@
       "pages": [
         "pages/search/search",
         "pages/activeDetails/activeDetails",
-        "pages/newsDetails/newsDetails"
+        "pages/newsDetails/newsDetails",
+        "pages/voteDetails/voteDetails"
       ]
     }
   ]

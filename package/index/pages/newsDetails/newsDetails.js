@@ -74,9 +74,7 @@ Page({
       self.setData({
         newsDetail: res.data.data
       });
-      console.warn("aaa: ", self.data);
       WxParse.wxParse('article', 'html', res.data.data.content, self, 30);
-      console.warn("ddd: ", self.data);
     });
   }
 })
