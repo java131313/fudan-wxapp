@@ -1,0 +1,7 @@
+<view class='main-wrapper'>
+  <view class='recruit-container'>
+    <text class="recruit-title"></text>
+    <text class="recruit-time"></text>
+    <view class="recruit-content"></view>
+  </view>
+</view>

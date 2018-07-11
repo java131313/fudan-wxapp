@@ -32,6 +32,7 @@ module.exports = {
     ACTIVEDETAILS: '/package/index/pages/activeDetails/activeDetails',
     NEWSDETAILS: '/package/index/pages/newsDetails/newsDetails',
     VOTEDETAILS: '/package/index/pages/voteDetails/voteDetails',
+    RECRUITDETAILS: '/package/index/pages/recruitDetails/recruitDetails',
     /* 服务 */
     SERVICE: '/pages/service/service',
     /* 我的 */

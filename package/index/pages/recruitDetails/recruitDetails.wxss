@@ -1,0 +1,20 @@
+.main-wrapper {
+  width: 92.6%;
+  padding: 0 3.7%;
+  height: auto;
+}
+
+.recruit-container{
+  width: 100%;
+  height: auto;
+  margin-top: 20rpx;
+}
+
+.recruit-container > text{
+  display:inline-block;
+}
+
+.recruit-title{
+  font-weight: bold;
+  color: #333;
+}
