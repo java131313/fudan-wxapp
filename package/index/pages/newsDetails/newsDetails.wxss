@@ -1,0 +1,72 @@
+@import '../../../../wxapp/template/wxParse/wxParse.wxss';
+
+.main-wrapper {
+  width: 92.6%;
+  padding: 0 3.7%;
+  height: 100%;
+}
+
+.news-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: #fff;
+}
+
+.news-top {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.news-content {
+  width: 100%;
+  height: auto;
+  margin-top: 20rpx;
+}
+
+.news-top > text {
+  display: inline-block;
+}
+
+.news-title {
+  line-height: 55rpx;
+  font-weight: bold;
+  width: 100%;
+  height: auto;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.news-author {
+  float: left;
+  width: 50%;
+  color: #aaa;
+  line-height: 35rpx;
+  font-size: 0.8em;
+}
+
+.news-date {
+  float: right;
+  width: 50%;
+  color: #aaa;
+  line-height: 35rpx;
+  font-size: 0.8em;
+  text-align: end;
+}
+
+.news-foot {
+  width: 100%;
+  height: 65rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: 20rpx;
+  border-bottom: 5rpx solid #f5f5f5;
+}
+
+.news-foot > text {
+  color: #aaa;
+  line-height: 35rpx;
+  font-size: 0.8em;
+}

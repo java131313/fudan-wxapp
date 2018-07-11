@@ -13,7 +13,8 @@
   <scroll-view scroll-y='true' class='news-box'>
     <template is='topLoading' data='{{isLoading}}'></template>
     <block wx:for='{{newsItem}}' wx:key='{{item.id}}'>
-      <news-bar news_type='{{item.type}}' news_pic='{{item.imgUrl}}' news_title='{{item.title}}' synopsis_time='{{item.createtime}}' synopsis_source='{{item.source}}' newsB_time='{{item.activetime}}' newsB_from='{{item.activefrom}}' />
+      <news-bar news_url='{{newsDetailUrl}}?id=1108' news_type='{{item.type}}' news_pic='{{item.imgUrl}}' news_title='{{item.title}}' synopsis_time='{{item.createtime}}' synopsis_source='{{item.source}}' newsB_time='{{item.activetime}}' newsB_from='{{item.activefrom}}'
+      />
     </block>
   </scroll-view>
 </view>

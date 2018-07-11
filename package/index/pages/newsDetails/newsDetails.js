@@ -1,6 +1,4 @@
-import {
-  Util
-} from '../../utils/util.js';
+import WxParse from '../../../../wxapp/template/wxParse/wxParse.js';
 const app = getApp();
 
 Page({
@@ -9,23 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bgColor: app.CONFIG.BGCOLOR,
-    newsDetailUrl: app.CONFIG.PAGE.NEWSDETAILS,
-    isLoading: false,
-    newsItem: [],
+    newsDetail: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    app.api.mockTest().then(res => {
-      if (res.data.code == 200) {
-        this.setData({
-          newsItem: res.data.data.news
-        });
-      }
-    });
+    let self = this;
+    self.getNewsDetail(options.id);
   },
 
   /**
@@ -60,21 +50,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    let self = this;
-    let apifunc = app.api.mockTest();
-    let cb = res => {
-      self.setData({
-        newsItem: res.data.data.news
-      });
-    };
-    let pageTitle = '复旦大学';
-    Util.onPullDownRefresh(self, apifunc, cb, pageTitle);
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {},
+  onReachBottom: function() {
+
+  },
 
   /**
    * 用户点击右上角分享
@@ -83,10 +67,16 @@ Page({
 
   },
 
-  /* 搜索获取焦点触发 */
-  search() {
-    wx.navigateTo({
-      url: app.CONFIG.PAGE.SEARCH
+  /* 获取新闻详情 */
+  getNewsDetail(id) {
+    let self = this;
+    app.api.getNewsDetail(id).then(res => {
+      self.setData({
+        newsDetail: res.data.data
+      });
+      console.warn("aaa: ", self.data);
+      WxParse.wxParse('article', 'html', res.data.data.content, self, 30);
+      console.warn("ddd: ", self.data);
     });
   }
 })

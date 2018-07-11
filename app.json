@@ -54,7 +54,8 @@
       "root": "package/index/",
       "pages": [
         "pages/search/search",
-        "pages/activeDetails/activeDetails"
+        "pages/activeDetails/activeDetails",
+        "pages/newsDetails/newsDetails"
       ]
     }
   ]

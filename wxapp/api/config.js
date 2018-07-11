@@ -30,6 +30,7 @@ module.exports = {
     /* 首页(分包页) */
     SEARCH: '/package/index/pages/search/search',
     ACTIVEDETAILS: '/package/index/pages/activeDetails/activeDetails',
+    NEWSDETAILS: '/package/index/pages/newsDetails/newsDetails',
     /* 服务 */
     SERVICE: '/pages/service/service',
     /* 我的 */
