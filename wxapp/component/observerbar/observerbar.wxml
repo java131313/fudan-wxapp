@@ -1,0 +1,49 @@
+
+<view class='click_like'>
+  <view class='click_like_border'>
+    <view class='click_love'>
+      <image src='/images/like.png'></image>
+      <text>122</text>
+    </view>
+    <view class='click_love'>
+      <image src='/images/like.png'></image>
+      <text>122</text>
+    </view>
+    <view class='click_love'>
+      <image src='/images/like.png'></image>
+      <text>122</text>
+    </view>
+  </view>
+</view>
+
+
+
+<view class='commentFunction'>
+  <view class='commentFunction_title'>
+    <text>评论内容</text>
+  </view>
+  <view class='commentFunction_speak'>
+    <text>写评论</text>
+  </view>
+</view>
+
+
+<view class="commentContent">
+  <view class='commentContent_pic'>
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class='commentContent_all'>
+    <view class='commentContent_name'>
+      <open-data type="userNickName"></open-data>
+    </view>
+    <view class='commentContent_speak'>
+      <text>今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！今年我一定要参加！</text>
+    </view>
+  </view>
+  <view class='commentContent_attitude'>
+    <view class='click_love2'>
+      <image src='/images/like.png'></image>
+      <text>12</text>
+    </view>
+  </view>
+</view>

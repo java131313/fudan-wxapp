@@ -1,0 +1,102 @@
+/* wxapp/component/observerbar/observerbar.wxss */
+
+.click_like {
+  width: 92.6%;
+  padding: 0 3.7%;
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+
+.click_like_border {
+  border-top: 2rpx solid #e5e5e5;
+  display: flex;
+}
+
+.click_love {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+}
+
+.click_love image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.click_love text {
+  line-height: 94rpx;
+  font-size: 28rpx;
+  color: #888;
+}
+
+
+
+.commentFunction {
+  display: flex;
+  width: 92.6%;
+  padding: 0 3.7%;
+  justify-content: space-between;
+}
+
+.commentFunction_title {
+  font-size: 28rpx;
+  line-height: 104rpx;
+  color: #aaa;
+}
+
+.commentFunction_speak {
+  font-size: 28rpx;
+  line-height: 104rpx;
+  color: #cc1a1a;
+}
+
+
+
+
+
+
+.commentContent {
+  display: flex;
+  width: 92.6%;
+  padding: 0 3.7% 40rpx;
+  /* justify-content: center; */
+}
+
+.commentContent_pic {
+  /* width: 100rpx; *//* width: 9.8%; */
+  width: 14.8%;
+  height: 100rpx;
+}
+
+.commentContent_all {
+  width: 85.2%;
+}
+
+.commentContent_name {
+  font-size: 28rpx;
+  color: #aaa;
+  display: block;
+  line-height: 34rpx;
+}
+
+.commentContent_speak {
+  display: block;
+  color: #333;
+  font-size: 28rpx;
+  line-height: 34rpx;
+  font-weight: bold;
+}
+.commentContent_attitude {
+  width: 10%;
+}
+.click_love2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.click_love2 image {
+  width: 30rpx;
+  height: 30rpx;
+}
