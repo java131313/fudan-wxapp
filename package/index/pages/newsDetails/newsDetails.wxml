@@ -14,5 +14,5 @@
       <text>来源：{{newsDetail.origin}}</text>
     </view>
   </view>
-
+  <observer-bar />
 </view>

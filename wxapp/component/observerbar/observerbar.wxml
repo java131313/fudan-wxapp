@@ -1,4 +1,3 @@
-
 <view class='click_like'>
   <view class='click_like_border'>
     <view class='click_love'>
@@ -16,8 +15,6 @@
   </view>
 </view>
 
-
-
 <view class='commentFunction'>
   <view class='commentFunction_title'>
     <text>评论内容</text>
@@ -26,7 +23,6 @@
     <text>写评论</text>
   </view>
 </view>
-
 
 <view class="commentContent">
   <view class='commentContent_pic'>

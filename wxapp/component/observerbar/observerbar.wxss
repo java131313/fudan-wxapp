@@ -1,14 +1,11 @@
 /* wxapp/component/observerbar/observerbar.wxss */
 
 .click_like {
-  width: 92.6%;
-  padding: 0 3.7%;
-  margin-top: 30rpx;
+  width: 100%;
   overflow: hidden;
 }
 
 .click_like_border {
-  border-top: 2rpx solid #e5e5e5;
   display: flex;
 }
 
@@ -30,8 +27,6 @@
   color: #888;
 }
 
-
-
 .commentFunction {
   display: flex;
   width: 92.6%;
@@ -50,11 +45,6 @@
   line-height: 104rpx;
   color: #cc1a1a;
 }
-
-
-
-
-
 
 .commentContent {
   display: flex;
@@ -87,15 +77,18 @@
   line-height: 34rpx;
   font-weight: bold;
 }
+
 .commentContent_attitude {
   width: 10%;
 }
+
 .click_love2 {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
+
 .click_love2 image {
   width: 30rpx;
   height: 30rpx;
