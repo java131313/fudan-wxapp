@@ -2,6 +2,7 @@
   "navigationBarTitleText": "招聘详情",
   "usingComponents": {
     "title-bar": "/wxapp/component/titlebar/titlebar",
-    "option-bar": "/wxapp/component/optionbar/optionbar"
+    "option-bar": "/wxapp/component/optionbar/optionbar",
+    "operate-bar": "/wxapp/component/operatebar/operatebar"
   }
 }

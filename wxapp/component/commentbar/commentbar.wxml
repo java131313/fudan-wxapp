@@ -1,0 +1,31 @@
+<view class='comment-container'>
+  <view class='commentFunction'>
+    <view class='commentFunction_title'>
+      <text>评论内容</text>
+    </view>
+    <view class='commentFunction_speak'>
+      <text>写评论</text>
+    </view>
+  </view>
+  <block wx:for="{{comments}}" wx:key="{{item.id}}">
+    <view class="commentContent">
+      <view class='commentContent_pic_parent'>
+        <image src='{{item.avatar}}' class='commentContent_pic'></image>
+      </view>
+      <view class='commentContent_all'>
+        <view class='commentContent_name'>
+          <text>{{item.nickname}}</text>
+        </view>
+        <view class='commentContent_speak'>
+          <text>{{item.content}}</text>
+        </view>
+      </view>
+      <view class='commentContent_attitude'>
+        <view class='click_love2'>
+          <image src='/images/like.png'></image>
+          <text>{{item.support_num}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

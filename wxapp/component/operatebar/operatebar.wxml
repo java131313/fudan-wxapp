@@ -1,0 +1,14 @@
+<view class='operate-container'>
+  <view class='operate-item'>
+    <image src='/images/like.png'></image>
+    <text>{{support_num}}</text>
+  </view>
+  <view class='operate-item'>
+    <image src='/images/edit.png'></image>
+    <text>{{comment_num}}</text>
+  </view>
+  <view class='operate-item'>
+    <image src='/images/share.png'></image>
+    <text>{{share_num}}</text>
+  </view>
+</view>

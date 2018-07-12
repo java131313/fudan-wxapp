@@ -27,9 +27,15 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function arrayIsContain(array, arg) {
+  if (!array || array.length == 0) return false;
+  else return array.indexOf(arg) > -1 ? true : false;
+}
+
 module.exports = {
   split: split,
   formatPercent: formatPercent,
   formatDate: formatDate,
-  formatNumber: formatNumber
+  formatNumber: formatNumber,
+  arrayIsContain: arrayIsContain
 }

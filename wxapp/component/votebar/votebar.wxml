@@ -1,21 +1,17 @@
-<!--wxapp/component/votebar/votebar.wxml-->
-
- 
-  <view class="vote">
-    <view class='vote_index'>
-      <text>{{option_id}}</text>
-    </view>
-    <view class='vote_pic'>
-      <image src='{{option_img}}'></image>
-    </view>
-    <view class='vote_text'>
-      <text>{{option_title}}</text>
-    </view>
-    <view class='vote_temp'>
-      <progress percent="{{option_percent}}" show-info active stroke-width="4" activeColor="#cc1a1a" backgroundColor="#fff" />
-    </view>
-    <view class='vote_status'>
-      <text class='{{option_isVote ? "vote_status_yes" : "vote_status_no"}}'>{{option_isVote ? '已投' : '投票'}}</text>
-    </view>
+<view class="vote">
+  <view class='vote_index'>
+    <text>{{option_id}}</text>
   </view>
-
+  <view class='vote_pic'>
+    <image src='{{option_img}}'></image>
+  </view>
+  <view class='vote_text'>
+    <text>{{option_title}}</text>
+  </view>
+  <view class='vote_temp'>
+    <progress percent="{{option_percent}}" show-info active stroke-width="4" activeColor="#cc1a1a" backgroundColor="#fff" />
+  </view>
+  <view class='vote_status'>
+    <text class="{{option_isVote ? 'vote_status_yes' : 'vote_status_no'}}">{{option_isVote ? '已投' : '投票'}}</text>
+  </view>
+</view>

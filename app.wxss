@@ -11,9 +11,7 @@ page {
   width: 100%;
 }
 
-
-/* 评论位置定位 */
-.observer_position{
+.commentbar {
   position: fixed;
   bottom: 0;
   left: 0;

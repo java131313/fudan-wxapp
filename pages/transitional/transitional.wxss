@@ -1,1 +1,4 @@
-/* pages/transitional/transitional.wxss */
+.main-wrapper {
+  width: 100%;
+  height: 100%;
+}

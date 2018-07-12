@@ -4,11 +4,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    option_id:Number,
-    option_img:String,
-    option_content:String,
-    option_percent:Number,
-    option_isVote:Number
+    option_id: Number,
+    option_img: String,
+    option_content: String,
+    option_percent: Number,
+    option_isVote: {
+      type: Boolean,
+      value: false
+    }
   },
 
   /**

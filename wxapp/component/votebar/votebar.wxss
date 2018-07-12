@@ -1,7 +1,3 @@
-/* wxapp/component/votebar/votebar.wxss */
-
-
-
 .vote {
   display: flex;
   justify-content: flex-start;
@@ -43,15 +39,6 @@
   margin-top: 38rpx;
 }
 
-progress {
-}
-
-.vote_status {
-  width: 29%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .vote_status {
   width: 29%;
   display: flex;
@@ -68,6 +55,7 @@ progress {
   color: #cc1a1a;
   font-size: 30rpx;
 }
+
 .vote_status_no {
   display: inline-block;
   width: 50%;
@@ -87,20 +75,22 @@ progress {
 
 .click_like_border {
   border-top: 2rpx solid #e5e5e5;
-  
 }
-.click_love{
+
+.click_love {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 33%;
 }
-.click_love image{
+
+.click_love image {
   width: 30rpx;
   height: 30rpx;
 }
-.click_love text{
+
+.click_love text {
   line-height: 94rpx;
   font-size: 28rpx;
-  color:#888888;
+  color: #888;
 }

@@ -1,7 +1,8 @@
 {
   "navigationBarTitleText": "投票详情",
   "usingComponents": {
-    "vote-bar":"/wxapp/component/votebar/votebar",
-    "observer-bar": "/wxapp/component/observerbar/observerbar"
+    "title-bar": "/wxapp/component/titlebar/titlebar",
+    "vote-bar": "/wxapp/component/votebar/votebar",
+    "comment-bar": "/wxapp/component/commentbar/commentbar"
   }
 }

@@ -1,19 +1,13 @@
 <wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
 
- <view class='vote_synopsis'>
-    <view class='vote_title_parent'>
-      <text class='vote_title'>{{voteDetail.name}}</text>
-    </view>
-    <view class='vote_publish'>
-      <text class='vote_publish_time'>{{voteDetail.createtime}}</text>
-    </view>
-    <view class='vote_publish_comment_parent'>
-      <text class='vote_publish_comment'>{{voteDetail.explain}}</text>
-    </view>
+<view class='main-wrapper'>
+  <view class='vote-container'>
+    <title-bar title='{{voteDetail.name}}' issuetime='{{voteDetail.begintime}}' />
+    <text class='vote_publish_comment'>{{voteDetail.explain}}</text>
+    <block wx:for="{{voteDetail.options}}" wx:key='{{item.id}}'>
+      <vote-bar option_id="{{index+1}}" option_img="{{item.img}}" option_content="{{item.title}}" option_percent="{{filter.formatPercent(item.percent)}}" option_isVote="{{filter.arrayIsContain(voteDetail.voted,item.id)}}" />
+    </block>
   </view>
+</view>
 
-  <block wx:for="{{voteDetail.options}}" wx:key='{{item.id}}'>
-    <vote-bar option_id = "{{index+1}}" option_img="{{item.img}}" option_content="{{item.title}}" option_percent="{{filter.formatPercent(item.percent)}}" option_isVote="{{item.count}}" />
-  </block>
-  <observer-bar class="observer_position" support_num="{{voteDetail.support_num}}" comment_num= "{{voteDetail.comment_num}}" share_num="{{voteDetail.share_num}}" comments="{{voteDetail.comments}}"/>
-   
+<comment-bar class='commentbar' comments="{{voteDetail.comments}}" />
