@@ -75,7 +75,7 @@ module.exports = {
   },
   SCHOOL_SERVICE: {
     SCHOOL_ITEM: [{
-        schoolNaviTo: "pages/index/index",
+      schoolNaviTo: "/package/index/pages/voteDetails/voteDetails",
         schoolUrl: '/images/kt1.png',
         schoolText: '课程日历'
       },

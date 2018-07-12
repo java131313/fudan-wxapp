@@ -1,11 +1,17 @@
 function split(str, length) {
-  if(typeof str !== 'string') return;
+  if (typeof str !== 'string') return;
   if (str.length <= length) {
     return str;
   }
   return str.substring(0, length) + '...';
 }
 
+function formatPercent(percent) {
+  if (!percent) return '';
+  return percent.toString().replace('%', '');
+}
+
 module.exports = {
-  split: split
+  split: split,
+  formatPercent: formatPercent
 }
