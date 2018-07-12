@@ -150,6 +150,16 @@ class Api {
     return self.post(url, postData);
   }
 
+  /* 获取投票详情 */
+  getVoteDetail(id) {
+    let self = this;
+    let url = '/front/vote';
+    let postData = {
+      id: id
+    };
+    return self.post(url, postData);
+  }
+
   /* session过期重新登录 */
   reLogin() {
     let self = this;

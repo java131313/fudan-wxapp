@@ -1,18 +1,20 @@
-// package/index/pages/voteDetails/voteDetails.js
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    voteDetail: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let self=this;
+    self.getVoteDetail(1);
   },
 
   /**
@@ -62,5 +64,14 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  /* 获取投票详情 */
+  getVoteDetail(id) {
+    let self = this;
+    app.api.getVoteDetail(id).then(res => {
+      self.setData({
+        voteDetail: res.data.data
+      });
+    });
   }
 })
