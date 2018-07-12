@@ -1,0 +1,6 @@
+<view class="option">
+  <text class="option-title">{{option_title}}</text>
+  <view class="option-content">
+    <text>{{option_content}}</text>
+  </view>
+</view>

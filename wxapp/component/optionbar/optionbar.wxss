@@ -1,0 +1,27 @@
+.option {
+  width: 100%;
+  height: auto;
+  font-size: 30rpx;
+  display: flex;
+  margin-bottom: 5rpx;
+}
+
+.option-title {
+  display: inline-block;
+  max-width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.option-content {
+  flex: 1;
+  height: auto;
+}
+
+.option-content > text {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  margin-bottom: 5rpx;
+}

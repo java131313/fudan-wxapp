@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    recruitDetail: {}
   },
 
   /**
@@ -68,8 +68,11 @@ Page({
 
   /* 获取招聘详情 */
   getRecruitDetail(id) {
+    let self = this;
     app.api.getRecruitDetail(id).then(res => {
-
+      self.setData({
+        recruitDetail: res.data.data
+      });
     });
   }
 })

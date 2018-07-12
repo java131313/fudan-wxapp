@@ -1,0 +1,4 @@
+<wxs src='../../wxs/filter.wxs' module='filter' />
+
+<text class="title">{{title}}</text>
+<text class="issuetime">{{filter.formatDate(issuetime)}}</text>

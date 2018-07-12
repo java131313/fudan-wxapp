@@ -12,61 +12,10 @@
   border-bottom: 5rpx solid #f5f5f5;
 }
 
-.recruit-container > text {
-  display: inline-block;
-}
-
-.recruit-title {
-  width: 100%;
-  height: auto;
-  font-weight: bold;
-  color: #333;
-  line-height: 35rpx;
-  margin-bottom: 10rpx;
-}
-
-.recruit-time {
-  width: 100%;
-  height: 22rpx;
-  color: #aaa;
-  line-height: 22rpx;
-  font-size: 0.8em;
-  overflow: hidden;
-}
-
 .recruit-content {
   width: 100%;
   height: auto;
   margin-top: 10rpx;
-}
-
-.recruit-option {
-  width: 100%;
-  height: auto;
-  font-size: 30rpx;
-  display: flex;
-  margin-bottom: 5rpx;
-}
-
-.recruit-option > text {
-  display: inline-block;
-}
-
-.recruit-option-title {
-  width: 23%;
-  overflow: hidden;
-}
-
-.recruit-option-content {
-  width: 77%;
-  height: auto;
-}
-
-.recruit-option-content > text {
-  width: 100%;
-  height: auto;
-  display: inline-block;
-  margin-bottom: 5rpx;
 }
 
 .recruit-btn {

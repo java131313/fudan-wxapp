@@ -1,41 +1,12 @@
 <view class='main-wrapper'>
   <view class='recruit-container'>
-    <text class="recruit-title">招募视频拍摄/制作高手</text>
-    <text class="recruit-time">2018-06-11</text>
+    <title-bar title='{{recruitDetail.title}}' issuetime='{{recruitDetail.issuetime}}' />
     <view class="recruit-content">
-      <view class="recruit-option">
-        <text class="recruit-option-title">岗位职责：</text>
-        <view class="recruit-option-content">
-          <text>为学校重大活动拍摄制作短视频</text>
-        </view>
-      </view>
-      <view class="recruit-option">
-        <text class="recruit-option-title">任职要求：</text>
-        <view class="recruit-option-content">
-          <text>1.具备扎实的专业素养</text>
-          <text>2.熟练运用premiere\AE \vegas</text>
-          <text>3.对镜头语言和音乐有良好的认知</text>
-          <text>4.工作责任心强，性格开朗</text>
-        </view>
-      </view>
-      <view class="recruit-option">
-        <text class="recruit-option-title">薪资费用：</text>
-        <view class="recruit-option-content">
-          <text>3000元/月</text>
-        </view>
-      </view>
-      <view class="recruit-option">
-        <text class="recruit-option-title">招聘人数：</text>
-        <view class="recruit-option-content">
-          <text>3人</text>
-        </view>
-      </view>
-      <view class="recruit-option">
-        <text class="recruit-option-title">截止日期：</text>
-        <view class="recruit-option-content">
-          <text>2018-08-01</text>
-        </view>
-      </view>
+      <option-bar option_title='岗位职责：' option_content='{{recruitDetail.target}}' />
+      <option-bar option_title='任职要求：' option_content='{{recruitDetail.require}}' />
+      <option-bar wx:if='{{pay_show == 1}}' option_title='薪资费用：' option_content='{{recruitDetail.pay}}元/月' />
+      <!-- <option-bar option_title='招聘人数：' option_content='{{recruitDetail.target}}' />
+      <option-bar option_title='截止日期：' option_content='{{recruitDetail.target}}' /> -->
     </view>
     <text class='recruit-btn'>岗位申请</text>
     <!-- <text class='recruit-btn after'>已提交岗位申请，请耐心等待审核</text> -->

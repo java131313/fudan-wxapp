@@ -1,0 +1,19 @@
+.title {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  font-weight: bold;
+  color: #333;
+  line-height: 35rpx;
+  margin-bottom: 10rpx;
+}
+
+.issuetime {
+  display: inline-block;
+  width: 100%;
+  height: 22rpx;
+  color: #aaa;
+  line-height: 22rpx;
+  font-size: 0.8em;
+  overflow: hidden;
+}
