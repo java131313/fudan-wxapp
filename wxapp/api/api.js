@@ -139,6 +139,17 @@ class Api {
     return self.post(url, postData);
   }
 
+  /* 招聘详情 */
+  getRecruitDetail(id) {
+    let self = this;
+    let url = '/front/recruit';
+    let postData = {
+      id: id,
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
   /* session过期重新登录 */
   reLogin() {
     let self = this;

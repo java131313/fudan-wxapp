@@ -80,7 +80,7 @@ module.exports = {
         schoolText: '课程日历'
       },
       {
-        schoolNaviTo: "pages/index/index",
+        schoolNaviTo: "/package/index/pages/recruitDetails/recruitDetails",
         schoolUrl: '/images/kt2.png',
         schoolText: '场馆预定'
       },
