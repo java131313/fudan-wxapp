@@ -25,8 +25,8 @@
 </view>
 <block wx:for="{{comments}}" wx:key="{{item.id}}">
   <view class="commentContent">
-    <view class='commentContent_pic'>
-      <image src='{{item.avatar}}'></image>
+    <view class='commentContent_pic_parent'>
+      <image src='{{item.avatar}}' class='commentContent_pic'></image>
     </view>
     <view class='commentContent_all'>
       <view class='commentContent_name'>

@@ -65,6 +65,7 @@ Page({
   onShareAppMessage: function () {
   
   },
+  
   /* 获取投票详情 */
   getVoteDetail(id) {
     let self = this;

@@ -10,3 +10,12 @@ page {
 .overspread {
   width: 100%;
 }
+
+
+/* 评论位置定位 */
+.observer_position{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

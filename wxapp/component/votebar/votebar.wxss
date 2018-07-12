@@ -1,4 +1,7 @@
 /* wxapp/component/votebar/votebar.wxss */
+
+
+
 .vote {
   display: flex;
   justify-content: flex-start;

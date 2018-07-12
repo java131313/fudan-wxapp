@@ -1,1 +1,29 @@
 /* package/index/pages/voteDetails/voteDetails.wxss */
+.vote_synopsis{
+  width: 92%;
+  padding: 0 4%;
+  overflow: hidden;
+}
+
+.vote_title_parent{
+  padding-top: 17rpx;
+}
+.vote_title{
+  font-size: 36rpx;
+  line-height: 66rpx;
+  color: #333;
+  font-weight: bold;
+}
+.vote_publish{
+  text-align: left;
+}
+.vote_publish_time{
+  line-height: 78rpx;
+  font-size: 28rpx;
+  color: #aaaaaa;
+}
+.vote_publish_comment{
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #333;
+}
