@@ -10,7 +10,8 @@ Page({
    */
   data: {
     bgColor: app.CONFIG.BGCOLOR,
-    myVote: []
+    myVote: [],
+    voteDetailUrl: app.CONFIG.PAGE.VOTEDETAILS
   },
 
   /**

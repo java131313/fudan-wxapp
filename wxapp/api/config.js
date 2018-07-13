@@ -33,6 +33,7 @@ module.exports = {
     NEWSDETAILS: '/package/index/pages/newsDetails/newsDetails',
     VOTEDETAILS: '/package/index/pages/voteDetails/voteDetails',
     RECRUITDETAILS: '/package/index/pages/recruitDetails/recruitDetails',
+    RECRUITFORM: '/package/index/pages/recruitForm/recruitForm',
     /* 服务 */
     SERVICE: '/pages/service/service',
     /* 我的 */
@@ -75,7 +76,7 @@ module.exports = {
   },
   SCHOOL_SERVICE: {
     SCHOOL_ITEM: [{
-      schoolNaviTo: "/package/index/pages/voteDetails/voteDetails",
+        schoolNaviTo: "/package/index/pages/voteDetails/voteDetails",
         schoolUrl: '/images/kt1.png',
         schoolText: '课程日历'
       },

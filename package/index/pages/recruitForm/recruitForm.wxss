@@ -1,49 +1,63 @@
-.recruit_job{
-  line-height:108rpx ;
+.recruit_job {
+  line-height: 108rpx;
   font-size: 36rpx;
-  color: #333333;
+  color: #333;
   height: 108rpx;
   font-weight: bold;
+  margin-left: 3.7%;
 }
-.recruit_from{
+
+.recruit_from {
   width: 96.3%;
   padding-right: 3.7%;
 }
-.recruit_message{
+
+.recruit_message {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20rpx;
 }
-.recruit_message text{
+
+.recruit_message text {
   font-size: 30rpx;
   line-height: 74rpx;
-  color: #aaaaaa;
+  color: #aaa;
 }
-.recruit_message input{
+
+.recruit_message input {
   width: 78%;
   height: 74rpx;
   border: 1px solid #e7e7e7;
   margin-left: 2%;
 }
-.recruit_message textarea{
+
+.recruit_message textarea {
   width: 78%;
   border: 1px solid #e7e7e7;
   margin-left: 2%;
+  height: 500rpx;
 }
-.recruit_btn{
-  width: 100%;
-}
-.recruit_btn{
+
+.recruit_btn {
+  width: 92.6%;
+  margin-left: 3.7%;
   position: absolute;
   bottom: 0%;
   left: 0%;
+  border-top: 5rpx solid #f5f5f5;
 }
-.recruit_btn button{
+
+.recruit_btn button {
   display: inline-block;
   background: rgba(0, 0, 0, 0);
   width: 50%;
-  color:#999999;
+  color: #999;
 }
-.recruit_button::after{
+
+.recruit_btn :nth-child(2) {
+  color: #da0000 !important;
+}
+
+.recruit_button::after {
   border: none;
 }
