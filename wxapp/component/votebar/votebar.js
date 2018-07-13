@@ -10,13 +10,13 @@ Component({
     option_img: String,
     option_content: String,
     option_percent: Number,
-    progress_show:{
-      type:Boolean,
-      value:false
-    },
     option_isVote: {
       type: Boolean,
       value: false
+    },
+    showVote: {
+      type: Boolean,
+      value: true
     }
   },
 
@@ -24,7 +24,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    showProgress: false
   },
 
   /**
@@ -32,16 +32,23 @@ Component({
    */
   methods: {
     _vote(e) {
-      let id = e.currentTarget.dataset.vid;
       let self = this;
-      // app.api.voteClick(id).then(res => {
-      // console.log(this)
-      this.setData({
-        option_isVote: true,
-        progress_show:true
-      })
-      // });
-
+      let id = e.currentTarget.dataset.vid;
+      app.api.vote(id).then(res => {
+        self.triggerEvent('vote');
+      });
+    },
+    showProgressBar() {
+      let self = this;
+      self.setData({
+        showProgress: true
+      });
+    },
+    hideVote() {
+      let self = this;
+      self.setData({
+        showVote: false
+      });
     }
   }
 })

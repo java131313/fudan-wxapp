@@ -161,15 +161,15 @@ class Api {
     return self.post(url, postData);
   }
 
-  // 点击投票效果
-  voteClick(id){
+  /* 投票 */
+  vote(id) {
     let self = this;
     let url = '/front/voteIt';
     let postData = {
-      id:id,
+      id: id,
       session_id: self.getSessionId()
     };
-    return self.post(url,postData);
+    return self.post(url, postData);
   }
 
   /* session过期重新登录 */

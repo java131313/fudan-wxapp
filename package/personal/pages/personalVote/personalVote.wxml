@@ -3,7 +3,7 @@
 <view class="main-wrapper" style='background:{{bgColor}}'>
   <view class='vote-container'>
     <block wx:for='{{myVote}}' wx:key='{{item.id}}'>
-      <guide-bar guide_naviUrl='{{voteDetailUrl}}id={{item.id}}' guide_title='{{item.name}}' guide_content='投票时间：{{filter.formatDate(item.createtime)}}' />
+      <guide-bar guide_naviUrl='{{voteDetailUrl}}?id={{item.id}}' guide_title='{{item.name}}' guide_content='投票时间：{{filter.formatDate(item.createtime)}}' />
     </block>
   </view>
 </view>

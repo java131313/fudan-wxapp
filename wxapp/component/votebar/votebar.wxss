@@ -39,9 +39,14 @@
   font-size: 32rpx;
 }
 
-.vote_temp {
+.progress_block {
   width: 39.33%;
   margin-top: 38rpx;
+  color: #cc1a1a;
+}
+
+.progress_none {
+  display: none;
 }
 
 .vote_status {
