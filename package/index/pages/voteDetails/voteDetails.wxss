@@ -17,3 +17,7 @@
   line-height: 40rpx;
   color: #333;
 }
+
+.operate_top {
+  height: 20rpx;
+}
