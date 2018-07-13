@@ -3,6 +3,7 @@
   "usingComponents": {
     "title-bar": "/wxapp/component/titlebar/titlebar",
     "vote-bar": "/wxapp/component/votebar/votebar",
-    "comment-bar": "/wxapp/component/commentbar/commentbar"
+    "comment-bar": "/wxapp/component/commentbar/commentbar",
+    "operate-bar": "/wxapp/component/operatebar/operatebar"
   }
 }

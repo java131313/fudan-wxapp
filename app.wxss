@@ -3,17 +3,14 @@ page {
   height: 100%;
 }
 
+.main-wrapper {
+  min-height: 92%;
+}
+
 .clear {
   clear: both;
 }
 
 .overspread {
-  width: 100%;
-}
-
-.commentbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
 }

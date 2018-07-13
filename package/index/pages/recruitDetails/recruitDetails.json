@@ -3,6 +3,7 @@
   "usingComponents": {
     "title-bar": "/wxapp/component/titlebar/titlebar",
     "option-bar": "/wxapp/component/optionbar/optionbar",
+    "comment-bar": "/wxapp/component/commentbar/commentbar",
     "operate-bar": "/wxapp/component/operatebar/operatebar"
   }
 }

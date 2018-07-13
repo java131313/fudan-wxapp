@@ -32,10 +32,16 @@ function arrayIsContain(array, arg) {
   else return array.indexOf(arg) > -1 ? true : false;
 }
 
+function imageSrcParse(path) {
+  var domain = 'https://fd.gxdianpu.com';
+  return domain + path;
+}
+
 module.exports = {
   split: split,
   formatPercent: formatPercent,
   formatDate: formatDate,
   formatNumber: formatNumber,
-  arrayIsContain: arrayIsContain
+  arrayIsContain: arrayIsContain,
+  imageSrcParse: imageSrcParse
 }

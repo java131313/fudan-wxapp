@@ -16,17 +16,22 @@
 }
 
 .vote_pic {
-  width: 11.7%;
+  width: auto;
 }
 
 .vote_pic image {
-  width: 100%;
+  width: 90rpx;
   height: 90rpx;
   margin-top: 14rpx;
+  border-radius: 50%;
 }
 
 .vote_text {
-  width: 16.8%;
+  width: 19.8%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .vote_text text {
@@ -35,20 +40,20 @@
 }
 
 .vote_temp {
-  width: 33.33%;
+  width: 39.33%;
   margin-top: 38rpx;
 }
 
 .vote_status {
-  width: 29%;
+  width: 20%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .vote_status_yes {
   display: inline-block;
-  width: 50%;
+  width: 70%;
   text-align: center;
   line-height: 62rpx;
   background: #fff3f3;
@@ -58,10 +63,10 @@
 
 .vote_status_no {
   display: inline-block;
-  width: 50%;
+  width: 70%;
   text-align: center;
   line-height: 62rpx;
-  border: 1px solid #de6b6b;
+  border: 2rpx solid #de6b6b;
   color: #de6b6b;
   font-size: 30rpx;
 }

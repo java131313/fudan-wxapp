@@ -13,3 +13,4 @@
     <operate-bar support_num='{{recruitDetail.support_num}}' comment_num='{{recruitDetail.comment_num}}' share_num='{{recruitDetail.share_num}}' />
   </view>
 </view>
+<comment-bar comments="{{recruitDetail.comments}}" />
