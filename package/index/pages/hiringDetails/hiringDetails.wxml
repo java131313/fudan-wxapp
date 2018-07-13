@@ -1,0 +1,31 @@
+<view class='recruit'>
+  <text class='recruit_job'>招募视频拍摄/制作高手 拷贝</text>
+</view>
+<view class='recruit_from'>
+  <form>
+    <view class='recruit_message'>
+      <text>姓名</text>
+      <input type='text'></input>
+    </view>
+    <view class='recruit_message'>
+      <text>学院</text>
+      <input type='text'></input>
+    </view>
+    <view class='recruit_message'>
+      <text>专业</text>
+      <input type='text'></input>
+    </view>
+    <view class='recruit_message'>
+      <text>联系方式</text>
+      <input type='text'></input>
+    </view>
+    <view class='recruit_message'>
+      <text>个人简历</text>
+      <textarea></textarea>
+    </view>
+    <view class='recruit_btn'>
+      <button class='recruit_button'>取消</button>
+      <button class='recruit_button'>确定</button>
+    </view>
+  </form>
+</view>

@@ -1,13 +1,19 @@
-// wxapp/component/votebar/votebar.js
+const app = getApp();
+
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
+    option_num: Number,
     option_id: Number,
     option_img: String,
     option_content: String,
     option_percent: Number,
+    progress_show:{
+      type:Boolean,
+      value:false
+    },
     option_isVote: {
       type: Boolean,
       value: false
@@ -25,8 +31,17 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    _vote(e){
-      console.warn(e);
+    _vote(e) {
+      let id = e.currentTarget.dataset.vid;
+      let self = this;
+      // app.api.voteClick(id).then(res => {
+      // console.log(this)
+      this.setData({
+        option_isVote: true,
+        progress_show:true
+      })
+      // });
+
     }
   }
 })

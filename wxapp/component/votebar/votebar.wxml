@@ -1,6 +1,6 @@
 <view class="vote">
   <view class='vote_index'>
-    <text>{{option_id}}</text>
+    <text>{{option_num}}</text>
   </view>
   <view class='vote_pic'>
     <image src='{{option_img}}'></image>
@@ -9,7 +9,7 @@
     <text>{{option_content}}</text>
   </view>
   <view class='vote_temp'>
-    <progress percent="{{option_percent}}" show-info active stroke-width="4" activeColor="#cc1a1a" backgroundColor="#fff" />
+    <progress percent="{{option_percent}}" show-info active stroke-width="4" activeColor="#cc1a1a" backgroundColor="#fff" wx:if="{{progress_show}}" />
   </view>
   <view class='vote_status'>
     <text wx:if='{{option_isVote}}' class='vote_status_yes'>已投</text>

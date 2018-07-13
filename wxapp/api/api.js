@@ -156,9 +156,20 @@ class Api {
     let url = '/front/vote';
     let postData = {
       id: id,
-      session_id:self.getSessionId()
+      session_id: self.getSessionId()
     };
     return self.post(url, postData);
+  }
+
+  // 点击投票效果
+  voteClick(id){
+    let self = this;
+    let url = '/front/voteIt';
+    let postData = {
+      id:id,
+      session_id: self.getSessionId()
+    };
+    return self.post(url,postData);
   }
 
   /* session过期重新登录 */
