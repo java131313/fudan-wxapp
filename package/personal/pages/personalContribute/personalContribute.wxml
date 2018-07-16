@@ -1,7 +1,9 @@
+<wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
+
 <view class="main-wrapper" style='background:{{bgColor}}'>
   <view class='contribute-container'>
     <block wx:for='{{myContribution}}' wx:key='{{item.id}}'>
-      <guide-bar guide_naviUrl='' guide_title='{{item.title}}' guide_content='投稿时间：{{item.createtime}}' />
+      <guide-bar guide_naviUrl='' guide_title='{{item.title}}' guide_content='投稿时间：{{filter.formatDate(item.createtime)}}' />
     </block>
   </view>
 </view>

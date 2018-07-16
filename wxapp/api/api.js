@@ -1,10 +1,8 @@
-import {
-  MockData
-} from '../mock/mockData.js';
+import MockData from '../mock/mockData.js';
 const CONFIG = require('config.js');
 const mockData = new MockData();
 
-class Api {
+export default class Api {
   constructor() {
     let self = this;
     self.isMock = CONFIG.MOCK.STATUS;
@@ -172,6 +170,16 @@ class Api {
     return self.post(url, postData);
   }
 
+  /* 岗位申请 */
+  recruitApply(recruitFormData) {
+    let self = this;
+    let url = '/front/recruitApply';
+    let postData = Object.assign(recruitFormData, {
+      session_id: self.getSessionId()
+    });
+    return self.post(url, postData);
+  }
+
   /* session过期重新登录 */
   reLogin() {
     let self = this;
@@ -219,6 +227,7 @@ class Api {
     if (!url || !method) return;
     let self = this;
     let service = CONFIG.DEBUG.STATUS ? CONFIG.DEBUG.API : CONFIG.HTTP.API;
+    console.log(`${url}提交数据: `, data);
     return new Promise((resolve, reject) => {
       wx.request({
         url: service + url,
@@ -226,8 +235,9 @@ class Api {
         header: header || {},
         method: method.toLocaleUpperCase(),
         success: function(res) {
-          console.log(res.data.msg);
+          console.log('后台返回的Message: ', res.data.msg);
           if (res.data.code == 200) {
+            console.log(`${url}请求成功返回数据: `, res);
             resolve(res);
           } else if (res.data.code == 400) {
             /* session过期需要重新登录一次 */
@@ -253,8 +263,4 @@ class Api {
       });
     });
   }
-}
-
-module.exports = {
-  Api: Api
 }

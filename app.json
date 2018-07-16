@@ -58,8 +58,7 @@
         "pages/newsDetails/newsDetails",
         "pages/voteDetails/voteDetails",
         "pages/recruitDetails/recruitDetails",
-        "pages/recruitForm/recruitForm",
-        "pages/mobileDetails/mobileDetails"
+        "pages/recruitForm/recruitForm"
       ]
     }
   ]

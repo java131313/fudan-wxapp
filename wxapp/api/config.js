@@ -43,8 +43,8 @@ module.exports = {
     SELFTAGS: '/package/personal/pages/interestTags/interestTags',
     SELFVOTE: '/package/personal/pages/personalVote/personalVote',
     SELFACTIVE: '/package/personal/pages/personalActive/personalActive',
-    SELFComment: '/package/personal/pages/personalComment/personalComment',
-    SELFContribute: '/package/personal/pages/personalContribute/personalContribute',
+    SELFCOMMENT: '/package/personal/pages/personalComment/personalComment',
+    SELFCONTRIBUTE: '/package/personal/pages/personalContribute/personalContribute',
   },
   PERSONAL: {
     ACTION_BAR_ITEM: [{

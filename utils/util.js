@@ -1,9 +1,7 @@
-import {
-  Api
-} from '../wxapp/api/api.js';
+import Api from '../wxapp/api/api.js';
 const api = new Api();
 
-class Util {
+export default class Util {
   constructor() {
     let self = this;
   }
@@ -58,6 +56,42 @@ class Util {
           }
         }
       })
+    });
+  }
+
+  /* 展示消息弹窗 */
+  static showToast(options) {
+    if (options.image) {
+      switch (options.image) {
+        case 1:
+          options.image = '/images/ok.png';
+          break;
+        case 2:
+          options.image = '/images/error.png';
+          break;
+        case 3:
+          options.image = '/images/warning.png';
+          break;
+      }
+    }
+    let defaultOption = {
+      title: '提示',
+      image: '/images/ok.png',
+      duration: 2000
+    };
+    options = Object.assign(defaultOption, options || {});
+    return new Promise((resolve, reject) => {
+      wx.showToast({
+        title: options.title,
+        image: options.image,
+        duration: 2000,
+        success: res => {
+          resolve(res);
+        },
+        fail: res => {
+          reject(res);
+        }
+      });
     });
   }
 
@@ -236,8 +270,29 @@ class Util {
       }
     }
   }
-}
 
-module.exports = {
-  Util: Util
+  /* 验证用户是否有功能操作权限 */
+  static checkIsHasPermission() {
+    let self = this;
+    let nohasPermissonFunc = () => {
+      self.showModal({
+        content: '对不起，您没有此操作权限，请进行身份认证！',
+        confirmText: '前去认证',
+        cancelText: '暂不认证'
+      }).then(() => {
+        wx.navigateTo({
+          url: getApp().CONFIG.PAGE.LOGIN
+        });
+      });
+      return false;
+    };
+    try {
+      let role = getApp().globalData.userInfo.role;
+      if (role == getApp().ENUM.Identity.Teacher || role == getApp().ENUM.Identity.Student) return true;
+      nohasPermissonFunc();
+    } catch (e) {
+      console.warn(e);
+      nohasPermissonFunc();
+    }
+  }
 }

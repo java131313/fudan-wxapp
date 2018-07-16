@@ -1,7 +1,7 @@
 import Mock from 'mock.js';
 const analogData = require('analogData.js');
 
-class MockData {
+export default class MockData {
   constructor() {
     let self = this;
   }
@@ -78,8 +78,4 @@ class MockData {
         });
     }
   }
-}
-
-module.exports = {
-  MockData: MockData
 }

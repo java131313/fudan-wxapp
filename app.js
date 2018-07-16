@@ -1,12 +1,7 @@
-import {
-  Util
-} from 'utils/util.js';
-import {
-  Api
-} from 'wxapp/api/api.js';
-import {
-  MockData
-} from 'wxapp/mock/mockData.js';
+import Util from 'utils/util.js';
+import Api from 'wxapp/api/api.js';
+import wxValidate from 'utils/validate.js';
+import MockData from 'wxapp/mock/mockData.js';
 const CONFIG = require('wxapp/api/config.js');
 const ENUM = require('utils/enum.js');
 const api = new Api();
@@ -73,5 +68,6 @@ App({
   CONFIG: CONFIG,
   ENUM: ENUM,
   api: api,
+  wxValidate: (rules, messages) => new wxValidate(rules, messages),
   mockData: mockData
 })

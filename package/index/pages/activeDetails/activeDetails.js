@@ -1,4 +1,5 @@
-// package/personal/pages/activeDetails/activeDetails.js
+import Util from '../../../../utils/util.js';
+
 Page({
 
   /**
@@ -62,5 +63,11 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 活动报名 */
+  activeRegister(e) {
+    let self = this;
+    if (!Util.checkIsHasPermission()) return;
   }
 })

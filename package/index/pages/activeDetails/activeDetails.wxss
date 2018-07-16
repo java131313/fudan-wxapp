@@ -1,1 +1,76 @@
-/* package/personal/pages/activeDetails/activeDetails.wxss */
+.main-wrapper {
+  width: 92.6%;
+  padding: 0 3.7%;
+  height: auto;
+  overflow: hidden;
+}
+
+.active-container {
+  width: 100%;
+  height: auto;
+  margin-top: 20rpx;
+}
+
+.active-content {
+  width: 100%;
+  height: auto;
+  margin-top: 10rpx;
+}
+
+.activ_btn {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.activ_from {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.btn1 {
+  display: inline-block;
+  width: 36.3%;
+  border: 1rpx solid #d95454;
+  font-size: 32rpx;
+  line-height: 82rpx;
+  color: #cc1a1a;
+  text-align: center;
+  background: rgba(255, 255, 255, 0);
+}
+
+.btn2 {
+  display: inline-block;
+  width: 60.2%;
+  border: 1rpx solid #cc1a1a;
+  margin-left: 3%;
+  font-size: 32rpx;
+  line-height: 82rpx;
+  background: #cc1a1a;
+  color: #fff;
+}
+
+.activ_poster {
+  width: 100%;
+  margin: 20rpx 0rpx 30rpx 0rpx;
+}
+
+.activ_poster_title {
+  font-size: 32rpx;
+  line-height: 54rpx;
+  color: #333;
+}
+
+.activ_poster_content {
+  display: block;
+  font-size: 32rpx;
+  line-height: 54rpx;
+  color: #333;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+.activ_poster_img {
+  width: 100%;
+}

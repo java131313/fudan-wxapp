@@ -1,4 +1,6 @@
-// package/index/pages/hiringDetails/hiringDetails.js
+import Util from '../../../../utils/util.js';
+const app = getApp();
+
 Page({
 
   /**
@@ -18,6 +20,7 @@ Page({
       recruitId: options.id,
       recruitTitle: options.title
     });
+    self.initValidateRules();
   },
 
   /**
@@ -69,8 +72,58 @@ Page({
 
   },
 
+  /* 加载表单验证规则 */
+  initValidateRules() {
+    let self = this;
+    self.wxValidate = app.wxValidate({
+      name: {
+        required: true,
+        minlength: 2,
+        maxlength: 10
+      },
+      contact: {
+        required: true,
+        tel: true
+      }
+    }, {
+      name: {
+        required: '请填写姓名'
+      },
+      contact: {
+        required: '请填写联系方式'
+      }
+    });
+  },
+
   /* 提交应聘申请 */
-  recruitSubmit(e){
-    debugger;
+  recruitSubmit(e) {
+    if (!Util.checkIsHasPermission()) return;
+    let self = this;
+    if (!self.wxValidate.checkForm(e)) {
+      const error = self.wxValidate.errorList[0];
+      Util.showToast({
+        title: error.msg,
+        image: 2
+      });
+    } else {
+      let formData = e.detail.value;
+      Object.assign(formData, {
+        id: self.data.recruitId
+      });
+      app.api.recruitApply(formData).then(res => {
+        Util.showToast({
+          title: '岗位申请成功！'
+        }).then(() => {
+          wx.redirectTo({
+            url: app.CONFIG.PAGE.RECRUITDETAILS
+          });
+        });
+      }, res => {
+        Util.showToast({
+          title: res.data.msg,
+          image: 3
+        });
+      });
+    }
   }
 })
