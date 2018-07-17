@@ -34,6 +34,7 @@ module.exports = {
     VOTEDETAILS: '/package/index/pages/voteDetails/voteDetails',
     RECRUITDETAILS: '/package/index/pages/recruitDetails/recruitDetails',
     RECRUITFORM: '/package/index/pages/recruitForm/recruitForm',
+    CONTRIBUTEForm: '/package/index/pages/contributeForm/contributeForm',
     /* 服务 */
     SERVICE: '/pages/service/service',
     /* 我的 */
