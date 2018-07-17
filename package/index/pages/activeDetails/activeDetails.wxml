@@ -1,12 +1,13 @@
+<wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
+
 <view class='main-wrapper'>
   <view class='active-container'>
-    <title-bar title='看完我哥萨克贵金属了挂失卡了嘎啊' issuetime='2018-07-05' />
+    <title-bar title='{{activityDetail.title}}' issuetime='{{activityDetail.issuetime}}' />
     <view class='active-content'>
-      <option-bar option_title='活动时间：' option_content='测试1' />
-      <option-bar option_title='活动地点：' option_content='测试2' />
-      <option-bar option_title='主办单位：' option_content='测试3' />
-      <option-bar option_title='协办单位：' option_content='测试4' />
-      <option-bar option_title='承办单位：' option_content='测试5' />
+      <option-bar option_title='活动时间：' option_content='{{filter.formatDate(activityDetail.begintime)}}' />
+      <option-bar option_title='活动地点：' option_content='{{activityDetail.site}}' />
+      <option-bar option_title='主办单位：' option_content='{{activityDetail.organ}}' />
+      <option-bar option_title='承办单位：' option_content='{{activityDetail.under}}' />
     </view>
   </view>
   <view class="activ_btn">
@@ -20,11 +21,12 @@
       <text class='activ_poster_title'>活动介绍：</text>
     </view>
     <view class='activ_poster_content_parent'>
-      <text class='activ_poster_content'>这场演讲将引发一些关于新技术，尤其是人工智能和机器学习，将如何影响设计师的创造力与设计方式的思考。这场演讲将引发一些关于新技术，尤其是人工智能和机器学习，将如何影响设计师的创造力与设计方式的思考。这场演讲将引发一些关于新技术，尤其是人工智能和机器学习，将如何影响设计师的创造力与设计方式的思考。这场演讲将引发一些关于新技术，尤其是人工智能和机器学习，将如何影响设计师的创造力与设计方式的思考。这场演讲将引发一些关于新技术，尤其是人工智能和机器学习，将如何影响设计师的创造力与设计方式的思考。</text>
+      <text class='activ_poster_content'>{{activityDetail.intro}}</text>
       <view class='activ_poster_img_parent'>
-        <image class='activ_poster_img' src='/images/mk1.png'></image>
+        <image class='activ_poster_img' src='{{activityDetail.playbill}}'></image>
       </view>
     </view>
   </view>
-  <operate-bar support_num='66' comment_num='51' share_num='88' />
+  <operate-bar support_num='{{activityDetail.support_num}}' comment_num='{{activityDetail.comment_num}}' share_num='{{activityDetail.share_num}}' />
 </view>
+<comment-bar comments="{{activityDetail.comments}}" />

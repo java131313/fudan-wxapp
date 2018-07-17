@@ -1,66 +1,74 @@
-page{
+page {
   background: #f4f4f4;
 }
-.bgPic{
+
+.bgPic {
   width: 100%;
   height: 242rpx;
   background: url("http://xinzhibang168-1253521270.costj.myqcloud.com/images/mk1.png") no-repeat center center;
-  background-size:cover; 
+  background-size: cover;
 }
-.contribute{
+
+.contribute {
   width: 92%;
-  padding: 0 4%;
+  padding: 0 4% 10%;
 }
-.compile_parent{
+
+.compile_parent {
   width: 100%;
 }
-.compile{
+
+.compile {
   display: block;
   width: 100%;
-  height: 510rpx!important;
+  height: 510rpx !important;
   background: #fff;
 }
 
-.uploading_text{
+.uploading_text {
   font-size: 28rpx;
   line-height: 76rpx;
-  color:#aaaaaa;
+  color: #aaa;
 }
-.uploading_parent{
+
+.uploading_parent {
   display: flex;
- flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-.uploading_first{
+
+.uploading_first {
   width: 18.4%;
   height: 135rpx;
   margin-right: 2%;
   margin-bottom: 20rpx;
   background: #fff;
   display: flex;
- justify-content: center;
+  justify-content: center;
   align-items: center;
 }
-.uploading_first:nth-child(5n){
+
+.uploading_first:nth-child(5n) {
   margin-right: 0%;
 }
-.uploading{
+
+.uploading {
   font-size: 30rpx;
   line-height: 60rpx;
-  color:#cccccc;
-   
+  color: #ccc;
 }
 
-.mmxx{
+.mmxx {
   width: 135rpx;
   height: 135rpx;
 }
 
-.uploading_sub_parent{
+.uploading_sub_parent {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.uploading_sub{
+
+.uploading_sub {
   display: inline-block;
   width: 61%;
   background: #cc1a1a;

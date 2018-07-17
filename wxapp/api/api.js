@@ -180,6 +180,58 @@ export default class Api {
     return self.post(url, postData);
   }
 
+  /* 提交稿件 */
+  contribute(imgPath, contributeFormData) {
+    let self = this;
+    let url = '/front/contribute';
+    let postData = Object.assign(contributeFormData, {
+      session_id: self.getSessionId()
+    });
+    return self.uploadImages(url, imgPath, contributeFormData, 'image[]');
+  }
+
+  /* 活动详情 */
+  getActivityDetails(id) {
+    let self = this;
+    let url = '/front/activity';
+    let postData = {
+      id: id,
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
+  /* 上传图片(支持多张) */
+  uploadImages(url, imgPath, formData, key) {
+    if (!url || !imgPath || imgPath.length == 0) return;
+    let service = CONFIG.DEBUG.STATUS ? CONFIG.DEBUG.API : CONFIG.HTTP.API;
+    let successCount = 0;
+    return new Promise((resolve, reject) => {
+      imgPath.forEach(x => {
+        wx.uploadFile({
+          url: `${service}${url}`,
+          filePath: imgPath,
+          name: key || 'file',
+          formData: formData || {},
+          success: res => {
+            if (res.data.code == 200) {
+              console.log('上传图片成功: ', res);
+              successCount++;
+              if (successCount == imgPath.length) resolve('上传所有图片成功！');
+            } else {
+              console.warn('上传图片失败: ', res);
+              reject(res);
+            }
+          },
+          fail: res => {
+            console.warn('请求报错,上传图片失败: ', res);
+            reject(res);
+          }
+        });
+      });
+    });
+  }
+
   /* session过期重新登录 */
   reLogin() {
     let self = this;

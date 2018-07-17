@@ -1,3 +1,5 @@
+<wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
+
 <view class='main-wrapper'>
   <view class='recruit-container'>
     <title-bar title='{{recruitDetail.title}}' issuetime='{{recruitDetail.issuetime}}' />
@@ -6,7 +8,7 @@
       <option-bar option_title='任职要求：' option_content='{{recruitDetail.require}}' />
       <option-bar wx:if='{{pay_show == 1}}' option_title='薪资费用：' option_content='{{recruitDetail.pay}}元/月' />
       <option-bar option_title='招聘人数：' option_content='{{recruitDetail.invite_num}}' />
-      <option-bar option_title='截止日期：' option_content='{{recruitDetail.endtime}}' />
+      <option-bar option_title='截止日期：' option_content='{{filter.formatDate(recruitDetail.endtime)}}' />
     </view>
     <text wx:if='{{recruitDetail.applied == 0}}' class='recruit-btn' bindtap='recruitApply'>岗位申请</text>
     <text wx:if='{{recruitDetail.applied == 1}}' class='recruit-btn after'>已提交岗位申请，请耐心等待审核</text>

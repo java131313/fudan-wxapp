@@ -34,7 +34,7 @@ module.exports = {
     VOTEDETAILS: '/package/index/pages/voteDetails/voteDetails',
     RECRUITDETAILS: '/package/index/pages/recruitDetails/recruitDetails',
     RECRUITFORM: '/package/index/pages/recruitForm/recruitForm',
-    CONTRIBUTEForm: '/package/index/pages/contributeForm/contributeForm',
+    CONTRIBUTEFORM: '/package/index/pages/contributeForm/contributeForm',
     /* 服务 */
     SERVICE: '/pages/service/service',
     /* 我的 */
@@ -87,7 +87,7 @@ module.exports = {
         schoolText: '场馆预定'
       },
       {
-        schoolNaviTo: "pages/index/index",
+        schoolNaviTo: "/package/index/pages/contributeForm/contributeForm",
         schoolUrl: '/images/kt3.png',
         schoolText: '空课室查询'
       }

@@ -1,16 +1,14 @@
 <view class='main-wrapper' style='background:{{bgColor}}'>
   <view class='person-top'>
     <navigator class='person-avatar-box' url='{{personalDetailsUrl}}'>
-      <image class='{{userInfo.avatar ? "person-avatar" : "person-avatar-default"}}' src='{{userInfo.avatar ? userInfo.avatar : "/images/default_avatar.png"}}'></image>
-      <!-- <open-data wx:if='{{userInfo.avatar}}' type="userAvatarUrl" class="person-avatar"></open-data> -->
+      <image wx:if='{{userInfo.avatar}}' class='person-avatar' src='{{userInfo.avatar}}'></image>
+      <open-data wx:if='{{!userInfo.avatar}}' type="userAvatarUrl" class="person-avatar"></open-data>
     </navigator>
     <view class='person-nickname-box'>
-      <text class="person-nickname">{{userInfo.name ? userInfo.name : userInfo.role_name}}</text>
-      <!-- <button wx:if='{{!userInfo.nickname}}' class='person-nickname' open-type='getUserInfo' bindgetuserinfo='wxAuthorize'>点击登录</button>
-      <open-data wx:if='{{userInfo.nickname}}' type="userNickName" class="person-nickname"></open-data> -->
+      <text wx:if='{{userInfo.nickname}}' class="person-nickname">{{userInfo.name ? userInfo.name : userInfo.nickname}}</text>
+      <open-data wx:if='{{!userInfo.nickname}}' type="userNickName" class="person-nickname"></open-data>
     </view>
     <view wx:if='{{userInfo.college}}' class='person-major-box'>
-      <!-- <navigator wx:if='{{!userInfo.college}}' class='person-major' url='{{authorizeIDUrl}}'>请完成身份认证</navigator> -->
       <text class='person-major'>{{userInfo.college}}</text>
       <view class='person-major-icon-box'>
         <image src='/images/major_icon.png'></image>

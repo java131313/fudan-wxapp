@@ -1,4 +1,5 @@
 import Util from '../../../../utils/util.js';
+const app = getApp();
 
 Page({
 
@@ -6,14 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    activityDetail: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options);
+    let self = this;
+    self.getActivityDetails(options.id);
   },
 
   /**
@@ -63,6 +65,17 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 获取活动详情 */
+  getActivityDetails(id) {
+    if (!id) return;
+    let self = this;
+    app.api.getActivityDetails(id).then(res => {
+      self.setData({
+        activityDetail: res.data.data
+      });
+    });
   },
 
   /* 活动报名 */
