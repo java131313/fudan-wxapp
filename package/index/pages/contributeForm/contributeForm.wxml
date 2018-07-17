@@ -1,2 +1,24 @@
-<!--package/index/pages/contributeForm/contributeForm.wxml-->
-<text>package/index/pages/contributeForm/contributeForm.wxml</text>
+  <view class='bgPic'></view> 
+<view class="contribute">
+ 
+  <form>
+    <view class='compile_parent'>
+      <textarea class='compile' auto-height placeholder="请输入文本(必填)"></textarea>
+    </view>
+    <text class='uploading_text'>分享图片(选填)</text>
+    <view class='uploading_parent'>
+      <!-- <image></image> -->
+      <view class='uploading_first' catchtap='uploadPictures'>
+        <text class='uploading' bindtap='uploadPictures'>十</text>
+      </view>
+      <block wx:for="{{imgSrc}}" wx:key='this'>
+        <view class='uploading_first'>
+          <image src="{{item}}" class='mmxx'></image>
+        </view>
+      </block>
+    </view>
+    <view class='uploading_sub_parent'>
+    <button class='uploading_sub'>提交</button>
+    </view>
+  </form>
+</view>

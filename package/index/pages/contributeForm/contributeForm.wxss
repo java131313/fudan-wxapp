@@ -1,1 +1,72 @@
-/* package/index/pages/contributeForm/contributeForm.wxss */
+page{
+  background: #f4f4f4;
+}
+.bgPic{
+  width: 100%;
+  height: 242rpx;
+  background: url("http://xinzhibang168-1253521270.costj.myqcloud.com/images/mk1.png") no-repeat center center;
+  background-size:cover; 
+}
+.contribute{
+  width: 92%;
+  padding: 0 4%;
+}
+.compile_parent{
+  width: 100%;
+}
+.compile{
+  display: block;
+  width: 100%;
+  height: 510rpx!important;
+  background: #fff;
+}
+
+.uploading_text{
+  font-size: 28rpx;
+  line-height: 76rpx;
+  color:#aaaaaa;
+}
+.uploading_parent{
+  display: flex;
+ flex-wrap: wrap;
+}
+.uploading_first{
+  width: 18.4%;
+  height: 135rpx;
+  margin-right: 2%;
+  margin-bottom: 20rpx;
+  background: #fff;
+  display: flex;
+ justify-content: center;
+  align-items: center;
+}
+.uploading_first:nth-child(5n){
+  margin-right: 0%;
+}
+.uploading{
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color:#cccccc;
+   
+}
+
+.mmxx{
+  width: 135rpx;
+  height: 135rpx;
+}
+
+.uploading_sub_parent{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.uploading_sub{
+  display: inline-block;
+  width: 61%;
+  background: #cc1a1a;
+  font-size: 32rpx;
+  line-height: 84rpx;
+  height: 84rpx;
+  color: #fff;
+  margin-top: 114rpx;
+}
