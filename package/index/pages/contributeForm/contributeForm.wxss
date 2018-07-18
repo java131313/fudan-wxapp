@@ -1,7 +1,22 @@
 page {
   background: #f4f4f4;
 }
-
+.contribute_title{
+  font-size: 36rpx;
+  line-height: 68rpx;
+  color: #333;
+  font-weight: bold;
+}
+.contribute_time{
+  font-size: 28rpx;
+  line-height: 88rpx;
+  color: #aaa;
+}
+.contribute_text{
+  line-height: 42rpx;
+  font-size: 30rpx;
+  color: #333;
+}
 .bgPic {
   width: 100%;
   height: 242rpx;

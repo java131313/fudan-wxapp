@@ -1,5 +1,15 @@
 <import src="../../../../wxapp/template/wxParse/wxParse.wxml" />
-
+<view class='contribute'>
+  <view class='contribute_title_parent'>
+  <text class='contribute_title'>{{contributionDetail.title}}</text>
+  </view>
+  <view class='contribute_time_parent'>
+  <text class='contribute_time'>{{contributionDetail.createtime}}</text>
+  </view>
+  <view class='contribute_text_parent'>
+  <text class='contribute_text'>{{contributionDetail.content}}</text>
+  </view>
+</view>
 <view class='bgPic'></view>
 <view class="contribute">
   <form>
