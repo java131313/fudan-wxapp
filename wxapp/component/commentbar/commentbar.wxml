@@ -35,9 +35,9 @@
     <form>
       <view class='commentView_title'>
         <textarea 
-        auto-focus
+        auto-focus="true"
         fixed="true"
-        cursor-spacing
+        cursor-spacing="10"
         >{{writeReview}}</textarea>
       </view>
       <view class='commentView_true'>
