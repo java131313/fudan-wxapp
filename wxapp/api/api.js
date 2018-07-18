@@ -180,18 +180,30 @@ export default class Api {
     return self.post(url, postData);
   }
 
+  /* 活动申请 */
+  activityApply(id) {
+    let self = this;
+    let url = '/front/activityApply';
+    let postData = {
+      id: id,
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
   /* 提交稿件 */
   contribute(imgPath, contributeFormData) {
     let self = this;
-    let url = '/front/contribute';
-    let postData = Object.assign(contributeFormData, {
-      session_id: self.getSessionId()
-    });
-    return self.uploadImages(url, imgPath, contributeFormData, 'image[]');
+    // let url = '/front/contribute';
+    // let postData = Object.assign(contributeFormData, {
+    //   session_id: self.getSessionId()
+    // });
+    // return self.uploadImages(url, imgPath, contributeFormData, 'image[]');
+
   }
 
   /* 活动详情 */
-  getActivityDetails(id) {
+  getActivityDetail(id) {
     let self = this;
     let url = '/front/activity';
     let postData = {
@@ -201,35 +213,62 @@ export default class Api {
     return self.post(url, postData);
   }
 
-  /* 上传图片(支持多张) */
-  uploadImages(url, imgPath, formData, key) {
-    if (!url || !imgPath || imgPath.length == 0) return;
-    let service = CONFIG.DEBUG.STATUS ? CONFIG.DEBUG.API : CONFIG.HTTP.API;
-    let successCount = 0;
-    return new Promise((resolve, reject) => {
-      imgPath.forEach(x => {
-        wx.uploadFile({
-          url: `${service}${url}`,
-          filePath: imgPath,
-          name: key || 'file',
-          formData: formData || {},
-          success: res => {
-            if (res.data.code == 200) {
-              console.log('上传图片成功: ', res);
-              successCount++;
-              if (successCount == imgPath.length) resolve('上传所有图片成功！');
-            } else {
-              console.warn('上传图片失败: ', res);
-              reject(res);
-            }
-          },
-          fail: res => {
-            console.warn('请求报错,上传图片失败: ', res);
-            reject(res);
-          }
-        });
+  /* 征稿详情 */
+  getContributionDetail(id) {
+    let self = this;
+    let url = '/front/contribution';
+    let postData = {
+      id: id
+    };
+    return self.getRequest(url, postData);
+  }
+
+  /* 获取腾讯云签名 */
+  getQCloudSign() {
+    let self = this;
+    let url = '/front/getQCloudSign';
+    return self.getRequest(url);
+  }
+
+  /* 上传图片到腾讯云(支持多张) */
+  uploadImages(url, imgPath, formData, key, header) {
+    // if (!url || !imgPath || imgPath.length == 0) return;
+    let self = this;
+    self.getQCloudSign().then(res => {
+      let host = 'https://xinzhibang168-1253521270.costj.myqcloud.com';
+      let dir_name = res.data.data.config.dir_name;
+      let cosSignatureUrl = host + '/v1/qc_cos/config?cos_path=' + dir_name;
+      self.requestData('post', cosSignatureUrl, {}, {}, true).then(res => {
+        console.warn('腾讯云: ', res);
       });
     });
+    // let service = CONFIG.DEBUG.STATUS ? CONFIG.DEBUG.API : CONFIG.HTTP.API;
+    // let successCount = 0;
+    // return new Promise((resolve, reject) => {
+    //   imgPath.forEach(x => {
+    //     wx.uploadFile({
+    //       url: `${service}${url}`,
+    //       header: header || {},
+    //       filePath: imgPath,
+    //       name: key || 'file',
+    //       formData: formData || {},
+    //       success: res => {
+    //         if (res.data.code == 200) {
+    //           console.log('上传图片成功: ', res);
+    //           successCount++;
+    //           if (successCount == imgPath.length) resolve('上传所有图片成功！');
+    //         } else {
+    //           console.warn('上传图片失败: ', res);
+    //           reject(res);
+    //         }
+    //       },
+    //       fail: res => {
+    //         console.warn('请求报错,上传图片失败: ', res);
+    //         reject(res);
+    //       }
+    //     });
+    //   });
+    // });
   }
 
   /* session过期重新登录 */
@@ -275,18 +314,22 @@ export default class Api {
   }
 
   /* wx请求数据 */
-  requestData(method, url, data, header) {
+  requestData(method, url, data, header, isNotSelfApi) {
     if (!url || !method) return;
     let self = this;
     let service = CONFIG.DEBUG.STATUS ? CONFIG.DEBUG.API : CONFIG.HTTP.API;
     console.log(`${url}提交数据: `, data);
     return new Promise((resolve, reject) => {
       wx.request({
-        url: service + url,
+        url: isNotSelfApi ? url : service + url,
         data: data || {},
         header: header || {},
         method: method.toLocaleUpperCase(),
         success: function(res) {
+          if (isNotSelfApi) {
+            resolve(res);
+            return;
+          }
           console.log('后台返回的Message: ', res.data.msg);
           if (res.data.code == 200) {
             console.log(`${url}请求成功返回数据: `, res);

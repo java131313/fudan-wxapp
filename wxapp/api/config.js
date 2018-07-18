@@ -87,7 +87,7 @@ module.exports = {
         schoolText: '场馆预定'
       },
       {
-        schoolNaviTo: "/package/index/pages/contributeForm/contributeForm",
+        schoolNaviTo: "/package/index/pages/contributeForm/contributeForm?id=1",
         schoolUrl: '/images/kt3.png',
         schoolText: '空课室查询'
       }

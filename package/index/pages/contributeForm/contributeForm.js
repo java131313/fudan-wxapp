@@ -1,10 +1,14 @@
-// package/index/pages/contributeForm/contributeForm.js
+import WxParse from '../../../../wxapp/template/wxParse/wxParse.js';
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    contributionId: '',
+    contributionDetail: {},
     tempFilePaths: []
   },
 
@@ -12,7 +16,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let self = this;
+    self.setData({
+      contributionId: options.id
+    });
+    self.getContributionDetail();
   },
 
   /**
@@ -64,6 +72,18 @@ Page({
 
   },
 
+  /* 获取征稿详情 */
+  getContributionDetail() {
+    let self = this;
+    if (!self.data.contributionId) return;
+    app.api.getContributionDetail(self.data.contributionId).then(res => {
+      self.setData({
+        contributionDetail: res.data.data
+      });
+      WxParse.wxParse('article', 'html', res.data.data.content, self, 30);
+    });
+  },
+
   /* 上传图片 */
   uploadPictures(e) {
     let self = this;
@@ -76,6 +96,7 @@ Page({
         self.setData({
           tempFilePaths: res.tempFilePaths
         });
+        app.api.uploadImages();
       }
     });
   }

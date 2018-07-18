@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    activityId: '',
     activityDetail: {}
   },
 
@@ -15,7 +16,10 @@ Page({
    */
   onLoad: function(options) {
     let self = this;
-    self.getActivityDetails(options.id);
+    self.setData({
+      activityId: options.id
+    });
+    self.getActivityDetail();
   },
 
   /**
@@ -68,10 +72,10 @@ Page({
   },
 
   /* 获取活动详情 */
-  getActivityDetails(id) {
-    if (!id) return;
+  getActivityDetail() {
     let self = this;
-    app.api.getActivityDetails(id).then(res => {
+    if (!self.data.activityId) return;
+    app.api.getActivityDetail(self.data.activityId).then(res => {
       self.setData({
         activityDetail: res.data.data
       });
@@ -82,5 +86,15 @@ Page({
   activeRegister(e) {
     let self = this;
     if (!Util.checkIsHasPermission()) return;
+    app.api.activityApply(self.data.activityId).then(res => {
+      Util.showToast({
+        title: '活动报名成功！'
+      });
+    }, res => {
+      Util.showToast({
+        title: res.data.msg,
+        image: 3
+      });
+    });
   }
 })
