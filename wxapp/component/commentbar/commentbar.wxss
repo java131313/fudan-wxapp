@@ -102,14 +102,14 @@
 }
 .commentView_title {
   font-size: 32rpx;
-  line-height: 110rpx;
-  color: #bbb;
+  color: #000;
   border-bottom: 1px solid #eeeeee;
+  padding: 32rpx 0;
 }
 .commentView_title input{
-  /* height: 500rpx;
-  width: 100%; */
-   font-size: 32rpx;
+  height: 500rpx;
+  width: 100%;
+  font-size: 32rpx;
   line-height: 110rpx;
 }
 .commentView_true{
@@ -132,4 +132,14 @@
   background: #fff;
   line-height: 136rpx;
   font-size: 36rpx;
+}
+
+.th-text {
+  width: 100%;
+  justify-content: center;
+  color: #000;
+  display: block;
+  height: 70rpx;
+  align-items: center;
+  max-height: 70rpx;
 }

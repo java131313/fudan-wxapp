@@ -14,6 +14,7 @@ Component({
     writeReview: '',
     show_commentView: false
   },
+  
 
   /**
    * 组件的方法列表
