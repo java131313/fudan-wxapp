@@ -1,20 +1,25 @@
 <import src="../../../../wxapp/template/wxParse/wxParse.wxml" />
-<view class='contribute'>
+<wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
+
+<view class='contribute-cotent'>
   <view class='contribute_title_parent'>
-  <text class='contribute_title'>{{contributionDetail.title}}</text>
+    <text class='contribute_title'>{{contributionDetail.title}}</text>
   </view>
   <view class='contribute_time_parent'>
-  <text class='contribute_time'>{{contributionDetail.createtime}}</text>
+    <text class='contribute_time'>{{filter.formatDate(contributionDetail.createtime)}}</text>
   </view>
   <view class='contribute_text_parent'>
-  <text class='contribute_text'>{{contributionDetail.content}}</text>
+    <template class='contribute_text' is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+  <view class='contribute_from_parent'>
+    <text class='contribute_from'>来源：{{contributionDetail.origin}}</text>
   </view>
 </view>
 <view class='bgPic'></view>
 <view class="contribute">
-  <form>
+  <form bindsubmit='contribute'>
     <view class='compile_parent'>
-      <textarea class='compile' auto-height placeholder="请输入文本(必填)"></textarea>
+      <textarea name='name' class='compile' auto-height placeholder="请输入文本(必填)"></textarea>
     </view>
     <text class='uploading_text'>分享图片(选填)</text>
     <view class='uploading_parent'>
@@ -28,7 +33,7 @@
       </block>
     </view>
     <view class='uploading_sub_parent'>
-      <button class='uploading_sub'>提交</button>
+      <button class='uploading_sub' form-type='submit'>提交</button>
     </view>
   </form>
 </view>

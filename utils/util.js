@@ -167,6 +167,11 @@ export default class Util {
   static getUserInfo() {
     return api.getUserInfo().then(res => {
       getApp().globalData.userInfo = res.data.data;
+      if (res.data.data.role == getApp().ENUM.Identity.Teacher || res.data.data.role == getApp().ENUM.Identity.Student) {
+        getApp().globalData.userInfo.isHasPermission = true;
+      } else {
+        getApp().globalData.userInfo.isHasPermission = false;
+      }
     });
   }
 
@@ -287,8 +292,8 @@ export default class Util {
       return false;
     };
     try {
-      let role = getApp().globalData.userInfo.role;
-      if (role == getApp().ENUM.Identity.Teacher || role == getApp().ENUM.Identity.Student) return true;
+      let isHasPermission = getApp().globalData.userInfo.isHasPermission;
+      if (isHasPermission) return true;
       nohasPermissonFunc();
     } catch (e) {
       console.warn(e);

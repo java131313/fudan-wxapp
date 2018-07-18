@@ -1,11 +1,12 @@
 <import src="../../../../wxapp/template/wxParse/wxParse.wxml" />
+<wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='main-wrapper'>
   <view class='news-container'>
     <view class='news-top'>
       <text class='news-title'>{{newsDetail.title}}</text>
       <text class='news-author'>作者：{{newsDetail.author}}</text>
-      <text class='news-date'>{{newsDetail.issuetime}}</text>
+      <text class='news-date'>{{filter.formatDate(newsDetail.issuetime)}}</text>
     </view>
     <view class="news-content">
       <template is="wxParse" data="{{wxParseData:article.nodes}}" />

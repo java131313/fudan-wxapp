@@ -1,4 +1,5 @@
 import MockData from '../mock/mockData.js';
+import COS from 'cos-wx-sdk-v5.js';
 const CONFIG = require('config.js');
 const mockData = new MockData();
 
@@ -194,7 +195,7 @@ export default class Api {
   /* 提交稿件 */
   contribute(imgPath, contributeFormData) {
     let self = this;
-    // let url = '/front/contribute';
+    let url = '/front/contribute';
     // let postData = Object.assign(contributeFormData, {
     //   session_id: self.getSessionId()
     // });
@@ -231,16 +232,70 @@ export default class Api {
   }
 
   /* 上传图片到腾讯云(支持多张) */
-  uploadImages(url, imgPath, formData, key, header) {
-    // if (!url || !imgPath || imgPath.length == 0) return;
+  uploadImages(imgPath) {
+    if (!imgPath || imgPath.length == 0) return;
     let self = this;
+    let requestCallback = (err, data) => {
+      console.log(err || data);
+      if (err && err.error) {
+        wx.showModal({
+          title: '返回错误',
+          content: '请求失败：' + err.error.Message + '；状态码：' + err.statusCode,
+          showCancel: false
+        });
+      } else if (err) {
+        wx.showModal({
+          title: '请求出错',
+          content: '请求出错：' + err + '；状态码：' + err.statusCode,
+          showCancel: false
+        });
+      } else {
+        wx.showToast({
+          title: '请求成功',
+          icon: 'success',
+          duration: 3000
+        });
+      }
+    };
     self.getQCloudSign().then(res => {
-      let host = 'https://xinzhibang168-1253521270.costj.myqcloud.com';
-      let dir_name = res.data.data.config.dir_name;
-      let cosSignatureUrl = host + '/v1/qc_cos/config?cos_path=' + dir_name;
-      self.requestData('post', cosSignatureUrl, {}, {}, true).then(res => {
-        console.warn('腾讯云: ', res);
+      let config = res.data.data.config;
+      let Key = imgPath[0].substr(imgPath[0].lastIndexOf('/') + 1); // 这里指定上传的文件名
+      // let prefix = 'https://' + config.bucket + '.cos.' + config.region + '.myqcloud.com/files/v2/' + config.appid;
+      let prefix = "https://" + config.region + ".file.myqcloud.com/files/v2/" + config.appid + "/" + config.bucket + "/uploads/contri/20180721/";
+      const cos = new COS({
+        getAuthorization: function(params, callback) {
+          var authorization = COS.getAuthorization({
+            SecretId: config.cos.secretid,
+            SecretKey: config.cos.secretkey,
+            Method: params.Method,
+            Key: params.Key
+          });
+          callback(authorization);
+        }
       });
+      cos.postObject({
+        Bucket: `${config.bucket}-${config.appid}`,
+        Region: config.region,
+        Key: 'uploads/Ymd/testpeach.jpg',
+        FilePath: imgPath[0],
+        onProgress: function(info) {
+          console.log(JSON.stringify(info));
+        }
+      }, requestCallback);
+      // wx.uploadFile({
+      //   url: prefix,
+      //   formData: {
+      //     'Key': Key,
+      //     'success_action_status': 200,
+      //     'Signature': config.signature,
+      //     'x-cos-security-token': config.token
+      //   },
+      //   filePath: imgPath[0],
+      //   name: 'file',
+      //   success: res => {
+      //     console.warn('腾讯云测试：', res);
+      //   }
+      // })
     });
     // let service = CONFIG.DEBUG.STATUS ? CONFIG.DEBUG.API : CONFIG.HTTP.API;
     // let successCount = 0;

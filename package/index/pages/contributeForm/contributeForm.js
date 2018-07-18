@@ -1,4 +1,5 @@
 import WxParse from '../../../../wxapp/template/wxParse/wxParse.js';
+import Util from '../../../../utils/util.js';
 const app = getApp();
 
 Page({
@@ -20,6 +21,7 @@ Page({
     self.setData({
       contributionId: options.id
     });
+    self.initValidateRules();
     self.getContributionDetail();
   },
 
@@ -72,6 +74,20 @@ Page({
 
   },
 
+  /* 加载表单验证规则 */
+  initValidateRules() {
+    let self = this;
+    self.wxValidate = app.wxValidate({
+      name: {
+        required: true
+      }
+    }, {
+      name: {
+        required: '请填写征稿内容'
+      }
+    });
+  },
+
   /* 获取征稿详情 */
   getContributionDetail() {
     let self = this;
@@ -96,8 +112,36 @@ Page({
         self.setData({
           tempFilePaths: res.tempFilePaths
         });
-        app.api.uploadImages();
+        app.api.uploadImages(tempFilePaths);
       }
     });
+  },
+
+  /* 提交征稿 */
+  contribute(e) {
+    if (!Util.checkIsHasPermission()) return;
+    let self = this;
+    if (!self.wxValidate.checkForm(e)) {
+      const error = self.wxValidate.errorList[0];
+      Util.showToast({
+        title: error.msg,
+        image: 2
+      });
+    } else {
+      let formData = e.detail.value;
+      Object.assign(formData, {
+        id: self.data.contributionId
+      });
+      app.api.contribute(self.data.tempFilePaths, formData).then(res => {
+        Util.showToast({
+          title: '提交征稿成功！'
+        });
+      }, res => {
+        Util.showToast({
+          title: res.data.msg,
+          image: 3
+        });
+      });
+    }
   }
 })
