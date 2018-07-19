@@ -78,17 +78,17 @@ module.exports = {
   SCHOOL_SERVICE: {
     SCHOOL_ITEM: [{
         schoolNaviTo: "/package/index/pages/voteDetails/voteDetails?id=1",
-        schoolUrl: '/images/kt1.png',
+        schoolUrl: 'https://xinzhibang168-1253521270.costj.myqcloud.com/images/kt1.png',
         schoolText: '课程日历'
       },
       {
         schoolNaviTo: "/package/index/pages/recruitDetails/recruitDetails",
-        schoolUrl: '/images/kt2.png',
+        schoolUrl: 'https://xinzhibang168-1253521270.costj.myqcloud.com/images/kt2.png',
         schoolText: '场馆预定'
       },
       {
         schoolNaviTo: "/package/index/pages/contributeForm/contributeForm?id=1",
-        schoolUrl: '/images/kt3.png',
+        schoolUrl: 'https://xinzhibang168-1253521270.costj.myqcloud.com/images/kt3.png',
         schoolText: '空课室查询'
       }
     ]

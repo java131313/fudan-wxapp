@@ -1,9 +1,11 @@
+<wxs src='../../wxs/filter.wxs' module='filter' />
+
 <navigator class='guide-item' url='{{guide_naviUrl}}' open-type='navigate'>
   <view class='guide-text-box'>
     <text class='guide-title'>{{guide_title}}</text>
     <text class='guide-time'>{{guide_content}}</text>
   </view>
   <view class='guide-arrow-box'>
-    <image src='/images/arrow.png'></image>
+    <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
   </view>
 </navigator>
