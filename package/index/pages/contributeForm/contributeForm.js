@@ -135,8 +135,15 @@ Page({
 
   /* 提交征稿 */
   contribute(e) {
-    // if (!Util.checkIsHasPermission()) return;
     let self = this;
+    // if (!Util.checkIsHasPermission()) return;
+    if (self.data.contributionDetail.has_contributed == 1) {
+      Util.showToast({
+        title: '已经投过稿',
+        image: 3
+      });
+      return;
+    }
     if (!self.wxValidate.checkForm(e)) {
       const error = self.wxValidate.errorList[0];
       Util.showToast({
@@ -164,7 +171,7 @@ Page({
           wx.hideLoading();
           Util.showToast({
             title: res.data.msg || '提交征稿失败',
-            image: 3
+            image: 2
           });
         });
       }, res => {

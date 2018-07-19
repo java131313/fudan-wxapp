@@ -226,7 +226,8 @@ export default class Api {
     let self = this;
     let url = '/front/contribution';
     let postData = {
-      id: id
+      id: id,
+      session_id: self.getSessionId()
     };
     return self.getRequest(url, postData);
   }
