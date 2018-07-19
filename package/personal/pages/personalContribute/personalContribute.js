@@ -8,6 +8,7 @@ Page({
    */
   data: {
     bgColor: app.CONFIG.BGCOLOR,
+    naviUrl: app.CONFIG.PAGE.CONTRIBUTEFORM,
     myContribution: []
   },
 
