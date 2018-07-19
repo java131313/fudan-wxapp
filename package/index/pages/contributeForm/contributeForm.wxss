@@ -61,6 +61,15 @@ page {
   background: #fff;
 }
 
+.compile_parent>input {
+  background: #fff;
+  display: block;
+  height: 100rpx;
+  margin-bottom: 20rpx;
+  text-align: left;
+  line-height: 100rpx;
+}
+
 .uploading_text {
   font-size: 28rpx;
   line-height: 76rpx;

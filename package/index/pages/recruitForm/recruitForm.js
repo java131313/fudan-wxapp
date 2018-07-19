@@ -112,7 +112,7 @@ Page({
       });
       app.api.recruitApply(formData).then(res => {
         Util.showToast({
-          title: '岗位申请成功！'
+          title: '岗位申请成功'
         }).then(() => {
           wx.redirectTo({
             url: app.CONFIG.PAGE.RECRUITDETAILS

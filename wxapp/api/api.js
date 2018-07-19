@@ -196,13 +196,18 @@ export default class Api {
   }
 
   /* 提交稿件 */
-  contribute(contributeFormData) {
+  contribute(contributeFormData, dynamic_back) {
     let self = this;
     let url = '/front/contribute';
-    let postData = Object.assign(contributeFormData, {
-      session_id: self.getSessionId()
+    let dynamic_kv = {};
+    dynamic_back && dynamic_back.forEach((x, index) => {
+      dynamic_kv[x] = contributeFormData[`dynamic_${index}`];
     });
-    return self.requestData(url, postData);
+    let postData = Object.assign(contributeFormData, {
+      session_id: self.getSessionId(),
+      dynamic_kv: JSON.stringify(dynamic_kv)
+    });
+    return self.post(url, postData);
   }
 
   /* 活动详情 */
@@ -235,9 +240,12 @@ export default class Api {
 
   /* 上传图片到腾讯云(支持多张) */
   uploadImages(imgPath, imgPrefix) {
-    if (!imgPath || imgPath.length == 0) return;
-    let self = this;
     return new Promise((reslove, reject) => {
+      if (!imgPath || imgPath.length == 0) {
+        reslove([]);
+        return;
+      }
+      let self = this;
       let successCount = 0;
       let imgUrl = [];
       self.getQCloudSign().then(res => {

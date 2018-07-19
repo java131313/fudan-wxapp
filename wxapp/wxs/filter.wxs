@@ -36,7 +36,7 @@ function arrayIsContain(array, arg) {
 }
 
 function imageSrcParse(path) {
-  var domain = 'https://fd.gxdianpu.com';
+  var domain = 'https://xinzhibang168-1253521270.costj.myqcloud.com';
   return domain + path;
 }
 

@@ -78,10 +78,24 @@ Page({
   initValidateRules() {
     let self = this;
     self.wxValidate = app.wxValidate({
+      tel: {
+        required: true,
+        tel: true
+      },
+      email: {
+        required: true,
+        email: true
+      },
       name: {
         required: true
       }
     }, {
+      tel: {
+        required: '请填写手机号'
+      },
+      email: {
+        required: '请填写邮箱'
+      },
       name: {
         required: '请填写征稿内容'
       }
@@ -93,6 +107,9 @@ Page({
     let self = this;
     if (!self.data.contributionId) return;
     app.api.getContributionDetail(self.data.contributionId).then(res => {
+      if (res.data.data.dynamic_kv) {
+        res.data.data.dynamic_kv = JSON.parse(res.data.data.dynamic_kv);
+      }
       self.setData({
         contributionDetail: res.data.data
       });
@@ -118,7 +135,7 @@ Page({
 
   /* 提交征稿 */
   contribute(e) {
-    if (!Util.checkIsHasPermission()) return;
+    // if (!Util.checkIsHasPermission()) return;
     let self = this;
     if (!self.wxValidate.checkForm(e)) {
       const error = self.wxValidate.errorList[0];
@@ -133,21 +150,28 @@ Page({
       let formData = e.detail.value;
       let tempFilePaths = self.data.tempFilePaths;
       app.api.uploadImages(tempFilePaths, 'contri').then(res => {
-        console.log('腾讯云图片地址数组: ', res);
+        let dynamic_kv = self.data.contributionDetail.dynamic_kv;
         Object.assign(formData, {
           id: self.data.contributionId,
           imgs: res
         });
-        app.api.contribute(self.data.tempFilePaths, formData).then(res => {
+        app.api.contribute(formData, dynamic_kv).then(res => {
           wx.hideLoading();
           Util.showToast({
-            title: '提交征稿成功！'
+            title: '提交征稿成功'
           });
         }, res => {
+          wx.hideLoading();
           Util.showToast({
-            title: res.data.msg,
+            title: res.data.msg || '提交征稿失败',
             image: 3
           });
+        });
+      }, res => {
+        wx.hideLoading();
+        Util.showToast({
+          title: '提交征稿失败',
+          image: 2
         });
       });
     }

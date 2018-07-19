@@ -88,7 +88,7 @@ Page({
     if (!Util.checkIsHasPermission()) return;
     app.api.activityApply(self.data.activityId).then(res => {
       Util.showToast({
-        title: '活动报名成功！'
+        title: '活动报名成功'
       });
     }, res => {
       Util.showToast({

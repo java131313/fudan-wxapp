@@ -1,6 +1,8 @@
+<wxs src='../../wxs/filter.wxs' module='filter' />
+
 <view class='operate-container'>
   <view class='operate-item'>
-    <image src='/images/like.png'></image>
+    <image src='{{filter.imageSrcParse("/images/like.png")}}'></image>
     <text>{{support_num}}</text>
   </view>
   <view class='operate-item'>
