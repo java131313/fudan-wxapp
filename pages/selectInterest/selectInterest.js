@@ -1,7 +1,6 @@
 import Util from '../../utils/util.js';
 const app = getApp();
 
-
 Page({
 
   /**

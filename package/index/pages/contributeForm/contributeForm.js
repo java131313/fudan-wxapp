@@ -112,7 +112,6 @@ Page({
         self.setData({
           tempFilePaths: res.tempFilePaths
         });
-        app.api.uploadImages(tempFilePaths);
       }
     });
   },
@@ -128,18 +127,27 @@ Page({
         image: 2
       });
     } else {
-      let formData = e.detail.value;
-      Object.assign(formData, {
-        id: self.data.contributionId
+      wx.showLoading({
+        title: '正在提交中'
       });
-      app.api.contribute(self.data.tempFilePaths, formData).then(res => {
-        Util.showToast({
-          title: '提交征稿成功！'
+      let formData = e.detail.value;
+      let tempFilePaths = self.data.tempFilePaths;
+      app.api.uploadImages(tempFilePaths, 'contri').then(res => {
+        console.log('腾讯云图片地址数组: ', res);
+        Object.assign(formData, {
+          id: self.data.contributionId,
+          imgs: res
         });
-      }, res => {
-        Util.showToast({
-          title: res.data.msg,
-          image: 3
+        app.api.contribute(self.data.tempFilePaths, formData).then(res => {
+          wx.hideLoading();
+          Util.showToast({
+            title: '提交征稿成功！'
+          });
+        }, res => {
+          Util.showToast({
+            title: res.data.msg,
+            image: 3
+          });
         });
       });
     }

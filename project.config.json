@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
 	"appid": "wx8a8435cfb7775df9",
-	"projectname": "fudan_xxx",
+	"projectname": "fudan_front",
 	"condition": {
 		"search": {
 			"current": -1,

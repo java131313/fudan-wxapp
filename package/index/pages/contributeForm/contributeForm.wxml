@@ -19,7 +19,7 @@
 <view class="contribute">
   <form bindsubmit='contribute'>
     <view class='compile_parent'>
-      <textarea name='name' class='compile' auto-height placeholder="请输入文本(必填)"></textarea>
+      <textarea name='name' class='compile' auto-focus="true" fixed="true" cursor-spacing="10" auto-height placeholder="请输入征稿内容(必填)"></textarea>
     </view>
     <text class='uploading_text'>分享图片(选填)</text>
     <view class='uploading_parent'>

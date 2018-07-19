@@ -21,6 +21,19 @@ export default class Util {
     return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':');
   }
 
+  /* 获取当前年月日文件夹名字 */
+  static getImgYmd() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const formatNumber = n => {
+      n = n.toString();
+      return n[1] ? n : '0' + n
+    }
+    return [year, month, day].map(formatNumber).join('');
+  }
+
   /* 判断A字符串是否包含B字符串 */
   static strIsContain(strA, strB) {
     if (strA.toString().indexOf(strB.toString() > -1)) return true;
@@ -31,6 +44,11 @@ export default class Util {
   static arrayIsContain(array, arg) {
     if (!array || array.length == 0) return false;
     else return array.indexOf(arg) > -1 ? true : false;
+  }
+
+  /* 生成guid */
+  static genId(length) {
+    return Number(Math.random().toString().substr(3, length) + Date.now()).toString(36);
   }
 
   /* 模态弹窗 */

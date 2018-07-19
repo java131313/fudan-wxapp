@@ -4,8 +4,11 @@ const CONFIG = require('config.js');
 const mockData = new MockData();
 
 export default class Api {
-  constructor() {
+  constructor(Util) {
     let self = this;
+    if (Util) {
+      self.Util = Util;
+    }
     self.isMock = CONFIG.MOCK.STATUS;
   }
 
@@ -193,14 +196,13 @@ export default class Api {
   }
 
   /* 提交稿件 */
-  contribute(imgPath, contributeFormData) {
+  contribute(contributeFormData) {
     let self = this;
     let url = '/front/contribute';
-    // let postData = Object.assign(contributeFormData, {
-    //   session_id: self.getSessionId()
-    // });
-    // return self.uploadImages(url, imgPath, contributeFormData, 'image[]');
-
+    let postData = Object.assign(contributeFormData, {
+      session_id: self.getSessionId()
+    });
+    return self.requestData(url, postData);
   }
 
   /* 活动详情 */
@@ -232,98 +234,65 @@ export default class Api {
   }
 
   /* 上传图片到腾讯云(支持多张) */
-  uploadImages(imgPath) {
+  uploadImages(imgPath, imgPrefix) {
     if (!imgPath || imgPath.length == 0) return;
     let self = this;
-    let requestCallback = (err, data) => {
-      console.log(err || data);
-      if (err && err.error) {
-        wx.showModal({
-          title: '返回错误',
-          content: '请求失败：' + err.error.Message + '；状态码：' + err.statusCode,
-          showCancel: false
-        });
-      } else if (err) {
-        wx.showModal({
-          title: '请求出错',
-          content: '请求出错：' + err + '；状态码：' + err.statusCode,
-          showCancel: false
-        });
-      } else {
-        wx.showToast({
-          title: '请求成功',
-          icon: 'success',
-          duration: 3000
-        });
-      }
-    };
-    self.getQCloudSign().then(res => {
-      let config = res.data.data.config;
-      let Key = imgPath[0].substr(imgPath[0].lastIndexOf('/') + 1); // 这里指定上传的文件名
-      // let prefix = 'https://' + config.bucket + '.cos.' + config.region + '.myqcloud.com/files/v2/' + config.appid;
-      let prefix = "https://" + config.region + ".file.myqcloud.com/files/v2/" + config.appid + "/" + config.bucket + "/uploads/contri/20180721/";
-      const cos = new COS({
-        getAuthorization: function(params, callback) {
-          var authorization = COS.getAuthorization({
-            SecretId: config.cos.secretid,
-            SecretKey: config.cos.secretkey,
-            Method: params.Method,
-            Key: params.Key
+    return new Promise((reslove, reject) => {
+      let successCount = 0;
+      let imgUrl = [];
+      self.getQCloudSign().then(res => {
+        let config = res.data.data.config;
+        imgPath.forEach(x => {
+          self.cosImage(config, x, imgPrefix).then(cosRes => {
+            imgUrl.unshift(cosRes);
+            successCount++;
+            if (successCount == imgPath.length) {
+              console.log('上传所有图片到腾讯云成功: ', successCount);
+              reslove(imgUrl);
+            }
           });
-          callback(authorization);
-        }
+        });
+      }, res => {
+        reject('获取腾讯云配置信息失败');
       });
+    });
+  }
+
+  /* 腾讯云上传文件SDK */
+  cosImage(config, imgPath, imgPrefix) {
+    if (!config || !imgPath) return;
+    let self = this;
+    let imgGuid = self.Util.genId(6);
+    let imgYmd = self.Util.getImgYmd();
+    const cos = new COS({
+      getAuthorization: (params, callback) => {
+        let authorization = COS.getAuthorization({
+          SecretId: config.cos.secretid,
+          SecretKey: config.cos.secretkey,
+          Method: params.Method,
+          Key: params.Key
+        });
+        callback(authorization);
+      }
+    });
+    return new Promise((resolve, reject) => {
       cos.postObject({
         Bucket: `${config.bucket}-${config.appid}`,
         Region: config.region,
-        Key: 'uploads/Ymd/testpeach.jpg',
-        FilePath: imgPath[0],
-        onProgress: function(info) {
-          console.log(JSON.stringify(info));
+        Key: `uploads/${imgYmd}/${imgPrefix || 'cosimg'}/${imgGuid}.jpg`,
+        FilePath: imgPath
+      }, (error, data) => {
+        if (error) {
+          console.warn("上传腾讯云失败： ", error);
+          reject(error);
+        } else {
+          if (data.statusCode == 200) {
+            console.log('上传腾讯云成功： ', data);
+            resolve(data.Location);
+          }
         }
-      }, requestCallback);
-      // wx.uploadFile({
-      //   url: prefix,
-      //   formData: {
-      //     'Key': Key,
-      //     'success_action_status': 200,
-      //     'Signature': config.signature,
-      //     'x-cos-security-token': config.token
-      //   },
-      //   filePath: imgPath[0],
-      //   name: 'file',
-      //   success: res => {
-      //     console.warn('腾讯云测试：', res);
-      //   }
-      // })
+      });
     });
-    // let service = CONFIG.DEBUG.STATUS ? CONFIG.DEBUG.API : CONFIG.HTTP.API;
-    // let successCount = 0;
-    // return new Promise((resolve, reject) => {
-    //   imgPath.forEach(x => {
-    //     wx.uploadFile({
-    //       url: `${service}${url}`,
-    //       header: header || {},
-    //       filePath: imgPath,
-    //       name: key || 'file',
-    //       formData: formData || {},
-    //       success: res => {
-    //         if (res.data.code == 200) {
-    //           console.log('上传图片成功: ', res);
-    //           successCount++;
-    //           if (successCount == imgPath.length) resolve('上传所有图片成功！');
-    //         } else {
-    //           console.warn('上传图片失败: ', res);
-    //           reject(res);
-    //         }
-    //       },
-    //       fail: res => {
-    //         console.warn('请求报错,上传图片失败: ', res);
-    //         reject(res);
-    //       }
-    //     });
-    //   });
-    // });
   }
 
   /* session过期重新登录 */

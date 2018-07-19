@@ -4,7 +4,7 @@ import wxValidate from 'utils/validate.js';
 import MockData from 'wxapp/mock/mockData.js';
 const CONFIG = require('wxapp/api/config.js');
 const ENUM = require('utils/enum.js');
-const api = new Api();
+const api = new Api(Util);
 const mockData = new MockData();
 export let bindRolePromise = new Promise((resolve, reject) => {});
 

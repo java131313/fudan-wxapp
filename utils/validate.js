@@ -38,7 +38,7 @@ class WxValidate {
     this.defaults = {
       messages: {
         required: '这是必填字段。',
-        email: '请输入有效的电子邮件地址。',
+        email: '无效的邮箱',
         tel: '无效的手机号码',
         url: '请输入有效的网址。',
         date: '请输入有效的日期。',
