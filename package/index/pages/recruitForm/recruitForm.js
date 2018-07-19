@@ -120,8 +120,8 @@ Page({
         });
       }, res => {
         Util.showToast({
-          title: res.data.msg,
-          image: 3
+          title: res.data.msg || '岗位申请失败',
+          image: 2
         });
       });
     }
