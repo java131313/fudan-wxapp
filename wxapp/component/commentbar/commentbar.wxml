@@ -22,7 +22,7 @@
       </view>
       <view class='commentContent_attitude'>
         <view class='click_love2'>
-          <image src='/images/like.png'></image>
+          <image src='{{filter.imageSrcParse("/images/like.png")}}'></image>
           <text>{{item.support_num}}</text>
         </view>
       </view>

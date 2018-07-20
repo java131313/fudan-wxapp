@@ -1,3 +1,5 @@
+<wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
+
 <view class='oneself_message'>
   <view class='oneself_news'>
     <view class='oneself_identity'>
@@ -8,7 +10,7 @@
       <open-data type="userAvatarUrl" class="oneself_pic"></open-data>
     </view>
      <view class='arrows'>
-      <image src='/images/arrow.png'></image>
+      <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
     </view> 
   </view>
 
@@ -22,7 +24,7 @@
      <text>{{userInfo.nickname}}</text>
     </view>
      <view class='arrows2'>
-      <image src='/images/arrow.png'></image>
+      <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
     </view> 
   </view>
 
@@ -81,7 +83,7 @@
      <text>编辑</text>
     </view>
      <view class='arrows2'>
-      <image src='/images/arrow.png'></image>
+      <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
     </view> 
   </view>
 </view>

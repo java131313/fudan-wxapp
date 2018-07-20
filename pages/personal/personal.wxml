@@ -1,3 +1,5 @@
+<wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
+
 <view class='main-wrapper' style='background:{{bgColor}}'>
   <view class='person-top'>
     <navigator class='person-avatar-box' url='{{personalDetailsUrl}}'>
@@ -11,7 +13,7 @@
     <view wx:if='{{userInfo.college}}' class='person-major-box'>
       <text class='person-major'>{{userInfo.college}}</text>
       <view class='person-major-icon-box'>
-        <image src='/images/major_icon.png'></image>
+        <image src='{{filter.imageSrcParse("/images/major_icon.png")}}'></image>
       </view>
     </view>
   </view>

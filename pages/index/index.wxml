@@ -1,4 +1,5 @@
 <import src='/wxapp/template/topLoading/topLoading.wxml' />
+<wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='main-wrapper' style='background:{{bgColor}}'>
   <view class='newsHeader'>
@@ -6,7 +7,7 @@
     <text class='newsTitle'>本周热榜</text>
     <view class='search'>
       <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='学院 / 活动 / 课程...' bindfocus='search'>
-      <image src='/images/search.png'></image>
+      <image src='{{filter.imageSrcParse("/images/search.png")}}'></image>
       </input>
     </view>
   </view>

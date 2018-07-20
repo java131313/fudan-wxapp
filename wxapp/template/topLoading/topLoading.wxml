@@ -1,5 +1,7 @@
+<wxs src='../../wxs/filter.wxs' module='filter' />
+
 <template name='topLoading'>
   <view class='loading' wx:if='{{isLoading}}'>
-    <image src='/images/fudan.gif'></image>
+    <image src='{{filter.imageSrcParse("/images/fudan.gif")}}'></image>
   </view>
 </template>
