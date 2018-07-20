@@ -8,5 +8,13 @@ module.exports = {
     Teacher: 3,
     /* 校友 */
     Alumnus: 4
+  },
+  CommentType: {
+    News: 0,
+    Activity: 1,
+    Vote: 2,
+    Recruit: 3,
+    Video: 4,
+    Live: 5
   }
 }
