@@ -47,7 +47,8 @@
         "pages/personalVote/personalVote",
         "pages/personalActive/personalActive",
         "pages/personalComment/personalComment",
-        "pages/personalContribute/personalContribute"
+        "pages/personalContribute/personalContribute",
+        "pages/personalNameChange/personalNameChange"
       ]
     },
     {

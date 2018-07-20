@@ -46,6 +46,7 @@ module.exports = {
     SELFACTIVE: '/package/personal/pages/personalActive/personalActive',
     SELFCOMMENT: '/package/personal/pages/personalComment/personalComment',
     SELFCONTRIBUTE: '/package/personal/pages/personalContribute/personalContribute',
+    SELFNAMECHANGE:'/package/personal/pages/personalNameChange/personalNameChange'
   },
   PERSONAL: {
     ACTION_BAR_ITEM: [{

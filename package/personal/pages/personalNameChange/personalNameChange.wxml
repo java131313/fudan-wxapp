@@ -1,0 +1,7 @@
+<!--package/personal/pages/personalNameChange/personalNameChange.wxml-->
+<view>
+  <form bindsubmit='submitName'>
+    <input auto-focus='true' class='nameChange' type='text' placeholder="输入新昵称"></input>
+    <button class='recruit-btn' form-type='submit'>完成</button>
+  </form>
+</view>
