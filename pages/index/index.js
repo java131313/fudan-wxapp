@@ -11,6 +11,15 @@ Page({
     newsDetailUrl: app.CONFIG.PAGE.NEWSDETAILS,
     isLoading: false,
     newsItem: [],
+    _num: 1
+  },
+
+// 点击切换推荐叶
+  menuClick: function(e) {
+    console.log(e);
+    this.setData({
+      _num: e.target.dataset.num
+    })
   },
 
   /**
