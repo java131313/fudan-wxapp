@@ -21,7 +21,7 @@
         <view class='commentContent_speak'>
           <text>{{item.content}}</text>
         </view>
-      </view>
+      </view> 
       <view class='commentContent_attitude'>
         <view class='click_love2'>
           <image src='{{filter.imageSrcParse("/images/like.png")}}'></image>

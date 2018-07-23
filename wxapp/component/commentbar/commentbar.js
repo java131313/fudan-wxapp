@@ -40,6 +40,9 @@ Component({
         Util.showToast({
           title: '评论成功'
         });
+        self.setData({
+          show_commentView: false
+        });
       }, res => {
         Util.showToast({
           title: '评论失败',
@@ -57,7 +60,7 @@ Component({
       let self = this;
       self.setData({
         show_commentView: false
-      })
+      });
     }
   }
 })
