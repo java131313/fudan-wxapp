@@ -32,6 +32,7 @@
 .commentContent_pic_parent {
   width: 10%;
   height: 68rpx;
+  background-color: #fff;
 }
 
 .commentContent_pic {

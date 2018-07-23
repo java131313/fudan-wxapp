@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    commentType: app.ENUM.CommentType.Activity,
+    commentType: app.ENUM.ModuleType.Activity,
     activityId: '',
     activityDetail: {}
   },
