@@ -1,4 +1,3 @@
-
 <wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='all'>
