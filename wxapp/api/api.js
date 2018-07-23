@@ -185,6 +185,18 @@ export default class Api {
     return self.post(url, postData);
   }
 
+  /* 点赞 */
+  addSupportNum(id, supportType) {
+    let self = this;
+    let url = '/front/addSupportNum';
+    let postData = {
+      id: id,
+      type: supportType,
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
   /* 招聘详情 */
   getRecruitDetail(id) {
     let self = this;
