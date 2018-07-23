@@ -17,4 +17,4 @@
   </view>
   <operate-bar support_num='{{newsDetail.support_num}}' comment_num='{{newsDetail.comment_num}}' share_num='{{newsDetail.share_num}}' />
 </view>
-<comment-bar comments="{{newsDetail.comments}}" />
+<comment-bar commentId='{{newsDetail.id}}' commentType='{{commentType}}' comments="{{newsDetail.comments}}" />

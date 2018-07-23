@@ -1,9 +1,11 @@
+<wxs src='../../wxs/filter.wxs' module='filter' />
+
 <view class='comment-container'>
   <view class='commentFunction'>
     <view class='commentFunction_title'>
       <text>评论内容</text>
     </view>
-    <view class='commentFunction_speak' bindtap='StartedReview'>
+    <view class='commentFunction_speak' bindtap='_startedReview'>
       <text>写评论</text>
     </view>
   </view>
@@ -32,16 +34,16 @@
 
 <view class='Modal_view' wx:if="{{show_commentView}}">
   <view class='commentView'>
-    <form>
+    <form bindsubmit='_commentSubmit'>
       <view class='commentView_title'>
-        <textarea auto-focus="true" fixed="true" cursor-spacing="10">{{writeReview}}</textarea>
+        <textarea name='content' auto-focus="true" fixed="true" cursor-spacing="10">{{writeReview}}</textarea>
       </view>
       <view class='commentView_true'>
         <view>
           <button class='none no' bindtap="unselect">取消</button>
         </view>
         <view>
-          <button class='none yes' bindtap='IdentifyingChoice'>发布</button>
+          <button class='none yes' bindtap='IdentifyingChoice' form-type='submit'>发布</button>
         </view>
       </view>
     </form>

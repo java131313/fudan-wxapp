@@ -14,14 +14,6 @@ Page({
     _num: 1
   },
 
-// 点击切换推荐叶
-  menuClick: function(e) {
-    console.log(e);
-    this.setData({
-      _num: e.target.dataset.num
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -88,6 +80,14 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 点击切换推荐页 */
+  menuClick: function(e) {
+    let self = this;
+    self.setData({
+      _num: e.target.dataset.num
+    });
   },
 
   /* 搜索获取焦点触发 */

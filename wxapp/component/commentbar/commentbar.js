@@ -1,10 +1,14 @@
+import Util from '../../../utils/util.js';
+const app = getApp();
+
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    comments: Array
-
+    comments: Array,
+    commentId: Number,
+    commentType: Number
   },
 
   /**
@@ -14,13 +18,36 @@ Component({
     writeReview: '',
     show_commentView: false
   },
-  
+
 
   /**
    * 组件的方法列表
    */
   methods: {
-    StartedReview() {
+    _commentSubmit(e) {
+      let self = this;
+      let commentId = self.data.commentId;
+      let commentType = self.data.commentType;
+      let content = e.detail.value.content;
+      if (!content) {
+        Util.showToast({
+          title: '请填写评论内容',
+          image: 2
+        });
+        return;
+      }
+      app.api.addComment(commentId, commentType, content).then(res => {
+        Util.showToast({
+          title: '评论成功'
+        });
+      }, res => {
+        Util.showToast({
+          title: '评论失败',
+          image: 2
+        });
+      });
+    },
+    _startedReview() {
       let self = this;
       self.setData({
         show_commentView: true

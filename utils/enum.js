@@ -10,11 +10,17 @@ module.exports = {
     Alumnus: 4
   },
   CommentType: {
+    /* 新闻 */
     News: 0,
+    /* 活动 */
     Activity: 1,
+    /* 投票 */
     Vote: 2,
+    /* 招聘 */
     Recruit: 3,
+    /* 视频 */
     Video: 4,
+    /* 直播 */
     Live: 5
   }
 }
