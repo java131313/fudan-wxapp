@@ -16,7 +16,8 @@ Component({
    */
   data: {
     writeReview: '',
-    show_commentView: false
+    show_commentView: false,
+    support_num: 0
   },
 
 
@@ -24,6 +25,20 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    _commentSupport(e) {
+      let self = this;
+      let comments = self.data.comments;
+      let commentId = e.target.dataset.commentid;
+      comments.forEach(x => {
+        if (x.id == commentId) {
+          x.support_num++;
+          return;
+        }
+      });
+      self.setData({
+        comments: comments
+      });
+    },
     _commentSubmit(e) {
       let self = this;
       let commentId = self.data.commentId;
