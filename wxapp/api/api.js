@@ -197,6 +197,17 @@ export default class Api {
     return self.post(url, postData);
   }
 
+  /* 分享转发 */
+  addShareNum(id, shareType) {
+    let self = this;
+    let url = '/front/addShareNum';
+    let postData = {
+      id: id,
+      type: shareType
+    };
+    return self.post(url, postData);
+  }
+
   /* 招聘详情 */
   getRecruitDetail(id) {
     let self = this;

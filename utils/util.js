@@ -195,32 +195,13 @@ export default class Util {
 
   /* 分享和转发 */
   static onShareAppMessage(title, path, imageUrl, cb) {
-    let defaultImageUrl = '../../images/share.jpg';
+    let defaultImageUrl = '';
     return {
       title: title,
       path: path,
       imageUrl: imageUrl || defaultImageUrl,
       success(res) {
-        console.log('分享转发成功！', res);
-        if (!res.shareTickets) {
-          api.shareFriend().then(() => {
-            console.log('分享转发到个人成功!');
-            typeof cb == 'function' && cb();
-          });
-        } else {
-          let st = res.shareTickets[0];
-          wx.getShareInfo({
-            shareTicket: st,
-            success(res) {
-              let iv = res.iv
-              let encryptedData = res.encryptedData;
-              api.groupShare(encryptedData, iv).then(res => {
-                console.log('分享转发到群成功!', res);
-                typeof cb == 'function' && cb();
-              });
-            }
-          });
-        }
+        api
       },
       fail: function(res) {
         console.log('分享转发失败！');
