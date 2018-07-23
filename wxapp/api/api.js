@@ -141,6 +141,50 @@ export default class Api {
     return self.post(url, postData);
   }
 
+  /* 搜索 */
+  search(keyword) {
+    let self = this;
+    let url = '/front/search';
+    let postData = {
+      keyword: keyword,
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
+  /* 搜索页面数据,包括 搜索历史，搜索热词 */
+  getSearchPage() {
+    let self = this;
+    let url = '/front/searchPage';
+    let postData = {
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
+  /* 删除搜索历史记录 */
+  removeSearchHistory() {
+    let self = this;
+    let url = '/front/removeSearchHistory';
+    let postData = {
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
+  /* 评论 */
+  addComment(id, commentType, content) {
+    let self = this;
+    let url = '/front/addComment';
+    let postData = {
+      id: id,
+      type: commentType,
+      content: content,
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
   /* 招聘详情 */
   getRecruitDetail(id) {
     let self = this;

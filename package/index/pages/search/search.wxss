@@ -31,7 +31,7 @@
   padding-left: 15%;
   color: #000;
   position: relative;
-  height: 90rpx;
+  height: 85rpx;
   line-height: 68rpx;
 }
 

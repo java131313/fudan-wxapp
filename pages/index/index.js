@@ -11,6 +11,7 @@ Page({
     newsDetailUrl: app.CONFIG.PAGE.NEWSDETAILS,
     isLoading: false,
     newsItem: [],
+    _num: 1
   },
 
   /**
@@ -79,6 +80,14 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 点击切换推荐页 */
+  menuClick: function(e) {
+    let self = this;
+    self.setData({
+      _num: e.target.dataset.num
+    });
   },
 
   /* 搜索获取焦点触发 */

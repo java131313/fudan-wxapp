@@ -1,4 +1,4 @@
-<import src='/wxapp/template/topLoading/topLoading.wxml' />
+
 <wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='all'>
@@ -75,3 +75,4 @@
     </view>
   </view>
 </view>
+

@@ -1,89 +1,93 @@
 <wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
 
-<view class='oneself_message'>
-  <view class='oneself_news'>
-    <view class='oneself_identity'>
-      <text>头像</text>
+<view class='main-wrapper' style='background:{{bgColor}}'>
+  <view class='oneself_message'>
+    <view class='oneself_news' bindtap='personAvatarChange'>
+      <view class='oneself_identity'>
+        <text>头像</text>
+      </view>
+      <view class='oneself_kb'></view>
+      <view class='oneself_P'>
+        <image wx:if='{{userInfo.avatar}}' src='{{userInfo.avatar}}' class='person_avatar'></image>
+        <open-data wx:if='{{!userInfo.avatar}}' type="userAvatarUrl" class="oneself_pic"></open-data>
+      </view>
+      <view class='arrows'>
+        <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
+      </view>
     </view>
-    <view class='oneself_kb'></view>
-    <view class='oneself_P'>
-      <open-data type="userAvatarUrl" class="oneself_pic"></open-data>
-    </view>
-     <view class='arrows'>
-      <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
-    </view> 
-  </view>
 
-<view class='oneself_news2'>
-    <view class='oneself_identity2'>
-      <text>昵称</text>
+    <view class='oneself_news2' bindtap='personNameChange'>
+      <view class='oneself_identity2'>
+        <text>昵称</text>
+      </view>
+      <view class='oneself_kb2'></view>
+      <view class='oneself_P2'>
+        <open-data wx:if='{{!userInfo.isHasPermission}}' type="userNickName"></open-data>
+        <text wx:if='{{userInfo.isHasPermission}}'>{{userInfo.name}}</text>
+      </view>
+      <view class='arrows2' wx:if='{{!userInfo.isHasPermission}}'>
+        <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
+      </view>
     </view>
-    <view class='oneself_kb2'></view>
-    <view class='oneself_P2'>
-     <!-- <open-data type="userNickName"></open-data> -->
-     <text>{{userInfo.nickname}}</text>
-    </view>
-     <view class='arrows2'>
-      <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
-    </view> 
-  </view>
 
-<view class='oneself_news2'>
-    <view class='oneself_identity2'>
-      <text>身份</text>
+    <view class='oneself_news2' bindtap='personIdChange'>
+      <view class='oneself_identity2'>
+        <text>身份</text>
+      </view>
+      <view class='oneself_kb2'></view>
+      <view class='oneself_P2'>
+        <text>{{userInfo.role_name}}</text>
+      </view>
+      <view class='arrows2' wx:if='{{!userInfo.isHasPermission}}'>
+        <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
+      </view>
     </view>
-    <view class='oneself_kb2'></view>
-    <view class='oneself_P2'>
-     <text>{{userInfo.role_name}}</text>
-    </view>
-     <view class='arrows2'>
-    </view> 
-  </view>
 
-  <view class='oneself_news2'>
-    <view class='oneself_identity2'>
-      <text>绑定NetID</text>
+    <view class='oneself_news2'>
+      <view class='oneself_identity2'>
+        <text>绑定NetID</text>
+      </view>
+      <view class='oneself_kb2'></view>
+      <view class='oneself_P2'>
+        <text>{{userInfo.isHasPermission ? '已绑定' : '未绑定'}}</text>
+      </view>
+      <view class='arrows2'>
+      </view>
     </view>
-    <view class='oneself_kb2'></view>
-    <view class='oneself_P2'>
-     <text>已绑定</text>
-    </view>
-     <view class='arrows2'>
-    </view> 
-  </view>
 
-  <view class='oneself_news2'>
-    <view class='oneself_identity2'>
-      <text>学院</text>
+    <view class='oneself_news2'>
+      <view class='oneself_identity2'>
+        <text>学院</text>
+      </view>
+      <view class='oneself_kb2'></view>
+      <view class='oneself_P2'>
+        <text>{{userInfo.college}}</text>
+      </view>
+      <view class='arrows2'>
+      </view>
     </view>
-    <view class='oneself_kb2'></view>
-    <view class='oneself_P2'>
-     <text>{{userInfo.college}}</text>
+    <view class='oneself_news2'>
+      <view class='oneself_identity2'>
+        <text>专业</text>
+      </view>
+      <view class='oneself_kb2'></view>
+      <view class='oneself_P2'>
+        <text>新媒体</text>
+      </view>
+      <view class='arrows2'>
+      </view>
     </view>
-     <view class='arrows2'>
-    </view> 
-  </view>
-  <view class='oneself_news2'>
-    <view class='oneself_identity2'>
-      <text>专业</text>
-    </view>
-    <view class='oneself_kb2'></view>
-    <view class='oneself_P2'>
-       <text>新媒体</text>
-    </view>
-     <view class='arrows2'>
-    </view> 
-  </view>
-  <view class='oneself_news2'>
-    <view class='oneself_identity2'>
-      <text>兴趣标签</text>
-    </view>
-    <view class='oneself_kb2'></view>
-    <view class='oneself_P2'>
-     <text>编辑</text>
-    </view>
-     <view class='arrows2'>
-      <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
-    </view> 
+    <navigator class='oneself_news2' url='{{naviSelfTagUrl}}'>
+      <view class='oneself_identity2'>
+        <text>兴趣标签</text>
+      </view>
+      <view class='oneself_kb2'></view>
+      <view class='oneself_P2'>
+        <text>编辑</text>
+      </view>
+      <view class='arrows2'>
+        <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
+      </view>
+    </navigator>
   </view>
 </view>

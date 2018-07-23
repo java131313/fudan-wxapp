@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:{}
+    bgColor: app.CONFIG.BGCOLOR,
+    naviSelfTagUrl: app.CONFIG.PAGE.SELFTAGS,
+    userInfo: {}
   },
 
   /**
@@ -65,5 +67,42 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 更改昵称 */
+  personNameChange(e) {
+    let self = this;
+    if (self.data.userInfo.isHasPermission) return;
+    wx.navigateTo({
+      url: app.CONFIG.PAGE.SELFNAMECHANGE
+    });
+  },
+
+  /* 更改身份 */
+  personIdChange(e) {
+    let self = this;
+    if (self.data.userInfo.isHasPermission) return;
+    wx.navigateTo({
+      url: app.CONFIG.PAGE.SELECTID
+    });
+  },
+
+  /* 更改头像 */
+  personAvatarChange(e) {
+    let self = this;
+    wx.chooseImage({
+      count: 1, //最多可以选择的图片张数，默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function(res) {
+        let tempFilePaths = res.tempFilePaths;
+        app.api.uploadImages(tempFilePaths, 'avatar').then(res => {
+          app.globalData.userInfo.avatar = res;
+          self.setData({
+            'userInfo.avatar': res
+          });
+        });
+      }
+    });
   }
 })

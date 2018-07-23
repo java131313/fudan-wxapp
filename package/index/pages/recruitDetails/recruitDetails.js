@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    commentType: app.ENUM.CommentType.Recruit,
     recruitDetail: {},
     recruitFormUrl: app.CONFIG.PAGE.RECRUITFORM
   },

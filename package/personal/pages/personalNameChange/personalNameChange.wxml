@@ -1,7 +1,6 @@
-<!--package/personal/pages/personalNameChange/personalNameChange.wxml-->
-<view>
+<view class='main-wrapper' style='background:{{bgColor}}'>
   <form bindsubmit='submitName'>
     <input auto-focus='true' class='nameChange' type='text' placeholder="输入新昵称"></input>
-    <button class='recruit-btn' form-type='submit'>完成</button>
+    <button class='save-btn' form-type='submit'>保存</button>
   </form>
 </view>
