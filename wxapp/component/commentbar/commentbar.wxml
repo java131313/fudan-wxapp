@@ -40,10 +40,10 @@
       </view>
       <view class='commentView_true'>
         <view>
-          <button class='none no' bindtap="unselect">取消</button>
+          <button class='none no' bindtap="_commentCancel">取消</button>
         </view>
         <view>
-          <button class='none yes' bindtap='IdentifyingChoice' form-type='submit'>发布</button>
+          <button class='none yes' form-type='submit'>发布</button>
         </view>
       </view>
     </form>

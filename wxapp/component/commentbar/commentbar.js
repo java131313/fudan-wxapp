@@ -51,15 +51,9 @@ Component({
       let self = this;
       self.setData({
         show_commentView: true
-      })
+      });
     },
-    unselect(res) {
-      let self = this;
-      self.setData({
-        show_commentView: false
-      })
-    },
-    IdentifyingChoice(res) {
+    _commentCancel(res) {
       let self = this;
       self.setData({
         show_commentView: false
