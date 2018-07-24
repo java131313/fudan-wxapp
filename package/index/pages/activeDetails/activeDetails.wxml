@@ -29,4 +29,4 @@
   </view>
   <operate-bar support_num='{{activityDetail.support_num}}' comment_num='{{activityDetail.comment_num}}' share_num='{{activityDetail.share_num}}' />
 </view>
-<comment-bar commentId='{{activityDetail.id}}' commentType='{{commentType}}' comments="{{activityDetail.comments}}" />
+<comment-bar commentId='{{activityDetail.id}}' commentType='{{moduleType}}' comments="{{activityDetail.comments}}" />

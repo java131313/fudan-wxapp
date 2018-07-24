@@ -15,6 +15,6 @@
       <text>来源：{{newsDetail.origin}}</text>
     </view>
   </view>
-  <operate-bar support_num='{{newsDetail.support_num}}' comment_num='{{newsDetail.comment_num}}' share_num='{{newsDetail.share_num}}' />
+  <operate-bar support_num='{{newsDetail.support_num}}' comment_num='{{newsDetail.comment_num}}' share_num='{{newsDetail.share_num}}' has_supported='{{newsDetail.has_supported}}' supportType='{{moduleType}}' />
 </view>
-<comment-bar commentId='{{newsDetail.id}}' commentType='{{commentType}}' comments="{{newsDetail.comments}}" />
+<comment-bar commentId='{{newsDetail.id}}' commentType='{{moduleType}}' comments="{{newsDetail.comments}}" />

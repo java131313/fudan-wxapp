@@ -2,7 +2,7 @@
 
 <view class='operate-container'>
   <view class='operate-item'>
-    <image src='{{filter.imageSrcParse("/images/like.png")}}'></image>
+    <image src='{{filter.imageSrcParse(has_supported ? "/images/like_hover.png" : "/images/like.png")}}' bindtap='_moduleSupport'></image>
     <text>{{support_num}}</text>
   </view>
   <view class='operate-item'>

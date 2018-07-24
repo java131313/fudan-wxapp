@@ -16,7 +16,7 @@
       </view>
       <view class='commentContent_all'>
         <view class='commentContent_name'>
-          <text>{{item.nickname}}</text>
+          <text>{{item.nickname ? item.nickname : '匿名'}}</text>
         </view>
         <view class='commentContent_speak'>
           <text>{{item.content}}</text>
@@ -24,7 +24,7 @@
       </view>
       <view class='commentContent_attitude'>
         <view class='click_love2'>
-          <image src='{{filter.imageSrcParse("/images/like.png")}}' bindtap='_commentSupport' data-commentid="{{item.id}}"></image>
+          <image src='{{filter.imageSrcParse(item.has_supported == 1 ? "/images/like_hover.png" : "/images/like.png")}}' bindtap='_commentSupport' data-commentid="{{item.id}}"></image>
           <text>{{item.support_num}}</text>
         </view>
       </view>

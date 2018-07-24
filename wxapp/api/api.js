@@ -136,7 +136,8 @@ export default class Api {
     let self = this;
     let url = '/front/news';
     let postData = {
-      id: id
+      id: id,
+      session_id: self.getSessionId()
     };
     return self.post(url, postData);
   }

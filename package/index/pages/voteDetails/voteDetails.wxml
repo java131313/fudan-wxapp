@@ -12,4 +12,4 @@
     <operate-bar support_num='{{voteDetail.support_num}}' comment_num='{{voteDetail.comment_num}}' share_num='{{voteDetail.share_num}}' />
   </view>
 </view>
-<comment-bar commentId='{{voteDetail.id}}' commentType='{{commentType}}' comments="{{voteDetail.comments}}" />
+<comment-bar commentId='{{voteDetail.id}}' commentType='{{moduleType}}' comments="{{voteDetail.comments}}" />

@@ -15,4 +15,4 @@
     <operate-bar support_num='{{recruitDetail.support_num}}' comment_num='{{recruitDetail.comment_num}}' share_num='{{recruitDetail.share_num}}' />
   </view>
 </view>
-<comment-bar commentId='{{recruitDetail.id}}' commentType='{{commentType}}' comments="{{recruitDetail.comments}}" />
+<comment-bar commentId='{{recruitDetail.id}}' commentType='{{moduleType}}' comments="{{recruitDetail.comments}}" />

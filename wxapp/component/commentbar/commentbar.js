@@ -29,14 +29,22 @@ Component({
       let self = this;
       let comments = self.data.comments;
       let commentId = e.target.dataset.commentid;
-      comments.forEach(x => {
-        if (x.id == commentId) {
-          x.support_num++;
-          return;
+      let supportType = app.ENUM.ModuleType.Comment;
+      app.api.addSupportNum(commentId, supportType).then(res => {
+        try {
+          comments.forEach(x => {
+            if (x.id == commentId) {
+              x.support_num++;
+              x.has_supported = 1;
+              throw `${x.id}终止循环`
+            }
+          });
+        } catch (e) {
+          console.warn(e);
         }
-      });
-      self.setData({
-        comments: comments
+        self.setData({
+          comments: comments
+        });
       });
     },
     _commentSubmit(e) {

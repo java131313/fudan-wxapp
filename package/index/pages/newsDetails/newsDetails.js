@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    commentType: app.ENUM.ModuleType.News,
+    moduleType: app.ENUM.ModuleType.News,
     newsDetail: {}
   },
 
