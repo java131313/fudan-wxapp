@@ -194,14 +194,17 @@ export default class Util {
   }
 
   /* 分享和转发 */
-  static onShareAppMessage(title, path, imageUrl, cb) {
-    let defaultImageUrl = '';
+  static onShareAppMessage(shareOpions, cb) {
+    if (!shareOpions.shareId || !shareOpions.shareType) return;
+    let defaultTitle = getApp().CONFIG.SHARETITLE;
     return {
-      title: title,
-      path: path,
-      imageUrl: imageUrl || defaultImageUrl,
+      title: shareOpions.title || defaultTitle,
+      path: shareOpions.path,
+      imageUrl: shareOpions.imageUrl,
       success(res) {
-        api
+        api.addShareNum(shareOpions.shareId, shareOpions.shareType).then(res => {
+          typeof cb == 'function' && cb();
+        });
       },
       fail: function(res) {
         console.log('分享转发失败！');

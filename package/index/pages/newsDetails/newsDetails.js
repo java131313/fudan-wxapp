@@ -1,4 +1,5 @@
 import WxParse from '../../../../wxapp/template/wxParse/wxParse.js';
+import Util from '../../../../utils/util.js';
 const app = getApp();
 
 Page({
@@ -65,7 +66,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    let self = this;
+    let shareCallback = () => {
+      let share_num = self.data.newsDetail.share_num + 1;
+      self.setData({
+        share_num: share_num
+      });
+    };
+    let shareId = self.data.newsDetail.id;
+    let shareType = self.data.moduleType;
+    Util.onShareAppMessage({
+      shareId: shareId,
+      shareType: shareType
+    }, shareCallback);
   },
 
   /* 获取新闻详情 */

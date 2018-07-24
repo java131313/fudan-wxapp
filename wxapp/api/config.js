@@ -1,5 +1,6 @@
 module.exports = {
   BGCOLOR: '#f5f5f5',
+  SHARETITLE: '你所关心的复旦人，你想了解的复旦事',
   SCENES: {
     CHAT: [1007, 1008],
     QRCODE: [1011, 1012, 1013],
@@ -46,7 +47,7 @@ module.exports = {
     SELFACTIVE: '/package/personal/pages/personalActive/personalActive',
     SELFCOMMENT: '/package/personal/pages/personalComment/personalComment',
     SELFCONTRIBUTE: '/package/personal/pages/personalContribute/personalContribute',
-    SELFNAMECHANGE:'/package/personal/pages/personalNameChange/personalNameChange'
+    SELFNAMECHANGE: '/package/personal/pages/personalNameChange/personalNameChange'
   },
   PERSONAL: {
     ACTION_BAR_ITEM: [{
