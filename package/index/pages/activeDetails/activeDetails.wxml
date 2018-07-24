@@ -27,6 +27,7 @@
       </view>
     </view>
   </view>
-  <operate-bar support_num='{{activityDetail.support_num}}' comment_num='{{activityDetail.comment_num}}' share_num='{{activityDetail.share_num}}' />
+  <operate-bar support_num='{{activityDetail.support_num}}' comment_num='{{activityDetail.comment_num}}' share_num='{{activityDetail.share_num}}' has_supported='{{activityDetail.has_supported}}' supportId='{{activityDetail.id}}' supportType='{{moduleType}}'
+    bind:showCommentView='showCommentView' />
 </view>
-<comment-bar commentId='{{activityDetail.id}}' commentType='{{moduleType}}' comments="{{activityDetail.comments}}" />
+<comment-bar id='activeComment' commentId='{{activityDetail.id}}' commentType='{{moduleType}}' comments="{{activityDetail.comments}}" />

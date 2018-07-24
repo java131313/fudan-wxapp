@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .operate-item image {
@@ -24,4 +25,15 @@
   display: inline-block;
   font-size: 28rpx;
   color: #888;
+}
+
+.operate-item button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.0);
+  padding: 0;
+  margin: 0;
+}
+
+.operate-item button::after {
+  border: 0;
 }

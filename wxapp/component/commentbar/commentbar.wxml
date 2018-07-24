@@ -5,7 +5,7 @@
     <view class='commentFunction_title'>
       <text>评论内容</text>
     </view>
-    <view class='commentFunction_speak' bindtap='_startedReview'>
+    <view class='commentFunction_speak' catchtap='_startedReview'>
       <text>写评论</text>
     </view>
   </view>
@@ -24,7 +24,7 @@
       </view>
       <view class='commentContent_attitude'>
         <view class='click_love2'>
-          <image src='{{filter.imageSrcParse(item.has_supported == 1 ? "/images/like_hover.png" : "/images/like.png")}}' bindtap='_commentSupport' data-commentid="{{item.id}}"></image>
+          <image src='{{filter.imageSrcParse(item.has_supported == 1 ? "/images/like_hover.png" : "/images/like.png")}}' catchtap='_commentSupport' data-commentid="{{item.id}}"></image>
           <text>{{item.support_num}}</text>
         </view>
       </view>
@@ -40,7 +40,7 @@
       </view>
       <view class='commentView_true'>
         <view>
-          <button class='none no' bindtap="_commentCancel">取消</button>
+          <button class='none no' catchtap="_commentCancel">取消</button>
         </view>
         <view>
           <button class='none yes' form-type='submit'>发布</button>

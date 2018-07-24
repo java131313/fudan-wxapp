@@ -84,6 +84,12 @@ Component({
       self.setData({
         show_commentView: false
       });
+    },
+    showCommentView() {
+      let self = this;
+      self.setData({
+        show_commentView: true
+      });
     }
   }
 })

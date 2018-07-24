@@ -71,7 +71,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    let self = this;
+    let shareCallback = () => {
+      let share_num = self.data.voteDetail.share_num + 1;
+      self.setData({
+        'voteDetail.share_num': share_num
+      });
+    };
+    let shareId = self.data.voteDetail.id;
+    let shareType = self.data.moduleType;
+    return Util.onShareAppMessage({
+      shareId: shareId,
+      shareType: shareType
+    }, shareCallback);
   },
 
   /* 获取投票详情 */
@@ -103,5 +115,11 @@ Page({
         self.selectComponent(`#vote_${x}`).hideVote();
       }
     });
+  },
+
+  /* 打开添加评论窗口 */
+  showCommentView(e) {
+    let self = this;
+    self.selectComponent('#voteComment').showCommentView();
   }
 })

@@ -12,7 +12,8 @@
     </view>
     <text wx:if='{{recruitDetail.applied == 0}}' class='recruit-btn' bindtap='recruitApply'>岗位申请</text>
     <text wx:if='{{recruitDetail.applied == 1}}' class='recruit-btn after'>已提交岗位申请，请耐心等待审核</text>
-    <operate-bar support_num='{{recruitDetail.support_num}}' comment_num='{{recruitDetail.comment_num}}' share_num='{{recruitDetail.share_num}}' />
+    <operate-bar support_num='{{recruitDetail.support_num}}' comment_num='{{recruitDetail.comment_num}}' share_num='{{recruitDetail.share_num}}' has_supported='{{recruitDetail.has_supported}}' supportId='{{recruitDetail.id}}' supportType='{{moduleType}}'
+      bind:showCommentView='showCommentView' />
   </view>
 </view>
-<comment-bar commentId='{{recruitDetail.id}}' commentType='{{moduleType}}' comments="{{recruitDetail.comments}}" />
+<comment-bar id='recruitComment' commentId='{{recruitDetail.id}}' commentType='{{moduleType}}' comments="{{recruitDetail.comments}}" />

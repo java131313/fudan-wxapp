@@ -70,12 +70,12 @@ Page({
     let shareCallback = () => {
       let share_num = self.data.newsDetail.share_num + 1;
       self.setData({
-        share_num: share_num
+        'newsDetail.share_num': share_num
       });
     };
     let shareId = self.data.newsDetail.id;
     let shareType = self.data.moduleType;
-    Util.onShareAppMessage({
+    return Util.onShareAppMessage({
       shareId: shareId,
       shareType: shareType
     }, shareCallback);
@@ -90,5 +90,11 @@ Page({
       });
       WxParse.wxParse('article', 'html', res.data.data.content, self, 30);
     });
+  },
+
+  /* 打开添加评论窗口 */
+  showCommentView(e) {
+    let self = this;
+    self.selectComponent('#newsComment').showCommentView();
   }
 })

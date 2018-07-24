@@ -1,3 +1,4 @@
+import Util from '../../../../utils/util.js';
 const app = getApp();
 
 Page({
@@ -65,7 +66,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    let self = this;
+    let shareCallback = () => {
+      let share_num = self.data.recruitDetail.share_num + 1;
+      self.setData({
+        'recruitDetail.share_num': share_num
+      });
+    };
+    let shareId = self.data.recruitDetail.id;
+    let shareType = self.data.moduleType;
+    return Util.onShareAppMessage({
+      shareId: shareId,
+      shareType: shareType
+    }, shareCallback);
   },
 
   /* 获取招聘详情 */
@@ -85,5 +98,11 @@ Page({
     wx.navigateTo({
       url: `${self.data.recruitFormUrl}?id=${self.data.recruitDetail.id}&title=${self.data.recruitDetail.title}`
     });
+  },
+
+  /* 打开添加评论窗口 */
+  showCommentView(e) {
+    let self = this;
+    self.selectComponent('#recruitComment').showCommentView();
   }
 })

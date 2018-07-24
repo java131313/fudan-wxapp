@@ -9,7 +9,8 @@
         bind:vote='vote' />
     </block>
     <view class="operate_top"></view>
-    <operate-bar support_num='{{voteDetail.support_num}}' comment_num='{{voteDetail.comment_num}}' share_num='{{voteDetail.share_num}}' />
+    <operate-bar support_num='{{voteDetail.support_num}}' comment_num='{{voteDetail.comment_num}}' share_num='{{voteDetail.share_num}}' has_supported='{{voteDetail.has_supported}}' supportId='{{voteDetail.id}}' supportType='{{moduleType}}' bind:showCommentView='showCommentView'
+    />
   </view>
 </view>
-<comment-bar commentId='{{voteDetail.id}}' commentType='{{moduleType}}' comments="{{voteDetail.comments}}" />
+<comment-bar id='voteComment' commentId='{{voteDetail.id}}' commentType='{{moduleType}}' comments="{{voteDetail.comments}}" />
