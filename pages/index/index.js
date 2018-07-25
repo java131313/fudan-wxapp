@@ -18,6 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    let self = this;
     app.api.mockTest().then(res => {
       if (res.data.code == 200) {
         this.setData({
@@ -25,6 +26,7 @@ Page({
         });
       }
     });
+    self.getNewsList();
   },
 
   /**
@@ -80,6 +82,14 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 获取首页推荐列表数据 */
+  getNewsList() {
+    let self = this;
+    app.api.getNewsList().then(res => {
+
+    });
   },
 
   /* 点击切换推荐页 */

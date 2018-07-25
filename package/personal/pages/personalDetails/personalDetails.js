@@ -97,9 +97,14 @@ Page({
       success: function(res) {
         let tempFilePaths = res.tempFilePaths;
         app.api.uploadImages(tempFilePaths, 'avatar').then(res => {
-          app.globalData.userInfo.avatar = res;
-          self.setData({
-            'userInfo.avatar': res
+          let avatarUrl = res.shift();
+          app.api.setUserInfo({
+            avatar: avatarUrl
+          }).then(res => {
+            app.globalData.userInfo.avatar = avatarUrl;
+            self.setData({
+              'userInfo.avatar': avatarUrl
+            });
           });
         });
       }

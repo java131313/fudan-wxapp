@@ -1,3 +1,4 @@
+import Util from '../../../../utils/util.js';
 const app = getApp();
 
 Page({
@@ -13,7 +14,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let self = this;
+    self.initValidateRules();
   },
 
   /**
@@ -63,5 +65,40 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 加载表单验证规则 */
+  initValidateRules() {
+    let self = this;
+    self.wxValidate = app.wxValidate({
+      nickname: {
+        required: true,
+        maxlength: 10
+      }
+    }, {
+      nickname: {
+        required: '请输入昵称'
+      }
+    });
+  },
+
+  /* 修改昵称 */
+  submitName(e) {
+    let self = this;
+    if (!self.wxValidate.checkForm(e)) {
+      const error = self.wxValidate.errorList[0];
+      Util.showToast({
+        title: error.msg,
+        image: 2
+      });
+    } else {
+      let nickname = e.detail.value.nickname;
+      app.api.setUserInfo({
+        nickname: nickname
+      }).then(res => {
+        app.globalData.userInfo.nickname = nickname;
+        wx.navigateBack();
+      });
+    }
   }
 })

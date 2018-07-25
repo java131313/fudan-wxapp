@@ -1,6 +1,6 @@
 <view class='main-wrapper' style='background:{{bgColor}}'>
   <form bindsubmit='submitName'>
-    <input auto-focus='true' class='nameChange' type='text' placeholder="输入新昵称"></input>
+    <input name='nickname' auto-focus='true' class='nameChange' type='text' placeholder="输入新昵称"></input>
     <button class='save-btn' form-type='submit'>保存</button>
   </form>
 </view>

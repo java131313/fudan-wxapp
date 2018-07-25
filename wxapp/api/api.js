@@ -17,6 +17,13 @@ export default class Api {
     if (self.isMock) return mockData.getNewsList();
   }
 
+  /* 获取首页推荐列表数据 */
+  getNewsList() {
+    let self = this;
+    let url = '/front/front';
+    return self.post(url);
+  }
+
   /* 获取缓存里面的session_id */
   getSessionId() {
     return wx.getStorageSync('session_id');
