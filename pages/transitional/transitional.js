@@ -17,13 +17,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    bindRolePromise.then(() => {
-      if (app.globalData.isAuthorized) {
-        wx.switchTab({
-          url: app.CONFIG.PAGE.INDEX
-        });
-      }
-    });
+    // bindRolePromise.then(() => {
+    //   if (app.globalData.isAuthorized) {
+    //     wx.switchTab({
+    //       url: app.CONFIG.PAGE.INDEX
+    //     });
+    //   }
+    // });
   },
 
   /**

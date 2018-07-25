@@ -75,7 +75,7 @@
       </view>
       <view class='oneself_kb2'></view>
       <view class='oneself_P2'>
-        <text>新媒体</text>
+        <text>{{userInfo.profession}}</text>
       </view>
       <view class='arrows2'>
       </view>
