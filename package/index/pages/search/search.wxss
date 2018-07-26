@@ -56,12 +56,10 @@
 
 .newcontent {
   width: 100%;
-  height: 100%;
+  height: 180rpx;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 1rpx 0;
-  margin-bottom: 1rpx;
   background-color: #fff;
   border-bottom: 5rpx solid #f5f5f5;
 }
@@ -86,7 +84,7 @@
   display: inline-block;
   overflow: hidden;
   width: 100%;
-  height: 180rpx;
+  height: 130rpx;
   padding: 0 0 0 5%;
 }
 
@@ -97,8 +95,8 @@
   height: 180rpx;
 }
 
-.newsA {
-  width: 100%;
+.newA{
+  margin-bottom: 5rpx;
 }
 
 .title {
@@ -106,7 +104,11 @@
   font-size: 31rpx;
   color: rgba(0, 0, 0, 0.7);
   font-weight: bold;
-  margin-top: 30rpx;
+  line-height:40rpx;
+}
+
+.newsB{
+  padding-top:5rpx;
 }
 
 .time {
@@ -115,7 +117,7 @@
 }
 
 .class {
-  padding: 15rpx 0 0 0;
+  padding: 5rpx 0 0 0;
   background-color: #fff;
 }
 
@@ -127,24 +129,33 @@
 
 .newsport {
   width: 100%;
-  height: 100%;
+  height:165rpx;
   display: flex;
   overflow: hidden;
-  padding: 5rpx 0 0 0;
-  margin-bottom: 2rpx;
   background-color: #fff;
   border-bottom: 5rpx solid #f5f5f5;
+}
+
+._content{
+
 }
 
 .newsport:nth-last-child(1) {
   border: none;
 }
 
+._newsA{
+
+}
 .sporttitle {
   width: 100%;
   font-size: 31rpx;
   color: rgba(0, 0, 0, 0.75);
   font-weight: bold;
+}
+
+._newsB{
+  margin-top: 15rpx;
 }
 
 ._hisautoserach{
