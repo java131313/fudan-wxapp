@@ -149,8 +149,8 @@ export default class Api {
     return self.post(url, postData);
   }
 
-  /* 搜索 */
-  search(keyword) {
+  /* 关键词搜索 */
+  searchKeyword(keyword) {
     let self = this;
     let url = '/front/search';
     let postData = {

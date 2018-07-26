@@ -7,7 +7,8 @@ Page({
    */
   data: {
     bgColor: app.CONFIG.BGCOLOR,
-    search:true
+    showSearchHistory: true,
+    searchPage: {}
   },
 
   /**
@@ -71,22 +72,23 @@ Page({
   getSearchPage() {
     let self = this;
     app.api.getSearchPage().then(res => {
-
+      self.setData({
+        searchPage: res.data.data
+      });
     });
   },
-  _test:function(res){
+
+  /* 关键词搜索 */
+  searchKeyword: function(e) {
     let self = this;
-    console.log(res);
-    let value = res.detail.value;
-    if(value){
-      self.setData({
-        search:false
+    let keyword = e.detail.value;
+    self.setData({
+      showSearchHistory: keyword ? false : true
+    });
+    if (keyword) {
+      app.api.searchKeyword(keyword).then(res => {
+
       });
-    }
-    else{
-      self.setData({
-        search:true
-      })
     }
   }
 })

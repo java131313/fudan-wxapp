@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   background: #f5f5f5;
-  min-height:100%;
+  min-height: 100%;
 }
 
 .top {
@@ -36,8 +36,6 @@
   line-height: 68rpx;
   color: #aaa;
 }
-
-
 
 .searchBtn image {
   position: absolute;
@@ -147,39 +145,41 @@
   font-weight: bold;
 }
 
-._hisautoserach{
+._hisautoserach {
   margin: 40rpx 30rpx 0 30rpx;
 }
 
-._hotautoserach{
+._hotautoserach {
   border-bottom: 1rpx solid rgba(0, 0, 0, 0.08);
   margin: 40rpx 30rpx;
 }
 
-._title{
+._title {
   line-height: 27rpx;
   font-size: 0.8em;
   color: rgba(0, 0, 0, 0.5);
 }
 
-.hotsearch{
+.hotsearch {
   display: inline-flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   margin: 30rpx 0;
 }
-.historysearch{
+
+.historysearch {
   display: inline-flex;
   flex-direction: column;
   margin-top: 20rpx;
 }
-._hotsearch{
+
+._hotsearch {
   line-height: 65rpx;
   font-size: 30rpx;
   display: block;
   margin-right: 47rpx;
 }
 
-._historysearch{
+._historysearch {
   display: block;
   font-size: 30rpx;
   line-height: 70rpx;
