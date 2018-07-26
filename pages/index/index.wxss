@@ -23,24 +23,28 @@
   flex-direction: column;
   align-items: center;
 }
-.newsTitle{
- color: #999;
+
+.newsTitle {
+  color: #999;
 }
-.newsTitle_border{
+
+.newsTitle_border {
   height: 4rpx;
   width: 48rpx;
   background: #fff;
 }
-.newsTitle_border_click{
- background: #d33a3a;
+
+.newsTitle_border_click {
+  background: #d33a3a;
 }
-.newsTitle_click{
- color: #d33a3a;
-}
-.newsTitle_parent:nth-child(1) {
+
+.newsTitle_click {
   color: #d33a3a;
 }
 
+.newsTitle_parent:nth-child(1) {
+  color: #d33a3a;
+}
 
 .newsTitle_parent:nth-child(2) {
   padding-right: 3.4%;

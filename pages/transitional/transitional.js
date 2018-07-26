@@ -10,6 +10,7 @@ Page({
    */
   data: {
     redirectUrl: app.CONFIG.PAGE.SELECTID,
+    showLoginBtn: false,
     backgroundUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531393049025&di=63a646a36fac358f32e395501974654d&imgtype=0&src=http%3A%2F%2Fsh.newzane.com%2Fuploadfile%2F2017%2F0627%2F20170627113046147.jpg'
   },
 
@@ -17,13 +18,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // bindRolePromise.then(() => {
-    //   if (app.globalData.isAuthorized) {
-    //     wx.switchTab({
-    //       url: app.CONFIG.PAGE.INDEX
-    //     });
-    //   }
-    // });
+    let self = this;
+    bindRolePromise.then(() => {
+      if (app.globalData.isAuthorized) {
+        wx.switchTab({
+          url: app.CONFIG.PAGE.INDEX
+        });
+      } else {
+        self.setData({
+          showLoginBtn: true
+        });
+      }
+    });
   },
 
   /**

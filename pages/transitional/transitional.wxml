@@ -1,4 +1,3 @@
 <view class='main-wrapper' style='background:url({{backgroundUrl}}) no-repeat'>
-  <!-- <navigator open-type='redirect' url='{{redirectUrl}}'>登录</navigator> -->
-  <text class='_rgba'>登陆授权</text>
+  <navigator wx:if='{{showLoginBtn}}' class='loginbtn' open-type='redirect' url='{{redirectUrl}}'>进入我的复旦</navigator>
 </view>

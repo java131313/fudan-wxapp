@@ -1,9 +1,9 @@
 <wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
 
-<view class='all'>
+<view class='main-wrapper' style='background:{{bgColor}}'>
   <view class='top'>
     <view class='search'>
-      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='创新创业大赛'>
+      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='创新创业大赛' auto-focus='true'>
       <image src='{{filter.imageSrcParse("/images/search.png")}}'></image>
       </input>
     </view>

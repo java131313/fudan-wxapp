@@ -5,6 +5,15 @@
   justify-content: center;
   align-items: center;
 }
-._rgba{
-  color: rgba(0,0,0,0.7)
+
+.loginbtn {
+  display: inline-block;
+  height: 84rpx;
+  width: 300rpx;
+  background: #cc1a1a;
+  color: #fbefef;
+  text-align: center;
+  line-height: 84rpx;
+  font-size: 0.8em;
+  border-radius: 10rpx;
 }
