@@ -3,42 +3,26 @@
 <view class='main-wrapper' style='background:{{bgColor}}'>
   <view class='top'>
     <view class='search'>
-      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='输入学院/活动/课程，查找你需要的信息' auto-focus='true' bindinput="_test">
+      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='输入学院/活动/课程，查找你需要的信息' auto-focus='true' bindinput="searchKeyword">
       <image src='{{filter.imageSrcParse("/images/search.png")}}'></image>
       </input>
     </view>
   </view>
-  <view class='autoserach' wx:if="{{search}}">
+  <view class='autoserach' wx:if="{{showSearchHistory}}">
     <view class='_hotautoserach'>
       <view class='_title'>热门搜索</view>
       <view class='hotsearch'>
-        <view class='_hotsearch'>毕业论文</view>
-        <view class='_hotsearch'>校庆</view>
-        <view class='_hotsearch'>毕业季</view>
-        <view class='_hotsearch'>晨景</view>
-        <view class='_hotsearch'>广告大赛</view>
-        <view class='_hotsearch'>广告大赛</view>
+        <block wx:for='{{searchPage.hot_words}}' wx:key='this'>
+          <view class='_hotsearch'>{{item}}</view>
+        </block>
       </view>
     </view>
     <view class='_hisautoserach'>
       <view class='_title'>搜索记录</view>
       <view class='historysearch'>
-        <text class='_historysearch'>迎新晚会</text>
-        <text class='_historysearch'>换书活动</text>
-        <text class='_historysearch'>迎新晚会</text>
-        <text class='_historysearch'>换书活动</text>
-        <text class='_historysearch'>迎新晚会</text>
-        <text class='_historysearch'>换书活动</text>
-        <text class='_historysearch'>迎新晚会</text>
-        <text class='_historysearch'>换书活动</text>
-        <text class='_historysearch'>迎新晚会</text>
-        <text class='_historysearch'>换书活动</text>
-        <text class='_historysearch'>迎新晚会</text>
-        <text class='_historysearch'>换书活动</text>
-        <text class='_historysearch'>迎新晚会</text>
-        <text class='_historysearch'>换书活动</text>
-        <text class='_historysearch'>迎新晚会</text>
-        <text class='_historysearch'>换书活动</text>
+        <block wx:for='{{searchPage.history}}' wx:key='this'>
+          <text class='_historysearch'>{{item}}</text>
+        </block>
       </view>
     </view>
   </view>
@@ -78,25 +62,25 @@
     </view>
     <view class='down'>
       <view class='second'>
-        <view class='class'>
+        <view class='_class'>
           <text class='classtext'>活动</text>
         </view>
         <view class='newsport'>
-          <view class='content'>
-            <view class='newsA'>
+          <view class='_content'>
+            <view class='_newsA'>
               <text class='sporttitle'>第四届中国“互联网+”大学生创新创业大赛启动仪式即将在复旦大学举行</text>
             </view>
-            <view class="newsB">
+            <view class="_newsB">
               <text class='time'>2018-06-11</text>
             </view>
           </view>
         </view>
         <view class='newsport'>
-          <view class='content'>
-            <view class='newsA'>
+          <view class='_content'>
+            <view class='_newsA'>
               <text class='sporttitle'>第四届中国“互联网+”大学生创新创业大赛启动仪式即将在复旦大学举行</text>
             </view>
-            <view class="newsB">
+            <view class="_newsB">
               <text class='time'>2018-06-11</text>
             </view>
           </view>
