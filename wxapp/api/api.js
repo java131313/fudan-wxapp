@@ -180,6 +180,17 @@ export default class Api {
     return self.post(url, postData);
   }
 
+  /* 添加搜索历史关键词 */
+  addSearchHistory(keyword) {
+    let self = this;
+    let url = '/front/addSearchHistory';
+    let postData = {
+      keyword: keyword,
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
   /* 评论 */
   addComment(id, commentType, content) {
     let self = this;

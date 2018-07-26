@@ -8,6 +8,7 @@ Page({
   data: {
     bgColor: app.CONFIG.BGCOLOR,
     showSearchHistory: true,
+    keyword: '',
     searchPage: {}
   },
 
@@ -79,16 +80,24 @@ Page({
   },
 
   /* 关键词搜索 */
-  searchKeyword: function(e) {
+  searchKeyword(e) {
     let self = this;
     let keyword = e.detail.value;
     self.setData({
-      showSearchHistory: keyword ? false : true
+      showSearchHistory: keyword ? false : true,
+      keyword: keyword
     });
     if (keyword) {
       app.api.searchKeyword(keyword).then(res => {
 
       });
     }
+  },
+
+  /* 添加搜索历史关键词 */
+  addSearchHistory() {
+    let self = this;
+    let keyword = self.data.keyword;
+    app.api.addSearchHistory(keyword);
   }
 })
