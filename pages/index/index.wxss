@@ -60,13 +60,14 @@
 }
 
 .btnClass {
+  margin-top: 2.5rpx;
   font-size: 28rpx;
   line-height: 68rpx;
   color: #aaa;
-  padding-left: 20%;
 }
 
 .searchBtn {
+  padding-left: 20%;
   position: relative;
   height: 68rpx;
   line-height: 68rpx;

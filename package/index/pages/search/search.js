@@ -7,6 +7,7 @@ Page({
    */
   data: {
     bgColor: app.CONFIG.BGCOLOR,
+    search:true
   },
 
   /**
@@ -72,5 +73,20 @@ Page({
     app.api.getSearchPage().then(res => {
 
     });
+  },
+  _test:function(res){
+    let self = this;
+    console.log(res);
+    let value = res.detail.value;
+    if(value){
+      self.setData({
+        search:false
+      });
+    }
+    else{
+      self.setData({
+        search:true
+      })
+    }
   }
 })

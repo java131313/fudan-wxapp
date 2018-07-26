@@ -3,69 +3,105 @@
 <view class='main-wrapper' style='background:{{bgColor}}'>
   <view class='top'>
     <view class='search'>
-      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='创新创业大赛' auto-focus='true'>
+      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='输入学院/活动/课程，查找你需要的信息' auto-focus='true' bindinput="_test">
       <image src='{{filter.imageSrcParse("/images/search.png")}}'></image>
       </input>
     </view>
   </view>
-  <view class='down'>
-    <view class='first'>
-      <view class='class'>
-        <text class='classtext'>新闻</text>
+  <view class='autoserach' wx:if="{{search}}">
+    <view class='_hotautoserach'>
+      <view class='_title'>热门搜索</view>
+      <view class='hotsearch'>
+        <view class='_hotsearch'>毕业论文</view>
+        <view class='_hotsearch'>校庆</view>
+        <view class='_hotsearch'>毕业季</view>
+        <view class='_hotsearch'>晨景</view>
+        <view class='_hotsearch'>广告大赛</view>
+        <view class='_hotsearch'>广告大赛</view>
       </view>
-      <view class='newcontent'>
-        <view class="picture">
-          <image src='../../../../images/person_top_bg.png' class="imageclass" />
-        </view>
-        <view class='contentnoe'>
-          <view class='newsA'>
-            <text class='title'>第四届中国“互联网+”大学生创新创业大赛在复旦启动</text>
-          </view>
-          <view class="newsB">
-            <text class='time'>2018-06-12</text>
-          </view>
-        </view>
+    </view>
+    <view class='_hisautoserach'>
+      <view class='_title'>搜索记录</view>
+      <view class='historysearch'>
+        <text class='_historysearch'>迎新晚会</text>
+        <text class='_historysearch'>换书活动</text>
+        <text class='_historysearch'>迎新晚会</text>
+        <text class='_historysearch'>换书活动</text>
+        <text class='_historysearch'>迎新晚会</text>
+        <text class='_historysearch'>换书活动</text>
+        <text class='_historysearch'>迎新晚会</text>
+        <text class='_historysearch'>换书活动</text>
+        <text class='_historysearch'>迎新晚会</text>
+        <text class='_historysearch'>换书活动</text>
+        <text class='_historysearch'>迎新晚会</text>
+        <text class='_historysearch'>换书活动</text>
+        <text class='_historysearch'>迎新晚会</text>
+        <text class='_historysearch'>换书活动</text>
+        <text class='_historysearch'>迎新晚会</text>
+        <text class='_historysearch'>换书活动</text>
       </view>
-      <view class='newcontent'>
-        <view class="picture">
-          <image src='../../../../images/person_top_bg.png' class="imageclass" />
+    </view>
+  </view>
+  <block wx:else>
+    <view class='down'>
+      <view class='first'>
+        <view class='class'>
+          <text class='classtext'>新闻</text>
         </view>
-        <view class='contentnoe'>
-          <view class='newsA'>
-            <text class='title'>第四届中国“互联网+”大学生创新创业大赛在复旦启动</text>
+        <view class='newcontent'>
+          <view class="picture">
+            <image src='../../../../images/person_top_bg.png' class="imageclass" />
           </view>
-          <view class="newsB">
-            <text class='time'>2018-06-11</text>
+          <view class='contentnoe'>
+            <view class='newsA'>
+              <text class='title'>第四届中国“互联网+”大学生创新创业大赛在复旦启动</text>
+            </view>
+            <view class="newsB">
+              <text class='time'>2018-06-12</text>
+            </view>
+          </view>
+        </view>
+        <view class='newcontent'>
+          <view class="picture">
+            <image src='../../../../images/person_top_bg.png' class="imageclass" />
+          </view>
+          <view class='contentnoe'>
+            <view class='newsA'>
+              <text class='title'>第四届中国“互联网+”大学生创新创业大赛在复旦启动</text>
+            </view>
+            <view class="newsB">
+              <text class='time'>2018-06-11</text>
+            </view>
           </view>
         </view>
       </view>
     </view>
-  </view>
-  <view class='down'>
-    <view class='second'>
-      <view class='class'>
-        <text class='classtext'>活动</text>
-      </view>
-      <view class='newsport'>
-        <view class='content'>
-          <view class='newsA'>
-            <text class='sporttitle'>第四届中国“互联网+”大学生创新创业大赛启动仪式即将在复旦大学举行</text>
-          </view>
-          <view class="newsB">
-            <text class='time'>2018-06-11</text>
+    <view class='down'>
+      <view class='second'>
+        <view class='class'>
+          <text class='classtext'>活动</text>
+        </view>
+        <view class='newsport'>
+          <view class='content'>
+            <view class='newsA'>
+              <text class='sporttitle'>第四届中国“互联网+”大学生创新创业大赛启动仪式即将在复旦大学举行</text>
+            </view>
+            <view class="newsB">
+              <text class='time'>2018-06-11</text>
+            </view>
           </view>
         </view>
-      </view>
-      <view class='newsport'>
-        <view class='content'>
-          <view class='newsA'>
-            <text class='sporttitle'>第四届中国“互联网+”大学生创新创业大赛启动仪式即将在复旦大学举行</text>
-          </view>
-          <view class="newsB">
-            <text class='time'>2018-06-11</text>
+        <view class='newsport'>
+          <view class='content'>
+            <view class='newsA'>
+              <text class='sporttitle'>第四届中国“互联网+”大学生创新创业大赛启动仪式即将在复旦大学举行</text>
+            </view>
+            <view class="newsB">
+              <text class='time'>2018-06-11</text>
+            </view>
           </view>
         </view>
       </view>
     </view>
-  </view>
+  </block>
 </view>
