@@ -4,4 +4,7 @@
       <service-bar class="mw" schoolNaviTo='{{item.schoolNaviTo}}' schoolUrl='{{item.schoolUrl}}' schoolText='{{item.schoolText}}' />
     </block>
   </view>
+  <view class='service_title_parent'>
+    <text class='service_title'>更多服务敬请期待</text>
+  </view>
 </view>
