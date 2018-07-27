@@ -9,8 +9,12 @@ Page({
   data: {
     bgColor: app.CONFIG.BGCOLOR,
     newsDetailUrl: app.CONFIG.PAGE.NEWSDETAILS,
+    activityUrl: app.CONFIG.PAGE.ACTIVEDETAILS,
+    recruitUrl: app.CONFIG.PAGE.RECRUITDETAILS,
+    voteUrl: app.CONFIG.PAGE.VOTEDETAILS,
+    contributeUrl: app.CONFIG.PAGE.CONTRIBUTEFORM,
     isLoading: false,
-    newsItem: [],
+    newsItem: {},
     _num: 1
   },
 
@@ -19,13 +23,13 @@ Page({
    */
   onLoad: function(options) {
     let self = this;
-    app.api.mockTest().then(res => {
-      if (res.data.code == 200) {
-        this.setData({
-          newsItem: res.data.data.news
-        });
-      }
-    });
+    // app.api.mockTest().then(res => {
+    //   if (res.data.code == 200) {
+    //     this.setData({
+    //       newsItem: res.data.data.news
+    //     });
+    //   }
+    // });
     self.getNewsList();
   },
 
@@ -88,7 +92,9 @@ Page({
   getNewsList() {
     let self = this;
     app.api.getNewsList().then(res => {
-
+      self.setData({
+        newsItem: res.data.data
+      });
     });
   },
 

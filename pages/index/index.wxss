@@ -1,5 +1,9 @@
 @import '/wxapp/template/topLoading/topLoading.wxss';
 
+.main-wrapper {
+  height: 100%;
+}
+
 .newsHeader {
   width: 100%;
   background: #fff;

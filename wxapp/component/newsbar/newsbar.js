@@ -7,10 +7,13 @@ Component({
     news_title: String,
     synopsis_time: String,
     synopsis_source: String,
-    newsB_time: String,
-    newsB_from: String,
+    activity_time: String,
+    activity_site: String,
     news_type: Number,
-    news_url: String
+    news_url: String,
+    recruit_target: String,
+    recruit_require: String,
+    vote_options: Object
   },
 
   /**

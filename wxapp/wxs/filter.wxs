@@ -40,6 +40,14 @@ function imageSrcParse(path) {
   return domain + path;
 }
 
+function handleNewsType(cover_img, img_size) {
+  if (!cover_img) {
+    return 3;
+  } else {
+    return img_size == 'small' ? 2 : 1;
+  }
+}
+
 module.exports = {
   split: split,
   formatPercent: formatPercent,

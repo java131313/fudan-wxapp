@@ -48,8 +48,6 @@
   padding: 0 4%;
 }
 
-/* 方案二 */
-
 .news_F_pic2 {
   display: inline-block;
   width: 32%;
@@ -117,4 +115,140 @@
   color: #333;
   font-size: 34rpx;
   font-weight: bold;
+}
+
+.information_title {
+  margin-top: 14rpx;
+  font-size: 34rpx;
+  color: #333;
+  line-height: 72rpx;
+  font-weight: bold;
+}
+
+.information_job {
+  font-size: 28rpx;
+  color: #999;
+  line-height: 40rpx;
+}
+
+.require_header_parent {
+  display: flex;
+  flex-direction: row;
+}
+
+.information_job_parent {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.require {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.vote {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.vote_index {
+  width: 8.5%;
+  text-align: center;
+}
+
+.vote_index text {
+  line-height: 118rpx;
+  font-size: 28rpx;
+  color: #aaa;
+  display: inline-block;
+}
+
+.vote_pic {
+  width: auto;
+}
+
+.vote_pic image {
+  width: 90rpx;
+  height: 90rpx;
+  margin-top: 14rpx;
+  border-radius: 50%;
+}
+
+.vote_text {
+  width: 19.8%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vote_text text {
+  line-height: 118rpx;
+  font-size: 32rpx;
+}
+
+.progress_block {
+  width: 39.33%;
+  margin-top: 38rpx;
+  color: #cc1a1a;
+}
+
+.progress_none {
+  display: none;
+}
+
+.vote_status {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.vote_status_yes {
+  display: inline-block;
+  width: 70%;
+  text-align: center;
+  line-height: 62rpx;
+  background: #fff3f3;
+  color: #cc1a1a;
+  font-size: 30rpx;
+}
+
+.vote_status_no {
+  display: inline-block;
+  width: 70%;
+  text-align: center;
+  line-height: 62rpx;
+  border: 2rpx solid #de6b6b;
+  color: #de6b6b;
+  font-size: 30rpx;
+}
+
+.click_like {
+  width: 92.6%;
+  padding: 0 3.7%;
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+
+.click_like_border {
+  border-top: 2rpx solid #e5e5e5;
+}
+
+.click_love {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+}
+
+.click_love image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.click_love text {
+  line-height: 94rpx;
+  font-size: 28rpx;
+  color: #888;
 }

@@ -1,3 +1,4 @@
+import Util from '../../../../utils/util.js';
 const app = getApp();
 
 Page({
@@ -9,28 +10,10 @@ Page({
     bgColor: app.CONFIG.BGCOLOR,
     showSearchHistory: true,
     keyword: '',
-    searchPage: {}
+    searchPage: {},
+    searchResultData: {}
   },
-  delete_record:function(res){
-    let self = this;
-    let notes = self.data.searchPage.history;
-    wx.showModal({
-      title: '提示',
-      content: '确定清除搜索历史吗?',
-      success: function (res) {
-        if (res.confirm) {
-         console.log(res);
-          notes.splice(0,notes.length-1);
-          self.setData({
-            searchPage: notes
-          })
-        } else if (res.cancel) {
-          
-        }
-      }
 
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -108,7 +91,9 @@ Page({
     });
     if (keyword) {
       app.api.searchKeyword(keyword).then(res => {
-
+        self.setData({
+          searchResultData: res.data.data
+        });
       });
     }
   },
@@ -118,5 +103,18 @@ Page({
     let self = this;
     let keyword = self.data.keyword;
     app.api.addSearchHistory(keyword);
+  },
+
+  /* 删除搜索历史记录 */
+  removeSearchHistory() {
+    let self = this;
+    Util.showModal({
+      content: '确定清除搜索记录吗？',
+      cancelText: '取消'
+    }).then(() => {
+      app.api.removeSearchHistory().then(res => {
+        self.getSearchPage();
+      });
+    });
   }
 })
