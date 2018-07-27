@@ -33,7 +33,6 @@ Component({
    */
   methods: {
     _vote(e) {
-      if (!Util.checkIsHasPermission()) return;
       let self = this;
       let id = e.currentTarget.dataset.vid;
       app.api.vote(id).then(res => {

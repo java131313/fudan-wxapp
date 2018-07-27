@@ -23,13 +23,6 @@ Page({
    */
   onLoad: function(options) {
     let self = this;
-    // app.api.mockTest().then(res => {
-    //   if (res.data.code == 200) {
-    //     this.setData({
-    //       newsItem: res.data.data.news
-    //     });
-    //   }
-    // });
     self.getNewsList();
   },
 
@@ -66,10 +59,10 @@ Page({
    */
   onPullDownRefresh: function() {
     let self = this;
-    let apifunc = app.api.mockTest();
+    let apifunc = app.api.getNewsList();
     let cb = res => {
       self.setData({
-        newsItem: res.data.data.news
+        newsItem: res.data.data
       });
     };
     let pageTitle = '复旦大学';

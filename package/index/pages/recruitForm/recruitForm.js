@@ -97,7 +97,6 @@ Page({
 
   /* 提交应聘申请 */
   recruitSubmit(e) {
-    if (!Util.checkIsHasPermission()) return;
     let self = this;
     if (!self.wxValidate.checkForm(e)) {
       const error = self.wxValidate.errorList[0];
