@@ -208,5 +208,21 @@
 }
 
 .no_search_result{
+  display: flex;
+  justify-content: center;
+  margin-top: 50%;
+}
+.no_search_pic{
+  height: 100rpx;
+  width: 100rpx;
+}
+.no_search_text_parent{
+  display: flex;
+  align-items: center;
   
+}
+.no_search_text{
+  font-size: 30rpx;
+  color:#bfbfbf;
+  line-height: 40rpx;
 }
