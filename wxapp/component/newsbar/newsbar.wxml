@@ -33,13 +33,15 @@
 
   <!-- 新闻方案三（无图） -->
   <view wx:if="{{news_type == 3}}" class='newsIndex'>
-    <view class="is_title">
-      <view class='is_title_noPic_parent'>
-        <text class='information_title'>{{news_title}}</text>
+    <view class='newsBigPic'>
+      <view class="is_title">
+        <view class='is_title_noPic_parent'>
+          <text class='information_title'>{{news_title}}</text>
+        </view>
       </view>
-    </view>
-    <view class='newsSynopsis'>
-      <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+      <view class='newsSynopsis'>
+        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+      </view>
     </view>
   </view>
 
@@ -73,70 +75,76 @@
 
   <!-- 投票 -->
   <view wx:if="{{news_type == 6}}" class='newsIndex'>
-    <view class="information">
-      <view class='information_title_parent'>
-        <text class='information_title'>{{news_title}}</text>
-      </view>
-      <block wx:for='{{vote_options}}' wx:key='{{item.id}}'>
-        <view class="vote">
-          <view class='vote_index'>
-            <text>{{index+1}}</text>
-          </view>
-          <view class='vote_pic'>
-            <image src='{{item.img}}'></image>
-          </view>
-          <view class='vote_text'>
-            <text>{{item.content}}</text>
-          </view>
-          <view class='progress_block'></view>
-          <view class='vote_status'>
-            <text class='vote_status_no'>投票</text>
-          </view>
+    <view class='newsBigPic'>
+      <view class="information">
+        <view class='information_title_parent'>
+          <text class='information_title'>{{news_title}}</text>
         </view>
-      </block>
-    </view>
-    <view class='newsSynopsis'>
-      <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+        <block wx:for='{{vote_options}}' wx:key='{{item.id}}'>
+          <view class="vote">
+            <view class='vote_index'>
+              <text>{{index+1}}</text>
+            </view>
+            <view class='vote_pic'>
+              <image src='{{item.img}}'></image>
+            </view>
+            <view class='vote_text'>
+              <text>{{item.content}}</text>
+            </view>
+            <view class='progress_block'></view>
+            <view class='vote_status'>
+              <text class='vote_status_no'>投票</text>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class='newsSynopsis'>
+        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+      </view>
     </view>
   </view>
 
   <!-- 招聘 -->
   <view wx:if="{{news_type == 7}}" class='newsIndex'>
-    <view class="information">
-      <view class='information_title_parent'>
-        <text class='information_title'>{{news_title}}</text>
+    <view class='newsBigPic'>
+      <view class="information">
+        <view class='information_title_parent'>
+          <text class='information_title'>{{news_title}}</text>
+        </view>
+        <view class='information_job_parent'>
+          <view class='information_job_constructor'>
+            <text class='information_job'>岗位职责：</text>
+          </view>
+          <view class='information_job_constructor'>
+            <text class='information_job'>{{recruit_target}}</text>
+          </view>
+        </view>
+        <view class='require'>
+          <view class='require_header_parent'>
+            <text class='information_job'>任职要求：</text>
+          </view>
+          <view class='require_content_parent'>
+            <view class='information_job a'>{{recruit_require}}</view>
+          </view>
+        </view>
       </view>
-      <view class='information_job_parent'>
-        <view class='information_job_constructor'>
-          <text class='information_job'>岗位职责：</text>
-        </view>
-        <view class='information_job_constructor'>
-          <text class='information_job'>{{recruit_target}}</text>
-        </view>
+      <view class='newsSynopsis'>
+        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
       </view>
-      <view class='require'>
-        <view class='require_header_parent'>
-          <text class='information_job'>任职要求：</text>
-        </view>
-        <view class='require_content_parent'>
-          <view class='information_job a'>{{recruit_require}}</view>
-        </view>
-      </view>
-    </view>
-    <view class='newsSynopsis'>
-      <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
     </view>
   </view>
 
   <!-- 征稿 -->
   <view wx:if="{{news_type == 8}}" class='newsIndex'>
-    <view class="is_title">
-      <view class='is_title_noPic_parent'>
-        <text class='information_title'>{{news_title}}</text>
+    <view class='newsBigPic'>
+      <view class="is_title">
+        <view class='is_title_noPic_parent'>
+          <text class='information_title'>{{news_title}}</text>
+        </view>
       </view>
-    </view>
-    <view class='newsSynopsis'>
-      <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+      <view class='newsSynopsis'>
+        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+      </view>
     </view>
   </view>
 </navigator>

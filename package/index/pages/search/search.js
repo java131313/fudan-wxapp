@@ -98,11 +98,16 @@ Page({
     }
   },
 
-  /* 添加搜索历史关键词 */
-  addSearchHistory() {
+  /* 添加搜索历史关键词并跳转 */
+  addSearchHistory(url) {
     let self = this;
     let keyword = self.data.keyword;
-    app.api.addSearchHistory(keyword);
+    wx.navigateTo({
+      url: url,
+      success: res => {
+        app.api.addSearchHistory(keyword);
+      }
+    });
   },
 
   /* 删除搜索历史记录 */
@@ -116,5 +121,26 @@ Page({
         self.getSearchPage();
       });
     });
+  },
+
+  /* 进入搜索结果详情页 */
+  goSearchDetail(e) {
+    let self = this;
+    let id = e.currentTarget.dataset.id;
+    let mType = e.currentTarget.dataset.type;
+    switch (mType) {
+      case 'news':
+        self.addSearchHistory(`${app.CONFIG.PAGE.NEWSDETAILS}?id=${id}`);
+        break;
+      case 'activity':
+        self.addSearchHistory(`${app.CONFIG.PAGE.ACTIVEDETAILS}?id=${id}`);
+        break;
+      case 'vote':
+        self.addSearchHistory(`${app.CONFIG.PAGE.VOTEDETAILS}?id=${id}`);
+        break;
+      case 'recruit':
+        self.addSearchHistory(`${app.CONFIG.PAGE.RECRUITDETAILS}?id=${id}`);
+        break;
+    }
   }
 })
