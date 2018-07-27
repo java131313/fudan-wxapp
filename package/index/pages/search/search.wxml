@@ -54,7 +54,7 @@
     </view>
 
     <!-- 活动 -->
-    <view class='down' wx:if='{{searchResultData.activity.length > 0}}'>
+    <view class='down' wx:elif='{{searchResultData.activity.length > 0}}'>
       <view class='second'>
         <view class='_class'>
           <text class='classtext'>活动</text>
@@ -77,7 +77,7 @@
     <!-- 视频 -->
 
     <!-- 投票 -->
-    <view class='down' wx:if='{{searchResultData.vote.length > 0}}'>
+    <view class='down' wx:elif='{{searchResultData.vote.length > 0}}'>
       <view class='second'>
         <view class='_class'>
           <text class='classtext'>投票</text>
@@ -98,7 +98,7 @@
     </view>
 
     <!-- 招聘 -->
-    <view class='down' wx:if='{{searchResultData.recruit.length > 0}}'>
+    <view class='down' wx:elif='{{searchResultData.recruit.length > 0}}'>
       <view class='second'>
         <view class='_class'>
           <text class='classtext'>招聘</text>
@@ -120,5 +120,10 @@
 
     <!-- 征稿 -->
 
+    <!-- 无搜索结果 -->
+    <view class='no_search_result' wx:else>
+      <image src='{{filter.imageSrcParse("/images/no_result.png")}}'></image>
+      <text>暂无匹配结果</text>
+    </view>
   </block>
 </view>

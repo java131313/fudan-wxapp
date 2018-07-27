@@ -147,8 +147,7 @@
   border: none;
 }
 
-._newsA {
-}
+
 
 .sporttitle {
   width: 100%;
@@ -157,8 +156,6 @@
   font-weight: bold;
 }
 
-._newsB {
-}
 
 ._hisautoserach {
   margin: 40rpx 30rpx 0 30rpx;
@@ -178,9 +175,6 @@
 ._title_all {
   display: flex;
   justify-content: space-between;
-}
-
-.delete_pic {
 }
 
 .delete_pic image {
@@ -211,4 +205,8 @@
   display: block;
   font-size: 30rpx;
   line-height: 70rpx;
+}
+
+.no_search_result{
+  
 }

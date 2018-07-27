@@ -88,11 +88,11 @@ module.exports = {
         schoolUrl: 'https://xinzhibang168-1253521270.costj.myqcloud.com/images/kt2.png',
         schoolText: '场馆预定'
       },
-      {
-        schoolNaviTo: "/package/index/pages/contributeForm/contributeForm?id=1",
-        schoolUrl: 'https://xinzhibang168-1253521270.costj.myqcloud.com/images/kt3.png',
-        schoolText: '空课室查询'
-      }
+      // {
+      //   schoolNaviTo: "/package/index/pages/contributeForm/contributeForm?id=1",
+      //   schoolUrl: 'https://xinzhibang168-1253521270.costj.myqcloud.com/images/kt3.png',
+      //   schoolText: '空课室查询'
+      // }
     ]
   }
 }
