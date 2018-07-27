@@ -18,7 +18,10 @@
       </view>
     </view>
     <view class='_hisautoserach'>
+      <view class='_title_all'>
       <view class='_title'>搜索记录</view>
+      <view class='delete_pic'><image bindtap='delete_record' src='{{filter.imageSrcParse("/images/delete.png")}}'></image></view>
+      </view>
       <view class='historysearch'>
         <block wx:for='{{searchPage.history}}' wx:key='this'>
           <text class='_historysearch'>{{item}}</text>

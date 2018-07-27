@@ -175,7 +175,15 @@
   font-size: 0.8em;
   color: rgba(0, 0, 0, 0.5);
 }
-
+._title_all{
+  display: flex;
+  justify-content: space-between;
+}
+.delete_pic{}
+.delete_pic image{
+  width: 40rpx;
+  height: 40rpx;
+}
 .hotsearch {
   display: inline-flex;
   flex-wrap: wrap;

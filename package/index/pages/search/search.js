@@ -11,7 +11,26 @@ Page({
     keyword: '',
     searchPage: {}
   },
+  delete_record:function(res){
+    let self = this;
+    let notes = self.data.searchPage.history;
+    wx.showModal({
+      title: '提示',
+      content: '确定清除搜索历史吗?',
+      success: function (res) {
+        if (res.confirm) {
+         console.log(res);
+          notes.splice(0,notes.length-1);
+          self.setData({
+            searchPage: notes
+          })
+        } else if (res.cancel) {
+          
+        }
+      }
 
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
