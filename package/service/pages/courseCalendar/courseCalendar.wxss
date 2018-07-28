@@ -46,10 +46,10 @@ picker {
 
 .input_time_pic {
   position: absolute;
-  top: 18%;
+  top: 23%;
   right: 5%;
-  height: 60rpx;
-  width: 60rpx;
+  height: 45rpx;
+  width: 45rpx;
   z-index: 10;
 }
 
@@ -74,9 +74,9 @@ picker {
 }
 
 .search_result {
-  width: 80%;
+  width: 77%;
   background: #fff;
-  padding-left: 5%;
+  padding: 36rpx 0 36rpx 5%;
 }
 
 .classroom_seral_time {
@@ -92,18 +92,18 @@ picker {
 
 .classroom_seral {
   font-size: 30rpx;
-  line-height: 100rpx;
+  line-height: 52rpx;
   color: #a1a1a1;
   height: 100rpx;
 }
 
 .classroom_search {
   font-size: 30rpx;
-  line-height: 100rpx;
+  line-height: 52rpx;
   color: #333;
 }
 
-.classroom_seralBox{
+.classroom_seralBox {
   display: flex;
   align-items: flex-start;
 }
