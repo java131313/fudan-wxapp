@@ -159,7 +159,7 @@ function html2json(html, bindName) {
         imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
         /* 处理图片路径 */
         if (imgUrl.indexOf('http') == -1) {
-          let domain = CONFIG.DEBUG.STATUS ? CONFIG.DEBUG.API : CONFIG.HTTP.API;
+          let domain = CONFIG.DEBUG.STATUS ? CONFIG.DEBUG.IMAGESITE : CONFIG.HTTP.IMAGESITE;
           node.attr.src = `${domain}${imgUrl}`;
         } else {
           node.attr.src = imgUrl;

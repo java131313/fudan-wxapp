@@ -33,7 +33,7 @@
       <!-- 视频 -->
 
       <!-- 投票 -->
-      <news-bar wx:if='{{item.type=="vote"}}' news_url='{{voteUrl}}?id={{item.data.id}}' news_type='6' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' vote_options='{{item.data.options}}'
+      <news-bar wx:if='{{item.type=="vote"}}' news_url='{{voteUrl}}?id={{item.data.id}}' news_type='6' news_title='{{item.data.name}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' vote_options='{{item.data.options}}'
       />
 
       <!-- 招聘 -->
@@ -57,7 +57,7 @@
       <!-- 视频 -->
 
       <!-- 投票 -->
-      <news-bar wx:if='{{item.type=="vote"}}' news_url='{{voteUrl}}?id={{item.data.id}}' news_type='6' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' vote_options='{{item.data.options}}'
+      <news-bar wx:if='{{item.type=="vote"}}' news_url='{{voteUrl}}?id={{item.data.id}}' news_type='6' news_title='{{item.data.name}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' vote_options='{{item.data.options}}'
       />
 
       <!-- 招聘 -->

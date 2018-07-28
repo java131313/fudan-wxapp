@@ -8,11 +8,13 @@ module.exports = {
     WXAPPCODE: [1047, 1048, 1049]
   },
   HTTP: {
-    API: 'formal',
+    API: '',
+    IMAGESITE: ''
   },
   DEBUG: {
     STATUS: true,
     API: 'https://fd.gxdianpu.com',
+    IMAGESITE: 'https://xinzhibang168-1253521270.costj.myqcloud.com',
   },
   MOCK: {
     STATUS: true

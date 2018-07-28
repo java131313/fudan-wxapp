@@ -9,7 +9,7 @@
     <view class='search-container' data-sid='{{item.id}}' catchtap='_goSearchDetail'>
       <view class='search-content'>
         <text class='search-content-title'>{{item.title}}</text>
-        <text class='search-content-time'>{{filter.formatDate(item.createtime)}}</text>
+        <text class='search-content-time'>{{filter.formatDate(item.issuetime)}}</text>
       </view>
     </view>
   </block>

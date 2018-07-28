@@ -80,17 +80,5 @@
       <view class='arrows2'>
       </view>
     </view>
-    <navigator class='oneself_news2' url='{{naviSelfTagUrl}}'>
-      <view class='oneself_identity2'>
-        <text>兴趣标签</text>
-      </view>
-      <view class='oneself_kb2'></view>
-      <view class='oneself_P2'>
-        <text>编辑</text>
-      </view>
-      <view class='arrows2'>
-        <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>
-      </view>
-    </navigator>
   </view>
 </view>
