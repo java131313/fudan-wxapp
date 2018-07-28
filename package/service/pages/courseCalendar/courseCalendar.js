@@ -1,4 +1,3 @@
-// package/service/pages/courseCalendar/courseCalendar.js
 Page({
 
   /**

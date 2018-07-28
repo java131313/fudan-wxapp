@@ -107,7 +107,12 @@ Page({
   addSearchHistory(url) {
     let self = this;
     let keyword = self.data.keyword;
-    app.api.addSearchHistory(keyword);
+    wx.navigateTo({
+      url: url,
+      success: res => {
+        app.api.addSearchHistory(keyword);
+      }
+    });
   },
 
   removeSearchHistory() {
@@ -140,20 +145,19 @@ Page({
   goSearchDetail(e) {
     let self = this;
     let id = e.detail.sid;
-    let mType = e.detail.stype;
-    switch (mType) {
-      case 'news':
-        self.addSearchHistory(`${app.CONFIG.PAGE.NEWSDETAILS}?id=${id}`);
-        break;
-      case 'activity':
-        self.addSearchHistory(`${app.CONFIG.PAGE.ACTIVEDETAILS}?id=${id}`);
-        break;
-      case 'vote':
-        self.addSearchHistory(`${app.CONFIG.PAGE.VOTEDETAILS}?id=${id}`);
-        break;
-      case 'recruit':
-        self.addSearchHistory(`${app.CONFIG.PAGE.RECRUITDETAILS}?id=${id}`);
-        break;
-    }
+    let mtype = e.detail.stype;
+    self.addSearchHistory(Util.getModulePageUrl(mtype, id));
+  },
+
+  /* 查看更多 */
+  searchMore(e) {
+    let self = this;
+    let keyword = self.data.keyword;
+    let mtitle = e.detail.mtitle;
+    let mtype = e.detail.stype;
+    let searchData = JSON.stringify(self.allSearchResult[mtype]);
+    wx.navigateTo({
+      url: `${app.CONFIG.PAGE.SEARCHDETAILS}?keyword=${keyword}&mtitle=${mtitle}&mtype=${mtype}&searchData=${searchData}`
+    });
   }
 })

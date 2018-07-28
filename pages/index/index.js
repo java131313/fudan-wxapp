@@ -15,7 +15,13 @@ Page({
     contributeUrl: app.CONFIG.PAGE.CONTRIBUTEFORM,
     isLoading: false,
     newsItem: {},
-    menuType: 1
+    weekRank: {},
+    menuType: 1,
+    news_page_index: 0,
+    weekrank_page_index: 0,
+    isLoadWeekRank: false,
+    news_page_num: 0,
+    weekrank_page_num: 0
   },
 
   /**
@@ -59,11 +65,22 @@ Page({
    */
   onPullDownRefresh: function() {
     let self = this;
-    let apifunc = app.api.getNewsList();
+    let menuType = self.data.menuType;
+    let apifunc = menuType == 1 ? app.api.getNewsList(0) : app.api.getWeekRank(0);
     let cb = res => {
-      self.setData({
-        newsItem: res.data.data
-      });
+      if (menuType == 1) {
+        self.setData({
+          news_page_num: res.data.data.page_num,
+          news_page_index: 0,
+          newsItem: res.data.data.data
+        });
+      } else {
+        self.setData({
+          weekrank_page_num: res.data.data.page_num,
+          weekrank_page_index: 0,
+          weekRank: res.data.data.data
+        });
+      }
     };
     let pageTitle = '复旦大学';
     Util.onPullDownRefresh(self, apifunc, cb, pageTitle);
@@ -72,7 +89,37 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {},
+  onReachBottom: function() {
+    let self = this;
+    let menuType = self.data.menuType;
+    if (menuType == 1) {
+      self.setData({
+        news_page_index: self.data.news_page_index + 1
+      });
+      let news_page_index = self.data.news_page_index;
+      let news_page_num = self.data.news_page_num;
+      if (news_page_index <= news_page_num - 1) {
+        app.api.getNewsList(news_page_index).then(res => {
+          self.setData({
+            newsItem: self.data.newsItem.concat(res.data.data.data)
+          });
+        });
+      }
+    } else {
+      self.setData({
+        weekrank_page_index: self.data.weekrank_page_index + 1
+      });
+      let weekrank_page_index = self.data.weekrank_page_index;
+      let weekrank_page_num = self.data.weekrank_page_num;
+      if (weekrank_page_index <= weekrank_page_num - 1) {
+        app.api.getWeekRank(weekrank_page_index).then(res => {
+          self.setData({
+            weekRank: self.data.weekRank.concat(res.data.data.data)
+          });
+        });
+      }
+    }
+  },
 
   /**
    * 用户点击右上角分享
@@ -84,9 +131,22 @@ Page({
   /* 获取首页推荐列表数据 */
   getNewsList() {
     let self = this;
-    app.api.getNewsList().then(res => {
+    app.api.getNewsList(0).then(res => {
       self.setData({
-        newsItem: res.data.data
+        news_page_num: res.data.data.page_num,
+        newsItem: res.data.data.data
+      });
+    });
+  },
+
+  /* 获取本周热榜 */
+  getWeekRank() {
+    let self = this;
+    app.api.getWeekRank(0).then(res => {
+      self.setData({
+        isLoadWeekRank: true,
+        weekrank_page_num: res.data.data.page_num,
+        weekRank: res.data.data.data
       });
     });
   },
@@ -94,9 +154,13 @@ Page({
   /* 点击切换推荐页 */
   menuClick(e) {
     let self = this;
+    let menuType = Number(e.currentTarget.dataset.num);
     self.setData({
-      menuType: Number(e.currentTarget.dataset.num)
+      menuType: menuType
     });
+    if (menuType == 2 && !self.data.isLoadWeekRank) {
+      self.getWeekRank();
+    }
   },
 
   /* 搜索获取焦点触发 */

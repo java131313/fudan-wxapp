@@ -32,7 +32,7 @@
           <text class='classroom_search'>当代经济学</text>
         </view>
         <view class='classroom_seral_time'>
-          <view>
+          <view class='classroom_seralBox'>
             <text class='classroom_seral'>课室：</text>
           </view>
           <view class='classroom_seral_alls'>

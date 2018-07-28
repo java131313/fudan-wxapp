@@ -5,7 +5,11 @@ Component({
   properties: {
     search_module: String,
     search_type: String,
-    search_content: Object
+    search_content: Object,
+    show_loadmore: {
+      type: Boolean,
+      value: true
+    }
   },
 
   /**
@@ -22,9 +26,18 @@ Component({
     _goSearchDetail(e) {
       let self = this;
       let sid = e.currentTarget.dataset.sid;
-      let stype = e.currentTarget.dataset.stype;
+      let stype = self.data.search_type;
       self.triggerEvent('goSearchDetail', {
         sid: sid,
+        stype: stype
+      });
+    },
+    _searchMore(e) {
+      let self = this;
+      let stype = self.data.search_type;
+      let mtitle = self.data.search_module;
+      self.triggerEvent('searchMore', {
+        mtitle: mtitle,
         stype: stype
       });
     }

@@ -1,2 +1,1 @@
-<!--package/index/pages/searchDetails/searchDetails.wxml-->
-<text>package/index/pages/searchDetails/searchDetails.wxml</text>
+<search-bar search_module='{{mtitle}}' search_type='{{mtype}}' search_content='{{searchData}}' show_loadmore='{{false}}' bind:goSearchDetail='goSearchDetail' />

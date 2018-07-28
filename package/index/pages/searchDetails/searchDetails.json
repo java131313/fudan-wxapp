@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "搜索详情",
+  "usingComponents": {
+    "search-bar": "/wxapp/component/searchbar/searchbar"
+  }
+}
