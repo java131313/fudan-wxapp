@@ -87,7 +87,7 @@ Page({
       showSearchHistory: keyword ? false : true,
       keyword: keyword
     });
-    if (keyword) {
+    if (keyword) {  
       app.api.searchKeyword(keyword).then(res => {
 
       });
@@ -99,5 +99,12 @@ Page({
     let self = this;
     let keyword = self.data.keyword;
     app.api.addSearchHistory(keyword);
+  },
+
+  removeSearchHistory(){
+    let self = this;
+    app.api.removeSearchHistory().then(res=>{
+      self.getSearchPage()
+    });
   }
 })
