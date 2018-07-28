@@ -1,3 +1,4 @@
+import Util from '../../../../utils/util.js';
 const app = getApp();
 
 Page({
@@ -9,7 +10,8 @@ Page({
     bgColor: app.CONFIG.BGCOLOR,
     showSearchHistory: true,
     keyword: '',
-    searchPage: {}
+    searchPage: {},
+    searchResultData: {}
   },
 
   /**
@@ -89,15 +91,18 @@ Page({
     });
     if (keyword) {  
       app.api.searchKeyword(keyword).then(res => {
-
+        self.setData({
+          searchResultData: res.data.data
+        });
       });
     }
   },
 
-  /* 添加搜索历史关键词 */
-  addSearchHistory() {
+  /* 添加搜索历史关键词并跳转 */
+  addSearchHistory(url) {
     let self = this;
     let keyword = self.data.keyword;
+<<<<<<< HEAD
     app.api.addSearchHistory(keyword);
   },
 
@@ -106,5 +111,47 @@ Page({
     app.api.removeSearchHistory().then(res=>{
       self.getSearchPage()
     });
+=======
+    wx.navigateTo({
+      url: url,
+      success: res => {
+        app.api.addSearchHistory(keyword);
+      }
+    });
+  },
+
+  /* 删除搜索历史记录 */
+  removeSearchHistory() {
+    let self = this;
+    Util.showModal({
+      content: '确定清除搜索记录吗？',
+      cancelText: '取消'
+    }).then(() => {
+      app.api.removeSearchHistory().then(res => {
+        self.getSearchPage();
+      });
+    });
+  },
+
+  /* 进入搜索结果详情页 */
+  goSearchDetail(e) {
+    let self = this;
+    let id = e.currentTarget.dataset.id;
+    let mType = e.currentTarget.dataset.type;
+    switch (mType) {
+      case 'news':
+        self.addSearchHistory(`${app.CONFIG.PAGE.NEWSDETAILS}?id=${id}`);
+        break;
+      case 'activity':
+        self.addSearchHistory(`${app.CONFIG.PAGE.ACTIVEDETAILS}?id=${id}`);
+        break;
+      case 'vote':
+        self.addSearchHistory(`${app.CONFIG.PAGE.VOTEDETAILS}?id=${id}`);
+        break;
+      case 'recruit':
+        self.addSearchHistory(`${app.CONFIG.PAGE.RECRUITDETAILS}?id=${id}`);
+        break;
+    }
+>>>>>>> 8a97676b4fb99806ee641f6d86cf4096ba4143e3
   }
 })

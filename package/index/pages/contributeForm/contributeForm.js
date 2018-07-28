@@ -136,7 +136,6 @@ Page({
   /* 提交征稿 */
   contribute(e) {
     let self = this;
-    // if (!Util.checkIsHasPermission()) return;
     if (self.data.contributionDetail.has_contributed == 1) {
       Util.showToast({
         title: '已经投过稿',

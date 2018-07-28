@@ -21,7 +21,10 @@ export default class Api {
   getNewsList() {
     let self = this;
     let url = '/front/front';
-    return self.post(url);
+    let postData = {
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
   }
 
   /* 获取缓存里面的session_id */

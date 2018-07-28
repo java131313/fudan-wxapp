@@ -93,7 +93,6 @@ Page({
 
   /* 岗位申请 */
   recruitApply() {
-    if (!Util.checkIsHasPermission()) return;
     let self = this;
     wx.navigateTo({
       url: `${self.data.recruitFormUrl}?id=${self.data.recruitDetail.id}&title=${self.data.recruitDetail.title}`

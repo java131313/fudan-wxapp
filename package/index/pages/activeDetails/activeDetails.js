@@ -98,7 +98,6 @@ Page({
   /* 活动报名 */
   activeRegister(e) {
     let self = this;
-    if (!Util.checkIsHasPermission()) return;
     app.api.activityApply(self.data.activityId).then(res => {
       Util.showToast({
         title: '活动报名成功'

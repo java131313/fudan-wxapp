@@ -93,7 +93,7 @@
   height: 180rpx;
 }
 
-.newA{
+.newA {
   margin-bottom: 5rpx;
 }
 
@@ -102,11 +102,11 @@
   font-size: 31rpx;
   color: rgba(0, 0, 0, 0.7);
   font-weight: bold;
-  line-height:40rpx;
+  line-height: 40rpx;
 }
 
-.newsB{
-  padding-top:5rpx;
+.newsB {
+  padding-top: 5rpx;
 }
 
 .time {
@@ -127,19 +127,19 @@
 
 .newsport {
   width: 100%;
-  height:100%;
+  height: 100%;
   display: flex;
   overflow: hidden;
   background-color: #fff;
   border-bottom: 5rpx solid #f5f5f5;
 }
 
-._class{
-  padding-top:20rpx;
+._class {
+  padding-top: 20rpx;
 }
 
-._content{
-  margin-top:15rpx;
+._content {
+  margin-top: 15rpx;
   margin-bottom: 15rpx;
 }
 
@@ -147,9 +147,6 @@
   border: none;
 }
 
-._newsA{
-
-}
 .sporttitle {
   width: 100%;
   font-size: 31rpx;
@@ -157,11 +154,7 @@
   font-weight: bold;
 }
 
-._newsB{
-
-}
-
-._hisautoserach{
+._hisautoserach {
   margin: 40rpx 30rpx 0 30rpx;
 }
 
@@ -176,6 +169,16 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
+._title_all {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete_pic image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
 .hotsearch {
   display: inline-flex;
   flex-wrap: wrap;
@@ -185,7 +188,7 @@
 .historysearch {
   display: inline-flex;
   flex-direction: column;
-  margin-top: 20rpx;
+  margin-top: 10rpx;
 }
 
 ._hotsearch {
@@ -199,4 +202,26 @@
   display: block;
   font-size: 30rpx;
   line-height: 70rpx;
+}
+
+.no_search_result {
+  display: flex;
+  justify-content: center;
+  margin-top: 50%;
+}
+
+.no_search_pic {
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.no_search_text_parent {
+  display: flex;
+  align-items: center;
+}
+
+.no_search_text {
+  font-size: 30rpx;
+  color: #bfbfbf;
+  line-height: 40rpx;
 }

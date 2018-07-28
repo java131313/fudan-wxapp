@@ -18,3 +18,13 @@
 .mw:nth-child(2n-1) {
   margin-right: 7.98%;
 }
+
+.service_title_parent {
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.service_title {
+  color: #bfbfbf;
+}

@@ -20,9 +20,28 @@
   </view>
   <scroll-view scroll-y='true' class='news-box'>
     <template is='topLoading' data='{{isLoading}}'></template>
-    <block wx:for='{{newsItem}}' wx:key='{{item.id}}'>
-      <news-bar news_url='{{newsDetailUrl}}?id=1108' news_type='{{item.type}}' news_pic='{{item.imgUrl}}' news_title='{{item.title}}' synopsis_time='{{item.createtime}}' synopsis_source='{{item.source}}' newsB_time='{{item.activetime}}' newsB_from='{{item.activefrom}}'
+    <block wx:for='{{newsItem}}' wx:key='this'>
+      <!-- 新闻 -->
+      <news-bar wx:if='{{item.type=="news"}}' news_url='{{newsDetailUrl}}?id={{item.data.id}}' news_type='{{filter.handleNewsType(item.data.cover_img,item.data.img_size)}}' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}'
+        synopsis_source='{{item.data.origin}}' />
+
+      <!-- 活动 -->
+      <news-bar wx:if='{{item.type=="activity"}}' news_url='{{activityUrl}}?id={{item.data.id}}' news_type='4' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}'
+        activity_time='{{item.data.begintime}}' activity_site='{{item.data.site}}' />
+
+      <!-- 视频 -->
+
+      <!-- 投票 -->
+      <news-bar wx:if='{{item.type=="vote"}}' news_url='{{voteUrl}}?id={{item.data.id}}' news_type='6' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' vote_options='{{item.data.options}}'
       />
+
+      <!-- 招聘 -->
+      <news-bar wx:if='{{item.type=="recruit"}}' news_url='{{recruitUrl}}?id={{item.data.id}}' news_type='7' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' recruit_target='{{item.data.target}}'
+        recruit_require='{{item.data.require}}' />
+
+      <!-- 征稿 -->
+
     </block>
+
   </scroll-view>
 </view>

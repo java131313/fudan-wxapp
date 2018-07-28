@@ -18,7 +18,12 @@
       </view>
     </view>
     <view class='_hisautoserach'>
-      <view class='_title'>搜索记录</view>
+      <view class='_title_all'>
+        <view class='_title'>搜索记录</view>
+        <view class='delete_pic'>
+          <image bindtap='removeSearchHistory' src='{{filter.imageSrcParse("/images/delete.png")}}'></image>
+        </view>
+      </view>
       <view class='historysearch'>
         <block wx:for='{{searchPage.history}}' wx:key='this'>
           <text class='_historysearch'>{{item}}</text>
@@ -27,64 +32,101 @@
     </view>
   </view>
   <block wx:else>
-    <view class='down'>
-      <view class='first'>
-        <view class='class'>
+    <!-- 新闻 -->
+    <view class='down' wx:if='{{searchResultData.news.length > 0}}'>
+      <view class='second'>
+        <view class='_class'>
           <text class='classtext'>新闻</text>
         </view>
-        <view class='newcontent'>
-          <view class="picture">
-            <image src='../../../../images/person_top_bg.png' class="imageclass" />
-          </view>
-          <view class='contentnoe'>
-            <view class='newsA'>
-              <text class='title'>第四届中国“互联网+”大学生创新创业大赛在复旦启动</text>
-            </view>
-            <view class="newsB">
-              <text class='time'>2018-06-12</text>
-            </view>
-          </view>
-        </view>
-        <view class='newcontent'>
-          <view class="picture">
-            <image src='../../../../images/person_top_bg.png' class="imageclass" />
-          </view>
-          <view class='contentnoe'>
-            <view class='newsA'>
-              <text class='title'>第四届中国“互联网+”大学生创新创业大赛在复旦启动</text>
-            </view>
-            <view class="newsB">
-              <text class='time'>2018-06-11</text>
+        <block wx:for='{{searchResultData.news}}' wx:key='{{item.id}}'>
+          <view class='newsport' data-id='{{item.id}}' data-type='news' catchtap='goSearchDetail'>
+            <view class='_content'>
+              <view class='_newsA'>
+                <text class='sporttitle'>{{item.title}}</text>
+              </view>
+              <view class="_newsB">
+                <text class='time'>{{filter.formatDate(item.issuetime)}}</text>
+              </view>
             </view>
           </view>
-        </view>
+        </block>
       </view>
     </view>
-    <view class='down'>
+
+    <!-- 活动 -->
+    <view class='down' wx:elif='{{searchResultData.activity.length > 0}}'>
       <view class='second'>
         <view class='_class'>
           <text class='classtext'>活动</text>
         </view>
-        <view class='newsport'>
-          <view class='_content'>
-            <view class='_newsA'>
-              <text class='sporttitle'>第四届中国“互联网+”大学生创新创业大赛启动仪式即将在复旦大学举行</text>
-            </view>
-            <view class="_newsB">
-              <text class='time'>2018-06-11</text>
-            </view>
-          </view>
-        </view>
-        <view class='newsport'>
-          <view class='_content'>
-            <view class='_newsA'>
-              <text class='sporttitle'>第四届中国“互联网+”大学生创新创业大赛启动仪式即将在复旦大学举行</text>
-            </view>
-            <view class="_newsB">
-              <text class='time'>2018-06-11</text>
+        <block wx:for='{{searchResultData.activity}}' wx:key='{{item.id}}'>
+          <view class='newsport' data-id='{{item.id}}' data-type='activity' catchtap='goSearchDetail'>
+            <view class='_content'>
+              <view class='_newsA'>
+                <text class='sporttitle'>{{item.title}}</text>
+              </view>
+              <view class="_newsB">
+                <text class='time'>{{filter.formatDate(item.issuetime)}}</text>
+              </view>
             </view>
           </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 视频 -->
+
+    <!-- 投票 -->
+    <view class='down' wx:elif='{{searchResultData.vote.length > 0}}'>
+      <view class='second'>
+        <view class='_class'>
+          <text class='classtext'>投票</text>
         </view>
+        <block wx:for='{{searchResultData.vote}}' wx:key='{{item.id}}'>
+          <view class='newsport' data-id='{{item.id}}' data-type='vote' catchtap='goSearchDetail'>
+            <view class='_content'>
+              <view class='_newsA'>
+                <text class='sporttitle'>{{item.title}}</text>
+              </view>
+              <view class="_newsB">
+                <text class='time'>{{filter.formatDate(item.issuetime)}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 招聘 -->
+    <view class='down' wx:elif='{{searchResultData.recruit.length > 0}}'>
+      <view class='second'>
+        <view class='_class'>
+          <text class='classtext'>招聘</text>
+        </view>
+        <block wx:for='{{searchResultData.recruit}}' wx:key='{{item.id}}'>
+          <view class='newsport' data-id='{{item.id}}' data-type='recruit' catchtap='goSearchDetail'>
+            <view class='_content'>
+              <view class='_newsA'>
+                <text class='sporttitle'>{{item.title}}</text>
+              </view>
+              <view class="_newsB">
+                <text class='time'>{{filter.formatDate(item.issuetime)}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 征稿 -->
+
+    <!-- 无搜索结果 -->
+    <view class='no_search_result' wx:else>
+      <view class='no_search'>
+        <image src='{{filter.imageSrcParse("/images/no_result.png")}}' class='no_search_pic'></image>
+      </view>
+      <view class='no_search_text_parent'>
+        <text class='no_search_text'>暂无匹配结果</text>
       </view>
     </view>
   </block>

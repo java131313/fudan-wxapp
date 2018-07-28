@@ -9,8 +9,12 @@ Page({
   data: {
     bgColor: app.CONFIG.BGCOLOR,
     newsDetailUrl: app.CONFIG.PAGE.NEWSDETAILS,
+    activityUrl: app.CONFIG.PAGE.ACTIVEDETAILS,
+    recruitUrl: app.CONFIG.PAGE.RECRUITDETAILS,
+    voteUrl: app.CONFIG.PAGE.VOTEDETAILS,
+    contributeUrl: app.CONFIG.PAGE.CONTRIBUTEFORM,
     isLoading: false,
-    newsItem: [],
+    newsItem: {},
     _num: 1
   },
 
@@ -19,13 +23,6 @@ Page({
    */
   onLoad: function(options) {
     let self = this;
-    app.api.mockTest().then(res => {
-      if (res.data.code == 200) {
-        this.setData({
-          newsItem: res.data.data.news
-        });
-      }
-    });
     self.getNewsList();
   },
 
@@ -62,10 +59,10 @@ Page({
    */
   onPullDownRefresh: function() {
     let self = this;
-    let apifunc = app.api.mockTest();
+    let apifunc = app.api.getNewsList();
     let cb = res => {
       self.setData({
-        newsItem: res.data.data.news
+        newsItem: res.data.data
       });
     };
     let pageTitle = '复旦大学';
@@ -88,7 +85,9 @@ Page({
   getNewsList() {
     let self = this;
     app.api.getNewsList().then(res => {
-
+      self.setData({
+        newsItem: res.data.data
+      });
     });
   },
 
