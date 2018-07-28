@@ -59,3 +59,5 @@
     </view>
   </block>
 </view>
+<button bindtap='addSearchHistory'>添加搜索</button>
+<button bindtap='removeSearchHistory'>清空搜索</button>

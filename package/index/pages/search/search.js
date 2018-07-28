@@ -89,7 +89,7 @@ Page({
       showSearchHistory: keyword ? false : true,
       keyword: keyword
     });
-    if (keyword) {
+    if (keyword) {  
       app.api.searchKeyword(keyword).then(res => {
         let searchResult = res.data.data;
         self.allSearchResult = Object.assign({},searchResult);
@@ -107,6 +107,14 @@ Page({
   addSearchHistory(url) {
     let self = this;
     let keyword = self.data.keyword;
+    app.api.addSearchHistory(keyword);
+  },
+
+  removeSearchHistory(){
+    let self = this;
+    app.api.removeSearchHistory().then(res=>{
+      self.getSearchPage()
+    });
     wx.navigateTo({
       url: url,
       success: res => {
@@ -147,5 +155,6 @@ Page({
         self.addSearchHistory(`${app.CONFIG.PAGE.RECRUITDETAILS}?id=${id}`);
         break;
     }
+>>>>>>> 8a97676b4fb99806ee641f6d86cf4096ba4143e3
   }
 })

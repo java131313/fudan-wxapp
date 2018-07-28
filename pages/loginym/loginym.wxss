@@ -29,6 +29,10 @@
   border-radius: 6rpx;
 }
 
+.account,.passCode{
+  padding-left: 20rpx;
+}
+
 .submissionInformation .passCode {
   background: #fff;
   font-size: 30rpx;
