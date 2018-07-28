@@ -2,7 +2,7 @@
 
 <view class='main-wrapper'>
   <view class='active-container'>
-    <title-bar title='{{activityDetail.title}}' issuetime='{{activityDetail.issuetime}}' />
+    <title-bar title='{{activityDetail.title}}' issuetime='{{activityDetail.createtime}}' />
     <view class='active-content'>
       <option-bar option_title='活动时间：' option_content='{{filter.formatDate(activityDetail.begintime)}}' />
       <option-bar option_title='活动地点：' option_content='{{activityDetail.site}}' />

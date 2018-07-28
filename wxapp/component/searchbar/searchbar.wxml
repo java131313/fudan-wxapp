@@ -1,0 +1,16 @@
+<wxs src='../../wxs/filter.wxs' module='filter' />
+
+<view class='search-wrapper'>
+  <view class='search-top'>
+    <text class='search-top-title'>{{search_module}}</text>
+    <text class='search-top-loadmore'>查看更多</text>
+  </view>
+  <block wx:for='{{search_content}}' wx:key='{{item.id}}'>
+    <view class='search-container' data-sid='{{item.id}}' data-stype='{{search_type}}' catchtap='_goSearchDetail'>
+      <view class='search-content'>
+        <text class='search-content-title'>{{item.title}}</text>
+        <text class='search-content-time'>{{filter.formatDate(item.createtime)}}</text>
+      </view>
+    </view>
+  </block>
+</view>

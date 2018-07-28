@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "搜索",
   "usingComponents": {
-    
+    "search-bar": "/wxapp/component/searchbar/searchbar"
   }
 }

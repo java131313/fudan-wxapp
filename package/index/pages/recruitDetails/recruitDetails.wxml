@@ -2,7 +2,7 @@
 
 <view class='main-wrapper'>
   <view class='recruit-container'>
-    <title-bar title='{{recruitDetail.title}}' issuetime='{{recruitDetail.issuetime}}' />
+    <title-bar title='{{recruitDetail.title}}' issuetime='{{recruitDetail.createtime}}' />
     <view class="recruit-content">
       <option-bar option_title='岗位职责：' option_content='{{recruitDetail.target}}' />
       <option-bar option_title='任职要求：' option_content='{{recruitDetail.require}}' />

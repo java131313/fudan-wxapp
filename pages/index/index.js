@@ -15,7 +15,7 @@ Page({
     contributeUrl: app.CONFIG.PAGE.CONTRIBUTEFORM,
     isLoading: false,
     newsItem: {},
-    _num: 1
+    menuType: 1
   },
 
   /**
@@ -92,10 +92,10 @@ Page({
   },
 
   /* 点击切换推荐页 */
-  menuClick: function(e) {
+  menuClick(e) {
     let self = this;
     self.setData({
-      _num: e.target.dataset.num
+      menuType: Number(e.currentTarget.dataset.num)
     });
   },
 

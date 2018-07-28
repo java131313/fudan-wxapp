@@ -91,8 +91,13 @@ Page({
     });
     if (keyword) {
       app.api.searchKeyword(keyword).then(res => {
+        let searchResult = res.data.data;
+        self.allSearchResult = Object.assign({},searchResult);
+        for (let key in res.data.data) {
+          searchResult[key] = searchResult[key].slice(0, 2);
+        }
         self.setData({
-          searchResultData: res.data.data
+          searchResultData: searchResult
         });
       });
     }
@@ -126,8 +131,8 @@ Page({
   /* 进入搜索结果详情页 */
   goSearchDetail(e) {
     let self = this;
-    let id = e.currentTarget.dataset.id;
-    let mType = e.currentTarget.dataset.type;
+    let id = e.detail.sid;
+    let mType = e.detail.stype;
     switch (mType) {
       case 'news':
         self.addSearchHistory(`${app.CONFIG.PAGE.NEWSDETAILS}?id=${id}`);
