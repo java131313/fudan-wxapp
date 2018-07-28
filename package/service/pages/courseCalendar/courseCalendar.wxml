@@ -1,14 +1,17 @@
-<view>
+<view class='courseCalendar_all'>
   <form class='input_search'>
     <view class='input_time_parent'>
       <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
         <view class="picker">
           {{date}}
         </view>
+        <image src='http://xinzhibang168-1253521270.costj.myqcloud.com/images/calendar%20.png' class='input_time_pic'></image>
       </picker>
     </view>
     <view class='input_time_parent'>
-      <input class='input_time' placeholder='选择教学楼...'></input>
+      <input class='input_time' placeholder='选择教学楼...'>
+      <image src='http://xinzhibang168-1253521270.costj.myqcloud.com/images/bank%20.png' class='input_time_pic'></image>
+      </input>
     </view>
     <view class='input_time_parent'>
       <input class='input_time' placeholder='输入课程名称...'></input>
