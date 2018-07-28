@@ -1,2 +1,43 @@
-<!--package/service/pages/courseCalendar/courseCalendar.wxml-->
-<text>package/service/pages/courseCalendar/courseCalendar.wxml</text>
+<view>
+  <form class='input_search'>
+    <view class='input_time_parent'>
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+    <view class='input_time_parent'>
+      <input class='input_time' placeholder='选择教学楼...'></input>
+    </view>
+    <view class='input_time_parent'>
+      <input class='input_time' placeholder='输入课程名称...'></input>
+    </view>
+    <view class="submit_end_parent">
+      <button class='submit_end'>搜索课程</button>
+    </view>
+  </form>
+  <view class='search_result_all'>
+    <view class='search_result'>
+      <view class='classroom'>
+        <view class='classroom_seral_parent'>
+          <text class='classroom_seral'>课室：</text>
+          <text class='classroom_search'>光华楼HS1234</text>
+        </view>
+        <view class='classroom_seral_parent'>
+          <text class='classroom_seral'>课程：</text>
+          <text class='classroom_search'>当代经济学</text>
+        </view>
+        <view class='classroom_seral_time'>
+          <view>
+            <text class='classroom_seral'>课室：</text>
+          </view>
+          <view class='classroom_seral_alls'>
+            <text class='classroom_search'>第6节 13:30-14:15</text>
+            <text class='classroom_search'>第6节 13:30-14:15</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
