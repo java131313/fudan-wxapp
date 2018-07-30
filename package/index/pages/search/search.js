@@ -102,7 +102,6 @@ Page({
   addSearchHistory(url) {
     let self = this;
     let keyword = self.data.keyword;
-<<<<<<< HEAD
     app.api.addSearchHistory(keyword);
   },
 
@@ -111,7 +110,6 @@ Page({
     app.api.removeSearchHistory().then(res=>{
       self.getSearchPage()
     });
-=======
     wx.navigateTo({
       url: url,
       success: res => {
@@ -152,6 +150,5 @@ Page({
         self.addSearchHistory(`${app.CONFIG.PAGE.RECRUITDETAILS}?id=${id}`);
         break;
     }
->>>>>>> 8a97676b4fb99806ee641f6d86cf4096ba4143e3
   }
 })
