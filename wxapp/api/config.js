@@ -86,12 +86,14 @@ module.exports = {
     SCHOOL_ITEM: [{
         schoolNaviTo: "/package/service/pages/courseCalendar/courseCalendar",
         schoolUrl: 'https://xinzhibang168-1253521270.costj.myqcloud.com/images/kt1.png',
-        schoolText: '课程搜索'
+        schoolText: '课程搜索',
+        isOpen: true,
       },
       {
-        schoolNaviTo: "/package/index/pages/recruitDetails/recruitDetails",
+        schoolNaviTo: "",
         schoolUrl: 'https://xinzhibang168-1253521270.costj.myqcloud.com/images/kt2.png',
-        schoolText: '场馆预定'
+        schoolText: '场馆预定',
+        isOpen: false
       }
     ]
   }

@@ -97,6 +97,9 @@ Page({
           title: '未搜索到该课程',
           image: 3
         });
+        self.setData({
+          course: []
+        });
       } else {
         self.handleCourseData(res.data.data);
       }
