@@ -17,6 +17,7 @@
   width: 100%;
   height: auto;
   overflow: hidden;
+  padding-top: 10rpx;
 }
 
 .news-content {
@@ -30,7 +31,8 @@
 }
 
 .news-title {
-  line-height: 55rpx;
+  font-size: 40rpx;
+  line-height: 50rpx;
   font-weight: bold;
   width: 100%;
   height: auto;
@@ -43,7 +45,7 @@
   width: 50%;
   color: #aaa;
   line-height: 35rpx;
-  font-size: 0.8em;
+  font-size: 32rpx;
 }
 
 .news-date {
@@ -51,7 +53,7 @@
   width: 50%;
   color: #aaa;
   line-height: 35rpx;
-  font-size: 0.8em;
+  font-size: 32rpx;
   text-align: end;
 }
 

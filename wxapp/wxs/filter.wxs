@@ -49,6 +49,10 @@ function handleNewsType(cover_img, img_size) {
   }
 }
 
+function handleAuthorDisplay(author) {
+  return '作者：' + author;
+}
+
 module.exports = {
   split: split,
   formatPercent: formatPercent,
@@ -56,5 +60,6 @@ module.exports = {
   formatNumber: formatNumber,
   arrayIsContain: arrayIsContain,
   imageSrcParse: imageSrcParse,
-  handleNewsType: handleNewsType
+  handleNewsType: handleNewsType,
+  handleAuthorDisplay: handleAuthorDisplay
 }
