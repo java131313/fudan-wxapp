@@ -95,7 +95,6 @@ picker {
   font-size: 30rpx;
   line-height: 52rpx;
   color: #a1a1a1;
-  height: 100rpx;
 }
 
 .classroom_search {
@@ -119,6 +118,6 @@ picker {
 }
 
 .classroom_seral_width2 {
-  width: 76%;
+  width: 90%;
   padding-right: 6%;
 }

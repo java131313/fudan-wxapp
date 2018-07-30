@@ -43,7 +43,7 @@
               <text class='classroom_seral'>时间：</text>
             </view>
             <view class='classroom_seral_alls'>
-              <block wx:for='{{item.courseDate}}' wx:key='this' wx:item='date'>
+              <block wx:for='{{item.courseDate}}' wx:key='this' wx:for-item='date'>
                 <text class='classroom_search'>{{date}}</text>
               </block>
             </view>
