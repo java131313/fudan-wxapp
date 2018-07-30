@@ -5,8 +5,8 @@
   <view class='news-container'>
     <view class='news-top'>
       <text class='news-title'>{{newsDetail.title}}</text>
-      <text class='news-author'>作者：{{newsDetail.author}}</text>
-      <text class='news-date'>{{filter.formatDate(newsDetail.issuetime)}}</text>
+      <text class='news-author'>{{newsDetail.author ? filter.handleAuthorDisplay(newsDetail.author) : filter.formatDate(newsDetail.issuetime)}}</text>
+      <text wx:if='{{newsDetail.author}}' class='news-date'>{{filter.formatDate(newsDetail.issuetime)}}</text>
     </view>
     <view class="news-content">
       <template is="wxParse" data="{{wxParseData:article.nodes}}" />
