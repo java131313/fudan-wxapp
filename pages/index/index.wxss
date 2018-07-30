@@ -16,14 +16,14 @@
 }
 
 .news-box {
-  margin-top: 125rpx;
+  margin-top: 84rpx;
 }
 
 .newsTitle_parent {
   display: flex;
   width: 24.86%;
-  font-size: 30rpx;
-  line-height: 122rpx;
+  font-size: 32rpx;
+  line-height: 84rpx;
   flex-direction: column;
   align-items: center;
 }

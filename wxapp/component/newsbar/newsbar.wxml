@@ -60,7 +60,10 @@
             <text>时间：{{activity_time}}</text>
             <text>地点：{{activity_site}}</text>
           </view>
-          <view class='newsD'></view>
+          <view class='newsD'>
+            <image src="{{filter.imageSrcParse('/images/bell.png')}}"></image>
+            <text>活动提醒</text>
+          </view>
         </view>
       </view>
       <view class='newsSynopsis'>
