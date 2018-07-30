@@ -224,13 +224,15 @@ export default class Util {
       isLoading: true
     });
     let finallyfunc = () => {
-      ctx.setData({
-        isLoading: false
-      });
-      wx.hideNavigationBarLoading();
-      wx.setNavigationBarTitle({
-        title: pageTitle || ''
-      })
+      setTimeout(() => {
+        ctx.setData({
+          isLoading: false
+        });
+        wx.hideNavigationBarLoading();
+        wx.setNavigationBarTitle({
+          title: pageTitle || ''
+        });
+      }, 1000);
     }
     self.strIsContain(apifunc, 'Promise') && apifunc.then(res => {
       typeof cb == 'function' && cb(res);
