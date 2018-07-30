@@ -34,6 +34,25 @@ export default class Util {
     return [year, month, day].map(formatNumber).join('');
   }
 
+  /* 格式化日期带有星期几，例如：2018-07-30（星期一） */
+  static formatDateWithWeek(date) {
+    if (typeof date == 'string') {
+      date = new Date(date);
+    }
+    const weekName = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const dayIndex = date.getDay();
+    const formatNumber = n => {
+      n = n.toString();
+      return n[1] ? n : '0' + n
+    }
+    let formatDate = [year, month, day].map(formatNumber).join('-');
+    let week = weekName[dayIndex];
+    return `${formatDate}（${week}）`;
+  }
+
   /* 判断A字符串是否包含B字符串 */
   static strIsContain(strA, strB) {
     if (strA.toString().indexOf(strB.toString() > -1)) return true;

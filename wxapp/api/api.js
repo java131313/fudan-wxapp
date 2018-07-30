@@ -332,6 +332,17 @@ export default class Api {
     return self.getRequest(url, postData);
   }
 
+  /* 课程搜索 */
+  searchCourse(date, name) {
+    let self = this;
+    let url = '/front/seCourse';
+    let postData = {
+      date: date,
+      name: name
+    };
+    return self.post(url, postData);
+  }
+
   /* 获取腾讯云签名 */
   getQCloudSign() {
     let self = this;

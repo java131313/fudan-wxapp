@@ -1,23 +1,24 @@
+import Util from '../../../../utils/util.js';
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    date: '2016-09-01'
+    searchDate: '',
+    course: []
   },
-  bindDateChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      date: e.detail.value
-    })
-  },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let self = this;
+    self.setData({
+      searchDate: Util.formatDateWithWeek(new Date())
+    });
   },
 
   /**
@@ -67,5 +68,58 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 选择日期触发 */
+  bindDateChange(e) {
+    let self = this;
+    let date = Util.formatDateWithWeek(e.detail.value);
+    self.setData({
+      searchDate: date
+    });
+  },
+
+  /* 课程搜索 */
+  searchCourse(e) {
+    let self = this;
+    let cdate = e.detail.value.cdate;
+    let cname = e.detail.value.cname;
+    if (!cname) {
+      Util.showToast({
+        title: '请输入课程名称',
+        image: 2
+      });
+      return;
+    }
+    app.api.searchCourse(cdate, cname).then(res => {
+      if (!res.data.data || res.data.data.length == 0) {
+        Util.showToast({
+          title: '未搜索到该课程',
+          image: 3
+        });
+      } else {
+        self.handleCourseData(res.data.data);
+      }
+    });
+  },
+
+  /* 处理课程数据 */
+  handleCourseData(course) {
+    if (!course) return;
+    let self = this;
+    let courseArray = [];
+    for (let room in course) {
+      for (let name in course[room]) {
+        let couserData = {
+          courseRoom: room,
+          courseName: name,
+          courseDate: course[room][name]
+        };
+        courseArray.push(couserData);
+      }
+    }
+    self.setData({
+      course: courseArray
+    });
   }
 })
