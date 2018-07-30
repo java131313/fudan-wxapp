@@ -31,12 +31,16 @@
             <text class='classroom_search'>{{item.courseRoom}}</text>
           </view>
           <view class='classroom_seral_parent'>
-            <text class='classroom_seral'>课程：</text>
-            <text class='classroom_search'>{{item.courseName}}</text>
+            <view class='classroom_seral_width'>
+              <text class='classroom_seral'>课程：</text>
+            </view>
+            <view class='classroom_seral_width2'>
+              <text class='classroom_search'>{{item.courseName}}</text>
+            </view>
           </view>
           <view class='classroom_seral_time'>
             <view class='classroom_seralBox'>
-              <text class='classroom_seral'>课室：</text>
+              <text class='classroom_seral'>时间：</text>
             </view>
             <view class='classroom_seral_alls'>
               <block wx:for='{{item.courseDate}}' wx:key='this' wx:item='date'>
