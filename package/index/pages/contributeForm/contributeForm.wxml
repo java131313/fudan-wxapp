@@ -6,7 +6,7 @@
     <text class='contribute_title'>{{contributionDetail.title}}</text>
   </view>
   <view class='contribute_time_parent'>
-    <text class='contribute_time'>{{filter.formatDate(contributionDetail.createtime)}}</text>
+    <text class='contribute_time'>{{filter.formatDate(contributionDetail.issuetime)}}</text>
   </view>
   <view class='contribute_text_parent'>
     <template class='contribute_text' is="wxParse" data="{{wxParseData:article.nodes}}" />

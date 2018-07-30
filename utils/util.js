@@ -302,4 +302,19 @@ export default class Util {
       nohasPermissonFunc();
     }
   }
+
+  /* 根据模块类型匹配页面 */
+  static getModulePageUrl(mtype, id) {
+    const app = getApp();
+    switch (mtype) {
+      case 'news':
+        return `${app.CONFIG.PAGE.NEWSDETAILS}?id=${id}`;
+      case 'activity':
+        return `${app.CONFIG.PAGE.ACTIVEDETAILS}?id=${id}`;
+      case 'vote':
+        return `${app.CONFIG.PAGE.VOTEDETAILS}?id=${id}`;
+      case 'recruit':
+        return `${app.CONFIG.PAGE.RECRUITDETAILS}?id=${id}`;
+    }
+  }
 }

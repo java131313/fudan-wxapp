@@ -17,19 +17,30 @@ export default class Api {
     if (self.isMock) return mockData.getNewsList();
   }
 
+  /* 获取缓存里面的session_id */
+  getSessionId() {
+    return wx.getStorageSync('session_id');
+  }
+
   /* 获取首页推荐列表数据 */
-  getNewsList() {
+  getNewsList(page_index) {
     let self = this;
     let url = '/front/front';
     let postData = {
+      page_index: page_index,
       session_id: self.getSessionId()
     };
     return self.post(url, postData);
   }
 
-  /* 获取缓存里面的session_id */
-  getSessionId() {
-    return wx.getStorageSync('session_id');
+  /* 获取本周热榜 */
+  getWeekRank(page_index) {
+    let self = this;
+    let url = '/front/weekRank';
+    let postData = {
+      page_index: page_index
+    };
+    return self.post(url, postData);
   }
 
   /* 微信登录 */

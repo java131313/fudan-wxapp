@@ -60,7 +60,14 @@
         "pages/voteDetails/voteDetails",
         "pages/recruitDetails/recruitDetails",
         "pages/recruitForm/recruitForm",
-        "pages/contributeForm/contributeForm"
+        "pages/contributeForm/contributeForm",
+        "pages/searchDetails/searchDetails"
+      ]
+    },
+    {
+      "root": "package/service/",
+      "pages": [
+        "pages/courseCalendar/courseCalendar"
       ]
     }
   ]

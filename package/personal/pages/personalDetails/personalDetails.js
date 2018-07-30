@@ -7,7 +7,6 @@ Page({
    */
   data: {
     bgColor: app.CONFIG.BGCOLOR,
-    naviSelfTagUrl: app.CONFIG.PAGE.SELFTAGS,
     userInfo: {}
   },
 

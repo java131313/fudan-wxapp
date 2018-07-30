@@ -8,11 +8,13 @@ module.exports = {
     WXAPPCODE: [1047, 1048, 1049]
   },
   HTTP: {
-    API: 'formal',
+    API: '',
+    IMAGESITE: ''
   },
   DEBUG: {
     STATUS: true,
     API: 'https://fd.gxdianpu.com',
+    IMAGESITE: 'https://xinzhibang168-1253521270.costj.myqcloud.com',
   },
   MOCK: {
     STATUS: true
@@ -30,6 +32,7 @@ module.exports = {
     INDEX: '/pages/index/index',
     /* 首页(分包页) */
     SEARCH: '/package/index/pages/search/search',
+    SEARCHDETAILS: '/package/index/pages/searchDetails/searchDetails',
     ACTIVEDETAILS: '/package/index/pages/activeDetails/activeDetails',
     NEWSDETAILS: '/package/index/pages/newsDetails/newsDetails',
     VOTEDETAILS: '/package/index/pages/voteDetails/voteDetails',
@@ -38,6 +41,8 @@ module.exports = {
     CONTRIBUTEFORM: '/package/index/pages/contributeForm/contributeForm',
     /* 服务 */
     SERVICE: '/pages/service/service',
+    /* 服务分包页 */
+    COURSECALENDAR: '/package/service/pages/courseCalendar/courseCalendar',
     /* 我的 */
     PERSONAL: '/pages/personal/personal',
     /* 我的(分包页) */
@@ -79,20 +84,15 @@ module.exports = {
   },
   SCHOOL_SERVICE: {
     SCHOOL_ITEM: [{
-        schoolNaviTo: "/package/index/pages/voteDetails/voteDetails?id=1",
+        schoolNaviTo: "/package/service/pages/courseCalendar/courseCalendar",
         schoolUrl: 'https://xinzhibang168-1253521270.costj.myqcloud.com/images/kt1.png',
-        schoolText: '课程日历'
+        schoolText: '课程搜索'
       },
       {
         schoolNaviTo: "/package/index/pages/recruitDetails/recruitDetails",
         schoolUrl: 'https://xinzhibang168-1253521270.costj.myqcloud.com/images/kt2.png',
         schoolText: '场馆预定'
-      },
-      // {
-      //   schoolNaviTo: "/package/index/pages/contributeForm/contributeForm?id=1",
-      //   schoolUrl: 'https://xinzhibang168-1253521270.costj.myqcloud.com/images/kt3.png',
-      //   schoolText: '空课室查询'
-      // }
+      }
     ]
   }
 }
