@@ -1,11 +1,11 @@
-<!-- 文章图片：news_pic，文章标题：news_title，发表时间：synopsis1_time，来源：synopsis2_source 活动时间：newsB_time，活动地点：newsB_from-->
+<wxs src='../../wxs/filter.wxs' module='filter' />
 
 <navigator url='{{news_url}}'>
   <!--  新闻方案一（大图）  -->
   <view wx:if='{{news_type == 1}}' class='newsIndex'>
     <view class='newsBigPic'>
       <view class='newsModle'>
-        <image class='news_pic' src='{{news_pic}}'></image>
+        <image class='news_pic' src='{{filter.imageSrcParse(news_pic)}}'></image>
         <text class='newsText'>{{news_title}}</text>
       </view>
       <view class='newsSynopsis'>
@@ -19,7 +19,7 @@
     <view class='newsBigPic'>
       <view class='newsModle'>
         <view class='news_FA3'>
-          <image src='{{news_pic}}'></image>
+          <image src='{{filter.imageSrcParse(news_pic)}}'></image>
         </view>
         <view class='news_FA3_title'>
           <text>{{news_title}}</text>
@@ -50,7 +50,7 @@
     <view class='newsBigPic'>
       <view class='newsModle'>
         <view class="news_F_pic2">
-          <image class='news_pic2' src='{{news_pic}}'></image>
+          <image class='news_pic2' src='{{filter.imageSrcParse(news_pic)}}'></image>
         </view>
         <view class='news_service'>
           <view class='newsA'>

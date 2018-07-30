@@ -37,7 +37,8 @@ function arrayIsContain(array, arg) {
 
 function imageSrcParse(path) {
   var domain = 'https://xinzhibang168-1253521270.costj.myqcloud.com';
-  return domain + path;
+  if (path.indexOf('http') == -1) return domain + path;
+  else return path;
 }
 
 function handleNewsType(cover_img, img_size) {
