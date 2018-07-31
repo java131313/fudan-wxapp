@@ -336,6 +336,8 @@ export default class Util {
         return `${app.CONFIG.PAGE.VOTEDETAILS}?id=${id}`;
       case 'recruit':
         return `${app.CONFIG.PAGE.RECRUITDETAILS}?id=${id}`;
+      case 'contribute':
+        return `${app.CONFIG.PAGE.CONTRIBUTEFORM}?id=${id}`
     }
   }
 }

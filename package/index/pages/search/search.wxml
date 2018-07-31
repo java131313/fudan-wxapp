@@ -47,6 +47,7 @@
     <search-bar wx:elif='{{searchResultData.recruit.length > 0}}' search_module='招聘' search_type='recruit' search_content='{{searchResultData.recruit}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
 
     <!-- 征稿 -->
+    <search-bar wx:elif='{{searchResultData.contribute.length > 0}}' search_module='征稿' search_type='contribute' search_content='{{searchResultData.contribute}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
 
     <!-- 无搜索结果 -->
     <view class='no_search_result' wx:else>
