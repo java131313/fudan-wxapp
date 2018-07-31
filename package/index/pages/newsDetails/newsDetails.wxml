@@ -21,3 +21,5 @@
   </view>
   <comment-bar id='newsComment' commentId='{{newsDetail.id}}' commentType='{{moduleType}}' comments="{{newsDetail.comments}}" />
 </block>
+<view wx:else class='sold_out' style='background:url({{filter.imageSrcParse("/images/sold_out.png")}}) no-repeat center center;  background-size: cover;'>
+</view>

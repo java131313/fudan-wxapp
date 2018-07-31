@@ -71,3 +71,7 @@
   line-height: 35rpx;
   font-size: 0.8em;
 }
+.sold_out{
+  height: 100%;
+  width: 100%;
+}

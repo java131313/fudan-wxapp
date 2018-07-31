@@ -2,4 +2,5 @@
 
 <view class='main-wrapper' style='background:url({{filter.imageSrcParse("/images/loading.png")}}) no-repeat center center;  background-size: cover;'>
   <navigator wx:if='{{showLoginBtn}}' class='loginbtn' open-type='redirect' url='{{redirectUrl}}'>登录</navigator>
+  <view wx:else class='loading_ing' style='background:url({{filter.imageSrcParse("/images/loading_ing.gif")}}) no-repeat center center;'></view>
 </view>

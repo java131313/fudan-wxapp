@@ -20,6 +20,7 @@ Page({
     let self = this;
     bindRolePromise.then(() => {
       if (app.globalData.isAuthorized) {
+
         wx.switchTab({
           url: app.CONFIG.PAGE.INDEX
         });
