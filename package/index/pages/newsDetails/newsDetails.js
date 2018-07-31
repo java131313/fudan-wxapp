@@ -9,7 +9,8 @@ Page({
    */
   data: {
     moduleType: app.ENUM.ModuleType.News,
-    newsDetail: null
+    newsDetail: null,
+    sold_out: false
   },
 
   /**
@@ -89,6 +90,10 @@ Page({
         newsDetail: res.data.data
       });
       WxParse.wxParse('article', 'html', res.data.data.content, self, 30);
+    }, res => {
+      self.setData({
+        sold_out: true
+      });
     });
   },
 

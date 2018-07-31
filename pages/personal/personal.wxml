@@ -1,7 +1,7 @@
 <wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='main-wrapper' style='background:{{bgColor}}'>
-  <view class='person-top'>
+  <view class='person-top' style='background:url({{filter.imageSrcParse("/images/person_top_bg.png")}}) no-repeat center center;background-size:cover;'>
     <navigator class='person-avatar-box' url='{{personalDetailsUrl}}'>
       <image wx:if='{{userInfo.avatar}}' class='person-avatar' src='{{userInfo.avatar}}'></image>
       <open-data wx:if='{{!userInfo.avatar}}' type="userAvatarUrl" class="person-avatar"></open-data>
