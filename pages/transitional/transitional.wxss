@@ -1,9 +1,3 @@
-page{
-  background: url("http://xinzhibang168-1253521270.costj.myqcloud.com/images/loading.png") no-repeat center center;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
 .main-wrapper {
   width: 100%;
   height: 100%;

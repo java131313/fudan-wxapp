@@ -14,6 +14,7 @@ Page({
     voteUrl: app.CONFIG.PAGE.VOTEDETAILS,
     contributeUrl: app.CONFIG.PAGE.CONTRIBUTEFORM,
     isLoading: false,
+    showLoadingMore: false,
     newsItem: {},
     weekRank: {},
     menuType: 1,
@@ -99,9 +100,13 @@ Page({
       let news_page_index = self.data.news_page_index;
       let news_page_num = self.data.news_page_num;
       if (news_page_index <= news_page_num - 1) {
+        self.setData({
+          showLoadingMore: true
+        });
         app.api.getNewsList(news_page_index).then(res => {
           self.setData({
-            newsItem: self.data.newsItem.concat(res.data.data.data)
+            newsItem: self.data.newsItem.concat(res.data.data.data),
+            showLoadingMore: false
           });
         });
       }
@@ -112,9 +117,13 @@ Page({
       let weekrank_page_index = self.data.weekrank_page_index;
       let weekrank_page_num = self.data.weekrank_page_num;
       if (weekrank_page_index <= weekrank_page_num - 1) {
+        self.setData({
+          showLoadingMore: true
+        });
         app.api.getWeekRank(weekrank_page_index).then(res => {
           self.setData({
-            weekRank: self.data.weekRank.concat(res.data.data.data)
+            weekRank: self.data.weekRank.concat(res.data.data.data),
+            showLoadingMore: false
           });
         });
       }

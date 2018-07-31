@@ -82,7 +82,7 @@ Page({
   /* 课程搜索 */
   searchCourse(e) {
     let self = this;
-    let cdate = e.detail.value.cdate;
+    let cdate = e.detail.value.cdate.substring(0, 10);
     let cname = e.detail.value.cname;
     if (!cname) {
       Util.showToast({
@@ -113,12 +113,15 @@ Page({
     let courseArray = [];
     for (let room in course) {
       for (let name in course[room]) {
-        let couserData = {
-          courseRoom: room,
-          courseName: name,
-          courseDate: course[room][name]
-        };
-        courseArray.push(couserData);
+        for (let date in course[room][name]) {
+          let couserData = {
+            courseRoom: room,
+            courseName: name,
+            courseDate: date,
+            courseTime: course[room][name][date]
+          };
+          courseArray.push(couserData);
+        }
       }
     }
     self.setData({

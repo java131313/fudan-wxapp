@@ -1,7 +1,9 @@
+<wxs src='../../wxs/filter.wxs' module='filter' />
+
 <view class='school-bar' bindtap='_serviceNavi'>
   <view class='schoolService'>
     <view class='service'>
-      <image class='classifyPic' src='{{schoolUrl}}'></image>
+      <image class='classifyPic' src='{{filter.imageSrcParse(schoolUrl)}}'></image>
       <text class='classify'>{{schoolText}}</text>
     </view>
   </view>

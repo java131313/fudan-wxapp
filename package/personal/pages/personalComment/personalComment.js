@@ -7,14 +7,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bgColor: app.CONFIG.BGCOLOR
+    bgColor: app.CONFIG.BGCOLOR,
+    myComments: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let self = this;
+    self.getMyComments();
   },
 
   /**
@@ -64,5 +66,20 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 获取我的评论 */
+  getMyComments() {
+    let self = this;
+    app.api.getMyComments().then(res => {
+      let myComments = res.data.data;
+      myComments && myComments.forEach(x => {
+        let naviUrl = Util.getModulePageUrl(x.type, x.id);
+        x.naviUrl = naviUrl;
+      });
+      self.setData({
+        myComments: myComments
+      });
+    });
   }
 })

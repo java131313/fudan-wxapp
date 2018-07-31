@@ -9,7 +9,7 @@ Page({
    */
   data: {
     moduleType: app.ENUM.ModuleType.News,
-    newsDetail: {}
+    newsDetail: null
   },
 
   /**

@@ -1,3 +1,5 @@
-<view class='main-wrapper'>
+<wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
+
+<view class='main-wrapper' style='background:url({{filter.imageSrcParse("/images/loading.png")}}) no-repeat center center;  background-size: cover;'>
   <navigator wx:if='{{showLoginBtn}}' class='loginbtn' open-type='redirect' url='{{redirectUrl}}'>登录</navigator>
 </view>

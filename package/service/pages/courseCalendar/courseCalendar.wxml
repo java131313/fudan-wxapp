@@ -1,7 +1,7 @@
 <wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='courseCalendar_all'>
-  <form class='input_search' bindsubmit='searchCourse'>
+  <form class='input_search' bindsubmit='searchCourse' style='background:url({{filter.imageSrcParse("/images/search_classbg.png")}}) no-repeat top center;background-size: cover;'>
     <view class='input_time_parent'>
       <picker name='cdate' mode="date" value="{{searchDate}}" bindchange="bindDateChange">
         <view class="picker">
@@ -10,11 +10,6 @@
         <image src='{{filter.imageSrcParse("/images/calendar%20.png")}}' class='input_time_pic'></image>
       </picker>
     </view>
-    <!-- <view class='input_time_parent'>
-      <input class='input_time' placeholder='选择教学楼...'>
-      <image src='http://xinzhibang168-1253521270.costj.myqcloud.com/images/bank%20.png' class='input_time_pic'></image>
-      </input>
-    </view> -->
     <view class='input_time_parent'>
       <input name='cname' class='input_time' placeholder='输入课程名称...'></input>
     </view>
@@ -38,13 +33,21 @@
               <text class='classroom_search'>{{item.courseName}}</text>
             </view>
           </view>
+          <view class='classroom_seral_parent'>
+            <text class='classroom_seral'>日期：</text>
+            <text class='classroom_search'>{{item.courseDate}}</text>
+          </view>
+          <view class='classroom_seral_parent'>
+            <text class='classroom_seral'>星期：</text>
+            <text class='classroom_search'>{{filter.formatWeek(item.courseDate)}}</text>
+          </view>
           <view class='classroom_seral_time'>
             <view class='classroom_seralBox'>
               <text class='classroom_seral'>时间：</text>
             </view>
             <view class='classroom_seral_alls'>
-              <block wx:for='{{item.courseDate}}' wx:key='this' wx:for-item='date'>
-                <text class='classroom_search'>{{date}}</text>
+              <block wx:for='{{item.courseTime}}' wx:key='this' wx:for-item='time'>
+                <text class='classroom_search'>{{time}}</text>
               </block>
             </view>
           </view>

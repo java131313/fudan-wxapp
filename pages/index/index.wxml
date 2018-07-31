@@ -67,5 +67,9 @@
       <!-- 征稿 -->
 
     </block>
+    <view class='loadingmore' wx:if='{{showLoadingMore}}'>
+      <text>正在推荐新内容</text>
+      <image src='{{filter.imageSrcParse("/images/loading.gif")}}'></image>
+    </view>
   </scroll-view>
 </view>
