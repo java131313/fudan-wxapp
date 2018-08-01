@@ -96,5 +96,22 @@ module.exports = {
         isOpen: false
       }
     ]
+  },
+  BGSTYLE: {
+    RED: {
+      COLOR: '',
+      BELLIMAGE: '',
+      PERSONIMAGE: ''
+    },
+    BLUE: {
+      COLOR: '',
+      BELLIMAGE: '',
+      PERSONIMAGE: ''
+    },
+    GRAY: {
+      COLOR: '',
+      BELLIMAGE: '',
+      PERSONIMAGE: ''
+    }
   }
 }

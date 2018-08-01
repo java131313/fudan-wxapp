@@ -54,10 +54,10 @@
 .sloganEnd {
   width: 100%;
   position: fixed;
-  bottom: 160rpx;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 200rpx;
 }
 
 .sloganEnd .sloganEndTitle {

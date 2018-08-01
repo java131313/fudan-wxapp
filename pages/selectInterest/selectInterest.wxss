@@ -55,17 +55,16 @@
 
 .sloganEnd {
   width: 100%;
-  position: fixed;
-  bottom: 160rpx;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 200rpx;
 }
 
 .sloganEnd .sloganEndTitle {
   display: inline-block;
   text-align: center;
-  width: 230rpx;
+  width: 300rpx;
   background: #cc1a1a;
   color: #fff;
   font-size: 31rpx;
