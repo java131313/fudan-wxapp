@@ -99,19 +99,19 @@ module.exports = {
   },
   BGSTYLE: {
     RED: {
-      COLOR: '#d33a3a',
-      BELLIMAGE: '',
-      PERSONIMAGE: '/images/person_top_bg.png'
+      color: '#d33a3a',
+      bellImage: '/images/bell.png.png',
+      personImage: '/images/person_top_bg.png'
     },
     BLUE: {
-      COLOR: '#e419c',
-      BELLIMAGE: '/images/bell-blue.png',
-      PERSONIMAGE: '/images/person_top_bg-blue.png'
+      color: '#e419c',
+      bellImage: '/images/bell-blue.png',
+      personImage: '/images/person_top_bg-blue.png'
     },
     GRAY: {
-      COLOR: '#363636',
-      BELLIMAGE: '/images/bell-gray.png',
-      PERSONIMAGE: '/images/person_top_bg-ray.png'
+      color: '#363636',
+      bellImage: '/images/bell-gray.png',
+      personImage: '/images/person_top_bg-ray.png'
     }
   }
 }
