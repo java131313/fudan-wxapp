@@ -13,7 +13,8 @@ Component({
     news_url: String,
     recruit_target: String,
     recruit_require: String,
-    vote_options: Object
+    vote_options: Object,
+    bgStyle: Object
   },
 
   /**

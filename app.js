@@ -22,6 +22,7 @@ App({
    */
   onShow: function(options) {
     let self = this;
+    self.getSysBGStyle();
     /* 微信登录 */
     bindRolePromise = Util.wxlogin().then(() => {
       return self.getHasBindRole(options.scene);
@@ -59,10 +60,29 @@ App({
     });
   },
 
+  /* 获取系统配置颜色 */
+  getSysBGStyle() {
+    let self = this;
+    let styleType = 2;
+    switch (styleType) {
+      case 1:
+        self.globalData.sysConfig.bgStyle = CONFIG.BGSTYLE.RED;
+        break;
+      case 2:
+        self.globalData.sysConfig.bgStyle = CONFIG.BGSTYLE.BLUE;
+        break;
+      case 3:
+        self.globalData.sysConfig.bgStyle = CONFIG.BGSTYLE.GRAY;
+        break;
+    }
+  },
+
   /* 全局设置 */
   globalData: {
     userInfo: null,
-    sysConfig: null,
+    sysConfig: {
+      bgStyle: CONFIG.BGSTYLE.RED
+    },
     isAuthorized: false
   },
   CONFIG: CONFIG,

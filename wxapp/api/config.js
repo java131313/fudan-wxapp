@@ -99,19 +99,19 @@ module.exports = {
   },
   BGSTYLE: {
     RED: {
-      COLOR: '',
+      COLOR: '#d33a3a',
       BELLIMAGE: '',
-      PERSONIMAGE: ''
+      PERSONIMAGE: '/images/person_top_bg.png'
     },
     BLUE: {
-      COLOR: '',
-      BELLIMAGE: '',
-      PERSONIMAGE: ''
+      COLOR: '#e419c',
+      BELLIMAGE: '/images/bell-blue.png',
+      PERSONIMAGE: '/images/person_top_bg-blue.png'
     },
     GRAY: {
-      COLOR: '',
-      BELLIMAGE: '',
-      PERSONIMAGE: ''
+      COLOR: '#363636',
+      BELLIMAGE: '/images/bell-gray.png',
+      PERSONIMAGE: '/images/person_top_bg-ray.png'
     }
   }
 }

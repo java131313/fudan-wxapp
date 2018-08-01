@@ -8,6 +8,7 @@ Page({
    */
   data: {
     bgColor: app.CONFIG.BGCOLOR,
+    bgStyle: {},
     newsDetailUrl: app.CONFIG.PAGE.NEWSDETAILS,
     activityUrl: app.CONFIG.PAGE.ACTIVEDETAILS,
     recruitUrl: app.CONFIG.PAGE.RECRUITDETAILS,
@@ -30,6 +31,9 @@ Page({
    */
   onLoad: function(options) {
     let self = this;
+    self.setData({
+      bgStyle: app.globalData.sysConfig.bgStyle
+    });
     self.getNewsList();
   },
 
