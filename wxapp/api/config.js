@@ -104,7 +104,7 @@ module.exports = {
       personImage: '/images/person_top_bg.png'
     },
     BLUE: {
-      color: '#e419c',
+      color: '#303a73',
       bellImage: '/images/bell-blue.png',
       personImage: '/images/person_top_bg-blue.png'
     },

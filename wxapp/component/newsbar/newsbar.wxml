@@ -60,9 +60,9 @@
             <text>时间：{{activity_time}}</text>
             <text>地点：{{activity_site}}</text>
           </view>
-          <view class='newsD'>
-            <image src="{{filter.imageSrcParse('/images/bell.png')}}"></image>
-            <text>活动提醒</text>
+          <view class='newsD' style='border:1px solid {{bgStyle.color}}'>
+            <image src="{{filter.imageSrcParse(bgStyle.bellImage)}}"></image>
+            <text style='color:{{bgStyle.color}}'>活动提醒</text>
           </view>
         </view>
       </view>
@@ -96,7 +96,7 @@
             </view>
             <view class='progress_block'></view>
             <view class='vote_status'>
-              <text class='vote_status_no'>投票</text>
+              <text class='vote_status_no' style='color:{{bgStyle.color}};border:1px solid {{bgStyle.color}}'>投票</text>
             </view>
           </view>
         </block>

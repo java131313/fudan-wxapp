@@ -4,12 +4,12 @@
 <view class='main-wrapper' style='background:{{bgColor}}'>
   <view class='newsHeader'>
     <view data-num="1" class='newsTitle_parent' bindtap="menuClick">
-      <text class='newsTitle {{menuType == 1 ? "newsTitle_click" : ""}}'>我的复旦</text>
-      <view class='newsTitle_border {{menuType == 1 ? "newsTitle_border_click" : ""}}'></view>
+      <text style='color:{{menuType == 1 ? bgStyle.color : "#999"}}'>我的复旦</text>
+      <view class='newsTitle_border' style='background:{{menuType == 1 ? bgStyle.color : ""}}'></view>
     </view>
     <view data-num="2" class='newsTitle_parent' bindtap="menuClick">
-      <text class='newsTitle {{menuType == 2 ? "newsTitle_click" : ""}}'>本周热榜</text>
-      <view class='newsTitle_border {{menuType == 2 ? "newsTitle_border_click" : ""}}'></view>
+      <text style='color:{{menuType == 2 ? bgStyle.color : "#999"}}'>本周热榜</text>
+      <view class='newsTitle_border' style='background:{{menuType == 2 ? bgStyle.color : ""}}'></view>
     </view>
 
     <view class='search'>

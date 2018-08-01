@@ -1,7 +1,7 @@
 <!--pages/loginym/loginym.wxml-->
 <wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
 
-<view class='login-wrapper'>
+<view class='login-wrapper' style='background:{{bgColor}}'>
   <view class='logoPic'>
     <image src='{{filter.imageSrcParse("/images/logo.png")}}'></image>
   </view>

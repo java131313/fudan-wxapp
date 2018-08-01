@@ -8,6 +8,7 @@ Page({
    */
   data: {
     bgColor: app.CONFIG.BGCOLOR,
+    bgTop: '',
     actionBarItem: app.CONFIG.PERSONAL.ACTION_BAR_ITEM,
     authorizeIDUrl: app.CONFIG.PAGE.SELECTID,
     personalDetailsUrl: app.CONFIG.PAGE.PEESONALDETAILS,
@@ -33,6 +34,9 @@ Page({
    */
   onShow: function() {
     let self = this;
+    self.setData({
+      bgTop: app.globalData.sysConfig.bgStyle.personImage
+    });
     self.getUserInfo();
   },
 

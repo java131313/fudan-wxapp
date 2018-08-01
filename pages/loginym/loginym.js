@@ -6,14 +6,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    bgColor: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options);
+    let self = this;
+    self.setData({
+      bgColor: app.globalData.sysConfig.bgStyle.color
+    });
   },
 
   /**
