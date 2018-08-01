@@ -3,7 +3,9 @@
   width: 94.68%;
   margin: 20rpx 2.66% 0;
 }
-
+.newsText_parent{
+  padding:20rpx 2.8% 0;
+}
 .newsBigPic {
   padding: 20rpx 2.8% 0;
 }
@@ -21,15 +23,10 @@
 }
 
 .newsText {
-  display: inline-block;
-  width: 90%;
-  padding: 0 5%;
-  position: absolute;
-  bottom: 18%;
-  left: 0%;
+  width: 100%;
   font-size: 40rpx;
   line-height: 50rpx;
-  color: #fff;
+  color: #333;
   font-weight: bold;
   letter-spacing: 2rpx;
   text-shadow: 2rpx orpx 2rpx rgb(255, 255, 255);

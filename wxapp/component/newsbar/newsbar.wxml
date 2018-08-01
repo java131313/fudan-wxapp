@@ -3,10 +3,12 @@
 <navigator url='{{news_url}}'>
   <!--  新闻方案一（大图）  -->
   <view wx:if='{{news_type == 1}}' class='newsIndex'>
+    <view class='newsText_parent'>
+      <text class='newsText'>{{news_title}}</text>
+    </view>
     <view class='newsBigPic'>
       <view class='newsModle'>
         <image class='news_pic' src='{{filter.imageSrcParse(news_pic)}}'></image>
-        <text class='newsText'>{{news_title}}</text>
       </view>
       <view class='newsSynopsis'>
         <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
