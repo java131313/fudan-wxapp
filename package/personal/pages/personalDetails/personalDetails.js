@@ -14,9 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.setData({
-      userInfo: app.globalData.userInfo
-    })
+
   },
 
   /**
@@ -30,7 +28,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    let self = this;
+    self.setData({
+      userInfo: app.globalData.userInfo
+    });
   },
 
   /**
@@ -102,7 +103,7 @@ Page({
           }).then(res => {
             app.globalData.userInfo.avatar = avatarUrl;
             self.setData({
-              'userInfo.avatar': avatarUrl
+              userInfo: app.globalData.userInfo
             });
           });
         });

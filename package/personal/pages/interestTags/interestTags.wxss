@@ -26,28 +26,41 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  margin-bottom: 10rpx;
 }
 
 .tag-title {
   flex: 1;
   display: flex;
   justify-content: flex-start;
-  height: 35rpx;
-  line-height: 35rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   font-weight: bold;
   color: #000;
 }
 
 .tag-action-delete {
-  line-height: 35rpx;
+  line-height: 46rpx;
   color: #cc1a1a;
   font-size: 0.8em;
+  display: inline-block;
+  border: 2rpx solid #cc1a1a;
+  width: 90rpx;
+  height: 46rpx;
+  text-align: center;
+  border-radius: 10rpx;
 }
 
 .tag-action-add {
-  line-height: 35rpx;
+  line-height: 46rpx;
   color: #aaa;
   font-size: 0.8em;
+  display: inline-block;
+  border: 1px solid #aaa;
+  width: 140rpx;
+  height: 46rpx;
+  text-align: center;
+  border-radius: 10rpx;
 }
 
 .tag-content {
