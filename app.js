@@ -63,7 +63,7 @@ App({
   /* 获取系统配置颜色 */
   getSysBGStyle() {
     let self = this;
-    let styleType = 2;
+    let styleType = 1;
     switch (styleType) {
       case 1:
         self.globalData.sysConfig.bgStyle = CONFIG.BGSTYLE.RED;

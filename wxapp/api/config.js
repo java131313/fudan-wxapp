@@ -100,7 +100,7 @@ module.exports = {
   BGSTYLE: {
     RED: {
       color: '#d33a3a',
-      bellImage: '/images/bell.png.png',
+      bellImage: '/images/bell.png',
       personImage: '/images/person_top_bg.png'
     },
     BLUE: {

@@ -61,6 +61,15 @@ function handleAuthorDisplay(author) {
   return '作者：' + author;
 }
 
+function strLengthIsMoreThan(str, length) {
+  if (typeof str != 'string') return false;
+  if (str.toString().length > length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 module.exports = {
   split: split,
   formatPercent: formatPercent,
@@ -70,5 +79,6 @@ module.exports = {
   imageSrcParse: imageSrcParse,
   handleNewsType: handleNewsType,
   handleAuthorDisplay: handleAuthorDisplay,
-  formatWeek: formatWeek
+  formatWeek: formatWeek,
+  strLengthIsMoreThan: strLengthIsMoreThan
 }

@@ -81,3 +81,10 @@
 .tag-self:nth-child(3n) {
   margin-right: 0%;
 }
+
+.tag-long {
+  height: 74rpx;
+  margin-right: 4.1%;
+  font-size: 28rpx;
+  margin-bottom: 28rpx;
+}

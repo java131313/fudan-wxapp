@@ -1,11 +1,17 @@
 @import '/wxapp/wxss/component.wxss';
 
 .tag-item {
-  width: 100%;
+  width: 80%;
   height: 100%;
-  color: #acacac;
-  border: 2rpx solid #dfdfdf;
+  color: #999;
+  border: 2rpx solid #999;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 10%;
+}
+
+.tag_text {
+  display: block;
+  width: auto;
 }

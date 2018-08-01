@@ -107,12 +107,11 @@ Page({
     }
     app.api.setTags(self.data.selectedTags).then(res => {
       self.setRole().then(res => {
-        wx.switchTab({
-          url: app.CONFIG.PAGE.INDEX,
-          success: res => {
-            Util.getUserInfo();
-          }
-        });
+        let url = app.CONFIG.PAGE.INDEX;
+        let callback = () => {
+          Util.getUserInfo();
+        };
+        Util.switchTabToOnload(url, callback);
       });
     });
   }
