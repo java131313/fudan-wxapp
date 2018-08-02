@@ -76,6 +76,18 @@
 
   <!-- 视频 -->
   <view wx:if="{{news_type == 5}}" class='newsIndex'>
+    <view class='newsText_parent'>
+      <text class='newsText'>{{news_title}}</text>
+    </view>
+    <view class='newsBigPic'>
+      <view class='newsModle'>
+        <image class='news_pic' src='{{filter.imageSrcParse(news_pic)}}'></image>
+        <image class='news_pic_bg' src='{{filter.imageSrcParse("/images/vedio_bg.png")}}'></image>
+      </view>
+      <view class='newsSynopsis'>
+        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+      </view>
+    </view>
   </view>
 
   <!-- 投票 -->

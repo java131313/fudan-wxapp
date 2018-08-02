@@ -30,7 +30,13 @@
       <news-bar wx:if='{{item.type=="activity"}}' news_url='{{activityUrl}}?id={{item.data.id}}' news_type='4' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}'
         activity_time='{{item.data.begintime}}' activity_site='{{item.data.site}}' bgStyle='{{bgStyle}}' />
 
-      <!-- 视频 -->
+      <!-- 视频录播 -->
+      <news-bar wx:if='{{item.type=="video"}}' news_url='{{videoUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}'
+      />
+
+      <!-- 视频直播 -->
+      <news-bar wx:if='{{item.type=="live"}}' news_url='{{liveUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}'
+      />
 
       <!-- 投票 -->
       <news-bar wx:if='{{item.type=="vote"}}' news_url='{{voteUrl}}?id={{item.data.id}}' news_type='6' news_title='{{item.data.name}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' vote_options='{{item.data.options}}'
@@ -54,7 +60,13 @@
       <news-bar wx:if='{{item.type=="activity"}}' news_url='{{activityUrl}}?id={{item.data.id}}' news_type='4' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}'
         activity_time='{{item.data.begintime}}' activity_site='{{item.data.site}}' bgStyle='{{bgStyle}}' />
 
-      <!-- 视频 -->
+      <!-- 视频录播 -->
+      <news-bar wx:if='{{item.type=="video"}}' news_url='{{videoUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}'
+      />
+
+      <!-- 视频直播 -->
+      <news-bar wx:if='{{item.type=="live"}}' news_url='{{liveUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}'
+      />
 
       <!-- 投票 -->
       <news-bar wx:if='{{item.type=="vote"}}' news_url='{{voteUrl}}?id={{item.data.id}}' news_type='6' news_title='{{item.data.name}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' vote_options='{{item.data.options}}'

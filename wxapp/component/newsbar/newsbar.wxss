@@ -3,9 +3,11 @@
   width: 94.68%;
   margin: 20rpx 2.66% 0;
 }
-.newsText_parent{
-  padding:20rpx 2.8% 0;
+
+.newsText_parent {
+  padding: 20rpx 2.8% 0;
 }
+
 .newsBigPic {
   padding: 20rpx 2.8% 0;
 }
@@ -280,4 +282,12 @@
   line-height: 94rpx;
   font-size: 28rpx;
   color: #888;
+}
+
+.news_pic_bg {
+  position: absolute;
+  top: 35%;
+  left: 41%;
+  width: 110rpx;
+  height: 110rpx;
 }
