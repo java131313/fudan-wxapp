@@ -100,7 +100,9 @@ Page({
   /* 活动报名 */
   activeRegister(e) {
     let self = this;
-    app.api.activityApply(self.data.activityId).then(res => {
+    let activityId = self.data.activityId;
+    let form_id = e.detail.formId;
+    app.api.activityApply(activityId, form_id).then(res => {
       Util.showToast({
         title: '活动报名成功'
       });
