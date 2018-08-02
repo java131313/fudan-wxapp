@@ -114,6 +114,8 @@ Page({
         contributionDetail: res.data.data
       });
       WxParse.wxParse('article', 'html', res.data.data.content, self, 30);
+    }, res => {
+      Util.handleNoPermission(res.data.msg);
     });
   },
 

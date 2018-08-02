@@ -92,6 +92,8 @@ Page({
       self.setData({
         activityDetail: res.data.data
       });
+    }, res => {
+      Util.handleNoPermission(res.data.msg);
     });
   },
 

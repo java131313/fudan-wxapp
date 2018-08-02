@@ -19,12 +19,12 @@
 <view class="contribute">
   <form bindsubmit='contribute'>
     <view class='compile_parent'>
-      <input name='tel' type='number' placeholder='请输入手机号(必填)'></input>
-      <input name='email' type='text' placeholder='请输入邮箱(必填)'></input>
+      <input name='tel' type='number' placeholder='请输入手机号(必填)' placeholder-style="padding-left:0rpx;"></input>
+      <input name='email' type='text' placeholder='请输入邮箱(必填)' placeholder-style="padding-left:0rpx;"></input>
       <block wx:for='{{contributionDetail.dynamic_kv}}' wx:key='this'>
-        <input name='dynamic_{{index}}' type='text' placeholder='请输入{{item}}(选填)'></input>
+        <input name='dynamic_{{index}}' type='text' placeholder='请输入{{item}}(选填)' placeholder-style="padding-left:0rpx;"></input>
       </block>
-      <textarea name='name' class='compile' placeholder="请输入征稿内容(必填)"></textarea>
+      <textarea name='name' class='compile' placeholder="请输入征稿内容(必填)" placeholder-style="padding-left:0rpx;"></textarea>
     </view>
     <text class='uploading_text'>分享图片(选填)</text>
     <view class='uploading_parent'>

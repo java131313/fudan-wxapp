@@ -95,6 +95,8 @@ Page({
         voteDetail: res.data.data
       });
       self.handleDefaultCss(self.data.voteDetail.voted);
+    }, res => {
+      Util.handleNoPermission(res.data.msg);
     });
   },
 

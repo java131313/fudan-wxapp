@@ -88,6 +88,8 @@ Page({
       self.setData({
         recruitDetail: res.data.data
       });
+    }, res => {
+      Util.handleNoPermission(res.data.msg);
     });
   },
 

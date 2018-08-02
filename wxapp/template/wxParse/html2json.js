@@ -165,6 +165,7 @@ function html2json(html, bindName) {
           node.attr.src = imgUrl;
         }
         node.from = bindName;
+        if (node.attr.alt == '返回' || node.attr.alt == '打印') return;
         results.images.push(node);
         results.imageUrls.push(imgUrl);
       }

@@ -65,7 +65,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    let self = this;
+    let shareCallback = () => {
+      let share_num = self.data.videoDetail.share_num + 1;
+      self.setData({
+        'videoDetail.share_num': share_num
+      });
+    };
+    let shareId = self.data.videoDetail.id;
+    let shareType = self.data.moduleType;
+    return Util.onShareAppMessage({
+      shareId: shareId,
+      shareType: shareType
+    }, shareCallback);
   },
 
   /* 获取视频详情 */
@@ -75,6 +87,8 @@ Page({
       self.setData({
         videoDetail: res.data.data
       });
+    },res=>{
+      Util.handleNoPermission(res.data.msg);
     });
   },
 

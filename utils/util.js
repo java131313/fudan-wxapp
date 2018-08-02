@@ -299,29 +299,20 @@ export default class Util {
     }
   }
 
-  /* 验证用户是否有功能操作权限 */
-  static checkIsHasPermission() {
+  /* 没有操作权限处理 */
+  static handleNoPermission(msg) {
     let self = this;
-    let nohasPermissonFunc = () => {
-      self.showModal({
-        content: '对不起，您没有此操作权限，请进行身份认证！',
-        confirmText: '前去认证',
-        cancelText: '暂不认证'
-      }).then(() => {
-        wx.navigateTo({
-          url: getApp().CONFIG.PAGE.LOGIN
-        });
+    self.showModal({
+      content: msg || '对不起，您没有此权限！'
+    }).then(() => {
+      wx.switchTab({
+        url: getApp().CONFIG.PAGE.INDEX
       });
-      return false;
-    };
-    try {
-      let isHasPermission = getApp().globalData.userInfo.isHasPermission;
-      if (isHasPermission) return true;
-      nohasPermissonFunc();
-    } catch (e) {
-      console.warn(e);
-      nohasPermissonFunc();
-    }
+    }, () => {
+      wx.switchTab({
+        url: getApp().CONFIG.PAGE.INDEX
+      });
+    });
   }
 
   /* 根据模块类型匹配页面 */

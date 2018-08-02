@@ -36,22 +36,22 @@
     <search-bar wx:if='{{searchResultData.news.length > 0}}' search_module='新闻' search_type='news' search_content='{{searchResultData.news}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
 
     <!-- 活动 -->
-    <search-bar wx:elif='{{searchResultData.activity.length > 0}}' search_module='活动' search_type='activity' search_content='{{searchResultData.activity}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
+    <search-bar wx:if='{{searchResultData.activity.length > 0}}' search_module='活动' search_type='activity' search_content='{{searchResultData.activity}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
 
     <!-- 视频 -->
-    <search-bar wx:elif='{{searchResultData.video.length > 0}}' search_module='视频' search_type='video' search_content='{{searchResultData.video}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
+    <search-bar wx:if='{{searchResultData.video.length > 0}}' search_module='视频' search_type='video' search_content='{{searchResultData.video}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
 
     <!-- 投票 -->
-    <search-bar wx:elif='{{searchResultData.vote.length > 0}}' search_module='投票' search_type='vote' search_content='{{searchResultData.vote}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
+    <search-bar wx:if='{{searchResultData.vote.length > 0}}' search_module='投票' search_type='vote' search_content='{{searchResultData.vote}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
 
     <!-- 招聘 -->
-    <search-bar wx:elif='{{searchResultData.recruit.length > 0}}' search_module='招聘' search_type='recruit' search_content='{{searchResultData.recruit}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
+    <search-bar wx:if='{{searchResultData.recruit.length > 0}}' search_module='招聘' search_type='recruit' search_content='{{searchResultData.recruit}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
 
     <!-- 征稿 -->
-    <search-bar wx:elif='{{searchResultData.contribute.length > 0}}' search_module='征稿' search_type='contribute' search_content='{{searchResultData.contribute}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
+    <search-bar wx:if='{{searchResultData.contribute.length > 0}}' search_module='征稿' search_type='contribute' search_content='{{searchResultData.contribute}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
 
     <!-- 无搜索结果 -->
-    <view class='no_search_result' wx:else>
+    <view class='no_search_result' wx:if='{{showNoSearchResult}}'>
       <view class='no_search'>
         <image src='{{filter.imageSrcParse("/images/no_result.png")}}' class='no_search_pic'></image>
       </view>

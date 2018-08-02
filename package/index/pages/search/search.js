@@ -12,7 +12,8 @@ Page({
     keyword: '',
     searchValue: '',
     searchPage: {},
-    searchResultData: {}
+    searchResultData: {},
+    showNoSearchResult: false
   },
 
   /**
@@ -93,13 +94,7 @@ Page({
     if (keyword) {
       app.api.searchKeyword(keyword).then(res => {
         let searchResult = res.data.data;
-        self.allSearchResult = Object.assign({}, searchResult);
-        for (let key in res.data.data) {
-          searchResult[key] = searchResult[key].slice(0, 2);
-        }
-        self.setData({
-          searchResultData: searchResult
-        });
+        self.handleSearchResult(searchResult);
       });
     }
   },
@@ -173,13 +168,24 @@ Page({
     });
     app.api.searchKeyword(keyword).then(res => {
       let searchResult = res.data.data;
-      self.allSearchResult = Object.assign({}, searchResult);
-      for (let key in res.data.data) {
-        searchResult[key] = searchResult[key].slice(0, 2);
+      self.handleSearchResult(searchResult);
+    });
+  },
+
+  /* 处理搜索结果 */
+  handleSearchResult(searchResult) {
+    let self = this;
+    let showNoSearchResult = true;
+    self.allSearchResult = Object.assign({}, searchResult);
+    for (let key in searchResult) {
+      if (searchResult[key].length > 0) {
+        showNoSearchResult = false;
       }
-      self.setData({
-        searchResultData: searchResult
-      });
+      searchResult[key] = searchResult[key].slice(0, 2);
+    }
+    self.setData({
+      searchResultData: searchResult,
+      showNoSearchResult: showNoSearchResult
     });
   }
 })
