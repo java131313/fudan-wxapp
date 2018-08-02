@@ -81,11 +81,11 @@ export default class Api {
   }
 
   /* 获取标签列表 */
-  getTags() {
+  getTags(role_id) {
     let self = this;
     let url = '/front/getTags';
     let postData = {
-      session_id: self.getSessionId()
+      role_id: role_id
     };
     return self.post(url, postData);
   }

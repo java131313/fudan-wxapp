@@ -3,7 +3,7 @@
 <view class='main-wrapper' style='background:{{bgColor}}'>
   <view class='top'>
     <view class='search'>
-      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='输入学院/活动/课程，查找你需要的信息' auto-focus='true' bindinput="searchKeyword">
+      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='输入学院/活动/课程，查找你需要的信息' auto-focus='true' bindinput="searchKeyword" value='{{searchValue}}'>
       <image src='{{filter.imageSrcParse("/images/search.png")}}'></image>
       </input>
     </view>
@@ -13,7 +13,7 @@
       <view class='_title'>热门搜索</view>
       <view class='hotsearch'>
         <block wx:for='{{searchPage.hot_words}}' wx:key='this'>
-          <view class='_hotsearch'>{{item}}</view>
+          <view class='_hotsearch' data-stext='{{item.content}}' bindtap='keyboardClick'>{{item.content}}</view>
         </block>
       </view>
     </view>
@@ -26,7 +26,7 @@
       </view>
       <view class='historysearch'>
         <block wx:for='{{searchPage.history}}' wx:key='this'>
-          <text class='_historysearch'>{{item}}</text>
+          <text class='_historysearch' data-stext='{{item}}' bindtap='keyboardClick'>{{item}}</text>
         </block>
       </view>
     </view>

@@ -61,7 +61,9 @@
         "pages/recruitDetails/recruitDetails",
         "pages/recruitForm/recruitForm",
         "pages/contributeForm/contributeForm",
-        "pages/searchDetails/searchDetails"
+        "pages/searchDetails/searchDetails",
+        "pages/videoDetails/videoDetails",
+        "pages/liveDetails/liveDetails"
       ]
     },
     {

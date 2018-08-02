@@ -42,15 +42,11 @@
 }
 
 .tag-self {
-  height: 74rpx;
-  width: 30.54%;
+  height: 64rpx;
+  width: 29.2%;
   margin-right: 4.1%;
   font-size: 28rpx;
   margin-bottom: 28rpx;
-}
-
-.tag-self:nth-child(3n) {
-  margin-right: 0%;
 }
 
 .sloganEnd {
@@ -71,4 +67,11 @@
   line-height: 84rpx;
   height: 84rpx;
   border-radius: 7rpx;
+}
+
+.tag-long {
+  height: 64rpx;
+  margin-right: 4.1%;
+  font-size: 28rpx;
+  margin-bottom: 28rpx;
 }

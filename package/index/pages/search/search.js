@@ -4,70 +4,71 @@ const app = getApp();
 Page({
 
   /**
-  * 页面的初始数据
-  */
+   * 页面的初始数据
+   */
   data: {
     bgColor: app.CONFIG.BGCOLOR,
     showSearchHistory: true,
     keyword: '',
+    searchValue: '',
     searchPage: {},
     searchResultData: {}
   },
 
   /**
-  * 生命周期函数--监听页面加载
-  */
-  onLoad: function (options) {
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
     let self = this;
     self.getSearchPage();
   },
 
   /**
-  * 生命周期函数--监听页面初次渲染完成
-  */
-  onReady: function () {
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
 
   },
 
   /**
-  * 生命周期函数--监听页面显示
-  */
-  onShow: function () {
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
 
   },
 
   /**
-  * 生命周期函数--监听页面隐藏
-  */
-  onHide: function () {
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
 
   },
 
   /**
-  * 生命周期函数--监听页面卸载
-  */
-  onUnload: function () {
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
 
   },
 
   /**
-  * 页面相关事件处理函数--监听用户下拉动作
-  */
-  onPullDownRefresh: function () {
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
 
   },
 
   /**
-  * 页面上拉触底事件的处理函数
-  */
-  onReachBottom: function () {
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
 
   },
 
   /**
-  * 用户点击右上角分享
-  */
-  onShareAppMessage: function () {
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
 
   },
 
@@ -158,6 +159,27 @@ Page({
     let searchData = JSON.stringify(self.allSearchResult[mtype]);
     wx.navigateTo({
       url: `${app.CONFIG.PAGE.SEARCHDETAILS}?keyword=${keyword}&mtitle=${mtitle}&mtype=${mtype}&searchData=${searchData}`
+    });
+  },
+
+  /* 点击关键词 */
+  keyboardClick(e) {
+    let self = this;
+    let keyword = e.currentTarget.dataset.stext;
+    self.setData({
+      searchValue: keyword,
+      showSearchHistory: keyword ? false : true,
+      keyword: keyword
+    });
+    app.api.searchKeyword(keyword).then(res => {
+      let searchResult = res.data.data;
+      self.allSearchResult = Object.assign({}, searchResult);
+      for (let key in res.data.data) {
+        searchResult[key] = searchResult[key].slice(0, 2);
+      }
+      self.setData({
+        searchResultData: searchResult
+      });
     });
   }
 })

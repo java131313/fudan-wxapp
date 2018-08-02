@@ -41,7 +41,7 @@
         recruit_require='{{item.data.require}}' />
 
       <!-- 征稿 -->
-      <news-bar wx:if='{{item.type=="contribute"}}' news_url='{{contributeUrl}}id={{item.data.id}}' news_type='8' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' />
+      <news-bar wx:if='{{item.type=="contribute"}}' news_url='{{contributeUrl}}?id={{item.data.id}}' news_type='8' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' />
     </block>
 
     <!-- 本周热榜 -->
@@ -65,7 +65,7 @@
         recruit_require='{{item.data.require}}' />
 
       <!-- 征稿 -->
-      <news-bar wx:if='{{item.type=="contribute"}}' news_url='{{contributeUrl}}id={{item.data.id}}' news_type='8' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' />
+      <news-bar wx:if='{{item.type=="contribute"}}' news_url='{{contributeUrl}}?id={{item.data.id}}' news_type='8' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' />
     </block>
     <view class='loadingmore' wx:if='{{showLoadingMore}}'>
       <text>正在推荐新内容</text>

@@ -14,6 +14,8 @@ Page({
     recruitUrl: app.CONFIG.PAGE.RECRUITDETAILS,
     voteUrl: app.CONFIG.PAGE.VOTEDETAILS,
     contributeUrl: app.CONFIG.PAGE.CONTRIBUTEFORM,
+    videoUrl: app.CONFIG.PAGE.VIDEODETAILS,
+    liveUrl: app.CONFIG.PAGE.LIVEDETAILS,
     isLoading: false,
     showLoadingMore: false,
     newsItem: {},

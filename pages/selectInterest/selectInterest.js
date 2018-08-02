@@ -8,7 +8,7 @@ Page({
    */
   data: {
     bgColor: app.CONFIG.BGCOLOR,
-    id: '',
+    role_id: '',
     tags: [],
     selectedTags: []
   },
@@ -19,7 +19,7 @@ Page({
   onLoad: function(options) {
     let self = this;
     self.setData({
-      id: options.id
+      role_id: options.id
     });
     self.getTags();
   },
@@ -76,13 +76,14 @@ Page({
   /* 绑定用户身份 */
   setRole() {
     let self = this;
-    return app.api.setRole(self.data.id);
+    return app.api.setRole(self.data.role_id);
   },
 
   /* 获取标签列表 */
   getTags() {
     let self = this;
-    app.api.getTags().then(res => {
+    let role_id = self.data.role_id;
+    app.api.getTags(role_id).then(res => {
       self.setData({
         tags: res.data.data
       });

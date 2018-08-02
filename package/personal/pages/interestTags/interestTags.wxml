@@ -8,7 +8,7 @@
     </view>
     <view class="tag-content">
       <block wx:for='{{selfTags}}' wx:key='{{item.id}}'>
-        <tab-widget id='st_{{item.id}}' class='{{filter.strLengthIsMoreThan(item.name,7) ? "tag-long" : "tag-self"}}' hoverClass='delete-interest-hover' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='deleteInterestLable' />
+        <tab-widget id='st_{{item.id}}' class='{{filter.strLengthIsMoreThan(item.name,4) ? "tag-long" : "tag-self"}}' hoverClass='delete-interest-hover' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='deleteInterestLable' />
       </block>
     </view>
   </view>
@@ -19,7 +19,7 @@
     </view>
     <view class="tag-content">
       <block wx:for='{{tags}}' wx:key='{{item.id}}'>
-        <tab-widget id='mt_{{item.id}}' class='{{filter.strLengthIsMoreThan(item.name,7) ? "tag-long" : "tag-self"}}' hoverClass='select-interest-hover' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable' />
+        <tab-widget id='mt_{{item.id}}' class='{{filter.strLengthIsMoreThan(item.name,4) ? "tag-long" : "tag-self"}}' hoverClass='select-interest-hover' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable' />
       </block>
     </view>
   </view>

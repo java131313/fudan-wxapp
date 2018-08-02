@@ -39,6 +39,8 @@ module.exports = {
     RECRUITDETAILS: '/package/index/pages/recruitDetails/recruitDetails',
     RECRUITFORM: '/package/index/pages/recruitForm/recruitForm',
     CONTRIBUTEFORM: '/package/index/pages/contributeForm/contributeForm',
+    VIDEODETAILS: '/package/index/pages/videoDetails/videoDetails',
+    LIVEDETAILS: '/package/index/pages/liveDetails/liveDetails',
     /* 服务 */
     SERVICE: '/pages/service/service',
     /* 服务分包页 */

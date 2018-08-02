@@ -74,10 +74,11 @@ Page({
   /* 获取标签列表 */
   getTags() {
     let self = this;
+    let role_id = app.globalData.userInfo.role;
     self.setData({
       selfTags: app.globalData.userInfo.tag_list
     });
-    app.api.getTags().then(res => {
+    app.api.getTags(role_id).then(res => {
       let tags = res.data.data;
       let selfTags = self.data.selfTags;
       if (selfTags.length == 0) {
