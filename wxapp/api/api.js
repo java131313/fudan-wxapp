@@ -273,6 +273,28 @@ export default class Api {
     return self.post(url, postData);
   }
 
+  /* 视频详情 */
+  getVideoDetail(id) {
+    let self = this;
+    let url = '/front/video';
+    let postData = {
+      id: id,
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
+  /* 直播详情 */
+  getLiveDetail(id) {
+    let self = this;
+    let url = '/front/live';
+    let postData = {
+      id: id,
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
   /* 投票 */
   vote(id) {
     let self = this;

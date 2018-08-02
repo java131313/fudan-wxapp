@@ -1,1 +1,29 @@
-/* package/index/pages/liveDetails/liveDetails.wxss */
+.main-wrapper {
+  width: 92.6%;
+  padding: 0 3.7%;
+  height: auto;
+  overflow: hidden;
+}
+
+.live-container {
+  width: 100%;
+  height: auto;
+  margin-top: 20rpx;
+}
+
+.live-content {
+  width: 100%;
+  height: auto;
+  margin-top: 20rpx;
+}
+
+.live-player {
+  width: 100%;
+  height: 400rpx;
+}
+
+.live-intro {
+  color: #999;
+  font-size: 36rpx;
+  margin: 10rpx 0 30rpx 0;
+}

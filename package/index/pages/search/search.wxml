@@ -39,6 +39,7 @@
     <search-bar wx:elif='{{searchResultData.activity.length > 0}}' search_module='活动' search_type='activity' search_content='{{searchResultData.activity}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
 
     <!-- 视频 -->
+    <search-bar wx:elif='{{searchResultData.video.length > 0}}' search_module='视频' search_type='video' search_content='{{searchResultData.video}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
 
     <!-- 投票 -->
     <search-bar wx:elif='{{searchResultData.vote.length > 0}}' search_module='投票' search_type='vote' search_content='{{searchResultData.vote}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />

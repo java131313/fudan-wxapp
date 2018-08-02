@@ -1,2 +1,14 @@
-<!--package/index/pages/videoDetails/videoDetails.wxml-->
-<text>package/index/pages/videoDetails/videoDetails.wxml</text>
+<wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
+
+<view class='main-wrapper'>
+  <view class='video-container'>
+    <title-bar title='{{videoDetail.title}}' issuetime='{{videoDetail.issuetime}}' />
+    <view class='video-content'>
+      <video class='video-player' src='{{videoDetail.url}}' poster='{{videoDetail.cover_img}}'></video>
+      <view class='video-intro'>{{videoDetail.intro}}</view>
+    </view>
+    <operate-bar support_num='{{videoDetail.support_num}}' comment_num='{{videoDetail.comment_num}}' share_num='{{videoDetail.share_num}}' has_supported='{{videoDetail.has_supported}}' supportId='{{videoDetail.id}}' supportType='{{moduleType}}' bind:showCommentView='showCommentView'
+    />
+  </view>
+</view>
+<comment-bar id='videoComment' commentId='{{videoDetail.id}}' commentType='{{moduleType}}' comments="{{videoDetail.comments}}" />
