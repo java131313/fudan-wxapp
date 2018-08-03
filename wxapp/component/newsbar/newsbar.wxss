@@ -150,6 +150,10 @@
   color: #333;
   font-size: 34rpx;
   font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .information_title {

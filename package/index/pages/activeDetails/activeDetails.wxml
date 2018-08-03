@@ -12,8 +12,7 @@
   </view>
   <view class="activ_btn">
     <form class='activ_from' report-submit='true' bindsubmit='activeRegister'>
-      <button class='btn1' form-type='submit'>活动提醒</button>
-      <button class='btn2' form-type='submit'>活动报名</button>
+      <button class='activ_apply' form-type='submit'>活动报名</button>
     </form>
   </view>
   <view class='activ_poster'>

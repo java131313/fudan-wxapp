@@ -29,22 +29,10 @@
   border-bottom: 1rpx solid #e5e5e5;
 }
 
-.btn1 {
+.activ_apply {
   display: inline-block;
-  width: 36.3%;
-  border: 1rpx solid #d95454;
-  font-size: 32rpx;
-  line-height: 82rpx;
-  color: #cc1a1a;
-  text-align: center;
-  background: rgba(255, 255, 255, 0);
-}
-
-.btn2 {
-  display: inline-block;
-  width: 60.2%;
+  width: 100%;
   border: 1rpx solid #cc1a1a;
-  margin-left: 3%;
   font-size: 32rpx;
   line-height: 82rpx;
   background: #cc1a1a;
