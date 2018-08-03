@@ -4,7 +4,7 @@
   <view class='video-container'>
     <title-bar title='{{videoDetail.title}}' issuetime='{{videoDetail.issuetime}}' />
     <view class='video-content'>
-      <video class='video-player' src='{{videoDetail.url}}' poster='{{videoDetail.cover_img}}'></video>
+      <video class='video-player' src='{{videoDetail.url}}' poster='{{filter.imageSrcParse(videoDetail.cover_img)}}'></video>
       <view class='video-intro'>{{videoDetail.intro}}</view>
     </view>
     <operate-bar support_num='{{videoDetail.support_num}}' comment_num='{{videoDetail.comment_num}}' share_num='{{videoDetail.share_num}}' has_supported='{{videoDetail.has_supported}}' supportId='{{videoDetail.id}}' supportType='{{moduleType}}' bind:showCommentView='showCommentView'

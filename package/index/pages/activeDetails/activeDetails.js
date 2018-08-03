@@ -103,7 +103,8 @@ Page({
     let self = this;
     let activityId = self.data.activityId;
     let form_id = e.detail.formId;
-    app.api.activityApply(activityId, form_id).then(res => {
+    let page = Util.getModulePageUrl('activity', activityId);
+    app.api.activityApply(activityId, form_id, page).then(res => {
       Util.showToast({
         title: '活动报名成功'
       });

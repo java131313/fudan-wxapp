@@ -332,12 +332,13 @@ export default class Api {
   }
 
   /* 活动申请 */
-  activityApply(id, form_id) {
+  activityApply(id, form_id, page) {
     let self = this;
     let url = '/front/activityApply';
     let postData = {
       id: id,
       form_id: form_id,
+      page: page,
       session_id: self.getSessionId()
     };
     return self.post(url, postData);

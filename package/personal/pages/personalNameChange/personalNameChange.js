@@ -94,7 +94,7 @@ Page({
     } else {
       let nickname = e.detail.value.nickname;
       app.api.setUserInfo({
-        nickname: nickname
+        nickName: nickname
       }).then(res => {
         app.globalData.userInfo.nickname = nickname;
         wx.navigateBack();

@@ -1,3 +1,4 @@
+import Util from '../../utils/util.js';
 const app = getApp();
 import {
   bindRolePromise
@@ -9,7 +10,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    redirectUrl: app.CONFIG.PAGE.SELECTID,
     showLoginBtn: false
   },
 
@@ -21,7 +21,10 @@ Page({
     bindRolePromise.then(() => {
       if (app.globalData.isAuthorized) {
         wx.switchTab({
-          url: app.CONFIG.PAGE.INDEX
+          url: app.CONFIG.PAGE.INDEX,
+          success: res => {
+            Util.getUserInfo();
+          }
         });
       } else {
         self.setData({
@@ -78,5 +81,30 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 微信授权 */
+  wxAuthorize(e) {
+    let userInfo = e.detail.userInfo;
+    let callback = () => {
+      wx.redirectTo({
+        url: app.CONFIG.PAGE.SELECTID,
+        success: res => {
+          Util.getUserInfo();
+        }
+      });
+    };
+    if (!userInfo) {
+      Util.showModal({
+        content: '未进行授权，部分功能将受限！',
+        cancelText: '取消'
+      }).then(() => {
+        callback();
+      });
+    } else {
+      app.api.setUserInfo(userInfo).then(res => {
+        callback();
+      });
+    }
   }
 })

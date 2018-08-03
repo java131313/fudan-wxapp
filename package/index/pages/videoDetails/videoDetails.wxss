@@ -26,4 +26,5 @@
   color: #999;
   font-size: 36rpx;
   margin: 10rpx 0 30rpx 0;
+  line-height: 1.75em;
 }

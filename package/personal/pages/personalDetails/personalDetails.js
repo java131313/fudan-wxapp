@@ -101,7 +101,7 @@ Page({
         app.api.uploadImages(tempFilePaths, 'avatar').then(res => {
           let avatarUrl = res.shift();
           app.api.setUserInfo({
-            avatar: avatarUrl
+            avatarUrl: avatarUrl
           }).then(res => {
             app.globalData.userInfo.avatar = avatarUrl;
           });

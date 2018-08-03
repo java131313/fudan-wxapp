@@ -1,6 +1,6 @@
 <wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='main-wrapper' style='background:url({{filter.imageSrcParse("/images/loading.png")}}) no-repeat center center;  background-size: cover;'>
-  <navigator wx:if='{{showLoginBtn}}' class='loginbtn' open-type='redirect' url='{{redirectUrl}}'>登录</navigator>
+  <button wx:if='{{showLoginBtn}}' class='loginbtn' open-type='getUserInfo' bindgetuserinfo='wxAuthorize'>登录</button>
   <view wx:else class='loading_ing' style='background:url({{filter.imageSrcParse("/images/loading_ing.gif")}}) no-repeat center center;'></view>
 </view>

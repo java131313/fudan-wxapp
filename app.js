@@ -52,7 +52,6 @@ App({
     return self.api.getHasBindRole().then(() => {
       /* 已绑定身份 */
       self.globalData.isAuthorized = true;
-      Util.getUserInfo();
     }, () => {
       /* 未绑定身份,如果通过分享进来跳转到开机页 */
       if (Util.arrayIsContain(self.CONFIG.SCENES.CHAT, scene)) {
