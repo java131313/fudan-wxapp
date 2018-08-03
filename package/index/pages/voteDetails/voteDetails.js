@@ -82,7 +82,8 @@ Page({
     let shareType = self.data.moduleType;
     return Util.onShareAppMessage({
       shareId: shareId,
-      shareType: shareType
+      shareType: shareType,
+      path: Util.getModulePageUrl('vote', self.data.voteDetail.id)
     }, shareCallback);
   },
 

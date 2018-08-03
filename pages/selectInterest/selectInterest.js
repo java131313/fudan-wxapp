@@ -73,12 +73,6 @@ Page({
 
   },
 
-  /* 绑定用户身份 */
-  setRole() {
-    let self = this;
-    return app.api.setRole(self.data.role_id);
-  },
-
   /* 获取标签列表 */
   getTags() {
     let self = this;
@@ -107,13 +101,11 @@ Page({
       return;
     }
     app.api.setTags(self.data.selectedTags).then(res => {
-      self.setRole().then(res => {
-        let url = app.CONFIG.PAGE.INDEX;
-        let callback = () => {
-          Util.getUserInfo();
-        };
-        Util.switchTabToOnload(url, callback);
-      });
+      let url = app.CONFIG.PAGE.INDEX;
+      let callback = () => {
+        Util.getUserInfo();
+      };
+      Util.switchTabToOnload(url, callback);
     });
   }
 })

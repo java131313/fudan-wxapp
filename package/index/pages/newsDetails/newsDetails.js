@@ -78,7 +78,8 @@ Page({
     let shareType = self.data.moduleType;
     return Util.onShareAppMessage({
       shareId: shareId,
-      shareType: shareType
+      shareType: shareType,
+      path: Util.getModulePageUrl('news', self.data.newsDetail.id)
     }, shareCallback);
   },
 

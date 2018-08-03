@@ -149,7 +149,7 @@
 
 .information_title {
   margin-top: 14rpx;
-  font-size: 34rpx;
+  font-size: 40rpx;
   color: #333;
   line-height: 72rpx;
   font-weight: bold;

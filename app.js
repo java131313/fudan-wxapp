@@ -22,7 +22,10 @@ App({
    */
   onShow: function(options) {
     let self = this;
-    self.getSysBGStyle();
+    /* 获取系统配置 */
+    self.api.getSysConfig().then(res => {
+      self.getSysBGStyle(res.data.data.color);
+    });
     /* 微信登录 */
     bindRolePromise = Util.wxlogin().then(() => {
       return self.getHasBindRole(options.scene);
@@ -61,17 +64,16 @@ App({
   },
 
   /* 获取系统配置颜色 */
-  getSysBGStyle() {
+  getSysBGStyle(styleType) {
     let self = this;
-    let styleType = 1;
     switch (styleType) {
-      case 1:
+      case '1':
         self.globalData.sysConfig.bgStyle = CONFIG.BGSTYLE.RED;
         break;
-      case 2:
+      case '2':
         self.globalData.sysConfig.bgStyle = CONFIG.BGSTYLE.BLUE;
         break;
-      case 3:
+      case '3':
         self.globalData.sysConfig.bgStyle = CONFIG.BGSTYLE.GRAY;
         break;
     }

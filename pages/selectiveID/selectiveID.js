@@ -73,6 +73,12 @@ Page({
 
   },
 
+  /* 绑定用户身份 */
+  setRole() {
+    let self = this;
+    return app.api.setRole(self.data.selectedID);
+  },
+
   /* 选择身份触发 */
   selectIdentity(e) {
     let self = this;
@@ -99,12 +105,16 @@ Page({
       return;
     }
     if (selecedID == app.ENUM.Identity.Teacher || selecedID == app.ENUM.Identity.Student) {
-      wx.navigateTo({
-        url: `${app.CONFIG.PAGE.LOGIN}?id=${selecedID}`
+      self.setRole().then(() => {
+        wx.navigateTo({
+          url: app.CONFIG.PAGE.LOGIN
+        });
       });
     } else {
-      wx.navigateTo({
-        url: `${app.CONFIG.PAGE.SELECTINTEREST}?id=${selecedID}`
+      self.setRole().then(() => {
+        wx.navigateTo({
+          url: `${app.CONFIG.PAGE.SELECTINTEREST}?id=${selecedID}`
+        });
       });
     }
   }

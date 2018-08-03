@@ -72,7 +72,6 @@ Page({
   /* 更改昵称 */
   personNameChange(e) {
     let self = this;
-    if (self.data.userInfo.isHasPermission) return;
     wx.navigateTo({
       url: app.CONFIG.PAGE.SELFNAMECHANGE
     });
@@ -81,7 +80,6 @@ Page({
   /* 更改身份 */
   personIdChange(e) {
     let self = this;
-    if (self.data.userInfo.isHasPermission) return;
     wx.navigateTo({
       url: app.CONFIG.PAGE.SELECTID
     });

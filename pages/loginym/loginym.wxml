@@ -1,5 +1,4 @@
-<!--pages/loginym/loginym.wxml-->
-<wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
+<!-- <wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='login-wrapper' style='background:{{bgColor}}'>
   <view class='logoPic'>
@@ -11,4 +10,5 @@
     <button class='loginBtn'>登录</button>
     <text class='forgetPassword'>忘记密码</text>
   </view>
-</view>
+</view> -->
+<web-view src='{{oauthUrl}}'></web-view>

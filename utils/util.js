@@ -331,6 +331,8 @@ export default class Util {
         return `${app.CONFIG.PAGE.CONTRIBUTEFORM}?id=${id}`;
       case 'video':
         return `${app.CONFIG.PAGE.VIDEODETAILS}?id=${id}`;
+      case 'live':
+        return `${app.CONFIG.PAGE.LIVEDETAILS}?id=${id}`;
     }
   }
 }

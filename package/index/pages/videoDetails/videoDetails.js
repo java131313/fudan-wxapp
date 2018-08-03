@@ -76,7 +76,8 @@ Page({
     let shareType = self.data.moduleType;
     return Util.onShareAppMessage({
       shareId: shareId,
-      shareType: shareType
+      shareType: shareType,
+      path: Util.getModulePageUrl('video', self.data.videoDetail.id)
     }, shareCallback);
   },
 

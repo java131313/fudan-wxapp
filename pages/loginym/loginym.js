@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bgColor: ''
+    bgColor: '',
+    oauthUrl: ''
   },
 
   /**
@@ -17,6 +18,7 @@ Page({
     self.setData({
       bgColor: app.globalData.sysConfig.bgStyle.color
     });
+    self.oauthLogin();
   },
 
   /**
@@ -66,5 +68,13 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 第三方登录 */
+  oauthLogin() {
+    let self = this;
+    self.setData({
+      oauthUrl: app.api.oauthLogin()
+    });
   }
 })

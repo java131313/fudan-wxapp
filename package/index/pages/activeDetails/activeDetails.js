@@ -80,7 +80,8 @@ Page({
     let shareType = self.data.moduleType;
     return Util.onShareAppMessage({
       shareId: shareId,
-      shareType: shareType
+      shareType: shareType,
+      path: Util.getModulePageUrl('activity', self.data.activityDetail.id)
     }, shareCallback);
   },
 

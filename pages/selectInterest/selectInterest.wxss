@@ -1,7 +1,9 @@
 .main-wrapper {
   width: 92.6%;
-  height: 100%;
+  height: auto;
   padding: 0 3.7%;
+  min-height: 100%;
+  overflow: hidden;
 }
 
 .slogan {
@@ -54,7 +56,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 200rpx;
+  margin: 200rpx 0 100rpx 0;
 }
 
 .sloganEnd .sloganEndTitle {

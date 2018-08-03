@@ -53,6 +53,21 @@ export default class Api {
     return self.post(url, postData);
   }
 
+  /* 第三方登录 */
+  oauthLogin() {
+    let self = this;
+    let service = CONFIG.DEBUG.STATUS ? CONFIG.DEBUG.API : CONFIG.HTTP.API;
+    let url = '/tac_oauth';
+    return `${service}${url}?session_id=${self.getSessionId()}`;
+  }
+
+  /* 获取系统配置 */
+  getSysConfig() {
+    let self = this;
+    let url = '/front/sysConfig';
+    return self.getRequest(url);
+  }
+
   /* 保存用户信息 */
   setUserInfo(userInfo) {
     let self = this;
