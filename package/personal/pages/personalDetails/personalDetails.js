@@ -94,15 +94,16 @@ Page({
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function(res) {
         let tempFilePaths = res.tempFilePaths;
+        /* 先使用本地的头像图片 */
+        self.setData({
+          'userInfo.avatar': tempFilePaths[0]
+        });
         app.api.uploadImages(tempFilePaths, 'avatar').then(res => {
           let avatarUrl = res.shift();
           app.api.setUserInfo({
             avatar: avatarUrl
           }).then(res => {
             app.globalData.userInfo.avatar = avatarUrl;
-            self.setData({
-              userInfo: app.globalData.userInfo
-            });
           });
         });
       }
