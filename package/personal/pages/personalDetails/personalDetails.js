@@ -104,6 +104,9 @@ Page({
             avatarUrl: avatarUrl
           }).then(res => {
             app.globalData.userInfo.avatar = avatarUrl;
+            self.setData({
+              userInfo: app.globalData.userInfo
+            });
           });
         });
       }
