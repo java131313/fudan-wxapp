@@ -4,10 +4,12 @@
 复旦大学校园小程序
 
 #### 软件架构
+
 1.腾讯云文件上传SDK(cos-wx-sdk-v5.js)
 2.表单验证validate.js
 3.微信小程序分包加载subpackage
 4.模拟数据mock.js
+5.html标签解析wxParse
 
 
 #### 安装教程
