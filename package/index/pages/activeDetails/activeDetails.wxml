@@ -23,7 +23,7 @@
     <view class='activ_poster_content_parent'>
       <text class='activ_poster_content'>{{activityDetail.intro}}</text>
       <view class='activ_poster_img_parent'>
-        <image class='activ_poster_img' src='{{activityDetail.playbill}}'></image>
+        <image class='activ_poster_img' src='{{filter.imageSrcParse(activityDetail.playbill)}}'></image>
       </view>
     </view>
   </view>

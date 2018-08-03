@@ -44,6 +44,7 @@ function arrayIsContain(array, arg) {
 }
 
 function imageSrcParse(path) {
+  if (!path) return;
   var domain = 'https://xinzhibang168-1253521270.costj.myqcloud.com';
   if (path.indexOf('http') == -1) return domain + path;
   else return path;

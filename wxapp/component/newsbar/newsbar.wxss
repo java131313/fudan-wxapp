@@ -85,6 +85,10 @@
   font-size: 34rpx;
   color: #000;
   font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .newsB {
@@ -95,9 +99,10 @@
 
 .newsB text {
   display: block;
-  font-size: 30rpx;
+  font-size: 31rpx;
   color: #999;
-  line-height: 50rpx;
+  line-height: 29rpx;
+  margin-bottom: 15rpx;
 }
 
 .newsD {
