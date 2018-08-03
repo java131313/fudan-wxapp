@@ -4,7 +4,8 @@
   <view class='video-container'>
     <title-bar title='{{videoDetail.title}}' issuetime='{{videoDetail.issuetime}}' />
     <view class='video-content'>
-      <video class='video-player' src='{{videoDetail.url}}' poster='{{filter.imageSrcParse(videoDetail.cover_img)}}'></video>
+      <!-- src='{{videoDetail.url}}' -->
+      <video class='video-player' src='http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400' poster='{{filter.imageSrcParse(videoDetail.cover_img)}}'></video>
       <view class='video-intro'>{{videoDetail.intro}}</view>
     </view>
     <operate-bar support_num='{{videoDetail.support_num}}' comment_num='{{videoDetail.comment_num}}' share_num='{{videoDetail.share_num}}' has_supported='{{videoDetail.has_supported}}' supportId='{{videoDetail.id}}' supportType='{{moduleType}}' bind:showCommentView='showCommentView'
