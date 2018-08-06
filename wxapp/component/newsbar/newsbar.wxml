@@ -11,7 +11,7 @@
         <image class='news_pic' src='{{filter.imageSrcParse(news_pic)}}'></image>
       </view>
       <view class='newsSynopsis'>
-        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+        <text class='synopsis1'><text class='stick' wx:if="{{is_top == 1}}">置顶</text>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
       </view>
     </view>
   </view>
@@ -28,7 +28,7 @@
         </view>
       </view>
       <view class='newsSynopsis'>
-        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+        <text class='synopsis1'><text class='stick' wx:if="{{is_top == 1}}">置顶</text>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
       </view>
     </view>
   </view>
@@ -42,7 +42,7 @@
         </view>
       </view>
       <view class='newsSynopsis'>
-        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+        <text class='synopsis1'><text class='stick' wx:if="{{is_top == 1}}">置顶</text>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
       </view>
     </view>
   </view>
@@ -69,7 +69,7 @@
         </view>
       </view>
       <view class='newsSynopsis'>
-        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+        <text class='synopsis1'><text class='stick' wx:if="{{is_top == 1}}">置顶</text>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
       </view>
     </view>
   </view>
@@ -85,7 +85,7 @@
         <image class='news_pic_bg' src='{{filter.imageSrcParse("/images/vedio_bg.png")}}'></image>
       </view>
       <view class='newsSynopsis'>
-        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+        <text class='synopsis1'><text class='stick' wx:if="{{is_top == 1}}">置顶</text>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
       </view>
     </view>
   </view>
@@ -116,7 +116,7 @@
         </block>
       </view>
       <view class='newsSynopsis'>
-        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+        <text class='synopsis1'><text class='stick' wx:if="{{is_top == 1}}">置顶</text>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
       </view>
     </view>
   </view>
@@ -146,7 +146,7 @@
         </view>
       </view>
       <view class='newsSynopsis'>
-        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+        <text class='synopsis1'><text class='stick' wx:if="{{is_top == 1}}">置顶</text>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
       </view>
     </view>
   </view>
@@ -160,7 +160,7 @@
         </view>
       </view>
       <view class='newsSynopsis'>
-        <text class='synopsis1'>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
+        <text class='synopsis1'><text class='stick' wx:if="{{is_top == 1}}">置顶</text>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
       </view>
     </view>
   </view>

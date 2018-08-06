@@ -14,6 +14,7 @@ Component({
     recruit_target: String,
     recruit_require: String,
     vote_options: Object,
+    is_top:Number,
     bgStyle: Object
   },
 

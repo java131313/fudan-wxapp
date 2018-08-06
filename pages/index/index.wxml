@@ -24,60 +24,61 @@
     <block wx:if='{{menuType == 1}}' wx:for='{{newsItem}}' wx:key='this'>
       <!-- 新闻 -->
       <news-bar wx:if='{{item.type=="news"}}' news_url='{{newsDetailUrl}}?id={{item.data.id}}' news_type='{{filter.handleNewsType(item.data.cover_img,item.data.img_size)}}' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}'
-        synopsis_source='{{item.data.origin}}' />
+        synopsis_source='{{item.data.origin}}' is_top='{{item.is_top}}' />
 
       <!-- 活动 -->
       <news-bar wx:if='{{item.type=="activity"}}' news_url='{{activityUrl}}?id={{item.data.id}}' news_type='4' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}'
-        activity_time='{{item.data.begintime}}' activity_site='{{item.data.site}}' bgStyle='{{bgStyle}}' />
+        activity_time='{{item.data.begintime}}' activity_site='{{item.data.site}}' bgStyle='{{bgStyle}}' is_top='{{item.is_top}}' />
 
       <!-- 视频录播 -->
-      <news-bar wx:if='{{item.type=="video"}}' news_url='{{videoUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}'
+      <news-bar wx:if='{{item.type=="video"}}' news_url='{{videoUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}' is_top='{{item.is_top}}'
       />
 
       <!-- 视频直播 -->
-      <news-bar wx:if='{{item.type=="live"}}' news_url='{{liveUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}'
+      <news-bar wx:if='{{item.type=="live"}}' news_url='{{liveUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}' is_top='{{item.is_top}}'
       />
 
       <!-- 投票 -->
       <news-bar wx:if='{{item.type=="vote"}}' news_url='{{voteUrl}}?id={{item.data.id}}' news_type='6' news_title='{{item.data.name}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' vote_options='{{item.data.options}}'
-        bgStyle='{{bgStyle}}' />
+        bgStyle='{{bgStyle}}' is_top='{{item.is_top}}' />
 
       <!-- 招聘 -->
       <news-bar wx:if='{{item.type=="recruit"}}' news_url='{{recruitUrl}}?id={{item.data.id}}' news_type='7' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' recruit_target='{{item.data.target}}'
-        recruit_require='{{item.data.require}}' />
+        recruit_require='{{item.data.require}}' is_top='{{item.is_top}}' />
 
       <!-- 征稿 -->
-      <news-bar wx:if='{{item.type=="contribute"}}' news_url='{{contributeUrl}}?id={{item.data.id}}' news_type='8' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' />
+      <news-bar wx:if='{{item.type=="contribute"}}' news_url='{{contributeUrl}}?id={{item.data.id}}' news_type='8' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' is_top='{{item.is_top}}' />
     </block>
 
     <!-- 本周热榜 -->
     <block wx:if='{{menuType == 2}}' wx:for='{{weekRank}}' wx:key='this'>
       <!-- 新闻 -->
       <news-bar wx:if='{{item.type=="news"}}' news_url='{{newsDetailUrl}}?id={{item.data.id}}' news_type='{{filter.handleNewsType(item.data.cover_img,item.data.img_size)}}' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}'
-        synopsis_source='{{item.data.origin}}' />
+        synopsis_source='{{item.data.origin}}' is_top='{{item.is_top}}' />
 
       <!-- 活动 -->
       <news-bar wx:if='{{item.type=="activity"}}' news_url='{{activityUrl}}?id={{item.data.id}}' news_type='4' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}'
-        activity_time='{{item.data.begintime}}' activity_site='{{item.data.site}}' bgStyle='{{bgStyle}}' />
+        activity_time='{{item.data.begintime}}' activity_site='{{item.data.site}}' bgStyle='{{bgStyle}}' 
+       is_top='{{item.is_top}}' />
 
       <!-- 视频录播 -->
-      <news-bar wx:if='{{item.type=="video"}}' news_url='{{videoUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}'
+      <news-bar wx:if='{{item.type=="video"}}' news_url='{{videoUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}' is_top='{{item.is_top}}'
       />
 
       <!-- 视频直播 -->
-      <news-bar wx:if='{{item.type=="live"}}' news_url='{{liveUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}'
+      <news-bar wx:if='{{item.type=="live"}}' news_url='{{liveUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}' is_top='{{item.is_top}}'
       />
 
       <!-- 投票 -->
       <news-bar wx:if='{{item.type=="vote"}}' news_url='{{voteUrl}}?id={{item.data.id}}' news_type='6' news_title='{{item.data.name}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' vote_options='{{item.data.options}}'
-        bgStyle='{{bgStyle}}' />
+        bgStyle='{{bgStyle}}' is_top='{{item.is_top}}' />
 
       <!-- 招聘 -->
       <news-bar wx:if='{{item.type=="recruit"}}' news_url='{{recruitUrl}}?id={{item.data.id}}' news_type='7' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' recruit_target='{{item.data.target}}'
-        recruit_require='{{item.data.require}}' />
+        recruit_require='{{item.data.require}}' is_top='{{item.is_top}}' />
 
       <!-- 征稿 -->
-      <news-bar wx:if='{{item.type=="contribute"}}' news_url='{{contributeUrl}}?id={{item.data.id}}' news_type='8' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' />
+      <news-bar wx:if='{{item.type=="contribute"}}' news_url='{{contributeUrl}}?id={{item.data.id}}' news_type='8' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' is_top='{{item.is_top}}' />
     </block>
     <view class='loadingmore' wx:if='{{showLoadingMore}}'>
       <text>正在推荐新内容</text>
