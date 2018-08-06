@@ -2,17 +2,17 @@
 
 <view class='operate-container'>
   <view class='operate-item'>
-    <image src='{{filter.imageSrcParse(has_supported ? "/images/like_hover.png" : "/images/like.png")}}' catchtap='_moduleSupport'></image>
-    <text>{{support_num}}</text>
+    <button open-type='share'>
+      <image src='{{filter.imageSrcParse("/images/share.png")}}'></image>
+    </button>
+    <text>{{share_num}}</text>
   </view>
   <view class='operate-item'>
     <image src='{{filter.imageSrcParse("/images/edit.png")}}' catchtap='_showCommentView'></image>
     <text>{{comment_num}}</text>
   </view>
   <view class='operate-item'>
-    <button open-type='share'>
-      <image src='{{filter.imageSrcParse("/images/share.png")}}'></image>
-    </button>
-    <text>{{share_num}}</text>
+    <image src='{{filter.imageSrcParse(has_supported ? "/images/like_hover.png" : "/images/like.png")}}' catchtap='_moduleSupport'></image>
+    <text>{{support_num}}</text>
   </view>
 </view>
