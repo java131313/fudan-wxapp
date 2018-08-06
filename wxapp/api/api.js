@@ -38,7 +38,8 @@ export default class Api {
     let self = this;
     let url = '/front/weekRank';
     let postData = {
-      page_index: page_index
+      page_index: page_index,
+      session_id: self.getSessionId()
     };
     return self.post(url, postData);
   }
