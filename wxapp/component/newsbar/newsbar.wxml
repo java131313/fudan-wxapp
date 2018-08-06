@@ -128,11 +128,11 @@
         <view class='information_title_parent'>
           <text class='information_title'>{{news_title}}</text>
         </view>
-        <view class='information_job_parent'>
+        <view class='information_job_parent10'>
           <view class='information_job_constructor'>
             <text class='information_job'>岗位职责：</text>
           </view>
-          <view class='information_job_constructor'>
+          <view class='information_job_constructor2'>
             <text class='information_job'>{{recruit_target}}</text>
           </view>
         </view>
@@ -140,9 +140,7 @@
           <view class='require_header_parent'>
             <text class='information_job'>任职要求：</text>
           </view>
-          <view class='require_content_parent'>
-            <view class='information_job a'>{{recruit_require}}</view>
-          </view>
+          <text class='information_job_require'>{{recruit_require}}</text>
         </view>
       </view>
       <view class='newsSynopsis'>

@@ -170,6 +170,13 @@
   line-height: 40rpx;
 }
 
+.information_job_require {
+  font-size: 28rpx;
+  color: #999;
+  line-height: 40rpx;
+  width: 79%;
+}
+
 .require_header_parent {
   display: flex;
   flex-direction: row;
@@ -179,6 +186,14 @@
   display: flex;
   justify-content: flex-start;
   margin-bottom: 10rpx;
+  width: 21%;
+}
+
+.information_job_parent10 {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10rpx;
+  width: 100%;
 }
 
 .require {
@@ -311,4 +326,12 @@
   padding: 0 4%;
   margin-right: 3%;
   font-weight: bold;
+}
+
+.information_job_constructor {
+  width: 21%;
+}
+
+.information_job_constructor2 {
+  width: 79%;
 }

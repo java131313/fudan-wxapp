@@ -17,7 +17,7 @@ Page({
    */
   onLoad: function(options) {
     let self = this;
-    self.getRecruitDetail(1);
+    self.getRecruitDetail(options.id);
   },
 
   /**
