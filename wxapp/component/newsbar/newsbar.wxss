@@ -301,7 +301,7 @@
   height: 110rpx;
 }
 
-.stick{
+.stick {
   color: #d33a3a;
   line-height: 40rpx;
   border: 1px solid #d33a3a;
@@ -310,6 +310,5 @@
   display: inline-block;
   padding: 0 4%;
   margin-right: 3%;
+  font-weight: bold;
 }
-
-
