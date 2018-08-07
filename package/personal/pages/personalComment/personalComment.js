@@ -74,7 +74,7 @@ Page({
     app.api.getMyComments().then(res => {
       let myComments = res.data.data;
       myComments && myComments.forEach(x => {
-        let naviUrl = Util.getModulePageUrl(x.type, x.id);
+        let naviUrl = Util.getModulePageUrl(x.type, x.ids);
         x.naviUrl = naviUrl;
       });
       self.setData({
