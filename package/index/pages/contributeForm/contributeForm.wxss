@@ -1,3 +1,5 @@
+@import '../../../../wxapp/template/wxParse/wxParse.wxss';
+
 page {
   background: #f4f4f4;
 }
@@ -19,6 +21,11 @@ page {
   font-size: 28rpx;
   line-height: 88rpx;
   color: #aaa;
+}
+
+.contribute_text_parent {
+  width: 100%;
+  margin-top: 20rpx;
 }
 
 .contribute_from_parent {
@@ -125,4 +132,8 @@ page {
   height: 84rpx;
   color: #fff;
   margin-top: 114rpx;
+}
+
+.user_contribute_text {
+  margin-bottom: 10rpx;
 }

@@ -2,12 +2,7 @@
 <wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='contribute-cotent'>
-  <view class='contribute_title_parent'>
-    <text class='contribute_title'>{{contributionDetail.title}}</text>
-  </view>
-  <view class='contribute_time_parent'>
-    <text class='contribute_time'>{{filter.formatDate(contributionDetail.issuetime)}}</text>
-  </view>
+  <title-bar title='{{contributionDetail.title}}' issuetime='{{contributionDetail.issuetime}}' />
   <view class='contribute_text_parent'>
     <template class='contribute_text' is="wxParse" data="{{wxParseData:article.nodes}}" />
   </view>
@@ -17,7 +12,7 @@
 </view>
 <view class='bgPic'></view>
 <view class="contribute">
-  <form bindsubmit='contribute'>
+  <form bindsubmit='contribute' wx:if='{{showContributeFrom}}'>
     <view class='compile_parent'>
       <input name='tel' type='number' placeholder='请输入手机号(必填)' placeholder-style="padding-left:0rpx;"></input>
       <input name='email' type='text' placeholder='请输入邮箱(必填)' placeholder-style="padding-left:0rpx;"></input>
@@ -41,4 +36,20 @@
       <button class='uploading_sub' form-type='submit'>提交</button>
     </view>
   </form>
+  <block wx:else>
+    <view class='user_contribute_text'>手机号：{{contributionDetail.user_contribute.tel}}</view>
+    <view class='user_contribute_text'>邮箱：{{contributionDetail.user_contribute.email}}</view>
+    <block wx:for='{{contributionDetail.user_contribute.dynamic_kv}}' wx:key='this'>
+      <view class='user_contribute_text'>{{item.name}}：{{item.value}}</view>
+    </block>
+    <view class='user_contribute_text'>征稿内容：{{contributionDetail.user_contribute.name}}</view>
+    <view class='user_contribute_text'>分享图片：</view>
+    <view class='uploading_parent'>
+      <block wx:for="{{contributionDetail.user_contribute.img_list}}" wx:key='this'>
+        <view class='uploading_first'>
+          <image src="{{item}}" class='mmxx'></image>
+        </view>
+      </block>
+    </view>
+  </block>
 </view>

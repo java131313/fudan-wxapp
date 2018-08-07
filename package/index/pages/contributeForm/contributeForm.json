@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "征稿详情"
+  "navigationBarTitleText": "征稿详情",
+  "usingComponents": {
+    "title-bar": "/wxapp/component/titlebar/titlebar"
+  }
 }

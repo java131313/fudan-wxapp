@@ -10,7 +10,8 @@ Page({
   data: {
     contributionId: '',
     contributionDetail: {},
-    tempFilePaths: []
+    tempFilePaths: [],
+    showContributeFrom: true
   },
 
   /**
@@ -107,6 +108,22 @@ Page({
     let self = this;
     if (!self.data.contributionId) return;
     app.api.getContributionDetail(self.data.contributionId).then(res => {
+      if (Object.keys(res.data.data.user_contribute).length > 0) {
+        self.setData({
+          showContributeFrom: false
+        });
+      }
+      if (res.data.data.user_contribute.dynamic_kv) {
+        let temp = [];
+        let dynamic_kv = JSON.parse(res.data.data.user_contribute.dynamic_kv);
+        for (let key in dynamic_kv) {
+          temp.push({
+            name: key,
+            value: dynamic_kv[key]
+          });
+        }
+        res.data.data.user_contribute.dynamic_kv = temp;
+      }
       if (res.data.data.dynamic_kv) {
         res.data.data.dynamic_kv = JSON.parse(res.data.data.dynamic_kv);
       }
@@ -168,6 +185,7 @@ Page({
           Util.showToast({
             title: '提交征稿成功'
           });
+          self.getContributionDetail();
         }, res => {
           wx.hideLoading();
           Util.showToast({

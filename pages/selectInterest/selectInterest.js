@@ -94,6 +94,7 @@ Page({
   /* 点击进入我的复旦 */
   goMyFudan(e) {
     let self = this;
+    let role_id = self.data.role_id;
     if (self.data.selectedTags.length == 0) {
       Util.showModal({
         content: '请选择你感兴趣的标签'
@@ -103,7 +104,9 @@ Page({
     app.api.setTags(self.data.selectedTags).then(res => {
       let url = app.CONFIG.PAGE.INDEX;
       let callback = () => {
-        Util.getUserInfo();
+        app.api.setRole(role_id).then(res => {
+          Util.getUserInfo();
+        });
       };
       Util.switchTabToOnload(url, callback);
     });

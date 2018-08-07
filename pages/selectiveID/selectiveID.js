@@ -111,10 +111,8 @@ Page({
         });
       });
     } else {
-      self.setRole().then(() => {
-        wx.navigateTo({
-          url: `${app.CONFIG.PAGE.SELECTINTEREST}?id=${selecedID}`
-        });
+      wx.navigateTo({
+        url: `${app.CONFIG.PAGE.SELECTINTEREST}?id=${selecedID}`
       });
     }
   }
