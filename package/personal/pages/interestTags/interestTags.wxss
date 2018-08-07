@@ -84,3 +84,7 @@
   font-size: 28rpx;
   margin-bottom: 28rpx;
 }
+
+.tag-self .tag-item {
+  background: red;
+}

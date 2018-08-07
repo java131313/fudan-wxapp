@@ -6,7 +6,11 @@ Component({
   properties: {
     hoverClass: String,
     tagText: String,
-    dataTid: String
+    dataTid: String,
+    is_radius: {
+      type: Boolean,
+      value: false
+    }
   },
 
   /**
