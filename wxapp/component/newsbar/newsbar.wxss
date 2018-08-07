@@ -17,10 +17,21 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+}
+
+.newsModle_big {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
   height: 418rpx;
 }
 
 .news_pic {
+  width: 100%;
+}
+
+.news_pic_big {
   width: 100%;
   position: relative;
   top: 50%;

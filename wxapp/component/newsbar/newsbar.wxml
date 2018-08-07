@@ -7,8 +7,8 @@
       <text class='newsText'>{{news_title}}</text>
     </view>
     <view class='newsBigPic'>
-      <view class='newsModle'>
-        <image class='news_pic' src='{{filter.imageSrcParse(news_pic)}}'></image>
+      <view class='newsModle_big'>
+        <image class='news_pic_big' src='{{filter.imageSrcParse(news_pic)}}'></image>
       </view>
       <view class='newsSynopsis'>
         <text class='synopsis1'><text class='stick' wx:if="{{is_top == 1}}">置顶</text>{{synopsis_time}}<text class='synopsis2'>|</text>{{synopsis_source}}</text>
