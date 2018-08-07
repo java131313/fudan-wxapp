@@ -20,6 +20,7 @@
 .live-player {
   width: 100%;
   height: 400rpx;
+  position: relative;
 }
 
 .live-intro {
@@ -27,4 +28,22 @@
   font-size: 36rpx;
   margin: 10rpx 0 30rpx 0;
   line-height: 1.75em;
+}
+
+.player-action {
+  background: #f3f3f3;
+  height: 60rpx;
+  width: 60rpx;
+  position: absolute;
+  right: 15rpx;
+  bottom: 15rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-action image {
+  width: 50rpx;
+  height: 50rpx;
 }

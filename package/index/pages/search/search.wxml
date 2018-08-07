@@ -50,6 +50,9 @@
     <!-- 征稿 -->
     <search-bar wx:if='{{searchResultData.contribute.length > 0}}' search_module='征稿' search_type='contribute' search_content='{{searchResultData.contribute}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
 
+    <!-- 直播 -->
+    <search-bar wx:if='{{searchResultData.live.length > 0}}' search_module='直播' search_type='live' search_content='{{searchResultData.live}}' bind:goSearchDetail='goSearchDetail' bind:searchMore='searchMore' />
+
     <!-- 无搜索结果 -->
     <view class='no_search_result' wx:if='{{showNoSearchResult}}'>
       <view class='no_search'>

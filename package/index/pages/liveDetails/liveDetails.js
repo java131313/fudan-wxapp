@@ -8,7 +8,9 @@ Page({
    */
   data: {
     moduleType: app.ENUM.ModuleType.Live,
-    liveDetail: {}
+    liveDetail: {},
+    showChangeScreenBtn: false,
+    isFullScreen: false
   },
 
   /**
@@ -23,7 +25,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    let self = this;
+    self.playerctx = wx.createLivePlayerContext('player');
   },
 
   /**
@@ -97,5 +100,46 @@ Page({
   showCommentView(e) {
     let self = this;
     self.selectComponent('#liveComment').showCommentView();
+  },
+
+  /* 点击直播组件显示切换屏幕按钮 */
+  showAction(e) {
+    let self = this;
+    self.setData({
+      showChangeScreenBtn: !self.data.showChangeScreenBtn
+    });
+  },
+
+  /* 切换屏幕显示 */
+  changeScreen(e) {
+    let self = this;
+    if (self.data.isFullScreen) {
+      self.playerctx.exitFullScreen({
+        success: res => {
+          self.setData({
+            isFullScreen: false,
+            showChangeScreenBtn: false
+          });
+          console.log('关闭全屏成功：', res);
+        },
+        fail: res => {
+          console.warn('关闭全屏失败：', res);
+        }
+      });
+    } else {
+      self.playerctx.requestFullScreen({
+        direction: -90,
+        success: res => {
+          self.setData({
+            isFullScreen: true,
+            showChangeScreenBtn: false
+          });
+          console.log('全屏播放成功：', res);
+        },
+        fail: res => {
+          console.warn('全屏播放失败：', res);
+        }
+      });
+    }
   }
 })

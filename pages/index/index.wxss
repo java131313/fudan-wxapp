@@ -13,7 +13,7 @@
   position: fixed;
   z-index: 10;
   top: 0;
-  box-shadow: 0 10rpx rgba(238,238,238,0.7);
+  box-shadow: 0 10rpx rgba(238, 238, 238, 0.7);
 }
 
 .news-box {
@@ -80,10 +80,10 @@
 
 .searchBtn image {
   position: absolute;
-  top: 13%;
-  left: 4%;
-  width: 39%;
-  height: 80%;
+  top: 9rpx;
+  left: 12rpx;
+  width: 50rpx;
+  height: 50rpx;
 }
 
 .loadingmore {
@@ -95,7 +95,7 @@
   font-size: 30rpx;
 }
 
-.loadingmore > image{
+.loadingmore > image {
   height: 30rpx;
   width: 30rpx;
   margin-left: 5rpx;

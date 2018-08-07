@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  height: 418rpx;
+  height: 209px;
 }
 
 .news_pic {

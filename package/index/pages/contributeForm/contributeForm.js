@@ -146,7 +146,7 @@ Page({
       success: function(res) {
         let tempFilePaths = res.tempFilePaths;
         self.setData({
-          tempFilePaths: res.tempFilePaths
+          tempFilePaths: self.data.tempFilePaths.concat(tempFilePaths)
         });
       }
     });

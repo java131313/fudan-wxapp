@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bgColor: '',
     oauthUrl: ''
   },
 
@@ -15,9 +14,6 @@ Page({
    */
   onLoad: function(options) {
     let self = this;
-    self.setData({
-      bgColor: app.globalData.sysConfig.bgStyle.color
-    });
     self.oauthLogin();
   },
 
