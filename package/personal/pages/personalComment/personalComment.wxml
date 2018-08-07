@@ -3,7 +3,7 @@
 <view class="main-wrapper" style='background:{{bgColor}}'>
   <view class='comment-container'>
     <block wx:for='{{myComments}}' wx:key='this'>
-      <guide-bar guide_naviUrl='{{item.naviUrl}}' guide_title='{{item.title}}' guide_content='评论时间：{{filter.formatDate(item.createtime)}}' />
+      <guide-bar guide_naviUrl='{{item.naviUrl}}' guide_title='{{item.content}}' guide_content='评论时间：{{filter.formatDate(item.createtime)}}' />
     </block>
   </view>
 </view>
