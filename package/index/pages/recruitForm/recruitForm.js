@@ -114,7 +114,7 @@ Page({
           title: '岗位申请成功'
         }).then(() => {
           wx.redirectTo({
-            url: app.CONFIG.PAGE.RECRUITDETAILS
+            url: `${app.CONFIG.PAGE.RECRUITDETAILS}?id=${self.data.recruitId}`
           });
         });
       }, res => {
