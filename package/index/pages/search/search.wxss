@@ -38,10 +38,10 @@
 
 .searchBtn image {
   position: absolute;
-  top: 20%;
-  left: 5%;
-  width: 28%;
-  height: 70%;
+  top: 19rpx;
+  left: 35rpx;
+  width: 50rpx;
+  height: 50rpx;
 }
 
 .down {

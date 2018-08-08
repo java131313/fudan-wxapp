@@ -43,7 +43,7 @@
   justify-content: center;
 }
 
-.player-action image {
+.player-actionimg {
   width: 50rpx;
   height: 50rpx;
 }

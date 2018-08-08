@@ -7,8 +7,8 @@
       <view bindtap='showAction'>
         <live-player id='player' class='live-player' src='{{filter.imageSrcParse(liveDetail.playurl)}}' autoplay='true'>
           <cover-view wx:if='{{showChangeScreenBtn}}' class='player-action' catchtap='changeScreen'>
-            <cover-image wx:if='{{isFullScreen}}' src='{{filter.imageSrcParse("/images/shrink.png")}}'></cover-image>
-            <cover-image wx:else src='{{filter.imageSrcParse("/images/amplification.png")}}'></cover-image>
+            <cover-image wx:if='{{isFullScreen}}' class='player-actionimg' src='{{filter.imageSrcParse("/images/shrink.png")}}'></cover-image>
+            <cover-image wx:else class='player-actionimg' src='{{filter.imageSrcParse("/images/amplification.png")}}'></cover-image>
           </cover-view>
         </live-player>
       </view>

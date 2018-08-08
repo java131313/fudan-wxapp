@@ -23,3 +23,5 @@
 </block>
 <view wx:if='{{sold_out}}' class='sold_out' style='background:url({{filter.imageSrcParse("/images/sold_out.png")}}) no-repeat center center;background-size:cover;'>
 </view>
+
+<!-- <web-view src='{{newsDetail.a_url}}'></web-view> -->

@@ -35,7 +35,7 @@
 
   <!-- 新闻方案三（无图） -->
   <view wx:if="{{news_type == 3}}" class='newsIndex'>
-    <view class='newsBigPic'>
+    <view class='newsBigPic_noimg'>
       <view class="is_title">
         <view class='is_title_noPic_parent'>
           <text class='information_title'>{{news_title}}</text>
@@ -151,7 +151,7 @@
 
   <!-- 征稿 -->
   <view wx:if="{{news_type == 8}}" class='newsIndex'>
-    <view class='newsBigPic'>
+    <view class='newsBigPic_noimg'>
       <view class="is_title">
         <view class='is_title_noPic_parent'>
           <text class='information_title'>{{news_title}}</text>
