@@ -24,7 +24,7 @@
       <textarea name='desc'></textarea>
     </view>
     <view class='recruit_btn'>
-      <button class='recruit_button'>取消</button>
+      <button class='recruit_button' bindtap='recruitCacel'>取消</button>
       <button class='recruit_button' form-type='submit'>提交</button>
     </view>
   </form>

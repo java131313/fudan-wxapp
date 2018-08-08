@@ -124,5 +124,10 @@ Page({
         });
       });
     }
+  },
+
+  /* 点击取消 */
+  recruitCacel(e) {
+    wx.navigateBack();
   }
 })
