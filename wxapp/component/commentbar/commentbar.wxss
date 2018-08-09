@@ -29,6 +29,10 @@
   padding: 0 3.7% 40rpx;
 }
 
+.lastcomment {
+  padding: 0 3.7%;
+}
+
 .commentContent_pic_parent {
   width: 10%;
   height: 68rpx;
@@ -153,4 +157,26 @@
   height: 70rpx;
   align-items: center;
   max-height: 70rpx;
+}
+
+.comment-bottom {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-one {
+  width: 200rpx;
+  height: 2rpx;
+  background: #e4e4e4;
+}
+
+.bottom-two {
+  width: 10rpx;
+  height: 10rpx;
+  background: #e4e4e4;
+  border-radius: 50%;
+  margin: 0 25rpx;
 }

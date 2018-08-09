@@ -4,14 +4,14 @@
   <view class='live-container'>
     <title-bar title='{{liveDetail.title}}' issuetime='{{liveDetail.issuetime}}' />
     <view class='live-content'>
-      <view bindtap='showAction'>
-        <live-player id='player' class='live-player' src='{{filter.imageSrcParse(liveDetail.playurl)}}' autoplay='true'>
-          <cover-view wx:if='{{showChangeScreenBtn}}' class='player-action' catchtap='changeScreen'>
-            <cover-image wx:if='{{isFullScreen}}' class='player-actionimg' src='{{filter.imageSrcParse("/images/shrink.png")}}'></cover-image>
-            <cover-image wx:else class='player-actionimg' src='{{filter.imageSrcParse("/images/amplification.png")}}'></cover-image>
+      <live-player id='player' class='live-player' src='{{filter.imageSrcParse(liveDetail.playurl)}}' autoplay='true'>
+          <cover-view class='cover-box' bindtap='showAction'>
+            <cover-view wx:if='{{showChangeScreenBtn}}' class='player-action' catchtap='changeScreen'>
+              <cover-image wx:if='{{isFullScreen}}' class='player-actionimg' src='{{filter.imageSrcParse("/images/shrink.png")}}'></cover-image>
+              <cover-image wx:else class='player-actionimg' src='{{filter.imageSrcParse("/images/amplification.png")}}'></cover-image>
+            </cover-view>
           </cover-view>
         </live-player>
-      </view>
       <view class='live-intro'>{{liveDetail.intro}}</view>
     </view>
     <operate-bar support_num='{{liveDetail.support_num}}' comment_num='{{liveDetail.comment_num}}' share_num='{{liveDetail.share_num}}' has_supported='{{liveDetail.has_supported}}' supportId='{{liveDetail.id}}' supportType='{{moduleType}}' bind:showCommentView='showCommentView'

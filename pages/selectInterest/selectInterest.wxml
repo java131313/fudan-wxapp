@@ -8,7 +8,7 @@
   </view>
   <view class='interest-lable-content'>
     <block wx:for='{{tags}}' wx:key='{{item.id}}'>
-      <tab-widget class='{{filter.strLengthIsMoreThan(item.name,4) ? "tag-long" : "tag-self"}}' hoverClass='select-interest-hover' dataTid='{{item.id}}' is_radius='{{true}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable' />
+      <tab-widget class='{{filter.strLengthIsMoreThan(item.name,3) ? "tag-long" : "tag-self"}}' hoverClass='select-interest-hover' dataTid='{{item.id}}' is_radius='{{true}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable' />
     </block>
   </view>
   <view class='sloganEnd'>

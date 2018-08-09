@@ -10,7 +10,7 @@
     </view>
   </view>
   <block wx:for="{{comments}}" wx:key="{{item.id}}">
-    <view class="commentContent">
+    <view class="commentContent {{index == comments.length-1 ? 'lastcomment' : ''}}">
       <view class='commentContent_pic_parent'>
         <image src='{{item.avatar ? item.avatar : filter.imageSrcParse("/images/default_avatar.png")}}' class='commentContent_pic'></image>
       </view>
@@ -30,6 +30,11 @@
       </view>
     </view>
   </block>
+  <view class='comment-bottom'>
+    <view class='bottom-one'></view>
+    <view class='bottom-two'></view>
+    <view class='bottom-one'></view>
+  </view>
 </view>
 
 <view class='Modal_view' wx:if="{{show_commentView}}">

@@ -2,7 +2,7 @@
   width: 100%;
   height: 160rpx;
   background: #fff;
-  margin-bottom: 5rpx;
+  margin-bottom: 2rpx;
   padding: 20rpx;
   display: flex;
   flex-direction: row;
