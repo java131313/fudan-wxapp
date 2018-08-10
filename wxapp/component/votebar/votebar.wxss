@@ -64,6 +64,7 @@
   background: #fff3f3;
   color: #cc1a1a;
   font-size: 30rpx;
+  border-radius: 6rpx;
 }
 
 .vote_status_no {
@@ -74,6 +75,7 @@
   border: 2rpx solid #de6b6b;
   color: #de6b6b;
   font-size: 30rpx;
+  border-radius: 6rpx;
 }
 
 .click_like {

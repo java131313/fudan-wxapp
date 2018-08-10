@@ -8,7 +8,7 @@
     </view>
     <view class='newsBigPic'>
       <view class='newsModle_big'>
-        <image class='news_pic_big' src='{{filter.imageSrcParse(news_pic)}}'></image>
+        <image class='news_pic_big' src='{{filter.imageSrcParse(news_pic)}}' mode='widthFix'></image>
       </view>
       <view class='newsSynopsis'>
         <text class='synopsis1'><text class='stick' wx:if="{{is_top == 1}}">置顶</text>{{synopsis_time}}<text class='synopsis2'>|</text>{{is_top == 1 ? filter.split(synopsis_source,10) : filter.split(synopsis_source,15)}}</text>
@@ -20,9 +20,8 @@
   <view wx:if="{{news_type == 2}}" class='newsIndex'>
     <view class='newsBigPic'>
       <view class='newsModle'>
-        <view class='news_FA3'>
-          <image src='{{filter.imageSrcParse(news_pic)}}'></image>
-        </view>
+        <view class='news_FA3' 
+              style='background-image:url({{filter.imageSrcParse(news_pic)}});background-repeat: no-repeat;background-position: center center;background-size: cover;'></view>
         <view class='news_FA3_title'>
           <text>{{news_title}}</text>
         </view>

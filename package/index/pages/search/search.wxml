@@ -55,9 +55,9 @@
 
     <!-- 无搜索结果 -->
     <view class='no_search_result' wx:if='{{showNoSearchResult}}'>
-      <view class='no_search'>
+      <!-- <view class='no_search'>
         <image src='{{filter.imageSrcParse("/images/no_result.png")}}' class='no_search_pic'></image>
-      </view>
+      </view> -->
       <view class='no_search_text_parent'>
         <text class='no_search_text'>暂无匹配结果</text>
       </view>
