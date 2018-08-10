@@ -2,6 +2,7 @@
 
 <template name='topLoading'>
   <view class='loading' wx:if='{{isLoading}}'>
-    <image src='{{filter.imageSrcParse("/images/fudan.gif")}}'></image>
+    <image src='{{filter.imageSrcParse("/images/loading.gif")}}'></image>
+    <text>正在推荐</text>
   </view>
-</template>
+</template>   
