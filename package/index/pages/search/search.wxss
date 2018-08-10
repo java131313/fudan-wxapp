@@ -58,7 +58,7 @@
   align-items: center;
   overflow: hidden;
   background-color: #fff;
-  border-bottom: 5rpx solid #f5f5f5;
+  border-bottom: 2rpx solid #f5f5f5;
 }
 
 .newcontent:nth-last-child(1) {
@@ -130,7 +130,7 @@
   display: flex;
   overflow: hidden;
   background-color: #fff;
-  border-bottom: 5rpx solid #f5f5f5;
+  border-bottom: 2rpx solid #f5f5f5;
 }
 
 ._class {

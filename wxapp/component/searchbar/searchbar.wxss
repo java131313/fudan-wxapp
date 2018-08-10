@@ -30,7 +30,7 @@
   display: flex;
   overflow: hidden;
   background-color: #fff;
-  border-bottom: 5rpx solid #f5f5f5;
+  border-bottom: 2rpx solid #f5f5f5;
 }
 
 .search-content {

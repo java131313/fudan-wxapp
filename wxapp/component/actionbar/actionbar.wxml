@@ -1,7 +1,7 @@
 <wxs src='../../wxs/filter.wxs' module='filter' />
 
 <navigator class='action-bar' url='{{actionNaviTo}}' open-type='navigate'>
-  <image src='{{actionIconUrl}}'></image>
+  <image src='{{filter.imageSrcParse(actionIconUrl)}}'></image>
   <text>{{actionText}}</text>
   <view class='action-arrow-box'>
     <image src='{{filter.imageSrcParse("/images/arrow.png")}}'></image>

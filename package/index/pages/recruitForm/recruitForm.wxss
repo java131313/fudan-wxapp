@@ -47,7 +47,7 @@
   position: absolute;
   bottom: 0%;
   left: 0%;
-  border-top: 5rpx solid #f5f5f5;
+  border-top: 2rpx solid #f5f5f5;
 }
 
 .recruit_btn button {

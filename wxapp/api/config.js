@@ -59,27 +59,27 @@ module.exports = {
   PERSONAL: {
     ACTION_BAR_ITEM: [{
         actionNaviTo: '/package/personal/pages/personalActive/personalActive',
-        actionIconUrl: '/images/person_active_icon.png',
+        actionIconUrl: '/images/person_active_icon2.png',
         actionText: '我的活动'
       },
       {
         actionNaviTo: '/package/personal/pages/personalVote/personalVote',
-        actionIconUrl: '/images/person_vote_icon.png',
+        actionIconUrl: '/images/person_vote_icon2.png',
         actionText: '我的投票'
       },
       {
         actionNaviTo: '/package/personal/pages/personalComment/personalComment',
-        actionIconUrl: '/images/person_comment_icon.png',
+        actionIconUrl: '/images/person_comment_icon2.png',
         actionText: '我的评论'
       },
       {
         actionNaviTo: '/package/personal/pages/personalContribute/personalContribute',
-        actionIconUrl: '/images/person_contribute_icon.png',
+        actionIconUrl: '/images/person_contribute_icon2.png',
         actionText: '我的投稿'
       },
       {
         actionNaviTo: '/package/personal/pages/interestTags/interestTags',
-        actionIconUrl: '/images/person_tags_icon.png',
+        actionIconUrl: '/images/person_tags_icon2.png',
         actionText: '兴趣标签'
       }
     ]
