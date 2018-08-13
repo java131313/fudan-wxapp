@@ -10,7 +10,8 @@
 3. 微信小程序分包加载subpackage
 4. 模拟数据mock.js
 5. html标签解析wxParse
-
+6. 配置信息：config.js
+7. api请求：api.js
 
 #### 安装教程
 
@@ -34,7 +35,7 @@
 
 1. 开机页：transitional
 2. 选择身份： selectiveID
-3. 身份认证：selectiveID
+3. 身份认证：loginym
 4. 选择兴趣标签：selectInterest
 5. 首页：index
 6. 服务：service
