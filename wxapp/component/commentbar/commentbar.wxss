@@ -37,6 +37,7 @@
   width: 10%;
   height: 68rpx;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .commentContent_pic {

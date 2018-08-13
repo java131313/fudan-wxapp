@@ -23,7 +23,9 @@ module.exports = {
     Video: '4',
     /* 直播 */
     Live: '5',
+    /* 投稿 */
+    Contribute: '6',
     /* 评论 */
-    Comment: '6',
-  },
+    Comment: '7'
+  }
 }
