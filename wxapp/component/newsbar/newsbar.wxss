@@ -299,6 +299,7 @@
   border: 2rpx solid #de6b6b;
   color: #de6b6b;
   font-size: 30rpx;
+  border-radius: 6rpx;
 }
 
 .click_like {
