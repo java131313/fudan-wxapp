@@ -1,14 +1,1 @@
-<!-- <wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
-
-<view class='login-wrapper' style='background:{{bgColor}}'>
-  <view class='logoPic'>
-    <image src='{{filter.imageSrcParse("/images/logo.png")}}'></image>
-  </view>
-  <view class='submissionInformation'>
-    <input class='account' placeholder="用户名（本人学工号）" type='text' placeholder-style="padding-left:0rpx;" />
-    <input class='passCode' type='text' password="true" placeholder="新进师生初始密码为身份证后6位" placeholder-style="padding-left:0rpx;" />
-    <button class='loginBtn'>登录</button>
-    <text class='forgetPassword'>忘记密码</text>
-  </view>
-</view> -->
 <web-view src='{{oauthUrl}}'></web-view>

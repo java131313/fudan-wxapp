@@ -110,9 +110,13 @@ Page({
           url: app.CONFIG.PAGE.LOGIN
         });
       });
-    } else {
+    } else if (selecedID == app.ENUM.Identity.Tourist) {
       wx.navigateTo({
         url: `${app.CONFIG.PAGE.SELECTINTEREST}?id=${selecedID}`
+      });
+    } else {
+      wx.navigateTo({
+        url: app.CONFIG.PAGE.ALUMNILOGIN
       });
     }
   }

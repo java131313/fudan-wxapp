@@ -24,4 +24,5 @@
 <view wx:if='{{sold_out}}' class='sold_out' style='background:url({{filter.imageSrcParse("/images/sold_out.png")}}) no-repeat center center;background-size:cover;'>
 </view>
 
-<!-- <web-view src='{{newsDetail.a_url}}'></web-view> -->
+<!-- 直接跳转到公众号网页 -->
+<web-view wx:if='{{newsDetail.type == 1 && newsDetail.is_show == 1}}' src='{{newsDetail.a_url}}'></web-view>

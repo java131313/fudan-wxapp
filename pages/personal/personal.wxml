@@ -10,8 +10,8 @@
       <text wx:if='{{userInfo.nickname}}' class="person-nickname">{{userInfo.name ? userInfo.name : userInfo.nickname}}</text>
       <open-data wx:if='{{!userInfo.nickname}}' type="userNickName" class="person-nickname"></open-data>
     </view>
-    <view wx:if='{{userInfo.college}}' class='person-major-box'>
-      <text class='person-major'>{{userInfo.college}}</text>
+    <view wx:if='{{userInfo.college || userInfo.graduate_college}}' class='person-major-box'>
+      <text class='person-major'>{{userInfo.college || userInfo.graduate_college}}</text>
       <view class='person-major-icon-box'>
         <image src='{{filter.imageSrcParse("/images/major_icon.png")}}'></image>
       </view>

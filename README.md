@@ -40,3 +40,4 @@
 5. 首页：index
 6. 服务：service
 7. 个人中心：personal
+8. 校友登录：alumniLogin

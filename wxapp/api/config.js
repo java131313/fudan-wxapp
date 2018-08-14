@@ -26,6 +26,8 @@ module.exports = {
     SELECTID: '/pages/selectiveID/selectiveID',
     /* 登录 */
     LOGIN: '/pages/loginym/loginym',
+    /* 校友登录 */
+    ALUMNILOGIN:'/pages/alumniLogin/alumniLogin',
     /* 选择兴趣标签 */
     SELECTINTEREST: '/pages/selectInterest/selectInterest',
     /* 首页 */

@@ -1,0 +1,24 @@
+<wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
+
+<view class='login-wrapper' style='background:{{bgStyle.color}}'>
+  <view class='logoPic'>
+    <image src='{{filter.imageSrcParse("/images/logo.png")}}' mode='widthFix'></image>
+  </view>
+  <view class='submissionInformation'>
+    <form bindsubmit='alumniLogin'>
+      <picker name='graduate_year' mode="date" fields='year' bindchange="bindDateChange">
+        <view class="picker-text">
+          {{searchDate}}
+        </view>
+        <image src='{{filter.imageSrcParse("/images/calendar%20.png")}}' class='input_time_pic'></image>
+      </picker>
+      <picker name='graduate_college' range='{{collegeList}}' data-value='{{collegeIndex}}' bindchange="bindDateCollegeChange">
+        <view class="picker-text">
+          {{collegeList[collegeIndex]}}
+        </view>
+        <image src='{{filter.imageSrcParse("/images/college-icon.png")}}' class='input_time_pic'></image>
+      </picker>
+      <button class='loginBtn' form-type='submit'>确认</button>
+    </form>
+  </view>
+</view>

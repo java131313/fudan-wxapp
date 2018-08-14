@@ -62,6 +62,26 @@ export default class Api {
     return `${service}${url}?session_id=${self.getSessionId()}`;
   }
 
+  /* 获取学院列表 */
+  getCollegeList() {
+    let self = this;
+    let url = '/front/collegeList';
+    return self.post(url);
+  }
+
+  /* 校友绑定毕业信息 */
+  setGraduateInfo(graduate_year, graduate_college) {
+    let self = this;
+    let url = '/front/setGraduateInfo';
+    let postData = {
+      graduate_year: graduate_year,
+      graduate_college: graduate_college,
+      session_id: self.getSessionId()
+    };
+    return self.post(url, postData);
+  }
+
+
   /* 获取系统配置 */
   getSysConfig() {
     let self = this;

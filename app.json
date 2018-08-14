@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/transitional/transitional",
+    "pages/alumniLogin/alumniLogin",
     "pages/index/index",
     "pages/personal/personal",
     "pages/service/service",
