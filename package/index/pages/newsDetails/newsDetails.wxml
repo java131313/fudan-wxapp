@@ -6,14 +6,14 @@
     <view class='news-container'>
       <view class='news-top'>
         <text class='news-title'>{{newsDetail.title}}</text>
+        <view class='news-origin'>
+          <text>来源：{{newsDetail.origin}}</text>
+        </view>
         <text class='news-author'>{{newsDetail.author ? filter.handleAuthorDisplay(newsDetail.author) : filter.formatDate(newsDetail.issuetime)}}</text>
         <text wx:if='{{newsDetail.author}}' class='news-date'>{{filter.formatDate(newsDetail.issuetime)}}</text>
       </view>
       <view class="news-content">
         <template is="wxParse" data="{{wxParseData:article.nodes}}" />
-      </view>
-      <view class='news-foot'>
-        <text>来源：{{newsDetail.origin}}</text>
       </view>
     </view>
     <operate-bar support_num='{{newsDetail.support_num}}' comment_num='{{newsDetail.comment_num}}' share_num='{{newsDetail.share_num}}' has_supported='{{newsDetail.has_supported}}' supportId='{{newsDetail.id}}' supportType='{{moduleType}}' bind:showCommentView='showCommentView'
