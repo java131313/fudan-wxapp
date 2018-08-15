@@ -10,7 +10,8 @@ Page({
     selfTags: [],
     tags: [],
     selfTagsSelected: [],
-    moreTagsSelected: []
+    moreTagsSelected: [],
+    isEdit: false
   },
 
   /**
@@ -46,7 +47,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+    let self = this;
+    let postTags = self.data.selfTags.map(x => x.id);
+    app.api.setTags(postTags);
   },
 
   /**
@@ -73,40 +76,62 @@ Page({
   /* 获取标签列表 */
   getTags() {
     let self = this;
-    let role_id = app.globalData.userInfo.role;
-    self.setData({
-      selfTags: app.globalData.userInfo.tag_list
-    });
-    app.api.getTags(role_id).then(res => {
-      let tags = res.data.data;
-      let selfTags = self.data.selfTags;
-      if (selfTags.length == 0) {
-        self.setData({
-          tags: tags
-        });
-        return;
-      }
-      let selfTagsIDs = selfTags.map(x => x.id.toString());
-      let filterTags = tags.filter(x => !Util.arrayIsContain(selfTagsIDs, x.id.toString()));
+    Util.getUserInfo().then(() => {
+      let role_id = app.globalData.userInfo.role;
       self.setData({
-        tags: filterTags
+        selfTags: app.globalData.userInfo.tag_list
       });
-      self.saveSelectedHoverClass();
+      app.api.getTags(role_id).then(res => {
+        let tags = res.data.data;
+        let selfTags = self.data.selfTags;
+        if (selfTags.length == 0) {
+          self.setData({
+            tags: tags
+          });
+          return;
+        }
+        let selfTagsIDs = selfTags.map(x => x.id.toString());
+        let filterTags = tags.filter(x => !Util.arrayIsContain(selfTagsIDs, x.id.toString()));
+        self.setData({
+          tags: filterTags
+        });
+        self.saveSelectedHoverClass();
+      });
     });
   },
 
   /* 选择更多兴趣标签触发 */
   selectInterestLable(e) {
     let self = this;
-    Util.handleTagsSelected(e, 'moreTagsSelected', self);
-    console.log('选择的更多兴趣标签: ', self.data.moreTagsSelected);
+    if (!self.data.isEdit) return;
+    let tid = e.detail.tid;
+    let tname = e.detail.tname;
+    let tags = self.data.tags.filter(x => x.id != tid);
+    let selfTags = self.data.selfTags.concat([{
+      id: tid,                                            
+      name: tname
+    }]);
+    self.setData({
+      tags: tags,
+      selfTags: selfTags
+    });
   },
 
   /* 选择删除我的兴趣标签触发 */
   deleteInterestLable(e) {
     let self = this;
-    Util.handleTagsSelected(e, 'selfTagsSelected', self);
-    console.log('选择的删除我的兴趣标签: ', self.data.selfTagsSelected);
+    if (!self.data.isEdit) return;
+    let tid = e.detail.tid;
+    let tname = e.detail.tname;
+    let tags = self.data.tags.concat([{
+      id: tid,
+      name: tname
+    }]);
+    let selfTags = self.data.selfTags.filter(x => x.id != tid);
+    self.setData({
+      tags: tags,
+      selfTags: selfTags
+    });
   },
 
   /* 点击添加触发 */
@@ -175,6 +200,14 @@ Page({
     });
     self.data.moreTagsSelected.length > 0 && self.data.moreTagsSelected.forEach(x => {
       self.selectComponent(`#mt_${x}`).setHoverCss();
+    });
+  },
+
+  /* 点击编辑触发 */
+  editTag(e) {
+    let self = this;
+    self.setData({
+      isEdit: true
     });
   }
 })

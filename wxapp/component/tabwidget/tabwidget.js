@@ -27,11 +27,13 @@ Component({
     _selectTag(e) {
       let self = this;
       let tid = e.currentTarget.dataset.tid;
+      let tname = self.data.tagText;
       self.setData({
         showHoverClass: !self.data.showHoverClass
       });
       self.triggerEvent('selectTag', {
         tid: tid,
+        tname: tname,
         isSelect: self.data.showHoverClass
       });
     },

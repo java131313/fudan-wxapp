@@ -4,22 +4,22 @@
   <view class="tag-top">
     <view class="tag-bar">
       <text class="tag-title">我的标签</text>
-      <text class="tag-action-delete" bindtap='deleteTag'>完成</text>
+      <text class="{{isEdit ? 'tag-action-delete' : 'tag-action-add'}}" bindtap='editTag'>编辑</text>
     </view>
     <view class="tag-content">
       <block wx:for='{{selfTags}}' wx:key='{{item.id}}'>
-        <tab-widget id='st_{{item.id}}' class='{{filter.strLengthIsMoreThan(item.name,3) ? "tag-long" : "tag-self"}}' hoverClass='delete-interest-hover' is_radius='{{true}}' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='deleteInterestLable' />
+        <tab-widget id='st_{{item.id}}' class='{{filter.strLengthIsMoreThan(item.name,3) ? "tag-long" : "tag-self"}}' is_radius='{{true}}' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='deleteInterestLable' />
       </block>
     </view>
   </view>
   <view class="tag-foot">
     <view class="tag-bar">
       <text class="tag-title">更多标签</text>
-      <text class="tag-action-add" bindtap='addTag'>点击添加</text>
+      <!-- <text class="tag-action-add" bindtap='addTag'>点击添加</text> -->
     </view>
     <view class="tag-content">
       <block wx:for='{{tags}}' wx:key='{{item.id}}'>
-        <tab-widget id='mt_{{item.id}}' class='{{filter.strLengthIsMoreThan(item.name,3) ? "tag-long" : "tag-self"}}' hoverClass='select-interest-hover' is_radius='{{true}}' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable' />
+        <tab-widget id='mt_{{item.id}}' class='{{filter.strLengthIsMoreThan(item.name,3) ? "tag-long" : "tag-self"}}' is_radius='{{true}}' dataTid='{{item.id}}' tagText='{{item.name}}' bind:selectTag='selectInterestLable' />
       </block>
     </view>
   </view>

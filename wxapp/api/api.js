@@ -81,7 +81,6 @@ export default class Api {
     return self.post(url, postData);
   }
 
-
   /* 获取系统配置 */
   getSysConfig() {
     let self = this;
@@ -133,6 +132,28 @@ export default class Api {
     let postData = {
       session_id: self.getSessionId(),
       tags: tags.toString()
+    };
+    return self.post(url, postData);
+  }
+
+  /* 添加单个标签 */
+  addSingleTag(tag) {
+    let self = this;
+    let url = '/front/addSingleTag';
+    let postData = {
+      session_id: self.getSessionId(),
+      tag: tag
+    };
+    return self.post(url, postData);
+  }
+
+  /* 删除单个标签 */
+  delSingleTag(tag) {
+    let self = this;
+    let url = '/front/delSingleTag';
+    let postData = {
+      session_id: self.getSessionId(),
+      tag: tag
     };
     return self.post(url, postData);
   }
