@@ -48,7 +48,6 @@
   width: auto;
   height: auto;
   margin-top: 20rpx;
-  position: relative;
 }
 
 .person-avatar {
@@ -88,8 +87,8 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: -60rpx;
-  top: 5rpx;
+  right: 245rpx;
+  top: 115rpx;
 }
 
 .person-major-icon-box > image {
