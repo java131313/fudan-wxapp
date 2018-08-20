@@ -84,6 +84,7 @@
   margin-right: 4.1%;
   font-size: 28rpx;
   margin-bottom: 28rpx;
+  min-width: 29.2%;
 }
 
 .tag-self .tag-item {
