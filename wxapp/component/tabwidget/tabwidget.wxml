@@ -1,5 +1,6 @@
 <view wx:if='{{!is_radius}}' data-tid='{{dataTid}}' class='tag-item {{showHoverClass ? hoverClass : ""}}' bindtap='_selectTag'>
-  {{tagText}}
+  <image src='{{showHoverClass ? iconUrlHover : iconUrl}}' class='tag-icon'></image>
+  <text>{{tagText}}</text>
 </view>
 <view wx:else data-tid='{{dataTid}}' class='bg_radius {{showHoverClass ? hoverClass : ""}}' bindtap='_selectTag'>
   {{tagText}}

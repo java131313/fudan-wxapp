@@ -7,6 +7,8 @@ Component({
     hoverClass: String,
     tagText: String,
     dataTid: String,
+    iconUrl: String,
+    iconUrlHover: String,
     is_radius: {
       type: Boolean,
       value: false

@@ -17,11 +17,7 @@ Page({
    */
   onLoad: function(options) {
     let self = this;
-    app.api.getRoles().then(res => {
-      self.setData({
-        idList: res.data.data
-      });
-    });
+    self.getRoles();
   },
 
   /**
@@ -71,6 +67,37 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /* 获取角色列表 */
+  getRoles() {
+    let self = this;
+    app.api.getRoles().then(res => {
+      let idList = res.data.data;
+      idList && idList.forEach(x => {
+        switch (x.id) {
+          case app.ENUM.Identity.Tourist:
+            x['iconUrl'] = '/images/yk.png';
+            x['iconUrlHover'] = '/images/yk_hover.png';
+            break;
+          case app.ENUM.Identity.Teacher:
+            x['iconUrl'] = '/images/zg.png';
+            x['iconUrlHover'] = '/images/zg_hover.png';
+            break;
+          case app.ENUM.Identity.Student:
+            x['iconUrl'] = '/images/stu.png';
+            x['iconUrlHover'] = '/images/stu_hover.png';
+            break;
+          case app.ENUM.Identity.Alumnus:
+            x['iconUrl'] = '/images/xy.png';
+            x['iconUrlHover'] = '/images/xy_hover.png';
+            break;
+        }
+      });
+      self.setData({
+        idList: idList
+      });
+    });
   },
 
   /* 绑定用户身份 */

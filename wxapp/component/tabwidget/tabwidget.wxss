@@ -9,6 +9,7 @@
   align-items: center;
   padding: 0 40rpx;
   background: #fff;
+  flex-direction: column;
 }
 
 .bg_radius {
@@ -21,4 +22,15 @@
   justify-content: center;
   align-items: center;
   padding: 0 40rpx;
+}
+
+.tag-icon {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 15rpx;
+}
+
+.tag-item text {
+  display: block;
 }
