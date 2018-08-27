@@ -9,8 +9,8 @@
         <view class='news-origin'>
           <text>来源：{{newsDetail.origin}}</text>
         </view>
-        <text class='news-author'>{{newsDetail.author ? filter.handleAuthorDisplay(newsDetail.author) : filter.formatDate(newsDetail.issuetime)}}</text>
-        <text wx:if='{{newsDetail.author}}' class='news-date'>{{filter.formatDate(newsDetail.issuetime)}}</text>
+        <text class='news-author'>{{newsDetail.author ? filter.handleAuthorDisplay(newsDetail.author) : filter.formatDate(newsDetail.createtime)}}</text>
+        <text wx:if='{{newsDetail.author}}' class='news-date'>{{filter.formatDate(newsDetail.createtime)}}</text>
       </view>
       <view class="news-content">
         <template is="wxParse" data="{{wxParseData:article.nodes}}" />
