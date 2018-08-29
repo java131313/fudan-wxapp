@@ -8,7 +8,7 @@ module.exports = {
     WXAPPCODE: [1047, 1048, 1049]
   },
   HTTP: {
-    API: 'xcx.fudan.edu.cn',
+    API: 'https://xcx.fudan.edu.cn',
     IMAGESITE: ''
   },
   DEBUG: {
