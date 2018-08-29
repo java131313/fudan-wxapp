@@ -8,16 +8,16 @@ module.exports = {
     WXAPPCODE: [1047, 1048, 1049]
   },
   HTTP: {
-    API: '',
+    API: 'xcx.fudan.edu.cn',
     IMAGESITE: ''
   },
   DEBUG: {
-    STATUS: true,
+    STATUS: false,
     API: 'https://fd.gxdianpu.com',
     IMAGESITE: 'https://xinzhibang168-1253521270.costj.myqcloud.com',
   },
   MOCK: {
-    STATUS: true
+    STATUS: false
   },
   PAGE: {
     /* 开机页 */
