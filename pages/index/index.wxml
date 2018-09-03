@@ -1,22 +1,27 @@
 <import src='/wxapp/template/topLoading/topLoading.wxml' />
 <wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
 
-<view class='main-wrapper' style='background:{{bgColor}}'>
-  <view class='newsHeader'>
+
+
+<!-- <web-view src="https://xcx.fudan.edu.cn/test.html"></web-view> -->
+<view class='main-wrapper' style='background:{{bgColor}}'> -->
+   <view class='newsHeader'>
     <view data-num="1" class='newsTitle_parent' bindtap="menuClick">
       <text style='color:{{menuType == 1 ? bgStyle.color : "#999"}}'>我的复旦</text>
       <view class='newsTitle_border' style='background:{{menuType == 1 ? bgStyle.color : ""}}'></view>
     </view>
     <view data-num="2" class='newsTitle_parent' bindtap="menuClick">
-      <text style='color:{{menuType == 2 ? bgStyle.color : "#999"}}'>本周热榜</text>
+      <text style='color:{{menuType == 2 ? bgStyle.color : "#999"}}'>党代会</text>
       <view class='newsTitle_border' style='background:{{menuType == 2 ? bgStyle.color : ""}}'></view>
     </view>
-
-    <view class='search'>
-      <input class='searchBtn' type='text' placeholder-class="btnClass" placeholder='学院 / 活动 / 课程...' bindfocus='search'>
-      <image src='{{filter.imageSrcParse("/images/search.png")}}'></image>
-      </input>
+<!-- 新增视频版块 -->
+<view data-num="3" class='newsTitle_parent' bindtap="menuClick">
+      <text style='color:{{menuType == 3 ? bgStyle.color : "#999"}}'>视频</text>
+      <view class='newsTitle_border' style='background:{{menuType == 3 ? bgStyle.color : ""}}'></view>
     </view>
+
+<!-- 搜索 -->
+      <image class='search_img' bindtap='search' src='{{filter.imageSrcParse("/images/search.png")}}'></image>
   </view>
   <scroll-view scroll-y='true' class='news-box'>
     <template is='topLoading' data='{{isLoading}}'></template>
@@ -50,7 +55,7 @@
       <news-bar wx:if='{{item.type=="contribute"}}' news_url='{{contributeUrl}}?id={{item.data.id}}' news_type='8' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' is_top='{{item.is_top}}' />
     </block>
 
-    <!-- 本周热榜 -->
+    <!-- 党代会 -->
     <block wx:if='{{menuType == 2}}' wx:for='{{weekRank}}' wx:key='this'>
       <!-- 新闻 -->
       <news-bar wx:if='{{item.type=="news"}}' news_url='{{newsDetailUrl}}?id={{item.data.id}}' news_type='{{filter.handleNewsType(item.data.cover_img,item.data.img_size)}}' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}'
@@ -78,11 +83,20 @@
         recruit_require='{{item.data.require}}' is_top='{{item.is_top}}' />
 
       <!-- 征稿 -->
-      <news-bar wx:if='{{item.type=="contribute"}}' news_url='{{contributeUrl}}?id={{item.data.id}}' news_type='8' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' is_top='{{item.is_top}}' />
+       <news-bar wx:if='{{item.type=="contribute"}}' news_url='{{contributeUrl}}?id={{item.data.id}}' news_type='8' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}' is_top='{{item.is_top}}' />
     </block>
+
+    <!-- 视频 -->
+    <block wx:if="{{menuType == 3}}" wx:for="{{videoItem}}" wx:key='this'>
+     <!-- 视频录播 -->
+      <news-bar wx:if='{{item.type=="video"}}' news_url='{{videoUrl}}?id={{item.data.id}}' news_type='5' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.origin}}' is_top='{{item.is_top}}'
+      />
+    </block>
+    
     <view class='loadingmore' wx:if='{{showLoadingMore}}'>
       <text>正在推荐新内容</text>
       <image src='{{filter.imageSrcParse("/images/loading.gif")}}'></image>
     </view>
   </scroll-view>
-</view>
+</view> 
+

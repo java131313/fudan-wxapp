@@ -20,10 +20,13 @@ Page({
     showLoadingMore: false,
     newsItem: {},
     weekRank: {},
+    videoItem: {},
     menuType: 1,
     news_page_index: 0,
+    getVideo_page_index: 0,
     weekrank_page_index: 0,
     isLoadWeekRank: false,
+    isLoadVideoList: false,
     news_page_num: 0,
     weekrank_page_num: 0
   },
@@ -81,11 +84,17 @@ Page({
           news_page_index: 0,
           newsItem: res.data.data.data
         });
-      } else {
+      } else if (menuType == 2) {
         self.setData({
           weekrank_page_num: res.data.data.page_num,
           weekrank_page_index: 0,
           weekRank: res.data.data.data
+        });
+      } else {
+        self.setData({
+          weekrank_page_num: res.data.data.page_num,
+          weekrank_page_index: 0,
+          videoItem: res.data.data.data
         });
       }
     };
@@ -116,7 +125,7 @@ Page({
           });
         });
       }
-    } else {
+    } else if (menuType == 2) {
       self.setData({
         weekrank_page_index: self.data.weekrank_page_index + 1
       });
@@ -129,6 +138,23 @@ Page({
         app.api.getWeekRank(weekrank_page_index).then(res => {
           self.setData({
             weekRank: self.data.weekRank.concat(res.data.data.data),
+            showLoadingMore: false
+          });
+        });
+      }
+    } else {
+      self.setData({
+        getVideo_page_index: self.data.getVideo_page_index + 1
+      });
+      let getVideo_page_index = self.data.getVideo_page_index;
+      let getVideo_page_num = self.data.getVideo_page_num;
+      if (getVideo_page_index <= getVideo_page_num - 1) {
+        self.setData({
+          showLoadingMore: true
+        });
+        app.api.getVideoList(getVideo_page_index).then(res => {
+          self.setData({
+            videoItem: self.data.videoItem.concat(res.data.data.data),
             showLoadingMore: false
           });
         });
@@ -166,8 +192,20 @@ Page({
     });
   },
 
+  /* 获取视频 */
+  getVideoList() {
+    let self = this;
+    app.api.getVideoList(0).then(res => {
+      self.setData({
+        isLoadVideoList: true,
+        getVideo_page_num: res.data.data.page_num,
+        videoItem: res.data.data.data
+      });
+    });
+  },
   /* 点击切换推荐页 */
   menuClick(e) {
+    console.log("数据", e)
     let self = this;
     let menuType = Number(e.currentTarget.dataset.num);
     self.setData({
@@ -175,6 +213,9 @@ Page({
     });
     if (menuType == 2 && !self.data.isLoadWeekRank) {
       self.getWeekRank();
+    }
+    if (menuType == 3 && !self.data.isLoadVideoList) {
+      self.getVideoList();
     }
   },
 

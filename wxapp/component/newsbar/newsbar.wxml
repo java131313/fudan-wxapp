@@ -102,7 +102,7 @@
               <text>{{index+1}}</text>
             </view>
             <view class='vote_pic'>
-              <image src='{{item.img}}'></image>
+              <image  src='{{filter.imageSrcParse(item.img)}}'></image>
             </view>
             <view class='vote_text'>
               <text>{{item.content}}</text>
