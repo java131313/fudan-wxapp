@@ -3,7 +3,7 @@ function split(str, length) {
   if (str.length <= length) {
     return str;
   }
-  return str.substring(0, length) + '...';
+  return str.substring(0, 6) + '...';
 }
 
 function formatPercent(percent) {
@@ -70,6 +70,10 @@ function strLengthIsMoreThan(str, length) {
     return false;
   }
 }
+function dateSrcParse(path) {
+  if (!path) return '';
+  return path.toString().substring(5);
+}
 
 module.exports = {
   split: split,
@@ -81,5 +85,6 @@ module.exports = {
   handleNewsType: handleNewsType,
   handleAuthorDisplay: handleAuthorDisplay,
   formatWeek: formatWeek,
-  strLengthIsMoreThan: strLengthIsMoreThan
+  strLengthIsMoreThan: strLengthIsMoreThan,
+  dateSrcParse: dateSrcParse
 }
