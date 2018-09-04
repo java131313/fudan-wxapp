@@ -15,7 +15,9 @@ Component({
     recruit_require: String,
     vote_options: Object,
     is_top:Number,
-    bgStyle: Object
+    bgStyle: Object,
+    addComment:Number,
+    addSupportNum:Number
   },
 
   /**
@@ -29,6 +31,18 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onShareAppMessage:function(res){
+      if(res.from == 'button'){
+        return false;
+      }
+      return {
+        title:"自定义转发标题",
+        path:"pages/index/index"
+      }
+    },
+    // 评论功能
+    comment_function:function(res){},
+    // 点赞功能
+    thumb_up_function:function(res){}
   }
 })
