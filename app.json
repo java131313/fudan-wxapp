@@ -70,7 +70,8 @@
     {
       "root": "package/service/",
       "pages": [
-        "pages/courseCalendar/courseCalendar"
+        "pages/courseCalendar/courseCalendar",
+        "pages/property_service/property_service"
       ]
     }
   ]

@@ -99,7 +99,7 @@
   width: 33rpx;
   height: 33rpx;
   background: url(http://xinzhibang168-1253521270.costj.myqcloud.com/images/share.png) no-repeat center left;
-  background-size: 60%;
+  background-size: 50%;
 }
 .newsSynopsis_right2_btn::after{
   background: rgba(0,0,0,0);

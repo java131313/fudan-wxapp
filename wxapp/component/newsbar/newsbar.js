@@ -33,7 +33,7 @@ Component({
   methods: {
     onShareAppMessage:function(res){
       if(res.from == 'button'){
-        return false;
+        console.log("按钮转发",res)
       }
       return {
         title:"自定义转发标题",

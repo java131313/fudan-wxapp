@@ -98,6 +98,12 @@ module.exports = {
         schoolUrl: '/images/kt2.png',
         schoolText: '场馆预定',
         isOpen: false
+      },
+      {
+        schoolNaviTo: "/package/service/pages/property_service/property_service",
+        schoolUrl: '/images/wuye.png',
+        schoolText: '物业报修',
+        isOpen: true
       }
     ]
   },

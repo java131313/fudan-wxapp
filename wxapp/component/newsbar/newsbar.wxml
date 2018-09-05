@@ -22,22 +22,19 @@
           <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
           </view>
           <view class='newsSynopsis_left1'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>来源 </text>
-          </view>
-          <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
 
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1' bindtap='comment_function'>评{{addComment}}</text>
+            <text class='newsSynopsis_left_text1' bindtap='comment_function'>{{addComment}}评</text>
           </view>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1' bindtap='thumb_up_function'>赞{{addSupportNum}}</text>
+            <text class='newsSynopsis_left_text1' bindtap='thumb_up_function'>{{addSupportNum}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button class='newsSynopsis_right2_btn' open-type='share' bindtap='onShareAppMessage'></button>
+            <button data-hi="data_share_id" class='newsSynopsis_right2_btn' open-type='share' bindtap='onShareAppMessage'></button>
           </view>
         </view>
       </view>
@@ -64,9 +61,7 @@
           <view class='newsSynopsis_left1 newsSynopsis_left3'>
           <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
           </view>
-          <view class='newsSynopsis_left1'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>来源 </text>
-          </view>
+       
           <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
@@ -74,13 +69,13 @@
 
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>评{{addComment}}</text>
+            <text class='newsSynopsis_left_text1'>{{addComment}}评</text>
           </view>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>赞{{addSupportNum}}</text>
+            <text class='newsSynopsis_left_text1'>{{addSupportNum}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -106,9 +101,7 @@
           <view class='newsSynopsis_left1 newsSynopsis_left3'>
           <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
           </view>
-          <view class='newsSynopsis_left1'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>来源 </text>
-          </view>
+         
           <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
@@ -116,13 +109,13 @@
 
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>评{{addComment}}</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addComment}}评</text>
           </view>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>赞{{addSupportNum}}</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addSupportNum}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -162,22 +155,19 @@
           <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
           </view>
           <view class='newsSynopsis_left1'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>来源 </text>
-          </view>
-          <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
 
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>评{{addComment}}</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addComment}}评</text>
           </view>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>赞{{addSupportNum}}</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addSupportNum}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -206,22 +196,19 @@
           <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
           </view>
           <view class='newsSynopsis_left1'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>来源 </text>
-          </view>
-          <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
 
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>评{{addComment}}</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addComment}}评</text>
           </view>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>赞{{addSupportNum}}</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addSupportNum}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -265,22 +252,19 @@
           <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
           </view>
           <view class='newsSynopsis_left1'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>来源 </text>
-          </view>
-          <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
 
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>评{{addComment}}</text>
+            <text class='newsSynopsis_left_text1'>{{addComment}}评</text>
           </view>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>赞{{addSupportNum}}</text>
+            <text class='newsSynopsis_left_text1'>{{addSupportNum}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -321,22 +305,19 @@
           <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
           </view>
           <view class='newsSynopsis_left1'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>来源 </text>
-          </view>
-          <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
 
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>评{{addComment}}</text>
+            <text class='newsSynopsis_left_text1'>{{addComment}}评</text>
           </view>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>赞{{addSupportNum}}</text>
+            <text class='newsSynopsis_left_text1'>{{addSupportNum}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -361,9 +342,6 @@
           </view>
           <view class='newsSynopsis_left1 newsSynopsis_left3'>
           <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
-          </view>
-          <view class='newsSynopsis_left1'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>来源 </text>
           </view>
           <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
