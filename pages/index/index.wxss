@@ -58,8 +58,8 @@
   width: 3rpx;
   height: 33rpx;
   background: #e5e5e5;
-  margin-left: 7.5%;
-  margin-right: 5%;
+  margin-left: 9.5%;
+  margin-right: 4.5%;
 }
 .search {
   display: inline-block;
@@ -70,8 +70,8 @@
   color: #aaa;
 }
 .search_img{
-  width: 34rpx;
-  height: 37rpx;
+  width: 44rpx;
+  height: 44rpx;
 }
 
 .btnClass {

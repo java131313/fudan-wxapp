@@ -11,7 +11,7 @@
       <view class='newsTitle_border' style='background:{{menuType == 1 ? bgStyle.color : ""}}'></view>
     </view>
     <view data-num="2" class='newsTitle_parent' bindtap="menuClick">
-      <text style='color:{{menuType == 2 ? bgStyle.color : "#999"}}'>党代会</text>
+      <text style='color:{{menuType == 2 ? bgStyle.color : "#999"}}'>党代会专题</text>
       <view class='newsTitle_border' style='background:{{menuType == 2 ? bgStyle.color : ""}}'></view>
     </view>
 <!-- 新增视频版块 -->
