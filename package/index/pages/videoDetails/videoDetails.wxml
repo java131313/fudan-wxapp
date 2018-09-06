@@ -1,3 +1,4 @@
+<import src="../../../../wxapp/template/wxParse/wxParse.wxml" />
 <wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='main-wrapper'>

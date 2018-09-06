@@ -41,20 +41,16 @@
 }
 
 .news-author {
-  float: left;
-  width: 50%;
   color: #aaa;
   line-height: 35rpx;
   font-size: 30rpx;
 }
 
 .news-date {
-  float: right;
-  width: 50%;
   color: #aaa;
   line-height: 35rpx;
   font-size: 30rpx;
-  text-align: end;
+  margin-right: 30rpx;
 }
 
 .news-origin {

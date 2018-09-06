@@ -1,3 +1,4 @@
+
 <wxs src='../../wxs/filter.wxs' module='filter' />
 
 <navigator url='{{news_url}}'>
@@ -43,7 +44,7 @@
 
   <!-- 新闻方案二（小图） -->
   <view wx:if="{{news_type == 2}}" class='newsIndex'>
-    <view class='newsBigPic'>
+    <view class='newsBigPic newsBigPic2'>
       <view class='newsModle'>
         <view class='news_FA3' style='background-image:url({{filter.imageSrcParse(news_pic)}});background-repeat: no-repeat;background-position: center center;background-size: cover;'></view>
         <view class='news_FA3_title'>

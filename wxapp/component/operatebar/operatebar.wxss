@@ -32,8 +32,16 @@
   background-color: rgba(0, 0, 0, 0.0);
   padding: 0;
   margin: 0;
+  width: 50%;
 }
 
 .operate-item button::after {
   border: 0;
+}
+.operate_likes{
+  width: 64%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

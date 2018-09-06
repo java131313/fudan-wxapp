@@ -1,11 +1,12 @@
+<import src="../../../../wxapp/template/wxParse/wxParse.wxml" />
 <wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='main-wrapper'>
   <view class='vote-container'>
     <title-bar title='{{voteDetail.name}}' issuetime='{{voteDetail.begintime}}' />
-    <text class='vote_publish_comment'>{{voteDetail.explain}}</text>
+    <template is="wxParse" data="{{wxParseData:explain.nodes}}" />
     <block wx:for="{{voteDetail.options}}" wx:key='{{item.id}}'>
-      <vote-bar id='vote_{{item.id}}' option_num="{{index+1}}" option_id="{{item.id}}" option_img="{{item.img}}" option_content="{{item.content}}" option_percent="{{filter.formatPercent(item.percent)}}" option_isVote="{{filter.arrayIsContain(voteDetail.voted,item.id)}}"
+      <vote-bar id='vote_{{item.id}}' option_num="{{index+1}}" option_id="{{item.id}}" option_img="{{filter.imageSrcParse(item.img)}}" option_content="{{item.content}}" option_percent="{{filter.formatPercent(item.percent)}}" option_isVote="{{filter.arrayIsContain(voteDetail.voted,item.id)}}"
         bind:vote='vote' />
     </block>
     <view class="operate_top"></view>

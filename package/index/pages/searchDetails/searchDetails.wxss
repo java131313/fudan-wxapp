@@ -1,1 +1,2 @@
 /* package/index/pages/searchDetails/searchDetails.wxss */
+@import '../../../../wxapp/template/wxParse/wxParse.wxss';

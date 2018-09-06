@@ -1,3 +1,4 @@
+import WxParse from '../../../../wxapp/template/wxParse/wxParse.js';
 import Util from '../../../../utils/util.js';
 const app = getApp();
 
@@ -95,6 +96,7 @@ Page({
       self.setData({
         voteDetail: res.data.data
       });
+      WxParse.wxParse('explain', 'html', res.data.data.explain, self, 30);
       self.handleDefaultCss(self.data.voteDetail.voted);
     }, res => {
       Util.handleNoPermission(res.data.msg);

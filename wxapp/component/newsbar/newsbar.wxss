@@ -1,3 +1,4 @@
+
 .newsIndex {
   background: #fff;
   width: 94.68%;
@@ -5,13 +6,15 @@
 }
 
 .newsText_parent {
-  padding: 20rpx 2.8% 0;
+  padding: 25rpx 2.8% 0;
 }
 
 .newsBigPic {
-  padding: 20rpx 2.8% 0;
+  padding: 6rpx 2.8% 0;
 }
-
+.newsBigPic2{
+  padding-top: 20rpx;
+}
 .newsBigPic_noimg {
   padding: 5rpx 2.8%;
 }

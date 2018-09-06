@@ -1,3 +1,4 @@
+<import src="../../../../wxapp/template/wxParse/wxParse.wxml" />
 <view class='recruit'>
   <text class='recruit_job'>{{recruitTitle}}</text>
 </view>

@@ -1,3 +1,4 @@
+@import '../../../../wxapp/template/wxParse/wxParse.wxss';
 .recruit_job {
   line-height: 108rpx;
   font-size: 36rpx;

@@ -1,3 +1,4 @@
+import WxParse from '../../../../wxapp/template/wxParse/wxParse.js';
 import Util from '../../../../utils/util.js';
 const app = getApp();
 
@@ -93,6 +94,7 @@ Page({
       self.setData({
         activityDetail: res.data.data
       });
+      WxParse.wxParse('intro', 'html', res.data.data.intro, self, 30);
     }, res => {
       Util.handleNoPermission(res.data.msg);
     });

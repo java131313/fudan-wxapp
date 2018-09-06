@@ -205,7 +205,6 @@ Page({
   },
   /* 点击切换推荐页 */
   menuClick(e) {
-    console.log("数据", e)
     let self = this;
     let menuType = Number(e.currentTarget.dataset.num);
     self.setData({

@@ -1,3 +1,4 @@
+import WxParse from '../../../../wxapp/template/wxParse/wxParse.js';
 import Util from '../../../../utils/util.js';
 const app = getApp();
 
