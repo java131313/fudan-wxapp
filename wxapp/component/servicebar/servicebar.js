@@ -11,6 +11,10 @@ Component({
     isOpen: {
       type: Boolean,
       value: true
+    },
+    isSwitch: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -33,6 +37,12 @@ Component({
           image: 3
         });
       } else {
+        if (self.data.isSwitch) {
+          wx.switchTab({
+            url: self.data.schoolNaviTo
+          });
+          return;
+        }
         wx.navigateTo({
           url: self.data.schoolNaviTo
         });

@@ -5,6 +5,7 @@
     "pages/index/index",
     "pages/personal/personal",
     "pages/service/service",
+    "pages/courseCalendar/courseCalendar",
     "pages/selectiveID/selectiveID",
     "pages/selectInterest/selectInterest",
     "pages/loginym/loginym"
@@ -24,6 +25,12 @@
         "text": "首页",
         "iconPath": "/images/1.png",
         "selectedIconPath": "/images/1r.png"
+      },
+      {
+        "pagePath": "pages/courseCalendar/courseCalendar",
+        "text": "找课",
+        "iconPath": "/images/4.png",
+        "selectedIconPath": "/images/4r.png"
       },
       {
         "pagePath": "pages/service/service",
@@ -70,7 +77,6 @@
     {
       "root": "package/service/",
       "pages": [
-        "pages/courseCalendar/courseCalendar",
         "pages/property_service/property_service"
       ]
     }

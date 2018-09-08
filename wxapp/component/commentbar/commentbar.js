@@ -49,6 +49,7 @@ Component({
     },
     _commentSubmit(e) {
       let self = this;
+      let form_id = e.detail.formId;
       let commentId = self.data.commentId;
       let commentType = self.data.commentType;
       let content = e.detail.value.content;
@@ -59,7 +60,7 @@ Component({
         });
         return;
       }
-      app.api.addComment(commentId, commentType, content).then(res => {
+      app.api.addComment(form_id, commentId, commentType, content).then(res => {
         Util.showToast({
           title: '评论成功'
         });

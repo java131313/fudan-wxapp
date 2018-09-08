@@ -3,23 +3,23 @@
 <view class='operate-container'>
   <view class='operate-item'>
     <button open-type='share'>
-      <image src='{{filter.imageSrcParse("/images/share.png")}}'></image>
-      <text>{{share_num}}</text>
+      <image class='operate-item-image' src='{{filter.imageSrcParse("/images/share_btn.png")}}'></image>
+      <text class='operate-item-text'>{{share_num}}</text>
     </button>
-    
+
   </view>
   <view class='operate-item'>
     <view class='operate_likes' catchtap='_showCommentView'>
-     <image src='{{filter.imageSrcParse("/images/edit.png")}}'></image>
-      <text>{{comment_num}}</text>
+      <image class='operate-item-image' src='{{filter.imageSrcParse("/images/edit.png")}}'></image>
+      <text class='operate-item-text'>{{comment_num}}</text>
     </view>
-   
+
   </view>
   <view class='operate-item'>
-  <view class='operate_likes' catchtap='_moduleSupport'>
-  <image src='{{filter.imageSrcParse(has_supported ? "/images/like_hover.png" : "/images/like.png")}}' ></image>
-    <text>{{support_num}}</text>
-  </view>
-    
+    <view class='operate_likes' catchtap='_moduleSupport'>
+      <image class='operate-item-image' src='{{filter.imageSrcParse(has_supported ? "/images/like_hover.png" : "/images/like.png")}}'></image>
+      <text class='operate-item-text'>{{support_num}}</text>
+    </view>
+
   </view>
 </view>

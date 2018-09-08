@@ -39,7 +39,7 @@
 
 <view class='Modal_view' wx:if="{{show_commentView}}">
   <view class='commentView'>
-    <form bindsubmit='_commentSubmit'>
+    <form report-submit='true' bindsubmit='_commentSubmit'>
       <view class='commentView_title'>
         <textarea name='content' auto-focus="true" fixed="true" cursor-spacing="10">{{writeReview}}</textarea>
       </view>

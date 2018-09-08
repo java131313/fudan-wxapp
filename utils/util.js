@@ -335,4 +335,96 @@ export default class Util {
         return `${app.CONFIG.PAGE.LIVEDETAILS}?id=${id}`;
     }
   }
+
+  /* 公众号文章转义 */
+  static articleParse(article) {
+    if(!article) return '';
+    article = JSON.parse(article);
+    let articleContent = JSON.parse(article.content);
+    for (let paragraph of articleContent) {
+      switch (paragraph.type) {
+        case 0:
+          {
+            // 调整文本，依照 markups 把一段切分成若干 sentences
+            let text = paragraph.text;
+            let markups = text.markups;
+            let sentences = [];
+            let pos = 0;
+            if (markups != undefined) {
+              for (let m = 0; m < markups.length; m++) {
+                let markup = markups[m];
+                if (pos < markup.start) {
+                  sentences.push({
+                    "text": text.text.substring(pos, markup.start)
+                  });
+                }
+                sentences.push({
+                  "text": text.text.substring(markup.start, markup.end),
+                  "tag": markup.tag,
+                  "source": markup.source
+                });
+                pos = markup.end;
+              }
+            }
+            if (pos < text.text.length) {
+              sentences.push({
+                "text": text.text.substring(pos, text.text.length)
+              });
+            }
+            text.sentences = sentences;
+            // 计算样式标签
+            if (paragraph.blockquote == 1) {
+              text.class = "paragraph__blockquote";
+            } else if (text.linetype == "aside") {
+              text.class = "paragraph__aside";
+            } else {
+              text.class = "paragraph__text";
+            }
+            if (paragraph.blockquote == 1) {
+              text.class = "paragraph__blockquote";
+            } else {
+              switch (text.linetype) {
+                case "aside":
+                  text.class = "paragraph__aside";
+                  break;
+                case "h1":
+                  text.class = "paragraph__h1";
+                  break;
+                case "h2":
+                  text.class = "paragraph__h2";
+                  break;
+                case "h3":
+                  text.class = "paragraph__h3";
+                  break;
+                default:
+                  text.class = "paragraph__text";
+                  break;
+              }
+            }
+          }
+          break;
+        case 1:
+          {
+            // 调整图片，把图片大小算对
+            let image = paragraph.image;
+            let fullWidth = 750; // 按照微信的设计，屏幕宽度保持为 750rpx
+            if (image.width * 4 < fullWidth) {
+              image.height = image.height * 2;
+              image.width = image.width * 2;
+            } else {
+              image.height = (image.height * fullWidth) / image.width;
+              image.width = fullWidth;
+            }
+          }
+          break;
+        case 3: // audio
+          {
+            if (paragraph.media && paragraph.media.title) {
+              paragraph.media.title = util.decodeParam(paragraph.media.title);
+            }
+          }
+      }
+    }
+    return articleContent;
+  }
 }

@@ -1,7 +1,7 @@
 <view class='main-wrapper' style='background:{{bgColor}}'>
   <view class='mv'>
     <block wx:for='{{schoolBarItem}}' wx:key='this'>
-      <service-bar class="mw" schoolNaviTo='{{item.schoolNaviTo}}' schoolUrl='{{item.schoolUrl}}' schoolText='{{item.schoolText}}' isOpen='{{item.isOpen}}' />
+      <service-bar class="mw" schoolNaviTo='{{item.schoolNaviTo}}' schoolUrl='{{item.schoolUrl}}' schoolText='{{item.schoolText}}' isOpen='{{item.isOpen}}' isSwitch='{{item.isSwitch}}' />
     </block>
   </view>
   <view class='service_title_parent'>

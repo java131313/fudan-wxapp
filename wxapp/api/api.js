@@ -284,10 +284,11 @@ export default class Api {
   }
 
   /* 评论 */
-  addComment(id, commentType, content) {
+  addComment(form_id, id, commentType, content) {
     let self = this;
     let url = '/front/addComment';
     let postData = {
+      form_id: form_id,
       id: id,
       type: commentType,
       content: content,

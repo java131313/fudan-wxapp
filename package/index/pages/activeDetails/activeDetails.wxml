@@ -19,12 +19,12 @@
   <view class='activ_poster'>
     <view class='activ_poster_title_parent'>
       <text class='activ_poster_title'>活动介绍：</text>
-      <view class='wxapp_text'>
-      <template is="wxParse" data="{{wxParseData:intro.nodes}}" />
+      <view class='activ_poster_content'>
+        <template is="wxParse" data="{{wxParseData:intro.nodes}}" />
       </view>
-      
+
     </view>
-    <view class='activ_poster_content_parent'> 
+    <view class='activ_poster_content_parent'>
       <view class='activ_poster_img_parent'>
         <image class='activ_poster_img' src='{{filter.imageSrcParse(activityDetail.playbill)}}'></image>
       </view>

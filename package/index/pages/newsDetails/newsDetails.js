@@ -87,10 +87,14 @@ Page({
   getNewsDetail(id) {
     let self = this;
     app.api.getNewsDetail(id).then(res => {
+      if (res.data.data.transcoding == 1) {
+        res.data.data.content = Util.articleParse(res.data.data.content);
+      } else {
+        WxParse.wxParse('article', 'html', res.data.data.content, self, 30);
+      }
       self.setData({
         newsDetail: res.data.data
       });
-      WxParse.wxParse('article', 'html', res.data.data.content, self, 30);
     }, res => {
       self.setData({
         sold_out: true

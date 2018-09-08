@@ -1,4 +1,3 @@
-
 .newsIndex {
   background: #fff;
   width: 94.68%;
@@ -12,9 +11,11 @@
 .newsBigPic {
   padding: 6rpx 2.8% 0;
 }
-.newsBigPic2{
+
+.newsBigPic2 {
   padding-top: 20rpx;
 }
+
 .newsBigPic_noimg {
   padding: 5rpx 2.8%;
 }
@@ -67,55 +68,64 @@
   margin-top: 10rpx;
   border-top: 2rpx solid #f5f5f5;
 }
-.newsSynopsis_left{
+
+.newsSynopsis_left {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 58%;
+  align-items: center;
+  overflow: hidden;
 }
-.newsSynopsis_left1{
+
+.newsSynopsis_left1 {
   display: flex;
   align-items: center;
 }
-.newsSynopsis_left2{
+
+.newsSynopsis_left2 {
   margin-right: 28rpx;
 }
-.newsSynopsis_left3{
-  margin-right:28rpx; 
+
+.newsSynopsis_left3 {
+  margin-right: 28rpx;
 }
-.newsSynopsis_left_text1{
+
+.newsSynopsis_left_text1 {
   font-size: 26rpx;
   line-height: 94rpx;
   color: #aaa;
 }
-.newsSynopsis_right{
+
+.newsSynopsis_right {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.newsSynopsis_right1{
+
+.newsSynopsis_right1 {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.newsSynopsis_right2_btn{
-  width: 33rpx;
-  height: 33rpx;
+
+.newsSynopsis_right2_btn {
+  width: 66rpx;
+  height: 66rpx;
   background: url(http://xinzhibang168-1253521270.costj.myqcloud.com/images/share.png) no-repeat center left;
   background-size: 50%;
 }
-.newsSynopsis_right2_btn::after{
-  background: rgba(0,0,0,0);
+
+.newsSynopsis_right2_btn::after {
+  background: rgba(0, 0, 0, 0);
   border: none;
 }
-.newsSynopsis_right3{
-  margin-right: 40rpx;
-}
-.newsSynopsis_right4{
-  margin-right: 40rpx;
-}
-.synopsis1 {
 
+.newsSynopsis_right3 {
+  margin-right: 40rpx;
+}
+
+.newsSynopsis_right4 {
+  margin-right: 40rpx;
 }
 
 .synopsis2 {
@@ -391,13 +401,15 @@
 
 .stick {
   color: #d33a3a;
+  width: 66rpx;
   line-height: 40rpx;
+  height: 40rpx;
   border: 1px solid #d33a3a;
   font-size: 26rpx;
   display: inline-block;
-  padding: 0 2%;
-  margin-right: 1.5%;
+  margin-right: 10rpx;
   font-weight: bold;
+  text-align: center;
 }
 
 .information_job_constructor {
