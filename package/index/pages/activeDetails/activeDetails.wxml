@@ -9,6 +9,7 @@
       <option-bar option_title='活动地点：' option_content='{{activityDetail.site}}' />
       <option-bar option_title='主办单位：' option_content='{{activityDetail.organ}}' />
       <option-bar option_title='承办单位：' option_content='{{activityDetail.under}}' />
+      <option-bar wx:if='{{activityDetail.un_show == 1}}' option_title='报名人数：' option_content='{{activityDetail.apply_user_num}}' />
     </view>
   </view>
   <view class="activ_btn">
