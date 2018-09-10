@@ -165,8 +165,12 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
-    return Util.onShareAppMessage();
+  onShareAppMessage: function(e) {
+    if (e.from == 'button') {
+
+    } else {
+      return Util.onShareAppMessage();
+    }
   },
 
   /* 获取首页推荐列表数据 */

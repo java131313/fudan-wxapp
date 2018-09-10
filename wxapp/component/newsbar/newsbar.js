@@ -17,7 +17,9 @@ Component({
     is_top: Number,
     bgStyle: Object,
     comment_num: Number,
-    support_num: Number
+    support_num: Number,
+    mid: Number,
+    mtype: String
   },
 
   /**

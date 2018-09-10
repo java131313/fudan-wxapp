@@ -31,7 +31,7 @@
             <text class='newsSynopsis_left_text1'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button data-hi="data_share_id" class='newsSynopsis_right2_btn' open-type='share' catchtap='onShareAppMessage'></button>
+            <button data-mid='{{mid}}' data-mtype='{{mtype}}' class='newsSynopsis_right2_btn' open-type='share' catchtap='onShareAppMessage'></button>
           </view>
         </view>
       </view>
@@ -68,7 +68,7 @@
             <text class='newsSynopsis_left_text1'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button data-mid='{{mid}}' data-mtype='{{mtype}}' catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -105,7 +105,7 @@
             <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button data-mid='{{mid}}' data-mtype='{{mtype}}' catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -154,7 +154,7 @@
             <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button data-mid='{{mid}}' data-mtype='{{mtype}}' catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -192,7 +192,7 @@
             <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button data-mid='{{mid}}' data-mtype='{{mtype}}' catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -245,7 +245,7 @@
             <text class='newsSynopsis_left_text1'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button data-mid='{{mid}}' data-mtype='{{mtype}}' catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -295,7 +295,7 @@
             <text class='newsSynopsis_left_text1'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button data-mid='{{mid}}' data-mtype='{{mtype}}' catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -331,7 +331,7 @@
             <text class='newsSynopsis_left_text1'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button class='newsSynopsis_right2_btn' open-type='share' catchtap='onShareAppMessage'></button>
+            <button data-mid='{{mid}}' data-mtype='{{mtype}}' class='newsSynopsis_right2_btn' open-type='share' catchtap='onShareAppMessage'></button>
           </view>
         </view>
       </view>

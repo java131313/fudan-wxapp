@@ -10,7 +10,7 @@
     <view data-num="2" class='{{menuType == 2 ? "newsTitle_party1" : "newsTitle_party2"}}' bindtap="menuClick">
       <view class='party_father'>
         <image class='party_img' src='{{menuType == 2 ? filter.imageSrcParse("/images/danghui_hover.png") : filter.imageSrcParse("/images/danghui.png")}}'></image>
-        <text class='{{menuType == 2 ? "party_text_bold" : ""}}' style='color:{{menuType == 2 ? "#fff" : "#d33a3a"}}'>党代会专题</text>
+        <text style='color:{{menuType == 2 ? "#fff" : "#d33a3a"}}'>党代会专题</text>
       </view>
     </view>
     <!-- 新增视频版块 -->
@@ -27,12 +27,8 @@
     <!-- 我的复旦 -->
     <block wx:if='{{menuType == 1}}' wx:for='{{newsItem}}' wx:key='this'>
       <!-- 新闻 -->
-<<<<<<< HEAD
-      <news-bar wx:if='{{item.type=="news"}}' news_url='{{newsDetailUrl}}?id={{item.data.id}}' news_type='{{filter.handleNewsType(item.data.cover_img,item.data.img_size)}}' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' addComment='{{item.comment_num}}' thumb_up_function='{{item.support_num}}' synopsis_source='{{item.data.origin}}' is_top='{{item.is_top}}' />
-=======
       <news-bar wx:if='{{item.type=="news"}}' news_url='{{newsDetailUrl}}?id={{item.data.id}}' news_type='{{filter.handleNewsType(item.data.cover_img,item.data.img_size)}}' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}'
         comment_num='{{item.data.comment_num}}' support_num='{{item.data.support_num}}' synopsis_source='{{item.data.origin}}' is_top='{{item.is_top}}' />
->>>>>>> 075a8307dc3020655df44d82100d60ea11e4a071
 
       <!-- 活动 -->
       <news-bar wx:if='{{item.type=="activity"}}' news_url='{{activityUrl}}?id={{item.data.id}}' news_type='4' news_pic='{{item.data.cover_img}}' news_title='{{item.data.title}}' synopsis_time='{{filter.formatDate(item.data.issuetime)}}' synopsis_source='{{item.data.source}}'
