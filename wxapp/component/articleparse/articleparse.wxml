@@ -1,11 +1,11 @@
 <!-- 文章详情 -->
 <view class="article">
   <!-- 正文，按段落来渲染 -->
-  <block wx:for="{{content}}" wx:for-item="paragraph">
+  <block wx:for="{{content}}" wx:key='this' wx:for-item="paragraph">
     <!-- 文本 -->
     <block wx:if="{{paragraph.type == 0}}">
       <view class="{{paragraph.text.class}}">
-        <block wx:for="{{paragraph.text.sentences}}" wx:for-item="sentence">
+        <block wx:for="{{paragraph.text.sentences}}" wx:key='this' wx:for-item="sentence">
           <text wx:if="{{sentence.tag == 'strong'}}" class="sentence__bold">{{sentence.text}}</text>
           <text wx:elif="{{sentence.tag == 'a'}}" class="sentence__link" data-link="{{sentence.source}}" bindtap="openLink">{{sentence.text}}</text>
           <text wx:else>{{sentence.text}}</text>

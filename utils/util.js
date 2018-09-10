@@ -218,8 +218,9 @@ export default class Util {
     return {
       title: shareOpions.title || defaultTitle,
       path: shareOpions.path,
-      imageUrl: shareOpions.imageUrl,
+      imageUrl: shareOpions.imageUrl || '',
       success(res) {
+        console.log('分享转发成功！');
         if (shareOpions.shareId && shareOpions.shareType) {
           api.addShareNum(shareOpions.shareId, shareOpions.shareType).then(res => {
             typeof cb == 'function' && cb();
@@ -228,7 +229,7 @@ export default class Util {
           typeof cb == 'function' && cb();
         }
       },
-      fail: function(res) {
+      fail(res) {
         console.log('分享转发失败！');
       }
     };
@@ -319,23 +320,23 @@ export default class Util {
   }
 
   /* 根据模块类型匹配页面 */
-  static getModulePageUrl(mtype, id) {
+  static getModulePageUrl(mtype, mid) {
     const app = getApp();
     switch (mtype) {
       case 'news':
-        return `${app.CONFIG.PAGE.NEWSDETAILS}?id=${id}`;
+        return `${app.CONFIG.PAGE.NEWSDETAILS}?id=${mid}`;
       case 'activity':
-        return `${app.CONFIG.PAGE.ACTIVEDETAILS}?id=${id}`;
+        return `${app.CONFIG.PAGE.ACTIVEDETAILS}?id=${mid}`;
       case 'vote':
-        return `${app.CONFIG.PAGE.VOTEDETAILS}?id=${id}`;
+        return `${app.CONFIG.PAGE.VOTEDETAILS}?id=${mid}`;
       case 'recruit':
-        return `${app.CONFIG.PAGE.RECRUITDETAILS}?id=${id}`;
+        return `${app.CONFIG.PAGE.RECRUITDETAILS}?id=${mid}`;
       case 'contribute':
-        return `${app.CONFIG.PAGE.CONTRIBUTEFORM}?id=${id}`;
+        return `${app.CONFIG.PAGE.CONTRIBUTEFORM}?id=${mid}`;
       case 'video':
-        return `${app.CONFIG.PAGE.VIDEODETAILS}?id=${id}`;
+        return `${app.CONFIG.PAGE.VIDEODETAILS}?id=${mid}`;
       case 'live':
-        return `${app.CONFIG.PAGE.LIVEDETAILS}?id=${id}`;
+        return `${app.CONFIG.PAGE.LIVEDETAILS}?id=${mid}`;
     }
   }
 

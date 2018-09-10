@@ -167,7 +167,14 @@ Page({
    */
   onShareAppMessage: function(e) {
     if (e.from == 'button') {
-
+      let mid = e.target.dataset.mid;
+      let mtype = e.target.dataset.mtype;
+      let shareOptions = {
+        shareId: mid,
+        shareType: mtype,
+        path: Util.getModulePageUrl(mtype, mid)
+      };
+      return Util.onShareAppMessage(shareOptions);
     } else {
       return Util.onShareAppMessage();
     }
