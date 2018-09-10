@@ -215,6 +215,7 @@ export default class Util {
   /* 分享和转发 */
   static onShareAppMessage(shareOpions = {}, cb) {
     let defaultTitle = getApp().CONFIG.SHARETITLE;
+    debugger;
     return {
       title: shareOpions.title || defaultTitle,
       path: shareOpions.path,
@@ -337,6 +338,27 @@ export default class Util {
         return `${app.CONFIG.PAGE.VIDEODETAILS}?id=${mid}`;
       case 'live':
         return `${app.CONFIG.PAGE.LIVEDETAILS}?id=${mid}`;
+    }
+  }
+
+  /* 获取模块的类型值 */
+  static getModuleTypeNumber(mtype, mid) {
+    const app = getApp();
+    switch (mtype) {
+      case 'news':
+        return app.ENUM.ModuleType.News;
+      case 'activity':
+        return app.ENUM.ModuleType.Activity;
+      case 'vote':
+        return app.ENUM.ModuleType.Vote;
+      case 'recruit':
+        return app.ENUM.ModuleType.Recruit;
+      case 'contribute':
+        return app.ENUM.ModuleType.Contribute;
+      case 'video':
+        return app.ENUM.ModuleType.Video;
+      case 'live':
+        return app.ENUM.ModuleType.Live;
     }
   }
 

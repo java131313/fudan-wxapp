@@ -171,7 +171,7 @@ Page({
       let mtype = e.target.dataset.mtype;
       let shareOptions = {
         shareId: mid,
-        shareType: mtype,
+        shareType: Util.getModuleTypeNumber(mtype),
         path: Util.getModulePageUrl(mtype, mid)
       };
       return Util.onShareAppMessage(shareOptions);
