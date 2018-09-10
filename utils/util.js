@@ -215,7 +215,6 @@ export default class Util {
   /* 分享和转发 */
   static onShareAppMessage(shareOpions = {}, cb) {
     let defaultTitle = getApp().CONFIG.SHARETITLE;
-    debugger;
     return {
       title: shareOpions.title || defaultTitle,
       path: shareOpions.path,
