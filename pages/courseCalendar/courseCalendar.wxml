@@ -1,4 +1,4 @@
-<wxs src='../../../../wxapp/wxs/filter.wxs' module='filter' />
+<wxs src='../../wxapp/wxs/filter.wxs' module='filter' />
 
 <view class='courseCalendar_all'>
   <form class='input_search' bindsubmit='searchCourse' style='background:url({{filter.imageSrcParse("/images/search_classbg.png")}}) no-repeat top center;background-size: cover;'>

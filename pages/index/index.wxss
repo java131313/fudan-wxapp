@@ -17,7 +17,7 @@
 }
 
 .news-box {
-  margin-top: 40rpx;
+  margin-top: 76rpx;
 }
 
 .newsTitle_parent {

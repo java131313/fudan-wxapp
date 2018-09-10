@@ -14,14 +14,14 @@
   overflow: hidden;
 }
 
-.operate-item image {
+.operate-item-image {
   display: inline-block;
   width: 30rpx;
   height: 30rpx;
   margin-right: 15rpx;
 }
 
-.operate-item text {
+.operate-item-text {
   display: inline-block;
   font-size: 28rpx;
   color: #888;

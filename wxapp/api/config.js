@@ -27,7 +27,7 @@ module.exports = {
     /* 登录 */
     LOGIN: '/pages/loginym/loginym',
     /* 校友登录 */
-    ALUMNILOGIN:'/pages/alumniLogin/alumniLogin',
+    ALUMNILOGIN: '/pages/alumniLogin/alumniLogin',
     /* 选择兴趣标签 */
     SELECTINTEREST: '/pages/selectInterest/selectInterest',
     /* 首页 */
@@ -46,7 +46,7 @@ module.exports = {
     /* 服务 */
     SERVICE: '/pages/service/service',
     /* 服务分包页 */
-    COURSECALENDAR: '/package/service/pages/courseCalendar/courseCalendar',
+    COURSECALENDAR: '/pages/courseCalendar/courseCalendar',
     /* 我的 */
     PERSONAL: '/pages/personal/personal',
     /* 我的(分包页) */
@@ -88,22 +88,25 @@ module.exports = {
   },
   SCHOOL_SERVICE: {
     SCHOOL_ITEM: [{
-        schoolNaviTo: "/package/service/pages/courseCalendar/courseCalendar",
+        schoolNaviTo: "/pages/courseCalendar/courseCalendar",
         schoolUrl: '/images/kt1.png',
         schoolText: '课程搜索',
         isOpen: true,
+        isSwitch: true
       },
       {
         schoolNaviTo: "",
         schoolUrl: '/images/kt2.png',
         schoolText: '场馆预定',
-        isOpen: false
+        isOpen: false,
+        isSwitch: false
       },
       {
         schoolNaviTo: "/package/service/pages/property_service/property_service",
         schoolUrl: '/images/wuye.png',
         schoolText: '物业报修',
-        isOpen: true
+        isOpen: true,
+        isSwitch: false
       }
     ]
   },

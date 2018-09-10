@@ -89,7 +89,8 @@ Page({
       self.setData({
         videoDetail: res.data.data
       });
-    },res=>{
+      WxParse.wxParse('intro', 'html', res.data.data.intro, self, 30);
+    }, res => {
       Util.handleNoPermission(res.data.msg);
     });
   },

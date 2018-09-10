@@ -1,4 +1,5 @@
 @import '../../../../wxapp/template/wxParse/wxParse.wxss';
+
 .main-wrapper {
   width: 92.6%;
   padding: 0 3.7%;
@@ -49,8 +50,7 @@
   font-size: 32rpx;
   line-height: 54rpx;
   color: #333;
-  display: inline-block;
-  width: 24%;
+  display: block;
 }
 
 .activ_poster_content {
@@ -65,11 +65,9 @@
 .activ_poster_img {
   width: 100%;
 }
-.activ_poster_title_parent{
+
+.activ_poster_title_parent {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
-}
-.wxapp_text{
-  width: 76%;
 }

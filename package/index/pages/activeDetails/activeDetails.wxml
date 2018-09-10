@@ -9,6 +9,7 @@
       <option-bar option_title='活动地点：' option_content='{{activityDetail.site}}' />
       <option-bar option_title='主办单位：' option_content='{{activityDetail.organ}}' />
       <option-bar option_title='承办单位：' option_content='{{activityDetail.under}}' />
+      <option-bar wx:if='{{activityDetail.un_show == 1}}' option_title='报名人数：' option_content='{{activityDetail.apply_user_num}}' />
     </view>
   </view>
   <view class="activ_btn">
@@ -19,12 +20,12 @@
   <view class='activ_poster'>
     <view class='activ_poster_title_parent'>
       <text class='activ_poster_title'>活动介绍：</text>
-      <view class='wxapp_text'>
-      <template is="wxParse" data="{{wxParseData:intro.nodes}}" />
+      <view class='activ_poster_content'>
+        <template is="wxParse" data="{{wxParseData:intro.nodes}}" />
       </view>
-      
+
     </view>
-    <view class='activ_poster_content_parent'> 
+    <view class='activ_poster_content_parent'>
       <view class='activ_poster_img_parent'>
         <image class='activ_poster_img' src='{{filter.imageSrcParse(activityDetail.playbill)}}'></image>
       </view>

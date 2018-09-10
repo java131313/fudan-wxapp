@@ -64,7 +64,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return Util.onShareAppMessage();
   },
 
   /* 加载表单验证规则 */

@@ -1,4 +1,3 @@
-
 <wxs src='../../wxs/filter.wxs' module='filter' />
 
 <navigator url='{{news_url}}'>
@@ -13,29 +12,26 @@
       </view>
       <view class='newsSynopsis'>
         <view class='newsSynopsis_left'>
-          <!-- <view>
-            <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
-          </view> -->
+          <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
           <view class='newsSynopsis_left1 newsSynopsis_left2'>
             <text class='newsSynopsis_left_text1'>{{filter.dateSrcParse(synopsis_time)}}</text>
           </view>
           <view class='newsSynopsis_left1 newsSynopsis_left3'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
+            <text class='synopsis2' class='newsSynopsis_left_text1'>|</text>
           </view>
           <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
-
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1' bindtap='comment_function'>{{addComment}}评</text>
+            <text class='newsSynopsis_left_text1'>{{comment_num}}评</text>
           </view>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1' bindtap='thumb_up_function'>{{addSupportNum}}赞</text>
+            <text class='newsSynopsis_left_text1'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button data-hi="data_share_id" class='newsSynopsis_right2_btn' open-type='share' bindtap='onShareAppMessage'></button>
+            <button data-hi="data_share_id" class='newsSynopsis_right2_btn' open-type='share' catchtap='onShareAppMessage'></button>
           </view>
         </view>
       </view>
@@ -51,32 +47,28 @@
           <text>{{news_title}}</text>
         </view>
       </view>
-       <view class='newsSynopsis'>
+      <view class='newsSynopsis'>
         <view class='newsSynopsis_left'>
-          <!-- <view>
-            <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
-          </view> -->
+          <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
           <view class='newsSynopsis_left1 newsSynopsis_left2'>
             <text class='newsSynopsis_left_text1'>{{filter.dateSrcParse(synopsis_time)}}</text>
           </view>
           <view class='newsSynopsis_left1 newsSynopsis_left3'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
+            <text class='synopsis2' class='newsSynopsis_left_text1'>|</text>
           </view>
-       
           <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
-
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>{{addComment}}评</text>
+            <text class='newsSynopsis_left_text1'>{{comment_num}}评</text>
           </view>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>{{addSupportNum}}赞</text>
+            <text class='newsSynopsis_left_text1'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -93,30 +85,27 @@
       </view>
       <view class='newsSynopsis'>
         <view class='newsSynopsis_left'>
-          <!-- <view>
-            <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
-          </view> -->
+          <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
           <view class='newsSynopsis_left1 newsSynopsis_left2'>
             <text class='newsSynopsis_left_text1'>{{filter.dateSrcParse(synopsis_time)}}</text>
           </view>
           <view class='newsSynopsis_left1 newsSynopsis_left3'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
+            <text class='synopsis2' class='newsSynopsis_left_text1'>|</text>
           </view>
-         
+
           <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
-
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addComment}}评</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{comment_num}}评</text>
           </view>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addSupportNum}}赞</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -144,31 +133,28 @@
           </view>
         </view>
       </view>
-       <view class='newsSynopsis'>
+      <view class='newsSynopsis'>
         <view class='newsSynopsis_left'>
-          <!-- <view>
-            <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
-          </view> -->
+          <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
           <view class='newsSynopsis_left1 newsSynopsis_left2'>
             <text class='newsSynopsis_left_text1'>{{filter.dateSrcParse(synopsis_time)}}</text>
           </view>
           <view class='newsSynopsis_left1 newsSynopsis_left3'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
+            <text class='synopsis2' class='newsSynopsis_left_text1'>|</text>
           </view>
           <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
-
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addComment}}评</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{comment_num}}评</text>
           </view>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addSupportNum}}赞</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -185,31 +171,28 @@
         <image class='news_pic' src='{{filter.imageSrcParse(news_pic)}}'></image>
         <image class='news_pic_bg' src='{{filter.imageSrcParse("/images/vedio_bg.png")}}'></image>
       </view>
-       <view class='newsSynopsis'>
+      <view class='newsSynopsis'>
         <view class='newsSynopsis_left'>
-          <!-- <view>
-            <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
-          </view> -->
+          <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
           <view class='newsSynopsis_left1 newsSynopsis_left2'>
             <text class='newsSynopsis_left_text1'>{{filter.dateSrcParse(synopsis_time)}}</text>
           </view>
           <view class='newsSynopsis_left1 newsSynopsis_left3'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
+            <text class='synopsis2' class='newsSynopsis_left_text1'>|</text>
           </view>
           <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
-
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addComment}}评</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{comment_num}}评</text>
           </view>
           <view class='newsSynopsis_right1'>
-            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{addSupportNum}}赞</text>
+            <text class='newsSynopsis_left_text1 newsSynopsis_right3'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -241,31 +224,28 @@
           </view>
         </block>
       </view>
-       <view class='newsSynopsis'>
+      <view class='newsSynopsis'>
         <view class='newsSynopsis_left'>
-          <!-- <view>
-            <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
-          </view> -->
+          <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
           <view class='newsSynopsis_left1 newsSynopsis_left2'>
             <text class='newsSynopsis_left_text1'>{{filter.dateSrcParse(synopsis_time)}}</text>
           </view>
           <view class='newsSynopsis_left1 newsSynopsis_left3'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
+            <text class='synopsis2' class='newsSynopsis_left_text1'>|</text>
           </view>
           <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
-
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>{{addComment}}评</text>
+            <text class='newsSynopsis_left_text1'>{{comment_num}}评</text>
           </view>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>{{addSupportNum}}赞</text>
+            <text class='newsSynopsis_left_text1'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -294,31 +274,28 @@
           <text class='information_job_require'>{{recruit_require}}</text>
         </view>
       </view>
-       <view class='newsSynopsis'>
+      <view class='newsSynopsis'>
         <view class='newsSynopsis_left'>
-          <!-- <view>
-            <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
-          </view> -->
+          <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
           <view class='newsSynopsis_left1 newsSynopsis_left2'>
             <text class='newsSynopsis_left_text1'>{{filter.dateSrcParse(synopsis_time)}}</text>
           </view>
           <view class='newsSynopsis_left1 newsSynopsis_left3'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
+            <text class='synopsis2' class='newsSynopsis_left_text1'>|</text>
           </view>
           <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
-
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>{{addComment}}评</text>
+            <text class='newsSynopsis_left_text1'>{{comment_num}}评</text>
           </view>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>{{addSupportNum}}赞</text>
+            <text class='newsSynopsis_left_text1'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button bindtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
+            <button catchtap='onShareAppMessage' class='newsSynopsis_right2_btn' open-type='share'></button>
           </view>
         </view>
       </view>
@@ -333,31 +310,28 @@
           <text class='information_title'>{{news_title}}</text>
         </view>
       </view>
-       <view class='newsSynopsis'>
+      <view class='newsSynopsis'>
         <view class='newsSynopsis_left'>
-          <!-- <view>
-            <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
-          </view> -->
+          <text class='synopsis1 stick' wx:if="{{is_top == 1}}">置顶</text>
           <view class='newsSynopsis_left1 newsSynopsis_left2'>
             <text class='newsSynopsis_left_text1'>{{filter.dateSrcParse(synopsis_time)}}</text>
           </view>
           <view class='newsSynopsis_left1 newsSynopsis_left3'>
-          <text class='synopsis2'class='newsSynopsis_left_text1'>|</text>
+            <text class='synopsis2' class='newsSynopsis_left_text1'>|</text>
           </view>
           <view class='newsSynopsis_left1'>
             <text class='newsSynopsis_left_text1'>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
           </view>
         </view>
-
         <view class='newsSynopsis_right'>
           <view class='newsSynopsis_right1 newsSynopsis_right3'>
-            <text class='newsSynopsis_left_text1'>{{addComment}}评</text>
+            <text class='newsSynopsis_left_text1'>{{comment_num}}评</text>
           </view>
           <view class='newsSynopsis_right1 newsSynopsis_right4'>
-            <text class='newsSynopsis_left_text1'>{{addSupportNum}}赞</text>
+            <text class='newsSynopsis_left_text1'>{{support_num}}赞</text>
           </view>
           <view class='newsSynopsis_right2'>
-            <button class='newsSynopsis_right2_btn' open-type='share' bindtap='onShareAppMessage'></button>
+            <button class='newsSynopsis_right2_btn' open-type='share' catchtap='onShareAppMessage'></button>
           </view>
         </view>
       </view>
@@ -365,10 +339,8 @@
   </view>
 </navigator>
 
-
-
 <!-- 首页底部原始功能
 <view class='newsSynopsis'>
         <text class='synopsis1'><text class='stick' wx:if="{{is_top == 1}}">置顶</text>{{filter.dateSrcParse(synopsis_time)}}
         <text class='synopsis2'>|</text>{{is_top == 1 ? filter.split(synopsis_source,6) : filter.split(synopsis_source,6)}}</text>
-      </view> -->
+</view> -->

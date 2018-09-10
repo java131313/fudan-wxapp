@@ -7,14 +7,14 @@
       <view class='news-top'>
         <text class='news-title'>{{newsDetail.title}}</text>
         <view class='news-origin'>
-        <text  class='news-date'>{{filter.formatDate(newsDetail.createtime)}}</text>
+          <text class='news-date'>{{filter.formatDate(newsDetail.createtime)}}</text>
           <text>来源：{{newsDetail.origin}}</text>
-        
         </view>
         <text wx:if='{{newsDetail.author}}' class='news-author'>{{filter.handleAuthorDisplay(newsDetail.author)}}</text>
       </view>
       <view class="news-content">
-        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        <article-parse wx:if='{{newsDetail.transcoding == 1}}' content='{{newsDetail.content}}' />
+        <template wx:else is="wxParse" data="{{wxParseData:article.nodes}}" />
       </view>
     </view>
     <operate-bar support_num='{{newsDetail.support_num}}' comment_num='{{newsDetail.comment_num}}' share_num='{{newsDetail.share_num}}' has_supported='{{newsDetail.has_supported}}' supportId='{{newsDetail.id}}' supportType='{{moduleType}}' bind:showCommentView='showCommentView'
@@ -24,6 +24,3 @@
 </block>
 <view wx:if='{{sold_out}}' class='sold_out' style='background:url({{filter.imageSrcParse("/images/sold_out.png")}}) no-repeat center center;background-size:cover;'>
 </view>
-
-<!-- 直接跳转到公众号网页 -->
-<web-view wx:if='{{newsDetail.type == 1 && newsDetail.is_show == 1}}' src='{{newsDetail.a_url}}'></web-view>

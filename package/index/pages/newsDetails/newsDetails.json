@@ -2,6 +2,7 @@
   "navigationBarTitleText": "新闻详情",
   "usingComponents": {
     "comment-bar": "/wxapp/component/commentbar/commentbar",
-    "operate-bar": "/wxapp/component/operatebar/operatebar"
+    "operate-bar": "/wxapp/component/operatebar/operatebar",
+    "article-parse": "/wxapp/component/articleparse/articleparse"
   }
 }
