@@ -1,3 +1,4 @@
+import Util from '../../../../utils/util.js';
 const app = getApp();
 
 Page({
@@ -66,7 +67,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return Util.onShareAppMessage();
   },
 
   /* 更改昵称 */

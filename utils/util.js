@@ -213,17 +213,20 @@ export default class Util {
   }
 
   /* 分享和转发 */
-  static onShareAppMessage(shareOpions, cb) {
-    if (!shareOpions.shareId || !shareOpions.shareType) return;
+  static onShareAppMessage(shareOpions = {}, cb) {
     let defaultTitle = getApp().CONFIG.SHARETITLE;
     return {
       title: shareOpions.title || defaultTitle,
       path: shareOpions.path,
       imageUrl: shareOpions.imageUrl,
       success(res) {
-        api.addShareNum(shareOpions.shareId, shareOpions.shareType).then(res => {
+        if (shareOpions.shareId && shareOpions.shareType) {
+          api.addShareNum(shareOpions.shareId, shareOpions.shareType).then(res => {
+            typeof cb == 'function' && cb();
+          });
+        } else {
           typeof cb == 'function' && cb();
-        });
+        }
       },
       fail: function(res) {
         console.log('分享转发失败！');
@@ -338,7 +341,7 @@ export default class Util {
 
   /* 公众号文章转义 */
   static articleParse(article) {
-    if(!article) return '';
+    if (!article) return '';
     article = JSON.parse(article);
     let articleContent = JSON.parse(article.content);
     for (let paragraph of articleContent) {
